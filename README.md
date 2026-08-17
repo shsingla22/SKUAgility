@@ -82,8 +82,10 @@ from third-party sources.
 
 ## Caveats
 
-- Memory figures for the Azure SQL vCore model are derived from the published per-vCore
-  ratio with documented caps applied, not transcribed row by row.
+- Memory for every Azure SQL Database vCore SKU is transcribed from the published
+  `Memory (GB)` rows of the resource-limit tables (`tools/sqldb_memory.json`). Managed
+  Instance memory is derived from the documented per-vCore ratio with published caps
+  applied, since the MI docs publish ratios rather than a per-size table.
 - SKU availability is region-dependent. This catalog records what the service offers, not
   what any given region can currently allocate.
 - Preview SKUs (Hyperscale premium-series 160/192 vCore, PostgreSQL v6 series) are marked

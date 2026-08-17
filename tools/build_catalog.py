@@ -526,6 +526,15 @@ VCORE_SINGLE_LIMITS_DOC = (
 )
 MI_LIMITS = "https://learn.microsoft.com/azure/azure-sql/managed-instance/resource-limits"
 
+# Memory values transcribed from the Memory (GB) rows of the Azure SQL Database
+# single-database resource-limit tables, keyed by service-level objective. Using the
+# published numbers rather than a per-vCore ratio matters at the top of the range:
+# HS_PRMS_192 is documented at 843.7 GB, not the 996 GB a linear ratio implies, and
+# standard-series caps at 625 GB from 128 vCores.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "sqldb_memory.json"), encoding="utf-8") as _fh:
+    DOCUMENTED_MEMORY: dict[str, float] = json.load(_fh)
+
 
 def dtu_guidance(name: str) -> str:
     if name == "Basic":
@@ -692,7 +701,8 @@ for prefix, tier, compute, hardware, sizes, ratio, cap, default_ms in VCORE_FAMI
             hardware=hardware,
             capacity_unit="vCore",
             capacity=vcores,
-            memory_gb=mem(vcores, ratio, cap) if ratio else None,
+            memory_gb=DOCUMENTED_MEMORY.get(
+                f"{prefix}_{vcores}", mem(vcores, ratio, cap) if ratio else None),
             memory_gb_per_vcore=ratio,
             status=status,
             milestone=ms,

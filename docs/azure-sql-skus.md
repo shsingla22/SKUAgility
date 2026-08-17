@@ -90,15 +90,15 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 | `GP_Gen5_6` | General Purpose | Standard-series (Gen5) | 6 | 31.1 | GA | 2018-04 | low |
 | `GP_Gen5_8` | General Purpose | Standard-series (Gen5) | 8 | 41.5 | GA | 2018-04 | low |
 | `GP_Gen5_10` | General Purpose | Standard-series (Gen5) | 10 | 51.9 | GA | 2018-04 | low |
-| `GP_Gen5_12` | General Purpose | Standard-series (Gen5) | 12 | 62.2 | GA | 2018-04 | low |
-| `GP_Gen5_14` | General Purpose | Standard-series (Gen5) | 14 | 72.6 | GA | 2018-04 | low |
+| `GP_Gen5_12` | General Purpose | Standard-series (Gen5) | 12 | 62.3 | GA | 2018-04 | low |
+| `GP_Gen5_14` | General Purpose | Standard-series (Gen5) | 14 | 72.7 | GA | 2018-04 | low |
 | `GP_Gen5_16` | General Purpose | Standard-series (Gen5) | 16 | 83 | GA | 2018-04 | low |
 | `GP_Gen5_18` | General Purpose | Standard-series (Gen5) | 18 | 93.4 | GA | 2018-04 | low |
 | `GP_Gen5_20` | General Purpose | Standard-series (Gen5) | 20 | 103.8 | GA | 2018-04 | low |
-| `GP_Gen5_24` | General Purpose | Standard-series (Gen5) | 24 | 124.5 | GA | 2018-04 | low |
-| `GP_Gen5_32` | General Purpose | Standard-series (Gen5) | 32 | 166 | GA | 2018-04 | low |
-| `GP_Gen5_40` | General Purpose | Standard-series (Gen5) | 40 | 207.5 | GA | 2018-04 | low |
-| `GP_Gen5_80` | General Purpose | Standard-series (Gen5) | 80 | 415 | GA | 2018-04 | low |
+| `GP_Gen5_24` | General Purpose | Standard-series (Gen5) | 24 | 124.6 | GA | 2018-04 | low |
+| `GP_Gen5_32` | General Purpose | Standard-series (Gen5) | 32 | 166.1 | GA | 2018-04 | low |
+| `GP_Gen5_40` | General Purpose | Standard-series (Gen5) | 40 | 207.6 | GA | 2018-04 | low |
+| `GP_Gen5_80` | General Purpose | Standard-series (Gen5) | 80 | 415.2 | GA | 2018-04 | low |
 | `GP_Gen5_128` | General Purpose | Standard-series (Gen5) | 128 | 625 | GA | 2023-06 | high |
 
 ## Azure SQL Database — Single database / Elastic pool — vCore model — Business Critical — Standard-series (Gen5)
@@ -110,15 +110,15 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 | `BC_Gen5_6` | Business Critical | Standard-series (Gen5) | 6 | 31.1 | GA | 2018-04 | low |
 | `BC_Gen5_8` | Business Critical | Standard-series (Gen5) | 8 | 41.5 | GA | 2018-04 | low |
 | `BC_Gen5_10` | Business Critical | Standard-series (Gen5) | 10 | 51.9 | GA | 2018-04 | low |
-| `BC_Gen5_12` | Business Critical | Standard-series (Gen5) | 12 | 62.2 | GA | 2018-04 | low |
-| `BC_Gen5_14` | Business Critical | Standard-series (Gen5) | 14 | 72.6 | GA | 2018-04 | low |
+| `BC_Gen5_12` | Business Critical | Standard-series (Gen5) | 12 | 62.3 | GA | 2018-04 | low |
+| `BC_Gen5_14` | Business Critical | Standard-series (Gen5) | 14 | 72.7 | GA | 2018-04 | low |
 | `BC_Gen5_16` | Business Critical | Standard-series (Gen5) | 16 | 83 | GA | 2018-04 | low |
 | `BC_Gen5_18` | Business Critical | Standard-series (Gen5) | 18 | 93.4 | GA | 2018-04 | low |
 | `BC_Gen5_20` | Business Critical | Standard-series (Gen5) | 20 | 103.8 | GA | 2018-04 | low |
-| `BC_Gen5_24` | Business Critical | Standard-series (Gen5) | 24 | 124.5 | GA | 2018-04 | low |
-| `BC_Gen5_32` | Business Critical | Standard-series (Gen5) | 32 | 166 | GA | 2018-04 | low |
-| `BC_Gen5_40` | Business Critical | Standard-series (Gen5) | 40 | 207.5 | GA | 2018-04 | low |
-| `BC_Gen5_80` | Business Critical | Standard-series (Gen5) | 80 | 415 | GA | 2018-04 | low |
+| `BC_Gen5_24` | Business Critical | Standard-series (Gen5) | 24 | 124.6 | GA | 2018-04 | low |
+| `BC_Gen5_32` | Business Critical | Standard-series (Gen5) | 32 | 166.1 | GA | 2018-04 | low |
+| `BC_Gen5_40` | Business Critical | Standard-series (Gen5) | 40 | 207.6 | GA | 2018-04 | low |
+| `BC_Gen5_80` | Business Critical | Standard-series (Gen5) | 80 | 415.2 | GA | 2018-04 | low |
 | `BC_Gen5_128` | Business Critical | Standard-series (Gen5) | 128 | 625 | GA | 2023-06 | high |
 
 ## Azure SQL Database — Single database / Elastic pool — vCore model — Hyperscale — Standard-series (Gen5)
@@ -130,15 +130,15 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 | `HS_Gen5_6` | Hyperscale | Standard-series (Gen5) | 6 | 31.1 | GA | 2019-05 | medium |
 | `HS_Gen5_8` | Hyperscale | Standard-series (Gen5) | 8 | 41.5 | GA | 2019-05 | medium |
 | `HS_Gen5_10` | Hyperscale | Standard-series (Gen5) | 10 | 51.9 | GA | 2019-05 | medium |
-| `HS_Gen5_12` | Hyperscale | Standard-series (Gen5) | 12 | 62.2 | GA | 2019-05 | medium |
-| `HS_Gen5_14` | Hyperscale | Standard-series (Gen5) | 14 | 72.6 | GA | 2019-05 | medium |
+| `HS_Gen5_12` | Hyperscale | Standard-series (Gen5) | 12 | 62.3 | GA | 2019-05 | medium |
+| `HS_Gen5_14` | Hyperscale | Standard-series (Gen5) | 14 | 72.7 | GA | 2019-05 | medium |
 | `HS_Gen5_16` | Hyperscale | Standard-series (Gen5) | 16 | 83 | GA | 2019-05 | medium |
 | `HS_Gen5_18` | Hyperscale | Standard-series (Gen5) | 18 | 93.4 | GA | 2019-05 | medium |
 | `HS_Gen5_20` | Hyperscale | Standard-series (Gen5) | 20 | 103.8 | GA | 2019-05 | medium |
-| `HS_Gen5_24` | Hyperscale | Standard-series (Gen5) | 24 | 124.5 | GA | 2019-05 | medium |
-| `HS_Gen5_32` | Hyperscale | Standard-series (Gen5) | 32 | 166 | GA | 2019-05 | medium |
-| `HS_Gen5_40` | Hyperscale | Standard-series (Gen5) | 40 | 207.5 | GA | 2019-05 | medium |
-| `HS_Gen5_80` | Hyperscale | Standard-series (Gen5) | 80 | 415 | GA | 2019-05 | medium |
+| `HS_Gen5_24` | Hyperscale | Standard-series (Gen5) | 24 | 124.6 | GA | 2019-05 | medium |
+| `HS_Gen5_32` | Hyperscale | Standard-series (Gen5) | 32 | 166.1 | GA | 2019-05 | medium |
+| `HS_Gen5_40` | Hyperscale | Standard-series (Gen5) | 40 | 207.6 | GA | 2019-05 | medium |
+| `HS_Gen5_80` | Hyperscale | Standard-series (Gen5) | 80 | 415.2 | GA | 2019-05 | medium |
 
 ## Azure SQL Database — Single database / Elastic pool — vCore model — General Purpose (Serverless) — Standard-series (Gen5)
 
@@ -183,16 +183,16 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_Fsv2_8` | General Purpose | Fsv2-series | 8 | 15.2 | GA | 2019 | low |
-| `GP_Fsv2_10` | General Purpose | Fsv2-series | 10 | 19 | GA | 2019 | low |
-| `GP_Fsv2_12` | General Purpose | Fsv2-series | 12 | 22.8 | GA | 2019 | low |
-| `GP_Fsv2_14` | General Purpose | Fsv2-series | 14 | 26.6 | GA | 2019 | low |
-| `GP_Fsv2_16` | General Purpose | Fsv2-series | 16 | 30.4 | GA | 2019 | low |
-| `GP_Fsv2_18` | General Purpose | Fsv2-series | 18 | 34.2 | GA | 2019 | low |
-| `GP_Fsv2_20` | General Purpose | Fsv2-series | 20 | 38 | GA | 2019 | low |
-| `GP_Fsv2_24` | General Purpose | Fsv2-series | 24 | 45.6 | GA | 2019 | low |
-| `GP_Fsv2_32` | General Purpose | Fsv2-series | 32 | 60.8 | GA | 2019 | low |
-| `GP_Fsv2_36` | General Purpose | Fsv2-series | 36 | 68.4 | GA | 2019 | low |
+| `GP_Fsv2_8` | General Purpose | Fsv2-series | 8 | 15.1 | GA | 2019 | low |
+| `GP_Fsv2_10` | General Purpose | Fsv2-series | 10 | 18.9 | GA | 2019 | low |
+| `GP_Fsv2_12` | General Purpose | Fsv2-series | 12 | 22.7 | GA | 2019 | low |
+| `GP_Fsv2_14` | General Purpose | Fsv2-series | 14 | 26.5 | GA | 2019 | low |
+| `GP_Fsv2_16` | General Purpose | Fsv2-series | 16 | 30.2 | GA | 2019 | low |
+| `GP_Fsv2_18` | General Purpose | Fsv2-series | 18 | 34 | GA | 2019 | low |
+| `GP_Fsv2_20` | General Purpose | Fsv2-series | 20 | 37.8 | GA | 2019 | low |
+| `GP_Fsv2_24` | General Purpose | Fsv2-series | 24 | 45.4 | GA | 2019 | low |
+| `GP_Fsv2_32` | General Purpose | Fsv2-series | 32 | 60.5 | GA | 2019 | low |
+| `GP_Fsv2_36` | General Purpose | Fsv2-series | 36 | 68 | GA | 2019 | low |
 | `GP_Fsv2_72` | General Purpose | Fsv2-series | 72 | 136 | GA | 2019 | low |
 
 ## Azure SQL Database — Single database / Elastic pool — vCore model — General Purpose — DC-series
@@ -255,19 +255,19 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 | `HS_PRMS_6` | Hyperscale | Premium-series | 6 | 31.1 | GA | 2023-07 | high |
 | `HS_PRMS_8` | Hyperscale | Premium-series | 8 | 41.5 | GA | 2023-07 | high |
 | `HS_PRMS_10` | Hyperscale | Premium-series | 10 | 51.9 | GA | 2023-07 | high |
-| `HS_PRMS_12` | Hyperscale | Premium-series | 12 | 62.2 | GA | 2023-07 | high |
-| `HS_PRMS_14` | Hyperscale | Premium-series | 14 | 72.6 | GA | 2023-07 | high |
+| `HS_PRMS_12` | Hyperscale | Premium-series | 12 | 62.3 | GA | 2023-07 | high |
+| `HS_PRMS_14` | Hyperscale | Premium-series | 14 | 72.7 | GA | 2023-07 | high |
 | `HS_PRMS_16` | Hyperscale | Premium-series | 16 | 83 | GA | 2023-07 | high |
 | `HS_PRMS_18` | Hyperscale | Premium-series | 18 | 93.4 | GA | 2023-07 | high |
 | `HS_PRMS_20` | Hyperscale | Premium-series | 20 | 103.8 | GA | 2023-07 | high |
-| `HS_PRMS_24` | Hyperscale | Premium-series | 24 | 124.5 | GA | 2023-07 | high |
-| `HS_PRMS_32` | Hyperscale | Premium-series | 32 | 166 | GA | 2023-07 | high |
-| `HS_PRMS_40` | Hyperscale | Premium-series | 40 | 207.5 | GA | 2023-07 | high |
-| `HS_PRMS_64` | Hyperscale | Premium-series | 64 | 332 | GA | 2023-06 | high |
-| `HS_PRMS_80` | Hyperscale | Premium-series | 80 | 415 | GA | 2023-07 | high |
-| `HS_PRMS_128` | Hyperscale | Premium-series | 128 | 664 | GA | 2023-07 | high |
-| `HS_PRMS_160` | Hyperscale | Premium-series | 160 | 830 | Preview | 2026-03 (preview) | high |
-| `HS_PRMS_192` | Hyperscale | Premium-series | 192 | 996 | Preview | 2026-03 (preview) | high |
+| `HS_PRMS_24` | Hyperscale | Premium-series | 24 | 124.6 | GA | 2023-07 | high |
+| `HS_PRMS_32` | Hyperscale | Premium-series | 32 | 166.1 | GA | 2023-07 | high |
+| `HS_PRMS_40` | Hyperscale | Premium-series | 40 | 207.6 | GA | 2023-07 | high |
+| `HS_PRMS_64` | Hyperscale | Premium-series | 64 | 332.2 | GA | 2023-06 | high |
+| `HS_PRMS_80` | Hyperscale | Premium-series | 80 | 415.2 | GA | 2023-07 | high |
+| `HS_PRMS_128` | Hyperscale | Premium-series | 128 | 625 | GA | 2023-07 | high |
+| `HS_PRMS_160` | Hyperscale | Premium-series | 160 | 830.4 | Preview | 2026-03 (preview) | high |
+| `HS_PRMS_192` | Hyperscale | Premium-series | 192 | 843.7 | Preview | 2026-03 (preview) | high |
 
 ## Azure SQL Database — Single database / Elastic pool — vCore model — Hyperscale — Premium-series memory optimized
 
@@ -275,19 +275,19 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `HS_MOPRMS_2` | Hyperscale | Premium-series memory optimized | 2 | 20.8 | GA | 2023-07 | high |
 | `HS_MOPRMS_4` | Hyperscale | Premium-series memory optimized | 4 | 41.5 | GA | 2023-07 | high |
-| `HS_MOPRMS_6` | Hyperscale | Premium-series memory optimized | 6 | 62.2 | GA | 2023-07 | high |
+| `HS_MOPRMS_6` | Hyperscale | Premium-series memory optimized | 6 | 62.3 | GA | 2023-07 | high |
 | `HS_MOPRMS_8` | Hyperscale | Premium-series memory optimized | 8 | 83 | GA | 2023-07 | high |
 | `HS_MOPRMS_10` | Hyperscale | Premium-series memory optimized | 10 | 103.8 | GA | 2023-07 | high |
-| `HS_MOPRMS_12` | Hyperscale | Premium-series memory optimized | 12 | 124.5 | GA | 2023-07 | high |
-| `HS_MOPRMS_14` | Hyperscale | Premium-series memory optimized | 14 | 145.2 | GA | 2023-07 | high |
-| `HS_MOPRMS_16` | Hyperscale | Premium-series memory optimized | 16 | 166 | GA | 2023-07 | high |
-| `HS_MOPRMS_18` | Hyperscale | Premium-series memory optimized | 18 | 186.8 | GA | 2023-07 | high |
-| `HS_MOPRMS_20` | Hyperscale | Premium-series memory optimized | 20 | 207.5 | GA | 2023-07 | high |
-| `HS_MOPRMS_24` | Hyperscale | Premium-series memory optimized | 24 | 249 | GA | 2023-07 | high |
-| `HS_MOPRMS_32` | Hyperscale | Premium-series memory optimized | 32 | 332 | GA | 2023-07 | high |
-| `HS_MOPRMS_40` | Hyperscale | Premium-series memory optimized | 40 | 415 | GA | 2023-07 | high |
-| `HS_MOPRMS_64` | Hyperscale | Premium-series memory optimized | 64 | 664 | GA | 2023-06 | high |
-| `HS_MOPRMS_80` | Hyperscale | Premium-series memory optimized | 80 | 830 | GA | 2023-07 | high |
+| `HS_MOPRMS_12` | Hyperscale | Premium-series memory optimized | 12 | 124.6 | GA | 2023-07 | high |
+| `HS_MOPRMS_14` | Hyperscale | Premium-series memory optimized | 14 | 145.3 | GA | 2023-07 | high |
+| `HS_MOPRMS_16` | Hyperscale | Premium-series memory optimized | 16 | 166.1 | GA | 2023-07 | high |
+| `HS_MOPRMS_18` | Hyperscale | Premium-series memory optimized | 18 | 186.9 | GA | 2023-07 | high |
+| `HS_MOPRMS_20` | Hyperscale | Premium-series memory optimized | 20 | 207.6 | GA | 2023-07 | high |
+| `HS_MOPRMS_24` | Hyperscale | Premium-series memory optimized | 24 | 249.1 | GA | 2023-07 | high |
+| `HS_MOPRMS_32` | Hyperscale | Premium-series memory optimized | 32 | 332.2 | GA | 2023-07 | high |
+| `HS_MOPRMS_40` | Hyperscale | Premium-series memory optimized | 40 | 415.2 | GA | 2023-07 | high |
+| `HS_MOPRMS_64` | Hyperscale | Premium-series memory optimized | 64 | 664.4 | GA | 2023-06 | high |
+| `HS_MOPRMS_80` | Hyperscale | Premium-series memory optimized | 80 | 830.5 | GA | 2023-07 | high |
 
 ## Azure SQL Managed Instance — Managed instance — vCore model — General Purpose — Standard-series (Gen5)
 
