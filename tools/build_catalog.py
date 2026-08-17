@@ -17,7 +17,15 @@ from __future__ import annotations
 import csv
 import json
 import os
+import sys
 from dataclasses import asdict, dataclass, field
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from guidance import (  # noqa: E402
+    GUIDANCE,
+    PURCHASING_MODEL_NOTE,
+    RETIRED_FAMILIES,
+)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -188,7 +196,8 @@ VCORE_128 = milestone(
     preview="2022",
     ga="2023-06",
     confidence="high",
-    source="https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-preview-of-128-vcore-provisioned-compute-size-on/ba-p/3631211",
+    source="https://learn.microsoft.com/azure/azure-sql/database/doc-changes-updates-release-notes-whats-new-archive",
+    note="Learn what's-new archive, 2023: '128 vCore GA | June'. The original announcement blog post has been removed from Tech Community.",
 )
 
 HS_PREMIUM = milestone(
@@ -255,37 +264,63 @@ MI_PREMIUM = milestone(
     preview="2021-11",
     ga="2022-07-19",
     confidence="high",
-    source="https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-the-general-availability-of-premium-series-hardware/ba-p/3576737",
+    source="https://techcommunity.microsoft.com/blog/azuresqlblog/announcing-the-general-availability-of-premium-series-hardware-for-azure-sql-man/3576737",
 )
 
 MI_PREMIUM_MO = milestone(
     key="mi-premium-series-mo",
     label="Managed Instance memory optimized premium-series hardware (G8IH)",
     preview="2021-11",
-    ga="2022-09-28",
-    confidence="high",
-    source="https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-the-new-premium-series-hardware-for-sql-managed/ba-p/2913496",
+    ga="2022-09",
+    confidence="medium",
+    source="https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive",
+    note="The Learn what's-new archive places 'Memory optimized premium-series hardware GA' "
+    "and '16 TB support in Business Critical GA' in 2022 without a month; contemporaneous "
+    "coverage dates the announcement to 2022-09-28. The original blog post has been removed "
+    "from Tech Community.",
 )
 
-MI_EXTRA_VCORES = milestone(
-    key="mi-extra-vcores",
-    label="Additional premium-series vCore sizes (6, 10, 12, 20, 48, 56, 96, 128)",
+MI_128_VCORE = milestone(
+    key="mi-128-vcore",
+    label="96 and 128 vCore sizes for Business Critical on premium-series and memory "
+          "optimized premium-series",
     preview=None,
-    ga="2024-01",
-    confidence="medium",
-    source="https://learn.microsoft.com/azure/azure-sql/managed-instance/resource-limits",
-    note="Finer-grained vCore options for premium-series and memory optimized premium-series.",
+    ga="2023-07",
+    confidence="high",
+    source="https://techcommunity.microsoft.com/blog/azuresqlblog/128-vcores-on-azure-sql-managed-instance-business-critical/3879510",
+)
+
+MI_MID_VCORES = milestone(
+    key="mi-mid-vcores",
+    label="Additional Business Critical vCore sizes (6, 10, 12, 20, 48, 56) on premium-series "
+          "and memory optimized premium-series",
+    preview=None,
+    ga="2024-01-30",
+    confidence="high",
+    source="https://techcommunity.microsoft.com/blog/azuresqlblog/more-vcore-options-for-sql-mi-business-critical-for-better-priceperformance-and-/4043195",
+)
+
+MI_INSTANCE_POOLS = milestone(
+    key="mi-instance-pools",
+    label="Instance pools (the only way to deploy a 2-vCore managed instance)",
+    preview="2019",
+    ga="2024-11",
+    confidence="high",
+    source="https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive",
+    note="A 2-vCore instance can only be deployed inside an instance pool, so 2-vCore SKUs "
+    "became generally available when instance pools did.",
 )
 
 MI_NEXTGEN = milestone(
     key="mi-nextgen-gp",
     label="Managed Instance Next-gen General Purpose service tier",
-    preview="2024-05",
-    ga="2025-12-02",
+    preview="2024-03",
+    ga="2025-11",
     confidence="high",
-    source="https://techcommunity.microsoft.com/blog/azuresqlblog/generally-available-azure-sql-managed-instance-next-gen-general-purpose/4470970",
+    source="https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive",
     note="Billed as General Purpose. An architectural upgrade (Elastic SAN storage), not a "
-    "separate ARM SKU name.",
+    "separate ARM SKU name. The Learn what's-new archive dates the preview to March 2024 and "
+    "GA to November 2025; the GA blog post went up on 2025-12-02.",
 )
 
 # --- Azure Database for PostgreSQL ---------------------------------------
@@ -296,7 +331,7 @@ PG_FLEX = milestone(
     preview="2020-11",
     ga="2021-11",
     confidence="high",
-    source="https://techcommunity.microsoft.com/blog/adforpostgresql/azure-database-for-postgresql-%E2%80%93-flexible-server-is-now-ga/2987030",
+    source="https://azure.microsoft.com/updates?id=general-availability-azure-database-for-postgresql-flexible-server",
 )
 
 PG_V3 = milestone(
@@ -400,10 +435,16 @@ class Sku:
     memory_gb_per_vcore: float | None
     status: str
     milestone: str
+    lifecycle_status: str = "Generally available"
+    inventory_doc: str = ""
+    guidance_key: str = ""
+    release_date: str = ""
     preview_date: str | None = None
     ga_date: str | None = None
     date_confidence: str = ""
-    source: str = ""
+    release_doc: str = ""
+    recommend_when: list[str] = field(default_factory=list)
+    recommend_sources: list[str] = field(default_factory=list)
     notes: str = ""
 
     def resolve(self) -> "Sku":
@@ -411,16 +452,42 @@ class Sku:
         self.preview_date = m.preview
         self.ga_date = m.ga
         self.date_confidence = m.confidence
-        self.source = m.source
+        self.release_doc = m.source
         if m.note and not self.notes:
             self.notes = m.note
+
+        if self.lifecycle_status == "Public preview":
+            self.release_date = self.preview_date or "unknown"
+        else:
+            self.release_date = self.ga_date or self.preview_date or "unknown"
+
+        if self.guidance_key:
+            note, note_src = PURCHASING_MODEL_NOTE[self.purchasing_model]
+            when: list[str] = [note]
+            sources: list[str] = [note_src]
+            # A SKU can inherit guidance from more than one axis, e.g. a managed
+            # instance SKU inherits both its service tier and its hardware family.
+            for key in self.guidance_key.split("+"):
+                entry = GUIDANCE[key]
+                when += list(entry["when"])
+                sources += [s for s in entry["sources"] if s not in sources]
+            self.recommend_when = when
+            self.recommend_sources = sources
         return self
 
 
 SKUS: list[Sku] = []
 
 
+DEFAULT_LIFECYCLE = {
+    "GA": "Generally available",
+    "Preview": "Public preview",
+    "Retired": "Retired",
+}
+
+
 def add(**kwargs) -> None:
+    kwargs.setdefault("lifecycle_status", DEFAULT_LIFECYCLE[kwargs["status"]])
     SKUS.append(Sku(**kwargs).resolve())
 
 
@@ -448,9 +515,33 @@ DTU_SINGLE = [
     ("P15", 4000, 4096, DTU_P15),
 ]
 
+DTU_SINGLE_LIMITS_DOC = (
+    "https://learn.microsoft.com/azure/azure-sql/database/resource-limits-dtu-single-databases"
+)
+DTU_POOL_LIMITS_DOC = (
+    "https://learn.microsoft.com/azure/azure-sql/database/resource-limits-dtu-elastic-pools"
+)
+VCORE_SINGLE_LIMITS_DOC = (
+    "https://learn.microsoft.com/azure/azure-sql/database/resource-limits-vcore-single-databases"
+)
+MI_LIMITS = "https://learn.microsoft.com/azure/azure-sql/managed-instance/resource-limits"
+
+
+def dtu_guidance(name: str) -> str:
+    if name == "Basic":
+        return "dtu-basic"
+    if name in ("S0", "S1", "S2"):
+        return "dtu-standard-low"
+    if name.startswith("S"):
+        return "dtu-standard-high"
+    return "dtu-premium"
+
+
 for name, dtu, max_gb, ms in DTU_SINGLE:
     tier = "Basic" if name == "Basic" else ("Standard" if name.startswith("S") else "Premium")
     add(
+        inventory_doc=DTU_SINGLE_LIMITS_DOC,
+        guidance_key=dtu_guidance(name),
         sku=name,
         service=SQLDB,
         deployment_model="Single database",
@@ -476,6 +567,8 @@ DTU_POOLS = {
 for tier, sizes in DTU_POOLS.items():
     for edtu in sizes:
         add(
+            inventory_doc=DTU_POOL_LIMITS_DOC,
+            guidance_key="dtu-pool",
             sku=f"{tier}Pool_{edtu}",
             service=SQLDB,
             deployment_model="Elastic pool",
@@ -543,11 +636,30 @@ VCORE_FAMILIES = [
      MOPRMS_SIZES, MOPRMS_RATIO, None, HS_PREMIUM),
 ]
 
+VCORE_GUIDANCE = {
+    "GP_Gen5": "gp-gen5",
+    "BC_Gen5": "bc-gen5",
+    "HS_Gen5": "hs-gen5",
+    "GP_S_Gen5": "serverless-gp",
+    "HS_S_Gen5": "serverless-hs",
+    "GP_Fsv2": "fsv2",
+    "GP_DC": "dc",
+    "BC_DC": "dc",
+    "HS_DC": "dc",
+    "HS_PRMS": "hs-prms",
+    "HS_MOPRMS": "hs-moprms",
+}
+
 for prefix, tier, compute, hardware, sizes, ratio, cap, default_ms in VCORE_FAMILIES:
     for vcores in sizes:
         ms = default_ms
         status = "GA"
         notes = ""
+        guidance_key = VCORE_GUIDANCE[prefix]
+        lifecycle = "Generally available"
+
+        if prefix == "GP_Fsv2":
+            lifecycle = "Deprecated - cannot be created; retires 2026-10-01"
 
         if prefix in ("GP_Gen5", "BC_Gen5") and vcores == 128:
             ms = VCORE_128
@@ -558,6 +670,8 @@ for prefix, tier, compute, hardware, sizes, ratio, cap, default_ms in VCORE_FAMI
         elif prefix == "HS_PRMS" and vcores in (160, 192):
             ms = HS_PREMIUM_XL
             status = "Preview"
+            guidance_key = "hs-prms-xl"
+            lifecycle = "Public preview"
 
         if compute == "Serverless":
             notes = (
@@ -566,6 +680,9 @@ for prefix, tier, compute, hardware, sizes, ratio, cap, default_ms in VCORE_FAMI
             )
 
         add(
+            inventory_doc=VCORE_SINGLE_LIMITS_DOC,
+            guidance_key=guidance_key,
+            lifecycle_status=lifecycle,
             sku=f"{prefix}_{vcores}",
             service=SQLDB,
             deployment_model="Single database / Elastic pool",
@@ -616,15 +733,28 @@ MI_NEXTGEN_FAMILIES = [
 MI_MEM_CAP = {"Premium-series": 560.0, "Premium-series memory optimized": 870.4,
               "Standard-series (Gen5)": 408.0}
 
+MI_HW_GUIDANCE = {
+    "Standard-series (Gen5)": "mi-hw-gen5",
+    "Premium-series": "mi-hw-g8im",
+    "Premium-series memory optimized": "mi-hw-g8ih",
+}
+
 for prefix, tier, hardware, family, ratio, sizes, ms in MI_FAMILIES:
     for vcores in sizes:
         extra = ""
         milestone_key = ms
         if vcores == 2:
             extra = "2 vCores can only be deployed inside an instance pool. "
-        if hardware != "Standard-series (Gen5)" and vcores in (6, 10, 12, 20, 48, 56, 96, 128):
-            milestone_key = MI_EXTRA_VCORES
+        if vcores == 2:
+            milestone_key = MI_INSTANCE_POOLS
+        elif hardware != "Standard-series (Gen5)" and vcores in (96, 128):
+            milestone_key = MI_128_VCORE
+        elif hardware != "Standard-series (Gen5)" and vcores in (6, 10, 12, 20, 48, 56):
+            milestone_key = MI_MID_VCORES
         add(
+            inventory_doc=MI_LIMITS,
+            guidance_key=f"{'mi-gp' if prefix.startswith('GP') else 'mi-bc'}+"
+                         f"{MI_HW_GUIDANCE[hardware]}",
             sku=f"{prefix} ({vcores} vCores)",
             service=SQLMI,
             deployment_model="Managed instance",
@@ -644,6 +774,8 @@ for prefix, tier, hardware, family, ratio, sizes, ms in MI_FAMILIES:
 for prefix, hardware, family, ratio, sizes in MI_NEXTGEN_FAMILIES:
     for vcores in sizes:
         add(
+            inventory_doc=MI_LIMITS,
+            guidance_key=f"mi-nextgen-gp+{MI_HW_GUIDANCE[hardware]}",
             sku=f"{prefix} ({vcores} vCores)",
             service=SQLMI,
             deployment_model="Managed instance",
@@ -679,6 +811,7 @@ PG_BURSTABLE = [
 
 for name, vcores, memory, ms in PG_BURSTABLE:
     add(
+        inventory_doc="https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
         sku=f"Standard_{name}",
         service=PG,
         deployment_model="Flexible server",
@@ -728,6 +861,7 @@ for series, tier, template, sizes, ratio, ms, status, overrides in PG_SERIES:
     for vcores in sizes:
         memory = float(overrides.get(vcores, vcores * ratio))
         add(
+            inventory_doc="https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             sku=template.format(n=vcores),
             service=PG,
             deployment_model="Flexible server",
@@ -754,6 +888,7 @@ PG_SINGLE_TIERS = [
 for tier, template, sizes in PG_SINGLE_TIERS:
     for vcores in sizes:
         add(
+            inventory_doc="https://learn.microsoft.com/azure/postgresql/single-server/whats-happening-to-postgresql-single-server",
             sku=template.format(n=vcores),
             service=PG,
             deployment_model="Single server (retired)",
@@ -873,10 +1008,106 @@ def write_markdown(path: str, title: str, intro: str, services: list[str],
         fh.write("\n".join(lines))
 
 
+def numbered(items: list[str]) -> str:
+    return "<br>".join(f"{i}. {text}" for i, text in enumerate(items, 1))
+
+
+def links(urls: list[str]) -> str:
+    return "<br>".join(f"[{i}]({u})" for i, u in enumerate(urls, 1))
+
+
+def write_sql_table(path: str) -> None:
+    """The single wide Azure SQL table: every SKU, status, sources, guidance."""
+    rows = [s for s in SKUS if s.service in (SQLDB, SQLMI)]
+
+    lines = [
+        "# Azure SQL — complete SKU table",
+        "",
+        f"Every Azure SQL Database and Azure SQL Managed Instance SKU that Microsoft "
+        f"currently documents: **{len(rows)} SKUs**, catalog as of **{CATALOG_AS_OF}**.",
+        "",
+        "Column notes:",
+        "",
+        "- **Release date** — the GA date of the release that made the SKU orderable, or the "
+        "preview date for SKUs still in preview. Microsoft publishes release dates per SKU "
+        "*family*, not per individual size, so sizes added later than their family carry "
+        "their own date (for example `GP_Gen5_128`, the DC-series 10–40 vCore sizes, and the "
+        "160/192 vCore Hyperscale premium-series options).",
+        "- **Confidence** — how firmly the date is sourced. `high` = a dated Microsoft "
+        "announcement names this exact change; `medium` = a Microsoft page dates it to a "
+        "month; `low` = reconstructed from context, treat as approximate.",
+        "- **Lifecycle** — read directly from the current Microsoft docs.",
+        "- **When to recommend** — paraphrased from the Microsoft pages linked in the last "
+        "column. No third-party or inferred advice.",
+        "",
+        "| # | SKU | Deployment | Service tier | Hardware | Size | Release date | Confidence "
+        "| Lifecycle status | SKU data source | Release date source | When to recommend this "
+        "SKU | Recommendation source |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+
+    for i, s in enumerate(rows, 1):
+        size = f"{s.capacity:g} {s.capacity_unit}"
+        if s.memory_gb is not None:
+            size += f" / {s.memory_gb:g} GB"
+        lines.append(
+            f"| {i} | `{s.sku}` | {s.deployment_model} | {s.service_tier}"
+            f"{'' if s.compute_tier == 'Provisioned' else ' — ' + s.compute_tier} "
+            f"| {s.hardware} | {size} | {s.release_date} | {s.date_confidence} "
+            f"| {s.lifecycle_status} | [docs]({s.inventory_doc}) "
+            f"| [announcement]({s.release_doc}) | {numbered(s.recommend_when)} "
+            f"| {links(s.recommend_sources)} |"
+        )
+
+    lines += [
+        "",
+        "## Documentation discrepancies found while verifying",
+        "",
+        "- The **DC-series** row of the *Compute resources (CPU and memory)* table on the "
+        "[vCore purchasing model page]"
+        "(https://learn.microsoft.com/azure/azure-sql/database/service-tiers-sql-database-vcore) "
+        "still says *\"Provision up to 8 vCores (physical)\"*, but the "
+        "[single-database resource limits page]"
+        "(https://learn.microsoft.com/azure/azure-sql/database/resource-limits-vcore-single-databases) "
+        "enumerates DC-series objectives up to 40 vCores, and the what's-new archive records "
+        "the 10–40 vCore GA in November 2023. This table follows the resource-limits page.",
+        "- The Azure SQL Managed Instance **Next-gen General Purpose** GA date differs by "
+        "source: the [Learn what's-new archive]"
+        "(https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive) "
+        "says November 2025, while the [GA blog post]"
+        "(https://techcommunity.microsoft.com/blog/azuresqlblog/generally-available-azure-sql-managed-instance-next-gen-general-purpose/4470970) "
+        "was published 2 December 2025. This table uses the Learn date.",
+        "- Two announcement blog posts cited by older documentation have been removed from "
+        "Tech Community (the Azure SQL Database 128 vCore announcement and the Managed "
+        "Instance memory optimized premium-series announcement). Those dates are sourced from "
+        "the Microsoft Learn what's-new archives instead.",
+        "",
+    ]
+
+    lines += ["## Retired and deprecated hardware families", "",
+              "Gen4 and M-series no longer appear in the Microsoft resource-limit tables at "
+              "all, so their individual service-level objectives cannot be enumerated from a "
+              "current Microsoft page — they are recorded at family level rather than "
+              "invented as SKU rows. Fsv2-series is still fully documented and its sizes "
+              "appear individually in the table above.", "",
+              "| Family | Status | Retired | Detail | Source |",
+              "| --- | --- | --- | --- | --- |"]
+    for fam in RETIRED_FAMILIES:
+        lines.append(
+            f"| {fam['family']} | {fam['status']} | {fam['retired']} | {fam['detail']} "
+            f"| [link]({fam['source']}) |"
+        )
+    lines.append("")
+
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write("\n".join(lines))
+
+
 def main() -> None:
     os.makedirs(DATA, exist_ok=True)
     os.makedirs(DOCS, exist_ok=True)
 
+    write_sql_table(os.path.join(DOCS, "azure-sql-sku-table.md"))
     write_json(os.path.join(DATA, "azure-sql.json"), payload([SQLDB, SQLMI]))
     write_json(os.path.join(DATA, "azure-postgresql.json"), payload([PG]))
     write_csv(os.path.join(DATA, "skus.csv"))

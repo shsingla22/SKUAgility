@@ -293,7 +293,7 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_Gen5 (2 vCores)` | General Purpose | Standard-series (Gen5) | 2 | 10.2 | GA | 2018-10-01 | medium |
+| `GP_Gen5 (2 vCores)` | General Purpose | Standard-series (Gen5) | 2 | 10.2 | GA | 2024-11 | high |
 | `GP_Gen5 (4 vCores)` | General Purpose | Standard-series (Gen5) | 4 | 20.4 | GA | 2018-10-01 | medium |
 | `GP_Gen5 (8 vCores)` | General Purpose | Standard-series (Gen5) | 8 | 40.8 | GA | 2018-10-01 | medium |
 | `GP_Gen5 (16 vCores)` | General Purpose | Standard-series (Gen5) | 16 | 81.6 | GA | 2018-10-01 | medium |
@@ -320,7 +320,7 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_G8IM (2 vCores)` | General Purpose | Premium-series | 2 | 14 | GA | 2022-07-19 | high |
+| `GP_G8IM (2 vCores)` | General Purpose | Premium-series | 2 | 14 | GA | 2024-11 | high |
 | `GP_G8IM (4 vCores)` | General Purpose | Premium-series | 4 | 28 | GA | 2022-07-19 | high |
 | `GP_G8IM (8 vCores)` | General Purpose | Premium-series | 8 | 56 | GA | 2022-07-19 | high |
 | `GP_G8IM (16 vCores)` | General Purpose | Premium-series | 16 | 112 | GA | 2022-07-19 | high |
@@ -335,110 +335,110 @@ Memory values for the vCore model are derived from the per-vCore ratio published
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `BC_G8IM (4 vCores)` | Business Critical | Premium-series | 4 | 28 | GA | 2022-07-19 | high |
-| `BC_G8IM (6 vCores)` | Business Critical | Premium-series | 6 | 42 | GA | 2024-01 | medium |
+| `BC_G8IM (6 vCores)` | Business Critical | Premium-series | 6 | 42 | GA | 2024-01-30 | high |
 | `BC_G8IM (8 vCores)` | Business Critical | Premium-series | 8 | 56 | GA | 2022-07-19 | high |
-| `BC_G8IM (10 vCores)` | Business Critical | Premium-series | 10 | 70 | GA | 2024-01 | medium |
-| `BC_G8IM (12 vCores)` | Business Critical | Premium-series | 12 | 84 | GA | 2024-01 | medium |
+| `BC_G8IM (10 vCores)` | Business Critical | Premium-series | 10 | 70 | GA | 2024-01-30 | high |
+| `BC_G8IM (12 vCores)` | Business Critical | Premium-series | 12 | 84 | GA | 2024-01-30 | high |
 | `BC_G8IM (16 vCores)` | Business Critical | Premium-series | 16 | 112 | GA | 2022-07-19 | high |
-| `BC_G8IM (20 vCores)` | Business Critical | Premium-series | 20 | 140 | GA | 2024-01 | medium |
+| `BC_G8IM (20 vCores)` | Business Critical | Premium-series | 20 | 140 | GA | 2024-01-30 | high |
 | `BC_G8IM (24 vCores)` | Business Critical | Premium-series | 24 | 168 | GA | 2022-07-19 | high |
 | `BC_G8IM (32 vCores)` | Business Critical | Premium-series | 32 | 224 | GA | 2022-07-19 | high |
 | `BC_G8IM (40 vCores)` | Business Critical | Premium-series | 40 | 280 | GA | 2022-07-19 | high |
-| `BC_G8IM (48 vCores)` | Business Critical | Premium-series | 48 | 336 | GA | 2024-01 | medium |
-| `BC_G8IM (56 vCores)` | Business Critical | Premium-series | 56 | 392 | GA | 2024-01 | medium |
+| `BC_G8IM (48 vCores)` | Business Critical | Premium-series | 48 | 336 | GA | 2024-01-30 | high |
+| `BC_G8IM (56 vCores)` | Business Critical | Premium-series | 56 | 392 | GA | 2024-01-30 | high |
 | `BC_G8IM (64 vCores)` | Business Critical | Premium-series | 64 | 448 | GA | 2022-07-19 | high |
 | `BC_G8IM (80 vCores)` | Business Critical | Premium-series | 80 | 560 | GA | 2022-07-19 | high |
-| `BC_G8IM (96 vCores)` | Business Critical | Premium-series | 96 | 560 | GA | 2024-01 | medium |
-| `BC_G8IM (128 vCores)` | Business Critical | Premium-series | 128 | 560 | GA | 2024-01 | medium |
+| `BC_G8IM (96 vCores)` | Business Critical | Premium-series | 96 | 560 | GA | 2023-07 | high |
+| `BC_G8IM (128 vCores)` | Business Critical | Premium-series | 128 | 560 | GA | 2023-07 | high |
 
 ## Azure SQL Managed Instance — Managed instance — vCore model — General Purpose — Premium-series memory optimized
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_G8IH (4 vCores)` | General Purpose | Premium-series memory optimized | 4 | 54.4 | GA | 2022-09-28 | high |
-| `GP_G8IH (8 vCores)` | General Purpose | Premium-series memory optimized | 8 | 108.8 | GA | 2022-09-28 | high |
-| `GP_G8IH (16 vCores)` | General Purpose | Premium-series memory optimized | 16 | 217.6 | GA | 2022-09-28 | high |
-| `GP_G8IH (24 vCores)` | General Purpose | Premium-series memory optimized | 24 | 326.4 | GA | 2022-09-28 | high |
-| `GP_G8IH (32 vCores)` | General Purpose | Premium-series memory optimized | 32 | 435.2 | GA | 2022-09-28 | high |
-| `GP_G8IH (40 vCores)` | General Purpose | Premium-series memory optimized | 40 | 544 | GA | 2022-09-28 | high |
-| `GP_G8IH (64 vCores)` | General Purpose | Premium-series memory optimized | 64 | 870.4 | GA | 2022-09-28 | high |
-| `GP_G8IH (80 vCores)` | General Purpose | Premium-series memory optimized | 80 | 870.4 | GA | 2022-09-28 | high |
+| `GP_G8IH (4 vCores)` | General Purpose | Premium-series memory optimized | 4 | 54.4 | GA | 2022-09 | medium |
+| `GP_G8IH (8 vCores)` | General Purpose | Premium-series memory optimized | 8 | 108.8 | GA | 2022-09 | medium |
+| `GP_G8IH (16 vCores)` | General Purpose | Premium-series memory optimized | 16 | 217.6 | GA | 2022-09 | medium |
+| `GP_G8IH (24 vCores)` | General Purpose | Premium-series memory optimized | 24 | 326.4 | GA | 2022-09 | medium |
+| `GP_G8IH (32 vCores)` | General Purpose | Premium-series memory optimized | 32 | 435.2 | GA | 2022-09 | medium |
+| `GP_G8IH (40 vCores)` | General Purpose | Premium-series memory optimized | 40 | 544 | GA | 2022-09 | medium |
+| `GP_G8IH (64 vCores)` | General Purpose | Premium-series memory optimized | 64 | 870.4 | GA | 2022-09 | medium |
+| `GP_G8IH (80 vCores)` | General Purpose | Premium-series memory optimized | 80 | 870.4 | GA | 2022-09 | medium |
 
 ## Azure SQL Managed Instance — Managed instance — vCore model — Business Critical — Premium-series memory optimized
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `BC_G8IH (4 vCores)` | Business Critical | Premium-series memory optimized | 4 | 54.4 | GA | 2022-09-28 | high |
-| `BC_G8IH (6 vCores)` | Business Critical | Premium-series memory optimized | 6 | 81.6 | GA | 2024-01 | medium |
-| `BC_G8IH (8 vCores)` | Business Critical | Premium-series memory optimized | 8 | 108.8 | GA | 2022-09-28 | high |
-| `BC_G8IH (10 vCores)` | Business Critical | Premium-series memory optimized | 10 | 136 | GA | 2024-01 | medium |
-| `BC_G8IH (12 vCores)` | Business Critical | Premium-series memory optimized | 12 | 163.2 | GA | 2024-01 | medium |
-| `BC_G8IH (16 vCores)` | Business Critical | Premium-series memory optimized | 16 | 217.6 | GA | 2022-09-28 | high |
-| `BC_G8IH (20 vCores)` | Business Critical | Premium-series memory optimized | 20 | 272 | GA | 2024-01 | medium |
-| `BC_G8IH (24 vCores)` | Business Critical | Premium-series memory optimized | 24 | 326.4 | GA | 2022-09-28 | high |
-| `BC_G8IH (32 vCores)` | Business Critical | Premium-series memory optimized | 32 | 435.2 | GA | 2022-09-28 | high |
-| `BC_G8IH (40 vCores)` | Business Critical | Premium-series memory optimized | 40 | 544 | GA | 2022-09-28 | high |
-| `BC_G8IH (48 vCores)` | Business Critical | Premium-series memory optimized | 48 | 652.8 | GA | 2024-01 | medium |
-| `BC_G8IH (56 vCores)` | Business Critical | Premium-series memory optimized | 56 | 761.6 | GA | 2024-01 | medium |
-| `BC_G8IH (64 vCores)` | Business Critical | Premium-series memory optimized | 64 | 870.4 | GA | 2022-09-28 | high |
-| `BC_G8IH (80 vCores)` | Business Critical | Premium-series memory optimized | 80 | 870.4 | GA | 2022-09-28 | high |
-| `BC_G8IH (96 vCores)` | Business Critical | Premium-series memory optimized | 96 | 870.4 | GA | 2024-01 | medium |
-| `BC_G8IH (128 vCores)` | Business Critical | Premium-series memory optimized | 128 | 870.4 | GA | 2024-01 | medium |
+| `BC_G8IH (4 vCores)` | Business Critical | Premium-series memory optimized | 4 | 54.4 | GA | 2022-09 | medium |
+| `BC_G8IH (6 vCores)` | Business Critical | Premium-series memory optimized | 6 | 81.6 | GA | 2024-01-30 | high |
+| `BC_G8IH (8 vCores)` | Business Critical | Premium-series memory optimized | 8 | 108.8 | GA | 2022-09 | medium |
+| `BC_G8IH (10 vCores)` | Business Critical | Premium-series memory optimized | 10 | 136 | GA | 2024-01-30 | high |
+| `BC_G8IH (12 vCores)` | Business Critical | Premium-series memory optimized | 12 | 163.2 | GA | 2024-01-30 | high |
+| `BC_G8IH (16 vCores)` | Business Critical | Premium-series memory optimized | 16 | 217.6 | GA | 2022-09 | medium |
+| `BC_G8IH (20 vCores)` | Business Critical | Premium-series memory optimized | 20 | 272 | GA | 2024-01-30 | high |
+| `BC_G8IH (24 vCores)` | Business Critical | Premium-series memory optimized | 24 | 326.4 | GA | 2022-09 | medium |
+| `BC_G8IH (32 vCores)` | Business Critical | Premium-series memory optimized | 32 | 435.2 | GA | 2022-09 | medium |
+| `BC_G8IH (40 vCores)` | Business Critical | Premium-series memory optimized | 40 | 544 | GA | 2022-09 | medium |
+| `BC_G8IH (48 vCores)` | Business Critical | Premium-series memory optimized | 48 | 652.8 | GA | 2024-01-30 | high |
+| `BC_G8IH (56 vCores)` | Business Critical | Premium-series memory optimized | 56 | 761.6 | GA | 2024-01-30 | high |
+| `BC_G8IH (64 vCores)` | Business Critical | Premium-series memory optimized | 64 | 870.4 | GA | 2022-09 | medium |
+| `BC_G8IH (80 vCores)` | Business Critical | Premium-series memory optimized | 80 | 870.4 | GA | 2022-09 | medium |
+| `BC_G8IH (96 vCores)` | Business Critical | Premium-series memory optimized | 96 | 870.4 | GA | 2023-07 | high |
+| `BC_G8IH (128 vCores)` | Business Critical | Premium-series memory optimized | 128 | 870.4 | GA | 2023-07 | high |
 
 ## Azure SQL Managed Instance — Managed instance — vCore model — Next-gen General Purpose — Standard-series (Gen5)
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_Gen5 (4 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 4 | 20.4 | GA | 2025-12-02 | high |
-| `GP_Gen5 (8 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 8 | 40.8 | GA | 2025-12-02 | high |
-| `GP_Gen5 (16 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 16 | 81.6 | GA | 2025-12-02 | high |
-| `GP_Gen5 (24 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 24 | 122.4 | GA | 2025-12-02 | high |
-| `GP_Gen5 (32 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 32 | 163.2 | GA | 2025-12-02 | high |
-| `GP_Gen5 (40 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 40 | 204 | GA | 2025-12-02 | high |
-| `GP_Gen5 (64 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 64 | 326.4 | GA | 2025-12-02 | high |
-| `GP_Gen5 (80 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 80 | 408 | GA | 2025-12-02 | high |
+| `GP_Gen5 (4 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 4 | 20.4 | GA | 2025-11 | high |
+| `GP_Gen5 (8 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 8 | 40.8 | GA | 2025-11 | high |
+| `GP_Gen5 (16 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 16 | 81.6 | GA | 2025-11 | high |
+| `GP_Gen5 (24 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 24 | 122.4 | GA | 2025-11 | high |
+| `GP_Gen5 (32 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 32 | 163.2 | GA | 2025-11 | high |
+| `GP_Gen5 (40 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 40 | 204 | GA | 2025-11 | high |
+| `GP_Gen5 (64 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 64 | 326.4 | GA | 2025-11 | high |
+| `GP_Gen5 (80 vCores)` | Next-gen General Purpose | Standard-series (Gen5) | 80 | 408 | GA | 2025-11 | high |
 
 ## Azure SQL Managed Instance — Managed instance — vCore model — Next-gen General Purpose — Premium-series
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_G8IM (4 vCores)` | Next-gen General Purpose | Premium-series | 4 | 28 | GA | 2025-12-02 | high |
-| `GP_G8IM (6 vCores)` | Next-gen General Purpose | Premium-series | 6 | 42 | GA | 2025-12-02 | high |
-| `GP_G8IM (8 vCores)` | Next-gen General Purpose | Premium-series | 8 | 56 | GA | 2025-12-02 | high |
-| `GP_G8IM (10 vCores)` | Next-gen General Purpose | Premium-series | 10 | 70 | GA | 2025-12-02 | high |
-| `GP_G8IM (12 vCores)` | Next-gen General Purpose | Premium-series | 12 | 84 | GA | 2025-12-02 | high |
-| `GP_G8IM (16 vCores)` | Next-gen General Purpose | Premium-series | 16 | 112 | GA | 2025-12-02 | high |
-| `GP_G8IM (20 vCores)` | Next-gen General Purpose | Premium-series | 20 | 140 | GA | 2025-12-02 | high |
-| `GP_G8IM (24 vCores)` | Next-gen General Purpose | Premium-series | 24 | 168 | GA | 2025-12-02 | high |
-| `GP_G8IM (32 vCores)` | Next-gen General Purpose | Premium-series | 32 | 224 | GA | 2025-12-02 | high |
-| `GP_G8IM (40 vCores)` | Next-gen General Purpose | Premium-series | 40 | 280 | GA | 2025-12-02 | high |
-| `GP_G8IM (48 vCores)` | Next-gen General Purpose | Premium-series | 48 | 336 | GA | 2025-12-02 | high |
-| `GP_G8IM (56 vCores)` | Next-gen General Purpose | Premium-series | 56 | 392 | GA | 2025-12-02 | high |
-| `GP_G8IM (64 vCores)` | Next-gen General Purpose | Premium-series | 64 | 448 | GA | 2025-12-02 | high |
-| `GP_G8IM (80 vCores)` | Next-gen General Purpose | Premium-series | 80 | 560 | GA | 2025-12-02 | high |
-| `GP_G8IM (96 vCores)` | Next-gen General Purpose | Premium-series | 96 | 560 | GA | 2025-12-02 | high |
-| `GP_G8IM (128 vCores)` | Next-gen General Purpose | Premium-series | 128 | 560 | GA | 2025-12-02 | high |
+| `GP_G8IM (4 vCores)` | Next-gen General Purpose | Premium-series | 4 | 28 | GA | 2025-11 | high |
+| `GP_G8IM (6 vCores)` | Next-gen General Purpose | Premium-series | 6 | 42 | GA | 2025-11 | high |
+| `GP_G8IM (8 vCores)` | Next-gen General Purpose | Premium-series | 8 | 56 | GA | 2025-11 | high |
+| `GP_G8IM (10 vCores)` | Next-gen General Purpose | Premium-series | 10 | 70 | GA | 2025-11 | high |
+| `GP_G8IM (12 vCores)` | Next-gen General Purpose | Premium-series | 12 | 84 | GA | 2025-11 | high |
+| `GP_G8IM (16 vCores)` | Next-gen General Purpose | Premium-series | 16 | 112 | GA | 2025-11 | high |
+| `GP_G8IM (20 vCores)` | Next-gen General Purpose | Premium-series | 20 | 140 | GA | 2025-11 | high |
+| `GP_G8IM (24 vCores)` | Next-gen General Purpose | Premium-series | 24 | 168 | GA | 2025-11 | high |
+| `GP_G8IM (32 vCores)` | Next-gen General Purpose | Premium-series | 32 | 224 | GA | 2025-11 | high |
+| `GP_G8IM (40 vCores)` | Next-gen General Purpose | Premium-series | 40 | 280 | GA | 2025-11 | high |
+| `GP_G8IM (48 vCores)` | Next-gen General Purpose | Premium-series | 48 | 336 | GA | 2025-11 | high |
+| `GP_G8IM (56 vCores)` | Next-gen General Purpose | Premium-series | 56 | 392 | GA | 2025-11 | high |
+| `GP_G8IM (64 vCores)` | Next-gen General Purpose | Premium-series | 64 | 448 | GA | 2025-11 | high |
+| `GP_G8IM (80 vCores)` | Next-gen General Purpose | Premium-series | 80 | 560 | GA | 2025-11 | high |
+| `GP_G8IM (96 vCores)` | Next-gen General Purpose | Premium-series | 96 | 560 | GA | 2025-11 | high |
+| `GP_G8IM (128 vCores)` | Next-gen General Purpose | Premium-series | 128 | 560 | GA | 2025-11 | high |
 
 ## Azure SQL Managed Instance — Managed instance — vCore model — Next-gen General Purpose — Premium-series memory optimized
 
 | SKU | Tier | Hardware | vCores/DTU | Memory (GB) | Status | Released | Confidence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| `GP_G8IH (4 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 4 | 54.4 | GA | 2025-12-02 | high |
-| `GP_G8IH (6 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 6 | 81.6 | GA | 2025-12-02 | high |
-| `GP_G8IH (8 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 8 | 108.8 | GA | 2025-12-02 | high |
-| `GP_G8IH (10 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 10 | 136 | GA | 2025-12-02 | high |
-| `GP_G8IH (12 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 12 | 163.2 | GA | 2025-12-02 | high |
-| `GP_G8IH (16 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 16 | 217.6 | GA | 2025-12-02 | high |
-| `GP_G8IH (20 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 20 | 272 | GA | 2025-12-02 | high |
-| `GP_G8IH (24 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 24 | 326.4 | GA | 2025-12-02 | high |
-| `GP_G8IH (32 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 32 | 435.2 | GA | 2025-12-02 | high |
-| `GP_G8IH (40 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 40 | 544 | GA | 2025-12-02 | high |
-| `GP_G8IH (48 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 48 | 652.8 | GA | 2025-12-02 | high |
-| `GP_G8IH (56 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 56 | 761.6 | GA | 2025-12-02 | high |
-| `GP_G8IH (64 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 64 | 870.4 | GA | 2025-12-02 | high |
-| `GP_G8IH (80 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 80 | 870.4 | GA | 2025-12-02 | high |
-| `GP_G8IH (96 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 96 | 870.4 | GA | 2025-12-02 | high |
-| `GP_G8IH (128 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 128 | 870.4 | GA | 2025-12-02 | high |
+| `GP_G8IH (4 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 4 | 54.4 | GA | 2025-11 | high |
+| `GP_G8IH (6 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 6 | 81.6 | GA | 2025-11 | high |
+| `GP_G8IH (8 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 8 | 108.8 | GA | 2025-11 | high |
+| `GP_G8IH (10 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 10 | 136 | GA | 2025-11 | high |
+| `GP_G8IH (12 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 12 | 163.2 | GA | 2025-11 | high |
+| `GP_G8IH (16 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 16 | 217.6 | GA | 2025-11 | high |
+| `GP_G8IH (20 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 20 | 272 | GA | 2025-11 | high |
+| `GP_G8IH (24 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 24 | 326.4 | GA | 2025-11 | high |
+| `GP_G8IH (32 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 32 | 435.2 | GA | 2025-11 | high |
+| `GP_G8IH (40 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 40 | 544 | GA | 2025-11 | high |
+| `GP_G8IH (48 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 48 | 652.8 | GA | 2025-11 | high |
+| `GP_G8IH (56 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 56 | 761.6 | GA | 2025-11 | high |
+| `GP_G8IH (64 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 64 | 870.4 | GA | 2025-11 | high |
+| `GP_G8IH (80 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 80 | 870.4 | GA | 2025-11 | high |
+| `GP_G8IH (96 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 96 | 870.4 | GA | 2025-11 | high |
+| `GP_G8IH (128 vCores)` | Next-gen General Purpose | Premium-series memory optimized | 128 | 870.4 | GA | 2025-11 | high |
 
 ## Release milestones
 
@@ -457,15 +457,17 @@ The `Released` column above is the GA date of the milestone a SKU belongs to (or
 | Fsv2-series hardware (General Purpose only) | 2019 | 2019 | low | [link](https://azure.microsoft.com/updates?id=485030) |
 | DC-series hardware, 2-8 vCores (Intel SGX / Always Encrypted with secure enclaves) | 2019 | 2021-11 | low | [link](https://learn.microsoft.com/azure/azure-sql/database/service-tiers-sql-database-vcore) |
 | DC-series hardware, 10-40 vCores | 2023-07 | 2023-11 | high | [link](https://learn.microsoft.com/azure/azure-sql/database/doc-changes-updates-release-notes-whats-new-archive) |
-| 128 vCore compute size (General Purpose and Business Critical, standard-series) | 2022 | 2023-06 | high | [link](https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-preview-of-128-vcore-provisioned-compute-size-on/ba-p/3631211) |
+| 128 vCore compute size (General Purpose and Business Critical, standard-series) | 2022 | 2023-06 | high | [link](https://learn.microsoft.com/azure/azure-sql/database/doc-changes-updates-release-notes-whats-new-archive) |
 | Hyperscale premium-series and premium-series memory optimized hardware | 2022 | 2023-07 | high | [link](https://aka.ms/AAiq28n) |
 | 64 vCore option for Hyperscale premium-series and memory optimized premium-series | — | 2023-06 | high | [link](https://learn.microsoft.com/azure/azure-sql/database/doc-changes-updates-release-notes-whats-new-archive) |
 | 160 and 192 vCore options for Hyperscale premium-series | 2026-03 | — | high | [link](https://techcommunity.microsoft.com/blog/azuresqlblog/announcing-preview-of-160-and-192vcore-premium-series-options-for-azure-sql-data/4501367) |
 | Azure SQL Managed Instance GA (General Purpose and Business Critical, Gen5) | 2018-03 | 2018-10-01 | medium | [link](https://learn.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview) |
-| Managed Instance premium-series hardware (G8IM) | 2021-11 | 2022-07-19 | high | [link](https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-the-general-availability-of-premium-series-hardware/ba-p/3576737) |
-| Managed Instance memory optimized premium-series hardware (G8IH) | 2021-11 | 2022-09-28 | high | [link](https://techcommunity.microsoft.com/t5/azure-sql-blog/announcing-the-new-premium-series-hardware-for-sql-managed/ba-p/2913496) |
-| Additional premium-series vCore sizes (6, 10, 12, 20, 48, 56, 96, 128) | — | 2024-01 | medium | [link](https://learn.microsoft.com/azure/azure-sql/managed-instance/resource-limits) |
-| Managed Instance Next-gen General Purpose service tier | 2024-05 | 2025-12-02 | high | [link](https://techcommunity.microsoft.com/blog/azuresqlblog/generally-available-azure-sql-managed-instance-next-gen-general-purpose/4470970) |
+| Managed Instance premium-series hardware (G8IM) | 2021-11 | 2022-07-19 | high | [link](https://techcommunity.microsoft.com/blog/azuresqlblog/announcing-the-general-availability-of-premium-series-hardware-for-azure-sql-man/3576737) |
+| Managed Instance memory optimized premium-series hardware (G8IH) | 2021-11 | 2022-09 | medium | [link](https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive) |
+| 96 and 128 vCore sizes for Business Critical on premium-series and memory optimized premium-series | — | 2023-07 | high | [link](https://techcommunity.microsoft.com/blog/azuresqlblog/128-vcores-on-azure-sql-managed-instance-business-critical/3879510) |
+| Additional Business Critical vCore sizes (6, 10, 12, 20, 48, 56) on premium-series and memory optimized premium-series | — | 2024-01-30 | high | [link](https://techcommunity.microsoft.com/blog/azuresqlblog/more-vcore-options-for-sql-mi-business-critical-for-better-priceperformance-and-/4043195) |
+| Instance pools (the only way to deploy a 2-vCore managed instance) | 2019 | 2024-11 | high | [link](https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive) |
+| Managed Instance Next-gen General Purpose service tier | 2024-03 | 2025-11 | high | [link](https://learn.microsoft.com/azure/azure-sql/managed-instance/doc-changes-updates-release-notes-whats-new-archive) |
 
 ### Milestone notes
 
@@ -476,6 +478,8 @@ The `Released` column above is the GA date of the milestone a SKU belongs to (or
 - **vCore purchasing model (General Purpose / Business Critical, Gen4 + Gen5)** — Announced as a new purchasing option in September 2017 and generally available in the first half of 2018. The GA month is approximate.
 - **Fsv2-series hardware (General Purpose only)** — RETIRING: no longer available to create; retirement date 2026-10-01. Original GA year is approximate.
 - **DC-series hardware, 2-8 vCores (Intel SGX / Always Encrypted with secure enclaves)** — GA month reconstructed from the DC-series rollout; treat as approximate.
+- **128 vCore compute size (General Purpose and Business Critical, standard-series)** — Learn what's-new archive, 2023: '128 vCore GA | June'. The original announcement blog post has been removed from Tech Community.
 - **160 and 192 vCore options for Hyperscale premium-series** — Preview only as of the catalog date. Available for single databases and Hyperscale elastic pools.
-- **Additional premium-series vCore sizes (6, 10, 12, 20, 48, 56, 96, 128)** — Finer-grained vCore options for premium-series and memory optimized premium-series.
-- **Managed Instance Next-gen General Purpose service tier** — Billed as General Purpose. An architectural upgrade (Elastic SAN storage), not a separate ARM SKU name.
+- **Managed Instance memory optimized premium-series hardware (G8IH)** — The Learn what's-new archive places 'Memory optimized premium-series hardware GA' and '16 TB support in Business Critical GA' in 2022 without a month; contemporaneous coverage dates the announcement to 2022-09-28. The original blog post has been removed from Tech Community.
+- **Instance pools (the only way to deploy a 2-vCore managed instance)** — A 2-vCore instance can only be deployed inside an instance pool, so 2-vCore SKUs became generally available when instance pools did.
+- **Managed Instance Next-gen General Purpose service tier** — Billed as General Purpose. An architectural upgrade (Elastic SAN storage), not a separate ARM SKU name. The Learn what's-new archive dates the preview to March 2024 and GA to November 2025; the GA blog post went up on 2025-12-02.

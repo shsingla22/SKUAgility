@@ -11,12 +11,14 @@ and hardware family it belongs to, and when it shipped. The first two services c
 
 | Path | Contents |
 | --- | --- |
-| `docs/azure-sql-skus.md` | Human-readable Azure SQL catalog |
+| `docs/azure-sql-sku-table.md` | **Complete Azure SQL table** — every SKU with release date, lifecycle status, source links and doc-sourced recommendation conditions |
+| `docs/azure-sql-skus.md` | Azure SQL catalog grouped by tier and hardware |
 | `docs/azure-postgresql-skus.md` | Human-readable PostgreSQL catalog |
 | `data/azure-sql.json` | Machine-readable Azure SQL catalog + release milestones |
 | `data/azure-postgresql.json` | Machine-readable PostgreSQL catalog + release milestones |
 | `data/skus.csv` | Flat join of every SKU across both services |
 | `tools/build_catalog.py` | Source of truth; regenerates everything above |
+| `tools/guidance.py` | Doc-sourced "when to recommend" conditions per SKU family |
 
 Regenerate after editing `tools/build_catalog.py`:
 
@@ -56,6 +58,27 @@ milestone carries a preview date, a GA date, a source link and a confidence rati
 The `low` entries are mostly pre-2019 Azure SQL history, where the original announcement
 posts are no longer dated on Microsoft's site. They are flagged rather than dropped so the
 gap is visible.
+
+## Lifecycle status
+
+Every Azure SQL SKU carries a lifecycle status read from the current Microsoft docs:
+
+| Status | Count | What it covers |
+| --- | --- | --- |
+| Generally available | 291 | Orderable, fully supported |
+| Deprecated - cannot be created; retires 2026-10-01 | 11 | The Fsv2-series sizes |
+| Public preview | 2 | `HS_PRMS_160` and `HS_PRMS_192` |
+
+Gen4 and M-series are fully retired and no longer enumerable from Microsoft docs; they are
+recorded at family level in the table's *Retired and deprecated hardware families* section.
+
+## Recommendation conditions
+
+Each Azure SQL SKU carries a numbered list of plain-English conditions for when to
+recommend it, paraphrased from Microsoft Learn — the purchasing-model comparison, the
+service-tier "when to choose" sections, the serverless scenarios guidance, and the
+resource-limit pages. Every list ships with the links it came from. Nothing is inferred
+from third-party sources.
 
 ## Caveats
 
