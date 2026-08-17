@@ -12,18 +12,22 @@ and hardware family it belongs to, and when it shipped. The first two services c
 | Path | Contents |
 | --- | --- |
 | `docs/azure-sql-sku-table.md` | **Complete Azure SQL table** — every SKU with release date, lifecycle status, source links and doc-sourced recommendation conditions |
+| `docs/azure-sql-skus.html` | The same Azure SQL table as a self-contained page: search, facets, per-row guidance |
 | `docs/azure-sql-skus.md` | Azure SQL catalog grouped by tier and hardware |
 | `docs/azure-postgresql-skus.md` | Human-readable PostgreSQL catalog |
 | `data/azure-sql.json` | Machine-readable Azure SQL catalog + release milestones |
 | `data/azure-postgresql.json` | Machine-readable PostgreSQL catalog + release milestones |
 | `data/skus.csv` | Flat join of every SKU across both services |
-| `tools/build_catalog.py` | Source of truth; regenerates everything above |
+| `tools/build_catalog.py` | Source of truth; regenerates the data files and Markdown |
 | `tools/guidance.py` | Doc-sourced "when to recommend" conditions per SKU family |
+| `tools/sqldb_memory.json` | `Memory (GB)` values transcribed from the resource-limit tables |
+| `tools/build_artifact.py` | Renders `docs/azure-sql-skus.html` from `data/azure-sql.json` |
 
-Regenerate after editing `tools/build_catalog.py`:
+Regenerate after editing `tools/build_catalog.py` or `tools/guidance.py`:
 
 ```bash
-python3 tools/build_catalog.py
+python3 tools/build_catalog.py    # data/*.json, data/skus.csv, docs/*.md
+python3 tools/build_artifact.py   # docs/azure-sql-skus.html
 ```
 
 No dependencies beyond the Python 3 standard library.
