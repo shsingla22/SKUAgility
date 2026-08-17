@@ -1,0 +1,92 @@
+{
+  "_comment": [
+    "Registry of the Microsoft first-party pages this skill reads.",
+    "`raw` is the Learn article source on GitHub (MicrosoftDocs/sql-docs, live branch),",
+    "which is what the parser consumes. `live` is the rendered Learn URL that gets cited",
+    "in the output. Keep the two in sync when adding a page."
+  ],
+  "raw_base": "https://raw.githubusercontent.com/MicrosoftDocs/sql-docs/live/azure-sql",
+  "live_base": "https://learn.microsoft.com/azure/azure-sql",
+  "pages": {
+    "vcore_single": {
+      "path": "database/resource-limits-vcore-single-databases",
+      "role": "inventory",
+      "reads": "Every vCore service-level objective (GP_/BC_/HS_ names) plus the published Memory (GB) row for each."
+    },
+    "dtu_single": {
+      "path": "database/resource-limits-dtu-single-databases",
+      "role": "inventory",
+      "reads": "Basic, S0-S12 and P1-P15 compute sizes with their DTU and storage limits."
+    },
+    "dtu_pools": {
+      "path": "database/resource-limits-dtu-elastic-pools",
+      "role": "inventory",
+      "reads": "Basic, Standard and Premium elastic pool eDTU sizes."
+    },
+    "mi_limits": {
+      "path": "managed-instance/resource-limits",
+      "role": "inventory",
+      "reads": "The vCore grid per hardware generation and service tier, memory ratios and caps."
+    },
+    "mi_vcore_model": {
+      "path": "managed-instance/service-tiers-managed-instance-vcore",
+      "role": "guidance",
+      "reads": "ARM SKU names (GP_Gen5, GP_G8IM, GP_G8IH, BC_*) and the when-to-choose sections."
+    },
+    "vcore_model": {
+      "path": "database/service-tiers-sql-database-vcore",
+      "role": "guidance",
+      "reads": "Hardware configurations, when-to-choose sections, Fsv2 and Gen4 retirement notices."
+    },
+    "dtu_model": {
+      "path": "database/service-tiers-dtu",
+      "role": "guidance",
+      "reads": "Basic/Standard/Premium comparison, IOPS and latency, sub-vCore warnings."
+    },
+    "purchasing_models": {
+      "path": "database/purchasing-models",
+      "role": "guidance",
+      "reads": "vCore vs DTU decision guidance."
+    },
+    "serverless": {
+      "path": "database/serverless-tier-overview",
+      "role": "guidance",
+      "reads": "Scenarios suited to serverless vs provisioned compute; supported tier and hardware matrix."
+    },
+    "hyperscale": {
+      "path": "database/service-tier-hyperscale",
+      "role": "guidance",
+      "reads": "Hyperscale scale, replica and storage-billing characteristics."
+    },
+    "elastic_pools": {
+      "path": "database/elastic-pool-overview",
+      "role": "guidance",
+      "reads": "When pooling beats single databases."
+    },
+    "mi_nextgen": {
+      "path": "managed-instance/service-tiers-next-gen-general-purpose-use",
+      "role": "guidance",
+      "reads": "Next-gen General Purpose characteristics and when to choose it."
+    },
+    "whats_new_db": {
+      "path": "database/doc-changes-updates-release-notes-whats-new",
+      "role": "lifecycle",
+      "reads": "Current preview feature list and GA entries from the last 12 months."
+    },
+    "whats_new_db_archive": {
+      "path": "database/doc-changes-updates-release-notes-whats-new-archive",
+      "role": "lifecycle",
+      "reads": "Dated hardware and compute-size announcements for previous years."
+    },
+    "whats_new_mi": {
+      "path": "managed-instance/doc-changes-updates-release-notes-whats-new",
+      "role": "lifecycle",
+      "reads": "Current Managed Instance preview list and recent GA entries."
+    },
+    "whats_new_mi_archive": {
+      "path": "managed-instance/doc-changes-updates-release-notes-whats-new-archive",
+      "role": "lifecycle",
+      "reads": "Dated Managed Instance hardware, vCore and service-tier announcements."
+    }
+  }
+}

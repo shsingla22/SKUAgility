@@ -11,26 +11,38 @@ and hardware family it belongs to, and when it shipped. The first two services c
 
 | Path | Contents |
 | --- | --- |
-| `docs/azure-sql-sku-table.md` | **Complete Azure SQL table** — every SKU with release date, lifecycle status, source links and doc-sourced recommendation conditions |
-| `docs/azure-sql-skus.html` | The same Azure SQL table as a self-contained page: search, facets, per-row guidance |
-| `docs/azure-sql-skus.md` | Azure SQL catalog grouped by tier and hardware |
+| `Skills/AzureSQL/CurrentAzureSQLSKUInfo/` | **The Azure SQL skill** — reads Microsoft Learn and produces the whole Azure SQL catalog |
+| `docs/azure-sql-sku-table.md` | Complete Azure SQL table: every SKU with release date, lifecycle status, source links and doc-sourced recommendation conditions |
+| `docs/azure-sql-skus.html` | The Azure SQL SKU Atlas — the same table as a filterable page |
 | `docs/azure-postgresql-skus.md` | Human-readable PostgreSQL catalog |
-| `data/azure-sql.json` | Machine-readable Azure SQL catalog + release milestones |
-| `data/azure-postgresql.json` | Machine-readable PostgreSQL catalog + release milestones |
-| `data/skus.csv` | Flat join of every SKU across both services |
-| `tools/build_catalog.py` | Source of truth; regenerates the data files and Markdown |
-| `tools/guidance.py` | Doc-sourced "when to recommend" conditions per SKU family |
-| `tools/sqldb_memory.json` | `Memory (GB)` values transcribed from the resource-limit tables |
-| `tools/build_artifact.py` | Renders `docs/azure-sql-skus.html` from `data/azure-sql.json` |
+| `data/azure-sql.json`, `data/azure-sql.csv` | Machine-readable Azure SQL catalog + release milestones |
+| `data/azure-postgresql.json`, `data/azure-postgresql.csv` | Machine-readable PostgreSQL catalog |
+| `tools/refresh_azure_sql.sh` | Runs the skill and copies its output into `docs/` and `data/` |
+| `tools/build_catalog.py` | PostgreSQL catalog generator (Azure SQL is the skill's job) |
 
-Regenerate after editing `tools/build_catalog.py` or `tools/guidance.py`:
+Regenerate:
 
 ```bash
-python3 tools/build_catalog.py    # data/*.json, data/skus.csv, docs/*.md
-python3 tools/build_artifact.py   # docs/azure-sql-skus.html
+tools/refresh_azure_sql.sh        # Azure SQL — fetches live docs, verifies, rebuilds
+python3 tools/build_catalog.py    # PostgreSQL
 ```
 
-No dependencies beyond the Python 3 standard library.
+No dependencies beyond the Python 3 standard library. `refresh_azure_sql.sh` needs
+outbound HTTPS to Microsoft Learn.
+
+## The Azure SQL skill
+
+Azure SQL is not hand-maintained. `Skills/AzureSQL/CurrentAzureSQLSKUInfo` fetches the
+Microsoft Learn article sources, parses the SKU inventory out of them, joins it with a
+reviewed set of release milestones and doc-sourced recommendation conditions, and emits
+the Markdown table, the Atlas page, JSON and CSV — then verifies the result, including a
+liveness check on every cited URL.
+
+Re-running it months from now reports exactly what Azure changed (SKUs added or removed,
+values corrected) instead of silently absorbing it. See
+[`SKILL.md`](Skills/AzureSQL/CurrentAzureSQLSKUInfo/SKILL.md).
+
+It is symlinked into `.claude/skills/` so Claude Code can invoke it by name.
 
 ## Coverage
 
@@ -87,7 +99,8 @@ from third-party sources.
 ## Caveats
 
 - Memory for every Azure SQL Database vCore SKU is transcribed from the published
-  `Memory (GB)` rows of the resource-limit tables (`tools/sqldb_memory.json`). Managed
+  `Memory (GB)` rows of the resource-limit tables, parsed live from the article source
+  by the skill. Managed
   Instance memory is derived from the documented per-vCore ratio with published caps
   applied, since the MI docs publish ratios rather than a per-size table.
 - SKU availability is region-dependent. This catalog records what the service offers, not
@@ -95,5 +108,6 @@ from third-party sources.
 - Preview SKUs (Hyperscale premium-series 160/192 vCore, PostgreSQL v6 series) are marked
   `Preview` and dated by their preview announcement.
 
-Sources for every date are listed in [`SOURCES.md`](SOURCES.md) and inline in the JSON.
-Catalog as of **2026-08-17**.
+Sources for every date are listed in [`SOURCES.md`](SOURCES.md), in the skill's
+[`references/sources.json`](Skills/AzureSQL/CurrentAzureSQLSKUInfo/references/sources.json),
+and inline in the JSON. Catalog as of **2026-08-17**.

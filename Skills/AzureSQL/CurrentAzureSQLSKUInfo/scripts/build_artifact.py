@@ -1,21 +1,26 @@
 #!/usr/bin/env python3
-"""Render the Azure SQL catalog as a self-contained, filterable HTML page.
+"""Render the catalog as the Azure SQL SKU Atlas — a self-contained HTML page.
 
-Reads data/azure-sql.json (produced by build_catalog.py) and writes
-docs/azure-sql-skus.html. Guidance text is deduplicated into a lookup table
-keyed by guidance key, so the 304 rows stay small.
+Reads the azure-sql-skus.json produced by build_catalog.py and writes
+azure-sql-skus.html into the same directory. The page is filterable by service,
+lifecycle status, hardware and tier, and every row expands to its recommendation
+conditions and sources. No external requests: a strict CSP would block them, so
+all CSS and JS are inline and there are no webfonts.
 
-Run with:  python3 tools/build_artifact.py
+    python3 scripts/build_artifact.py [--out-dir DIR]
+
+Guidance text is deduplicated into a lookup table keyed by its own content, so
+304 rows stay small even though each carries a full numbered condition list.
 """
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
 import os
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SRC = os.path.join(ROOT, "data", "azure-sql.json")
-OUT = os.path.join(ROOT, "docs", "azure-sql-skus.html")
+HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SHORT_DOC = {
     "resource-limits-vcore-single-databases": "vCore resource limits",
@@ -30,7 +35,7 @@ SHORT_DOC = {
     "serverless-tier-overview": "Serverless compute tier",
     "service-tier-hyperscale": "Hyperscale service tier",
     "elastic-pool-overview": "Elastic pools overview",
-    "doc-changes-updates-release-notes-whats-new-archive": "What's new archive",
+    "doc-changes-updates-release-notes-whats-new-archive": "What\'s new archive",
     "sql-managed-instance-paas-overview": "Managed Instance overview",
 }
 
@@ -50,14 +55,16 @@ def label_for(url: str) -> str:
     return "Microsoft Learn"
 
 
-def build() -> None:
-    src = json.load(open(SRC, encoding="utf-8"))
-    skus = src["skus"]
+def build(out_dir: str) -> None:
+    src_path = os.path.join(out_dir, "azure-sql-skus.json")
+    with open(src_path, encoding="utf-8") as fh:
+        src = json.load(fh)
 
     guidance: dict[str, dict] = {}
     rows = []
-    for s in skus:
-        key = s["guidance_key"]
+    for s in src["skus"]:
+        key = hashlib.sha1(
+            "\n".join(s["recommend_when"]).encode("utf-8")).hexdigest()[:10]
         if key not in guidance:
             guidance[key] = {
                 "when": s["recommend_when"],
@@ -67,7 +74,6 @@ def build() -> None:
             "n": s["sku"],
             "svc": "SQL DB" if s["service"].endswith("Database") else "SQL MI",
             "dep": s["deployment_model"],
-            "pm": s["purchasing_model"],
             "t": s["service_tier"],
             "ct": s["compute_tier"],
             "hw": s["hardware"],
@@ -80,21 +86,18 @@ def build() -> None:
             "idoc": [s["inventory_doc"], label_for(s["inventory_doc"])],
             "rdoc": [s["release_doc"], label_for(s["release_doc"])],
             "g": key,
-            "ms": s["milestone"],
+            "ms": s["milestone_label"],
         })
 
-    milestones = {m["key"]: m["label"] for m in src["release_milestones"]}
-
     payload = json.dumps(
-        {"rows": rows, "guidance": guidance, "milestones": milestones,
-         "asOf": src["catalog_as_of"]},
-        separators=(",", ":"),
-    )
+        {"rows": rows, "guidance": guidance, "asOf": src["generated"]},
+        separators=(",", ":"))
 
-    html = TEMPLATE.replace("__DATA__", payload).replace("__COUNT__", str(len(rows)))
-    with open(OUT, "w", encoding="utf-8") as fh:
+    html = TEMPLATE.replace("__DATA__", payload)
+    out = os.path.join(out_dir, "azure-sql-skus.html")
+    with open(out, "w", encoding="utf-8") as fh:
         fh.write(html)
-    print(f"wrote {OUT} ({len(html) / 1024:.0f} KB, {len(rows)} rows, "
+    print(f"wrote {out} ({len(html) / 1024:.0f} KB, {len(rows)} rows, "
           f"{len(guidance)} guidance sets)")
 
 
@@ -437,7 +440,7 @@ TEMPLATE = r"""<title>Azure SQL SKU Atlas</title>
 <script>
 (function () {
   var D = JSON.parse(document.getElementById('data').textContent);
-  var rows = D.rows, G = D.guidance, MS = D.milestones;
+  var rows = D.rows, G = D.guidance;
   var tbody = document.getElementById('tbody');
   var empty = document.getElementById('empty');
   var countEl = document.getElementById('count');
@@ -560,7 +563,7 @@ TEMPLATE = r"""<title>Azure SQL SKU Atlas</title>
     right.appendChild(ul);
 
     right.appendChild(el('h4', null, 'Release milestone'));
-    right.appendChild(el('p', 'milestone', MS[r.ms] || r.ms));
+    right.appendChild(el('p', 'milestone', r.ms));
     var ul2 = el('ul', 'srcs');
     var li2 = document.createElement('li');
     li2.appendChild(docLink(r.rdoc));
@@ -654,6 +657,7 @@ TEMPLATE = r"""<title>Azure SQL SKU Atlas</title>
 </script>
 """
 
-
 if __name__ == "__main__":
-    build()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--out-dir", default=os.path.join(HERE, "output"))
+    build(ap.parse_args().out_dir)
