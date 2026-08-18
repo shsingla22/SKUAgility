@@ -1,0 +1,2954 @@
+{
+ "Azure App Service :: Basic [Basic]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dedicated compute"
+ },
+ "Azure App Service :: Free [Free]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Shared compute"
+ },
+ "Azure App Service :: IsolatedV2 [IsolatedV2]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Isolated"
+ },
+ "Azure App Service :: Premium [Premium]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dedicated compute"
+ },
+ "Azure App Service :: PremiumV2 [PremiumV2]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dedicated compute"
+ },
+ "Azure App Service :: PremiumV3 [PremiumV3]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dedicated compute"
+ },
+ "Azure App Service :: PremiumV4 [PremiumV4]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dedicated compute"
+ },
+ "Azure App Service :: Shared [Shared]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Shared compute"
+ },
+ "Azure App Service :: Standard [Standard]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dedicated compute"
+ },
+ "Azure Cache for Redis :: Basic [Basic]": {
+  "capacity": null,
+  "lifecycle_status": "Retiring - September 30, 2028",
+  "memory_gb": null,
+  "series": "OSS Redis"
+ },
+ "Azure Cache for Redis :: Enterprise Flash [Enterprise Flash]": {
+  "capacity": null,
+  "lifecycle_status": "Retiring - 2027-03-31",
+  "memory_gb": null,
+  "series": "Enterprise"
+ },
+ "Azure Cache for Redis :: Enterprise [Enterprise]": {
+  "capacity": null,
+  "lifecycle_status": "Retiring - 2027-03-31",
+  "memory_gb": null,
+  "series": "Enterprise"
+ },
+ "Azure Cache for Redis :: Premium [Premium]": {
+  "capacity": null,
+  "lifecycle_status": "Retiring - September 30, 2028",
+  "memory_gb": null,
+  "series": "OSS Redis"
+ },
+ "Azure Cache for Redis :: Standard [Standard]": {
+  "capacity": null,
+  "lifecycle_status": "Retiring - September 30, 2028",
+  "memory_gb": null,
+  "series": "OSS Redis"
+ },
+ "Azure Database for MySQL :: Standard_B12ms [Burstable]": {
+  "capacity": 12.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 48.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B16ms [Burstable]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B1ms [Burstable]": {
+  "capacity": 1.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 2.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B20ms [Burstable]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 80.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B2ms [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B2s [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 4.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B4ms [Burstable]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_B8ms [Burstable]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "B"
+ },
+ "Azure Database for MySQL :: Standard_D16ads_v5 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "D16ad"
+ },
+ "Azure Database for MySQL :: Standard_D16ds_v4 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "D16d"
+ },
+ "Azure Database for MySQL :: Standard_D2ads_v5 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "D2ad"
+ },
+ "Azure Database for MySQL :: Standard_D2ds_v4 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "D2d"
+ },
+ "Azure Database for MySQL :: Standard_D32ads_v5 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "D32ad"
+ },
+ "Azure Database for MySQL :: Standard_D32ds_v4 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "D32d"
+ },
+ "Azure Database for MySQL :: Standard_D48ads_v5 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "D48ad"
+ },
+ "Azure Database for MySQL :: Standard_D48ds_v4 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "D48d"
+ },
+ "Azure Database for MySQL :: Standard_D4ads_v5 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "D4ad"
+ },
+ "Azure Database for MySQL :: Standard_D4ds_v4 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "D4d"
+ },
+ "Azure Database for MySQL :: Standard_D64ads_v5 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "D64ad"
+ },
+ "Azure Database for MySQL :: Standard_D64ds_v4 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "D64d"
+ },
+ "Azure Database for MySQL :: Standard_D8ads_v5 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "D8ad"
+ },
+ "Azure Database for MySQL :: Standard_D8ds_v4 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "D8d"
+ },
+ "Azure Database for MySQL :: Standard_D96ads_v5 [General Purpose]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "D96ad"
+ },
+ "Azure Database for MySQL :: Standard_E16ads_v5, Standard_E16ds_v5 [Business Critical]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "E16ad"
+ },
+ "Azure Database for MySQL :: Standard_E16ds_v4 [Business Critical]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "E16d"
+ },
+ "Azure Database for MySQL :: Standard_E20ads_v5, Standard_E20ds_v5 [Business Critical]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "E20ad"
+ },
+ "Azure Database for MySQL :: Standard_E20ds_v4 [Business Critical]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "E20d"
+ },
+ "Azure Database for MySQL :: Standard_E2ads_v5, Standard_E2ds_v5 [Business Critical]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "E2ad"
+ },
+ "Azure Database for MySQL :: Standard_E2ds_v4 [Business Critical]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "E2d"
+ },
+ "Azure Database for MySQL :: Standard_E32ads_v5, Standard_E32ds_v5 [Business Critical]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "E32ad"
+ },
+ "Azure Database for MySQL :: Standard_E32ds_v4 [Business Critical]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "E32d"
+ },
+ "Azure Database for MySQL :: Standard_E48ads_v5, Standard_E48ds_v5 [Business Critical]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "E48ad"
+ },
+ "Azure Database for MySQL :: Standard_E48ds_v4 [Business Critical]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "E48d"
+ },
+ "Azure Database for MySQL :: Standard_E4ads_v5, Standard_E4ds_v5 [Business Critical]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "E4ad"
+ },
+ "Azure Database for MySQL :: Standard_E4ds_v4 [Business Critical]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "E4d"
+ },
+ "Azure Database for MySQL :: Standard_E64ads_v5 [Business Critical]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 504.0,
+  "series": "E64ad"
+ },
+ "Azure Database for MySQL :: Standard_E64ds_v4 [Business Critical]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 504.0,
+  "series": "E64d"
+ },
+ "Azure Database for MySQL :: Standard_E64ds_v5 [Business Critical]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "E64d"
+ },
+ "Azure Database for MySQL :: Standard_E80ids_v4 [Business Critical]": {
+  "capacity": 80.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 504.0,
+  "series": "E80id"
+ },
+ "Azure Database for MySQL :: Standard_E8ads_v5, Standard_E8ds_v5 [Business Critical]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "E8ad"
+ },
+ "Azure Database for MySQL :: Standard_E8ds_v4 [Business Critical]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "E8d"
+ },
+ "Azure Database for MySQL :: Standard_E96ads_v5 [Business Critical]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "E96ad"
+ },
+ "Azure Database for PostgreSQL :: Standard_B12ms [Burstable]": {
+  "capacity": 12.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 48.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B16ms [Burstable]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B1ms [Burstable]": {
+  "capacity": 1.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 2.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B20ms [Burstable]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 80.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B2ms [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B2s [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 4.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B4ms [Burstable]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_B8ms [Burstable]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "B-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D128ds_v6 [General Purpose]": {
+  "capacity": 128.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 512.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D16ads_v5 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D16ads_v6 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 64.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D16ds_v4 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D16ds_v5 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D16ds_v6 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 64.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D16s_v3 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D192ds_v6 [General Purpose]": {
+  "capacity": 192.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 768.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D2ads_v5 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D2ads_v6 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 8.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D2ds_v4 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D2ds_v5 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D2ds_v6 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 8.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D2s_v3 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D32ads_v5 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D32ads_v6 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 128.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D32ds_v4 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D32ds_v5 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D32ds_v6 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 128.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D32s_v3 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D48ads_v5 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D48ads_v6 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 192.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D48ds_v4 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D48ds_v5 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D48ds_v6 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 192.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D48s_v3 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D4ads_v5 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D4ads_v6 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 16.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D4ds_v4 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D4ds_v5 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D4ds_v6 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 16.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D4s_v3 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D64ads_v5 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D64ads_v6 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 256.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D64ds_v4 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D64ds_v5 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D64ds_v6 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 256.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D64s_v3 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D8ads_v5 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D8ads_v6 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 32.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D8ds_v4 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D8ds_v5 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D8ds_v6 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 32.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D8s_v3 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Dsv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D96ads_v5 [General Purpose]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D96ads_v6 [General Purpose]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 384.0,
+  "series": "Dadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D96ds_v5 [General Purpose]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ddsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_D96ds_v6 [General Purpose]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 384.0,
+  "series": "Ddsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E128ds_v6 [Memory Optimized]": {
+  "capacity": 128.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 1024.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E16ads_v5 [Memory Optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E16ads_v6 [Memory Optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 128.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E16ds_v4 [Memory Optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E16ds_v5 [Memory Optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E16ds_v6 [Memory Optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 128.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E16s_v3 [Memory Optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E192ds_v6 [Memory Optimized]": {
+  "capacity": 192.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 1832.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E20ads_v5 [Memory Optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E20ads_v6 [Memory Optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 160.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E20ds_v4 [Memory Optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E20ds_v5 [Memory Optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E20ds_v6 [Memory Optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 160.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E2ads_v5 [Memory Optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E2ads_v6 [Memory Optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 16.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E2ds_v4 [Memory Optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E2ds_v5 [Memory Optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E2ds_v6 [Memory Optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 16.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E2s_v3 [Memory Optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E32ads_v5 [Memory Optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E32ads_v6 [Memory Optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 256.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E32ds_v4 [Memory Optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E32ds_v5 [Memory Optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E32ds_v6 [Memory Optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 256.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E32s_v3 [Memory Optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E48ads_v5 [Memory Optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E48ads_v6 [Memory Optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 384.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E48ds_v4 [Memory Optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E48ds_v5 [Memory Optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E48ds_v6 [Memory Optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 384.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E48s_v3 [Memory Optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E4ads_v5 [Memory Optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E4ads_v6 [Memory Optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 32.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E4ds_v4 [Memory Optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E4ds_v5 [Memory Optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E4ds_v6 [Memory Optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 32.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E4s_v3 [Memory Optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E64ads_v5 [Memory Optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E64ads_v6 [Memory Optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 512.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E64ds_v4 [Memory Optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 432.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E64ds_v5 [Memory Optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E64ds_v6 [Memory Optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 512.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E64s_v3 [Memory Optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 432.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E8ads_v5 [Memory Optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E8ads_v6 [Memory Optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 64.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E8ds_v4 [Memory Optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E8ds_v5 [Memory Optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E8ds_v6 [Memory Optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 64.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E8s_v3 [Memory Optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Esv3-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E96ads_v5 [Memory Optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E96ads_v6 [Memory Optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 672.0,
+  "series": "Eadsv6-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E96ds_v5 [Memory Optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for PostgreSQL :: Standard_E96ds_v6 [Memory Optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 768.0,
+  "series": "Edsv6-series"
+ },
+ "Azure Kubernetes Service :: Free [Free]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Cluster management tier"
+ },
+ "Azure Kubernetes Service :: Premium [Premium]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Cluster management tier"
+ },
+ "Azure Kubernetes Service :: Standard [Standard]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Cluster management tier"
+ },
+ "Azure SQL Database :: BC_DC_10 [Business Critical]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 45.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_12 [Business Critical]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 54.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_14 [Business Critical]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 63.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_16 [Business Critical]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_18 [Business Critical]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_2 [Business Critical]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 9.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_20 [Business Critical]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 90.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_32 [Business Critical]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 144.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_4 [Business Critical]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 18.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_40 [Business Critical]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 180.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_6 [Business Critical]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 27.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_DC_8 [Business Critical]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 36.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: BC_Gen5_10 [Business Critical]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 51.9,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_12 [Business Critical]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 62.3,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_128 [Business Critical]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 625.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_14 [Business Critical]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.7,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_16 [Business Critical]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 83.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_18 [Business Critical]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 93.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_2 [Business Critical]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 10.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_20 [Business Critical]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 103.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_24 [Business Critical]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 124.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_32 [Business Critical]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 166.1,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_4 [Business Critical]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_40 [Business Critical]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 207.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_6 [Business Critical]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 31.1,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_8 [Business Critical]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 41.5,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: BC_Gen5_80 [Business Critical]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 415.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: Basic [Basic]": {
+  "capacity": 5,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_100 [Basic]": {
+  "capacity": 100,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_1200 [Basic]": {
+  "capacity": 1200,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_1600 [Basic]": {
+  "capacity": 1600,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_200 [Basic]": {
+  "capacity": 200,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_300 [Basic]": {
+  "capacity": 300,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_400 [Basic]": {
+  "capacity": 400,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_50 [Basic]": {
+  "capacity": 50,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: BasicPool_800 [Basic]": {
+  "capacity": 800,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: GP_DC_10 [General Purpose]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 45.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_12 [General Purpose]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 54.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_14 [General Purpose]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 63.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_16 [General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_18 [General Purpose]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_2 [General Purpose]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 9.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_20 [General Purpose]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 90.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_32 [General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 144.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_4 [General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 18.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_40 [General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 180.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_6 [General Purpose]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 27.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_DC_8 [General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 36.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_10 [General Purpose]": {
+  "capacity": 10,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 18.9,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_12 [General Purpose]": {
+  "capacity": 12,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 22.7,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_14 [General Purpose]": {
+  "capacity": 14,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 26.5,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_16 [General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 30.2,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_18 [General Purpose]": {
+  "capacity": 18,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 34.0,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_20 [General Purpose]": {
+  "capacity": 20,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 37.8,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_24 [General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 45.4,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_32 [General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 60.5,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_36 [General Purpose]": {
+  "capacity": 36,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 68.0,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_72 [General Purpose]": {
+  "capacity": 72,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 136.0,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Fsv2_8 [General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
+  "memory_gb": 15.1,
+  "series": "Fsv2-series"
+ },
+ "Azure SQL Database :: GP_Gen5_10 [General Purpose]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 51.9,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_12 [General Purpose]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 62.3,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_128 [General Purpose]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 625.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_14 [General Purpose]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.7,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_16 [General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 83.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_18 [General Purpose]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 93.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_2 [General Purpose]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 10.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_20 [General Purpose]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 103.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_24 [General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 124.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_32 [General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 166.1,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_4 [General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_40 [General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 207.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_6 [General Purpose]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 31.1,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_8 [General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 41.5,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_Gen5_80 [General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 415.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_1 [General Purpose - Serverless]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_10 [General Purpose - Serverless]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_12 [General Purpose - Serverless]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_14 [General Purpose - Serverless]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_16 [General Purpose - Serverless]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_18 [General Purpose - Serverless]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_2 [General Purpose - Serverless]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_20 [General Purpose - Serverless]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_24 [General Purpose - Serverless]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_32 [General Purpose - Serverless]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_4 [General Purpose - Serverless]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_40 [General Purpose - Serverless]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_6 [General Purpose - Serverless]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_8 [General Purpose - Serverless]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: GP_S_Gen5_80 [General Purpose - Serverless]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_DC_10 [Hyperscale]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 45.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_12 [Hyperscale]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 54.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_14 [Hyperscale]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 63.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_16 [Hyperscale]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_18 [Hyperscale]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_2 [Hyperscale]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 9.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_20 [Hyperscale]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 90.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_32 [Hyperscale]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 144.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_4 [Hyperscale]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 18.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_40 [Hyperscale]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 180.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_6 [Hyperscale]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 27.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_DC_8 [Hyperscale]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 36.0,
+  "series": "DC-series"
+ },
+ "Azure SQL Database :: HS_Gen5_10 [Hyperscale]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 51.9,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_12 [Hyperscale]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 62.3,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_14 [Hyperscale]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.7,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_16 [Hyperscale]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 83.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_18 [Hyperscale]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 93.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_2 [Hyperscale]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 10.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_20 [Hyperscale]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 103.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_24 [Hyperscale]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 124.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_32 [Hyperscale]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 166.1,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_4 [Hyperscale]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_40 [Hyperscale]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 207.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_6 [Hyperscale]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 31.1,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_8 [Hyperscale]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 41.5,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_Gen5_80 [Hyperscale]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 415.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_MOPRMS_10 [Hyperscale]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 103.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_12 [Hyperscale]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 124.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_14 [Hyperscale]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 145.3,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_16 [Hyperscale]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 166.1,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_18 [Hyperscale]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 186.9,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_2 [Hyperscale]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_20 [Hyperscale]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 207.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_24 [Hyperscale]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 249.1,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_32 [Hyperscale]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 332.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_4 [Hyperscale]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 41.5,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_40 [Hyperscale]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 415.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_6 [Hyperscale]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 62.3,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_64 [Hyperscale]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 664.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_8 [Hyperscale]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 83.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_MOPRMS_80 [Hyperscale]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 830.5,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Database :: HS_PRMS_10 [Hyperscale]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 51.9,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_12 [Hyperscale]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 62.3,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_128 [Hyperscale]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 625.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_14 [Hyperscale]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 72.7,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_16 [Hyperscale]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 83.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_160 [Hyperscale]": {
+  "capacity": 160,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 830.4,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_18 [Hyperscale]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 93.4,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_192 [Hyperscale]": {
+  "capacity": 192,
+  "lifecycle_status": "Public preview",
+  "memory_gb": 843.7,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_2 [Hyperscale]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 10.4,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_20 [Hyperscale]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 103.8,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_24 [Hyperscale]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 124.6,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_32 [Hyperscale]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 166.1,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_4 [Hyperscale]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.8,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_40 [Hyperscale]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 207.6,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_6 [Hyperscale]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 31.1,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_64 [Hyperscale]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 332.2,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_8 [Hyperscale]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 41.5,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_PRMS_80 [Hyperscale]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 415.2,
+  "series": "Premium-series"
+ },
+ "Azure SQL Database :: HS_S_Gen5_10 [Hyperscale - Serverless]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_12 [Hyperscale - Serverless]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_14 [Hyperscale - Serverless]": {
+  "capacity": 14,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_16 [Hyperscale - Serverless]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_18 [Hyperscale - Serverless]": {
+  "capacity": 18,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_2 [Hyperscale - Serverless]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_20 [Hyperscale - Serverless]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_24 [Hyperscale - Serverless]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_32 [Hyperscale - Serverless]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_4 [Hyperscale - Serverless]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_40 [Hyperscale - Serverless]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_6 [Hyperscale - Serverless]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_8 [Hyperscale - Serverless]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: HS_S_Gen5_80 [Hyperscale - Serverless]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Database :: P1 [Premium]": {
+  "capacity": 125,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: P11 [Premium]": {
+  "capacity": 1750,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: P15 [Premium]": {
+  "capacity": 4000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: P2 [Premium]": {
+  "capacity": 250,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: P4 [Premium]": {
+  "capacity": 500,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: P6 [Premium]": {
+  "capacity": 1000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_1000 [Premium]": {
+  "capacity": 1000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_125 [Premium]": {
+  "capacity": 125,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_1500 [Premium]": {
+  "capacity": 1500,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_2000 [Premium]": {
+  "capacity": 2000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_250 [Premium]": {
+  "capacity": 250,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_2500 [Premium]": {
+  "capacity": 2500,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_3000 [Premium]": {
+  "capacity": 3000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_3500 [Premium]": {
+  "capacity": 3500,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_4000 [Premium]": {
+  "capacity": 4000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: PremiumPool_500 [Premium]": {
+  "capacity": 500,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S0 [Standard]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S1 [Standard]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S12 [Standard]": {
+  "capacity": 3000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S2 [Standard]": {
+  "capacity": 50,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S3 [Standard]": {
+  "capacity": 100,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S4 [Standard]": {
+  "capacity": 200,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S6 [Standard]": {
+  "capacity": 400,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S7 [Standard]": {
+  "capacity": 800,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: S9 [Standard]": {
+  "capacity": 1600,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_100 [Standard]": {
+  "capacity": 100,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_1200 [Standard]": {
+  "capacity": 1200,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_1600 [Standard]": {
+  "capacity": 1600,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_200 [Standard]": {
+  "capacity": 200,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_2000 [Standard]": {
+  "capacity": 2000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_2500 [Standard]": {
+  "capacity": 2500,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_300 [Standard]": {
+  "capacity": 300,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_3000 [Standard]": {
+  "capacity": 3000,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_400 [Standard]": {
+  "capacity": 400,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_50 [Standard]": {
+  "capacity": 50,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Database :: StandardPool_800 [Standard]": {
+  "capacity": 800,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "n/a (DTU model)"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (10 vCores) [Business Critical]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 136.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (12 vCores) [Business Critical]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 163.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (128 vCores) [Business Critical]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (16 vCores) [Business Critical]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 217.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (20 vCores) [Business Critical]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 272.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (24 vCores) [Business Critical]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 326.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (32 vCores) [Business Critical]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 435.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (4 vCores) [Business Critical]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 54.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (40 vCores) [Business Critical]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 544.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (48 vCores) [Business Critical]": {
+  "capacity": 48,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 652.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (56 vCores) [Business Critical]": {
+  "capacity": 56,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 761.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (6 vCores) [Business Critical]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (64 vCores) [Business Critical]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (8 vCores) [Business Critical]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 108.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (80 vCores) [Business Critical]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IH (96 vCores) [Business Critical]": {
+  "capacity": 96,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (10 vCores) [Business Critical]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 70.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (12 vCores) [Business Critical]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 84.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (128 vCores) [Business Critical]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (16 vCores) [Business Critical]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 112.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (20 vCores) [Business Critical]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 140.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (24 vCores) [Business Critical]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 168.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (32 vCores) [Business Critical]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 224.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (4 vCores) [Business Critical]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 28.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (40 vCores) [Business Critical]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 280.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (48 vCores) [Business Critical]": {
+  "capacity": 48,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 336.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (56 vCores) [Business Critical]": {
+  "capacity": 56,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 392.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (6 vCores) [Business Critical]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 42.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (64 vCores) [Business Critical]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 448.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (8 vCores) [Business Critical]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 56.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (80 vCores) [Business Critical]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_G8IM (96 vCores) [Business Critical]": {
+  "capacity": 96,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (16 vCores) [Business Critical]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (24 vCores) [Business Critical]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 122.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (32 vCores) [Business Critical]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 163.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (4 vCores) [Business Critical]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (40 vCores) [Business Critical]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 204.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (64 vCores) [Business Critical]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 326.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (8 vCores) [Business Critical]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 40.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: BC_Gen5 (80 vCores) [Business Critical]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 408.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (10 vCores) [Next-gen General Purpose]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 136.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (12 vCores) [Next-gen General Purpose]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 163.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (128 vCores) [Next-gen General Purpose]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (16 vCores) [General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 217.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (16 vCores) [Next-gen General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 217.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (20 vCores) [Next-gen General Purpose]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 272.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (24 vCores) [General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 326.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (24 vCores) [Next-gen General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 326.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (32 vCores) [General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 435.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (32 vCores) [Next-gen General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 435.2,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (4 vCores) [General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 54.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (4 vCores) [Next-gen General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 54.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (40 vCores) [General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 544.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (40 vCores) [Next-gen General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 544.0,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (48 vCores) [Next-gen General Purpose]": {
+  "capacity": 48,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 652.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (56 vCores) [Next-gen General Purpose]": {
+  "capacity": 56,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 761.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (6 vCores) [Next-gen General Purpose]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.6,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (64 vCores) [General Purpose]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (64 vCores) [Next-gen General Purpose]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (8 vCores) [General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 108.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (8 vCores) [Next-gen General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 108.8,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (80 vCores) [General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (80 vCores) [Next-gen General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IH (96 vCores) [Next-gen General Purpose]": {
+  "capacity": 96,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 870.4,
+  "series": "Premium-series memory optimized"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (10 vCores) [Next-gen General Purpose]": {
+  "capacity": 10,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 70.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (12 vCores) [Next-gen General Purpose]": {
+  "capacity": 12,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 84.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (128 vCores) [Next-gen General Purpose]": {
+  "capacity": 128,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (16 vCores) [General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 112.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (16 vCores) [Next-gen General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 112.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (2 vCores) [General Purpose]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 14.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (20 vCores) [Next-gen General Purpose]": {
+  "capacity": 20,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 140.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (24 vCores) [General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 168.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (24 vCores) [Next-gen General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 168.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (32 vCores) [General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 224.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (32 vCores) [Next-gen General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 224.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (4 vCores) [General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 28.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (4 vCores) [Next-gen General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 28.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (40 vCores) [General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 280.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (40 vCores) [Next-gen General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 280.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (48 vCores) [Next-gen General Purpose]": {
+  "capacity": 48,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 336.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (56 vCores) [Next-gen General Purpose]": {
+  "capacity": 56,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 392.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (6 vCores) [Next-gen General Purpose]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 42.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (64 vCores) [General Purpose]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 448.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (64 vCores) [Next-gen General Purpose]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 448.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (8 vCores) [General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 56.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (8 vCores) [Next-gen General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 56.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (80 vCores) [General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (80 vCores) [Next-gen General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_G8IM (96 vCores) [Next-gen General Purpose]": {
+  "capacity": 96,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 560.0,
+  "series": "Premium-series"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (16 vCores) [General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (16 vCores) [Next-gen General Purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 81.6,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (2 vCores) [General Purpose]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 10.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (24 vCores) [General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 122.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (24 vCores) [Next-gen General Purpose]": {
+  "capacity": 24,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 122.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (32 vCores) [General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 163.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (32 vCores) [Next-gen General Purpose]": {
+  "capacity": 32,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 163.2,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (4 vCores) [General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (4 vCores) [Next-gen General Purpose]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 20.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (40 vCores) [General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 204.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (40 vCores) [Next-gen General Purpose]": {
+  "capacity": 40,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 204.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (64 vCores) [General Purpose]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 326.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (64 vCores) [Next-gen General Purpose]": {
+  "capacity": 64,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 326.4,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (8 vCores) [General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 40.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (8 vCores) [Next-gen General Purpose]": {
+  "capacity": 8,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 40.8,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (80 vCores) [General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 408.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure SQL Managed Instance :: GP_Gen5 (80 vCores) [Next-gen General Purpose]": {
+  "capacity": 80,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 408.0,
+  "series": "Standard-series (Gen5)"
+ },
+ "Azure Virtual Machines :: A-family [General purpose]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "1 current series"
+ },
+ "Azure Virtual Machines :: B-family [General purpose]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "3 current series"
+ },
+ "Azure Virtual Machines :: D-family [General purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "16 current series"
+ },
+ "Azure Virtual Machines :: DC-family [General purpose]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "6 current series"
+ },
+ "Azure Virtual Machines :: E-family [Memory optimized]": {
+  "capacity": 9,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "9 current series"
+ },
+ "Azure Virtual Machines :: EC-family [Memory optimized]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "3 current series"
+ },
+ "Azure Virtual Machines :: Eb-family [Memory optimized]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "2 current series"
+ },
+ "Azure Virtual Machines :: F-family [Compute optimized]": {
+  "capacity": 7,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "7 current series"
+ },
+ "Azure Virtual Machines :: FX-family [Compute optimized]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "3 current series"
+ },
+ "Azure Virtual Machines :: HB-family [High performance compute]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "4 current series"
+ },
+ "Azure Virtual Machines :: HC-family [High performance compute]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "2 current series"
+ },
+ "Azure Virtual Machines :: HX-family [High performance compute]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "1 current series"
+ },
+ "Azure Virtual Machines :: L-family [Storage optimized]": {
+  "capacity": 5,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "5 current series"
+ },
+ "Azure Virtual Machines :: M-family [Memory optimized]": {
+  "capacity": 7,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "7 current series"
+ },
+ "Azure Virtual Machines :: NC-family [GPU accelerated]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "6 current series"
+ },
+ "Azure Virtual Machines :: ND-family [GPU accelerated]": {
+  "capacity": 7,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "7 current series"
+ },
+ "Azure Virtual Machines :: NG-family [GPU accelerated]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "1 current series"
+ },
+ "Azure Virtual Machines :: NP-family [FPGA accelerated]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "1 current series"
+ },
+ "Azure Virtual Machines :: NV-family [GPU accelerated]": {
+  "capacity": 5,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "5 current series"
+ },
+ "Azure Virtual Machines :: Other families [Memory optimized]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "3 current series"
+ }
+}

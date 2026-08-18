@@ -304,8 +304,12 @@ def parse_mi(lines: list[str]) -> list[dict]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", default=os.path.join(HERE, ".cache"))
-    ap.add_argument("--out", default=os.path.join(HERE, ".cache", "inventory.json"))
+    ap.add_argument("--out", default=None,
+                    help="defaults to <cache>/inventory.json so an overridden "
+                         "--cache keeps the inventory beside its source documents")
     args = ap.parse_args()
+    if not args.out:
+        args.out = os.path.join(args.cache, "inventory.json")
 
     rows = []
     rows += parse_dtu_single(read(args.cache, "dtu_single"))

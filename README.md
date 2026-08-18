@@ -3,32 +3,68 @@
 SKU agility for all workloads.
 
 A catalog of the compute SKUs offered by Azure data services — what exists today, what tier
-and hardware family it belongs to, and when it shipped. The first two services covered are
-**Azure SQL** (Azure SQL Database + Azure SQL Managed Instance) and
-**Azure Database for PostgreSQL**.
+and hardware family it belongs to, when it shipped, whether it is still a good idea, and
+where every one of those claims came from. Currently **492 SKUs across 8 Azure services**,
+built from Microsoft documentation by two reusable skills.
 
 ## What's here
 
 | Path | Contents |
 | --- | --- |
-| `Skills/AzureSQL/CurrentAzureSQLSKUInfo/` | **The Azure SQL skill** — reads Microsoft Learn and produces the whole Azure SQL catalog |
+| `Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo/` | **The all-workloads skill** — one catalog spanning every covered Azure service |
+| `Skills/AzureSQL/CurrentAzureSQLSKUInfo/` | **The Azure SQL skill** — the deep Azure SQL catalog, also consumed by the skill above |
+| `docs/azure-workload-sku-table.md` | Cross-workload table: every SKU, release date, lifecycle, guidance, sources |
+| `docs/azure-workload-skus.html` | The Azure Workload SKU Atlas — the same table as a filterable page |
 | `docs/azure-sql-sku-table.md` | Complete Azure SQL table: every SKU with release date, lifecycle status, source links and doc-sourced recommendation conditions |
 | `docs/azure-sql-skus.html` | The Azure SQL SKU Atlas — the same table as a filterable page |
 | `docs/azure-postgresql-skus.md` | Human-readable PostgreSQL catalog |
 | `data/azure-sql.json`, `data/azure-sql.csv` | Machine-readable Azure SQL catalog + release milestones |
 | `data/azure-postgresql.json`, `data/azure-postgresql.csv` | Machine-readable PostgreSQL catalog |
-| `tools/refresh_azure_sql.sh` | Runs the skill and copies its output into `docs/` and `data/` |
+| `data/azure-workloads.json`, `data/azure-workloads.csv` | Machine-readable cross-workload catalog |
+| `tools/refresh_all_workloads.sh` | Runs the all-workloads skill into `docs/` and `data/` |
+| `tools/refresh_azure_sql.sh` | Runs the Azure SQL skill into `docs/` and `data/` |
 | `tools/build_catalog.py` | PostgreSQL catalog generator (Azure SQL is the skill's job) |
 
 Regenerate:
 
 ```bash
-tools/refresh_azure_sql.sh        # Azure SQL — fetches live docs, verifies, rebuilds
-python3 tools/build_catalog.py    # PostgreSQL
+tools/refresh_all_workloads.sh    # every covered service — fetches live docs, verifies
+tools/refresh_azure_sql.sh        # Azure SQL only, in more depth
+python3 tools/build_catalog.py    # the standalone PostgreSQL catalog
 ```
 
 No dependencies beyond the Python 3 standard library. `refresh_azure_sql.sh` needs
 outbound HTTPS to Microsoft Learn.
+
+## The skills
+
+Nothing in the Azure catalog is hand-maintained. Two skills read Microsoft's documentation
+and generate everything, then verify what they produced:
+
+| Skill | Covers | Granularity |
+| --- | --- | --- |
+| `CurrentAzureWorkloadSKUInfo` | SQL DB, SQL MI, PostgreSQL, MySQL, Cache for Redis, App Service, AKS, Virtual Machines | Per size, except VMs (per family) |
+| `CurrentAzureSQLSKUInfo` | Azure SQL Database + Managed Instance | Every service-level objective |
+
+The all-workloads skill delegates Azure SQL to the SQL skill rather than re-deriving it, so
+there is one source of truth per service. Both are symlinked into `.claude/skills/` so
+Claude Code can invoke them by name, and both report what changed since their last reviewed
+baseline instead of silently absorbing it.
+
+Adding a service to the cross-workload catalog is three edits — a source, a set of release
+milestones, and a provider module — described in the
+[skill's SKILL.md](Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo/SKILL.md).
+
+### Notable current findings
+
+- **Every Azure Cache for Redis tier is retiring.** Enterprise and Enterprise Flash on
+  2027-03-31, Basic/Standard/Premium on 2028-09-30, with creation already blocked for new
+  customers since 2026-04-01. Microsoft directs new work to Azure Managed Redis.
+- **Azure SQL Fsv2-series is deprecated**, retiring 2026-10-01.
+- **34 SKUs have no sourceable release date.** They read *not established* rather than
+  carrying a guess, and every run counts them.
+- **Four typos in Microsoft's published PostgreSQL compute table** are corrected explicitly
+  and listed in the output rather than repeated or silently dropped.
 
 ## The Azure SQL skill
 
