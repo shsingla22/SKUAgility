@@ -63,9 +63,15 @@ def collect(docs: dict) -> list[Sku]:
                                 "prefer a current series for new deployments.")
                 when.append("Check the family page for per-series specifications, "
                             "regional availability and any retirement notice.")
+                # The doc lists a family's series newest-first, so the first entry
+                # is the current flagship. Showing it beats repeating the count
+                # that the Size column already carries.
+                flagship = current[0] if current else "no current series"
+                if len(flagship) > 34:
+                    flagship = flagship[:31].rstrip() + "..."
                 rows.append(Sku(
                     workload=WORKLOAD, service=SERVICE, sku=family, tier=vm_type,
-                    series=f"{len(current)} current series",
+                    series=flagship,
                     capacity=len(current) or None, capacity_unit="series",
                     memory_gb=None, lifecycle_status=GA, milestone=VM_FAMILY,
                     inventory_doc=doc.url,

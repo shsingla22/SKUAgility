@@ -1,16 +1,18 @@
 {
   "generated": "2026-08-18",
   "generator": "Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo",
-  "sku_count": 413,
+  "sku_count": 433,
   "workloads": [
     "Azure SQL Database",
     "Azure SQL Managed Instance",
-    "Azure Database for PostgreSQL"
+    "Azure Database for PostgreSQL",
+    "Azure Virtual Machines"
   ],
   "service_order": [
     "Azure SQL Database",
     "Azure SQL Managed Instance",
-    "Azure Database for PostgreSQL"
+    "Azure Database for PostgreSQL",
+    "Azure Virtual Machines"
   ],
   "date_confidence_legend": {
     "high": "a dated Microsoft announcement or release note names this change",
@@ -87,6 +89,16 @@
       "confidence": "medium",
       "source": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
       "note": "PUBLIC PREVIEW. Scaling between Burstable and v6 is not supported, and virtual network integration is not supported on v6.",
+      "retirement": null
+    },
+    {
+      "key": "vm-family",
+      "label": "Azure Virtual Machine size family",
+      "preview": null,
+      "ga": null,
+      "confidence": "unknown",
+      "source": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "note": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages.",
       "retirement": null
     },
     {
@@ -13738,6 +13750,554 @@
       "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
       "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
       "notes": ""
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "A-family",
+      "tier": "General purpose",
+      "series": "Av2-series",
+      "capacity": 1,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the A-family when the workload is general purpose.",
+        "Entry-level economical.",
+        "Current series in this family: Av2-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "B-family",
+      "tier": "General purpose",
+      "series": "Bsv2-series",
+      "capacity": 3,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the B-family when the workload is general purpose.",
+        "Current series in this family: Bsv2-series, Basv2-series, Bpsv2-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "D-family",
+      "tier": "General purpose",
+      "series": "Dsv7 and Ddsv7 series",
+      "capacity": 16,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the D-family when the workload is general purpose.",
+        "Enterprise-grade applications Relational databases In-memory caching Data analytics.",
+        "Current series in this family: Dsv7 and Ddsv7 series, Dlsv7 and Dldsv7 series, Dasv7 and Dadsv7 series, Dalsv7 and Daldsv7 series, Dpsv6 and Dplsv6-series, Dpdsv6 and Dpldsv6-series, Dasv6 and Dadsv6-series, Dalsv6 and Daldsv6-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "DC-family",
+      "tier": "General purpose",
+      "series": "DCasv5 and DCadsv5-series",
+      "capacity": 6,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the DC-family when the workload is general purpose.",
+        "D-family with confidential computing.",
+        "Current series in this family: DCasv5 and DCadsv5-series, DCas_cc_v5 and DCads_cc_v5-series, DCesv6-series, DCedsv6-series, DCasv6 and DCadsv6-series, DCsv3 and DCdsv3-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "F-family",
+      "tier": "Compute optimized",
+      "series": "Fasv7 and Fadsv7 series",
+      "capacity": 7,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the F-family when the workload is compute optimized.",
+        "Medium traffic web servers Network appliances Batch processes Application servers.",
+        "Current series in this family: Fasv7 and Fadsv7 series, Famsv7 and Famdsv7 series, Falsv7 and Faldsv7 series, Fasv6, Falsv6, and Famsv6-series, Fsv2-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "FX-family",
+      "tier": "Compute optimized",
+      "series": "FX-series",
+      "capacity": 3,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the FX-family when the workload is compute optimized.",
+        "Electronic Design Automation (EDA) Large memory relational databases Medium to large caches In-memory analytics.",
+        "Current series in this family: FX-series, FXmsv2-series, FXmdsv2-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "E-family",
+      "tier": "Memory optimized",
+      "series": "Esv7 and Edsv7-series",
+      "capacity": 9,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the E-family when the workload is memory optimized.",
+        "Relational databases Medium to large caches In-memory analytics.",
+        "Current series in this family: Esv7 and Edsv7-series, Easv7 and Eadsv7 series, Esv6 and Edsv6-series, Epsv6 and Epdsv6-series, Easv6 and Eadsv6-series, Ev5 and Esv5-series, Edv5 and Edsv5-series, Easv5 and Eadsv5-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "Eb-family",
+      "tier": "Memory optimized",
+      "series": "Ebsv6 and Ebdsv6-series",
+      "capacity": 2,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the Eb-family when the workload is memory optimized.",
+        "E-family with High remote storage performance.",
+        "Current series in this family: Ebsv6 and Ebdsv6-series, Ebdsv5 and Ebsv5-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "EC-family",
+      "tier": "Memory optimized",
+      "series": "ECasv6 and ECadsv6-series",
+      "capacity": 3,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the EC-family when the workload is memory optimized.",
+        "E-family with confidential computing.",
+        "Current series in this family: ECasv6 and ECadsv6-series, ECasv5 and ECadsv5-series, ECas_cc_v5 and ECads_cc_v5-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "M-family",
+      "tier": "Memory optimized",
+      "series": "Mbsv3 and Mbdsv3-series",
+      "capacity": 7,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the M-family when the workload is memory optimized.",
+        "Extremely large databases Large amounts of memory.",
+        "Current series in this family: Mbsv3 and Mbdsv3-series, Msv3 and Mdsv3 Medium Memory series, Msv3 and Mdsv3 High Memory series, Mdsv3 Very High Memory series, Msv2 and Mdsv2-series, Msv2 High Memory Series, M-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "Other families",
+      "tier": "Memory optimized",
+      "series": "Dnsv6 and Dndsv6-series",
+      "capacity": 3,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the Other families when the workload is memory optimized.",
+        "Older generation memory optimized sizes.",
+        "Current series in this family: Dnsv6 and Dndsv6-series, Dnlsv6 and Dnldsv6-series, Ensv6 and Endsv6-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "L-family",
+      "tier": "Storage optimized",
+      "series": "Lsv4-series",
+      "capacity": 5,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the L-family when the workload is storage optimized.",
+        "High disk throughput and IO Big Data SQL and NoSQL databases Data warehousing Large transactional databases.",
+        "Current series in this family: Lsv4-series, Lasv4-series, Laosv4-series, Lsv3-series, Lasv3-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "NC-family",
+      "tier": "GPU accelerated",
+      "series": "NC_RTXPRO6000BSE_v6-series",
+      "capacity": 6,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the NC-family when the workload is gpu accelerated.",
+        "Compute-intensive Graphics-intensive Visualization.",
+        "Current series in this family: NC_RTXPRO6000BSE_v6-series, NCads_H100_v5-series, NCCads_H100_v5-series, NCv3-series, NCasT4_v3-series, NC_A100_v4-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "ND-family",
+      "tier": "GPU accelerated",
+      "series": "ND GB300-v6-series",
+      "capacity": 7,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the ND-family when the workload is gpu accelerated.",
+        "Large memory compute-intensive Large memory graphics-intensive Large memory visualization.",
+        "Current series in this family: ND GB300-v6-series, ND GB200-v6-series, ND_MI300X_v5-series, ND-H200-v5-series, ND-H100-v5-series, NDm_A100_v4-series, ND_A100_v4-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "NG-family",
+      "tier": "GPU accelerated",
+      "series": "NGads V620-series",
+      "capacity": 1,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the NG-family when the workload is gpu accelerated.",
+        "Virtual Desktop (VDI) Cloud gaming.",
+        "Current series in this family: NGads V620-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "NV-family",
+      "tier": "GPU accelerated",
+      "series": "NV-series",
+      "capacity": 5,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the NV-family when the workload is gpu accelerated.",
+        "Virtual desktop (VDI) Single-precision compute Video encoding and rendering.",
+        "Current series in this family: NV-series, NVv3-series, NVv4-series, NVadsA10_v5-series, NVads V710 v5-series.",
+        "This family also has previous-generation series; prefer a current series for new deployments.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "NP-family",
+      "tier": "FPGA accelerated",
+      "series": "NP-series",
+      "capacity": 1,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the NP-family when the workload is fpga accelerated.",
+        "Machine learning inference Video transcoding Database search and analytics.",
+        "Current series in this family: NP-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "HB-family",
+      "tier": "High performance compute",
+      "series": "HBv2-series",
+      "capacity": 4,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the HB-family when the workload is high performance compute.",
+        "High memory bandwidth Fluid Dynamics Weather modeling.",
+        "Current series in this family: HBv2-series, HBv3-series, HBv4-series, HBv5-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "HC-family",
+      "tier": "High performance compute",
+      "series": "HC-series *(retiring May 31",
+      "capacity": 2,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the HC-family when the workload is high performance compute.",
+        "High density compute Finite element analysis Molecular dynamics Computational chemistry.",
+        "Current series in this family: HC-series *(retiring May 31, 2027)*.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
+    },
+    {
+      "workload": "virtual_machines",
+      "service": "Azure Virtual Machines",
+      "sku": "HX-family",
+      "tier": "High performance compute",
+      "series": "HX-series",
+      "capacity": 1,
+      "capacity_unit": "series",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "vm-family",
+      "inventory_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "recommend_when": [
+        "Choose from the HX-family when the workload is high performance compute.",
+        "Large memory capacity Electronic Design Automation (EDA).",
+        "Current series in this family: HX-series.",
+        "Check the family page for per-series specifications, regional availability and any retirement notice."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/virtual-machines/sizes/overview"
+      ],
+      "release_date": "not established",
+      "date_confidence": "unknown",
+      "milestone_label": "Azure Virtual Machine size family",
+      "release_doc": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "notes": "A VM family spans many series introduced over many years, so a single release date is not meaningful at family level. Individual series carry their own dates on their series pages."
     }
   ]
 }

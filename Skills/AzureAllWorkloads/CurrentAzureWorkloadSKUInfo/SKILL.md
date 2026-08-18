@@ -1,6 +1,6 @@
 ---
 name: CurrentAzureWorkloadSKUInfo
-description: Produce a current, fully sourced SKU catalog for a configurable set of Azure services — Azure SQL and Azure Database for PostgreSQL by default, with MySQL, Cache for Redis, App Service, Kubernetes Service and Virtual Machines available by flipping a flag. Output is sectioned per service, and every SKU gets its release date, lifecycle status (GA / public preview / deprecated / retiring), numbered plain-English conditions for when to recommend it taken from Microsoft's own guidance, and links to every page the data came from. Outputs a Markdown table and the filterable "Azure Workload SKU Atlas" HTML page. Use when asked for Azure SKUs for one or more services, which Azure tier or size to pick for a workload, what is deprecated, retiring or in preview, or to refresh an existing Azure SKU catalog.
+description: Produce a current, fully sourced SKU catalog for a configurable set of Azure services — Azure SQL, Azure Database for PostgreSQL and Azure Virtual Machines by default, with MySQL, Cache for Redis, App Service and Kubernetes Service available by flipping a flag. Output is sectioned per service with the newest SKUs first and collapsible sections in the Atlas, and every SKU gets its release date, lifecycle status (GA / public preview / deprecated / retiring), numbered plain-English conditions for when to recommend it taken from Microsoft's own guidance, and links to every page the data came from. Outputs a Markdown table and the filterable "Azure Workload SKU Atlas" HTML page. Use when asked for Azure SKUs for one or more services, which Azure tier or size to pick for a workload, what is deprecated, retiring or in preview, or to refresh an existing Azure SKU catalog.
 ---
 
 # CurrentAzureWorkloadSKUInfo
@@ -29,14 +29,15 @@ every implemented service with an `enabled` flag:
 ```json
 { "key": "azure_sql",  "display": "Azure SQL (Database + Managed Instance)", "enabled": true  },
 { "key": "postgresql", "display": "Azure Database for PostgreSQL",           "enabled": true  },
+{ "key": "virtual_machines", "display": "Azure Virtual Machines",             "enabled": true  },
 { "key": "mysql",      "display": "Azure Database for MySQL",                "enabled": false },
 { "key": "redis",      "display": "Azure Cache for Redis",                   "enabled": false },
 { "key": "app_service","display": "Azure App Service",                       "enabled": false },
-{ "key": "aks",        "display": "Azure Kubernetes Service",                "enabled": false },
-{ "key": "virtual_machines", "display": "Azure Virtual Machines",            "enabled": false }
+{ "key": "aks",        "display": "Azure Kubernetes Service",                "enabled": false }
 ```
 
-**Azure SQL and Azure Database for PostgreSQL are enabled by default.** The
+**Azure SQL, Azure Database for PostgreSQL and Azure Virtual Machines are
+enabled by default.** The
 others are fully implemented and verified — flip `enabled` to `true` to include
 one. Everything follows this file: only enabled services are fetched, only they
 appear in the table, and verification checks exactly that set.
@@ -101,7 +102,7 @@ Three details worth knowing when reading a section:
 | Azure Cache for Redis | off | Tier | Overview + what's-new |
 | Azure App Service | off | Plan tier | Hosting-plans page |
 | Azure Kubernetes Service | off | Pricing tier | Pricing-tiers page |
-| Azure Virtual Machines | off | **Size family, not size** | Sizes overview |
+| Azure Virtual Machines | **on** | **Size family, not size** | Sizes overview |
 
 Two deliberate boundaries, both worth stating when you report results:
 
@@ -149,10 +150,12 @@ Some milestones ship with `confidence="unknown"` and a release date of
 *not established*. That is deliberate: no date could be sourced, and a guess
 would be worse than a gap. Verification counts them every run.
 
-With the default service set (Azure SQL + PostgreSQL) there are none — every
-date is sourced. They appear once the optional services are enabled: the older
-App Service tiers, the AKS tiers, the original Redis Basic/Standard/Premium GA,
-and VM families, where a single family-level date is not meaningful. Finding a
+In the default service set the 20 VM families carry them, because a family spans
+many series introduced over many years and no single family-level date is
+meaningful; the individual series carry their own dates on their series pages.
+Azure SQL and PostgreSQL are fully dated. More appear once the remaining
+services are enabled: the older App Service tiers, the AKS tiers and the
+original Redis Basic/Standard/Premium GA. Finding a
 dated Microsoft announcement for any of these is the highest-value improvement
 to this catalog.
 
@@ -189,7 +192,9 @@ silently rewrite correct data.
    boundaries above.
 
 Publish `azure-workload-skus.html` as an artifact if the user wants a shareable
-page; it is self-contained and renders under a strict CSP.
+page; it is self-contained and renders under a strict CSP. Each service section
+on that page folds shut — click the section header, or use *Collapse all* — so a
+reader can skim the whole catalog at service level and open only what they need.
 
 **Do not report results without a passing verification run**, which includes
 checking that every cited URL still resolves. Microsoft retires announcement

@@ -2476,5 +2476,125 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 408.0,
   "series": "Standard-series (Gen5)"
+ },
+ "Azure Virtual Machines :: A-family [General purpose]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Av2-series"
+ },
+ "Azure Virtual Machines :: B-family [General purpose]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Bsv2-series"
+ },
+ "Azure Virtual Machines :: D-family [General purpose]": {
+  "capacity": 16,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dsv7 and Ddsv7 series"
+ },
+ "Azure Virtual Machines :: DC-family [General purpose]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "DCasv5 and DCadsv5-series"
+ },
+ "Azure Virtual Machines :: E-family [Memory optimized]": {
+  "capacity": 9,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Esv7 and Edsv7-series"
+ },
+ "Azure Virtual Machines :: EC-family [Memory optimized]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "ECasv6 and ECadsv6-series"
+ },
+ "Azure Virtual Machines :: Eb-family [Memory optimized]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Ebsv6 and Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: F-family [Compute optimized]": {
+  "capacity": 7,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Fasv7 and Fadsv7 series"
+ },
+ "Azure Virtual Machines :: FX-family [Compute optimized]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "FX-series"
+ },
+ "Azure Virtual Machines :: HB-family [High performance compute]": {
+  "capacity": 4,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "HBv2-series"
+ },
+ "Azure Virtual Machines :: HC-family [High performance compute]": {
+  "capacity": 2,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "HC-series *(retiring May 31"
+ },
+ "Azure Virtual Machines :: HX-family [High performance compute]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "HX-series"
+ },
+ "Azure Virtual Machines :: L-family [Storage optimized]": {
+  "capacity": 5,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Lsv4-series"
+ },
+ "Azure Virtual Machines :: M-family [Memory optimized]": {
+  "capacity": 7,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Mbsv3 and Mbdsv3-series"
+ },
+ "Azure Virtual Machines :: NC-family [GPU accelerated]": {
+  "capacity": 6,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "NC_RTXPRO6000BSE_v6-series"
+ },
+ "Azure Virtual Machines :: ND-family [GPU accelerated]": {
+  "capacity": 7,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "ND GB300-v6-series"
+ },
+ "Azure Virtual Machines :: NG-family [GPU accelerated]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "NGads V620-series"
+ },
+ "Azure Virtual Machines :: NP-family [FPGA accelerated]": {
+  "capacity": 1,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "NP-series"
+ },
+ "Azure Virtual Machines :: NV-family [GPU accelerated]": {
+  "capacity": 5,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "NV-series"
+ },
+ "Azure Virtual Machines :: Other families [Memory optimized]": {
+  "capacity": 3,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Dnsv6 and Dndsv6-series"
  }
 }

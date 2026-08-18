@@ -60,7 +60,7 @@
       "key": "virtual_machines",
       "display": "Azure Virtual Machines",
       "provider": "virtual_machines",
-      "enabled": false,
+      "enabled": true,
       "note": "Per size family, not per size - Azure documents ~800 sizes and the authoritative per-size list is the Resource SKUs API."
     }
   ]

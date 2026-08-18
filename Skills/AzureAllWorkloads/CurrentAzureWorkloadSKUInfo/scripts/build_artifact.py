@@ -256,8 +256,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     background: var(--accent); border-color: var(--accent); color: var(--on-accent);
     font-weight: 600;
   }
-  .theme {
-    margin-left: auto; background: var(--ground); color: var(--ink-2);
+  .theme { background: var(--ground); color: var(--ink-2);
     border: 1px solid var(--line); border-radius: 3px; padding: 6px 12px;
     font: inherit; font-size: 12.5px; cursor: pointer;
   }
@@ -279,9 +278,24 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     color: var(--ink-2); text-align: left; padding: 10px 12px;
     border-bottom: 1px solid var(--line); white-space: nowrap; font-weight: 600;
   }
-  tbody tr.section td {
-    background: var(--surface-2); border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line); padding: 9px 12px 8px;
+  tbody tr.section td { padding: 0; border-top: 1px solid var(--line);
+                        border-bottom: 1px solid var(--line); }
+  .section-toggle {
+    width: 100%; display: flex; align-items: baseline; gap: 10px;
+    background: var(--surface-2); color: var(--ink); border: 0;
+    padding: 9px 12px 8px; font: inherit; text-align: left; cursor: pointer;
+  }
+  .section-toggle:hover { background: var(--line-2); }
+  .section-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+  .section-caret {
+    color: var(--ink-3); font-size: 9px; transition: transform .15s;
+    transform: rotate(90deg); flex: none;
+  }
+  .section-toggle[aria-expanded="false"] .section-caret { transform: rotate(0deg); }
+  .section-hint {
+    margin-left: auto; color: var(--ink-3); font-size: 10.5px; letter-spacing: .08em;
+    text-transform: uppercase;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
   .section-name {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -374,7 +388,8 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       Compute SKUs for the Azure services this catalog is configured to cover, grouped by
       service and newest first — each with the release that made it orderable, its lifecycle
       state, and the conditions for recommending it. Open any row for the guidance and its
-      sources. Every fact traces to Microsoft documentation.
+      sources, or collapse a whole service to skim the rest. Every fact traces to Microsoft
+      documentation.
     </p>
     <div class="stats">
       <div class="stat"><b id="st-total">—</b><span>SKUs documented</span></div>
@@ -392,6 +407,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     <input id="q" class="search" type="search" placeholder="Search SKU, tier, or hardware…"
            aria-label="Search SKUs">
     <div class="group" id="f-ls" data-facet="ls"><span class="group-label">Status</span></div>
+    <button class="theme" id="fold" type="button" style="margin-left:auto">Collapse all</button>
     <button class="theme" id="theme" type="button">Theme</button>
   </div>
 </div>
@@ -484,6 +500,14 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
 
   // ---- facets
   var state = { q: '', svc: null, ls: null, t: null };
+  var collapsed = {};        // service name -> true when folded shut
+
+  function allCollapsed(list) {
+    var svcs = {};
+    list.forEach(function (r) { svcs[r.svc] = 1; });
+    var names = Object.keys(svcs);
+    return names.length > 0 && names.every(function (s) { return collapsed[s]; });
+  }
 
   function uniq(key) {
     var seen = [];
@@ -589,9 +613,15 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     var list = rows.filter(matches);
     tbody.textContent = '';
     empty.hidden = list.length > 0;
-    countEl.textContent = list.length === rows.length
+    var shown = list.filter(function (r) { return !collapsed[r.svc]; }).length;
+    var base = list.length === rows.length
       ? 'Showing all ' + rows.length + ' SKUs'
       : 'Showing ' + list.length + ' of ' + rows.length + ' SKUs';
+    countEl.textContent = shown === list.length
+      ? base
+      : base + ' \u00b7 ' + (list.length - shown) + ' hidden in collapsed sections';
+
+    foldBtn.textContent = allCollapsed(list) ? 'Expand all' : 'Collapse all';
 
     var frag = document.createDocumentFragment();
     var order = D.order && D.order.length ? D.order : [];
@@ -604,16 +634,29 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     seen.forEach(function (s) { if (ordered.indexOf(s) === -1) ordered.push(s); });
 
     ordered.forEach(function (svc) {
+    var open = !collapsed[svc];
     var head = el('tr', 'section');
     var hcell = document.createElement('td');
     hcell.colSpan = 9;
-    hcell.appendChild(el('span', 'section-name', svc));
-    hcell.appendChild(document.createTextNode('  '));
-    hcell.appendChild(el('span', 'section-count',
+
+    var toggle = el('button', 'section-toggle');
+    toggle.type = 'button';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.appendChild(el('span', 'section-caret', '\u25b6'));
+    toggle.appendChild(el('span', 'section-name', svc));
+    toggle.appendChild(el('span', 'section-count',
       groups[svc].length + (groups[svc].length === 1 ? ' SKU' : ' SKUs')
       + ' \u00b7 newest first'));
+    toggle.appendChild(el('span', 'section-hint', open ? 'hide' : 'show'));
+    toggle.addEventListener('click', function () {
+      collapsed[svc] = open;      // flip it
+      render();
+    });
+    hcell.appendChild(toggle);
     head.appendChild(hcell);
     frag.appendChild(head);
+
+    if (!open) { return; }
 
     groups[svc].forEach(function (r) {
       var sc = statusClass(r.ls);
@@ -670,6 +713,17 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     });
     tbody.appendChild(frag);
   }
+
+  // ---- fold every section at once, or unfold them
+  var foldBtn = document.getElementById('fold');
+  foldBtn.addEventListener('click', function () {
+    var visible = rows.filter(matches);
+    var fold = !allCollapsed(visible);
+    visible.forEach(function (r) {
+      if (fold) { collapsed[r.svc] = true; } else { delete collapsed[r.svc]; }
+    });
+    render();
+  });
 
   // ---- theme toggle
   var order = ['', 'light', 'dark'];
