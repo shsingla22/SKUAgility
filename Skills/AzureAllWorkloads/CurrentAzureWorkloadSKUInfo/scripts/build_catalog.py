@@ -239,7 +239,7 @@ def main() -> int:
     for provider in modules:
         try:
             docs = {k: load(specs[k], args.cache) for k in provider.SOURCES}
-            if provider.WORKLOAD == "azure_sql":
+            if getattr(provider, "WANTS_CACHE", False) or provider.WORKLOAD == "azure_sql":
                 got = provider.collect(docs, cache=args.cache, offline=args.offline)
             else:
                 got = provider.collect(docs)

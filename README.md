@@ -5,7 +5,7 @@ SKU agility for all workloads.
 A catalog of the compute SKUs offered by Azure data services — what exists today, what tier
 and hardware family it belongs to, when it shipped, whether it is still a good idea, and
 where every one of those claims came from. Built from Microsoft documentation by two
-reusable skills. **433 SKUs across Azure SQL, Azure Database for PostgreSQL and Azure
+reusable skills. **1,378 SKUs across Azure SQL, Azure Database for PostgreSQL and Azure
 Virtual Machines** by default; four more services ship switched off behind a config flag.
 
 ## What's here
@@ -45,7 +45,7 @@ and generate everything, then verify what they produced:
 
 | Skill | Covers | Granularity |
 | --- | --- | --- |
-| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL, PostgreSQL and Virtual Machines on by default; MySQL, Cache for Redis, App Service and AKS available | Per size, except VMs (per family) |
+| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL, PostgreSQL and Virtual Machines on by default; MySQL, Cache for Redis, App Service and AKS available | Per individual size |
 | `CurrentAzureSQLSKUInfo` | Azure SQL Database + Managed Instance | Every service-level objective |
 
 Which services the cross-workload catalog covers is set in
@@ -69,10 +69,11 @@ milestones, and a provider module — described in the
 - **Azure SQL Fsv2-series is deprecated**, retiring 2026-10-01 — 11 SKUs.
 - **Four typos in Microsoft's published PostgreSQL compute table** are corrected explicitly
   and listed in the output rather than repeated or silently dropped.
-- **Azure SQL and PostgreSQL are fully dated.** The 20 VM families read *not established*,
-  because a family spans series introduced over many years and no family-level date is
-  meaningful. Enabling the remaining services adds 14 more. None of them carry a guess, and
-  every run counts them.
+- **Azure Virtual Machines are enumerated per size** — 965 sizes across 131 series, read
+  from each series' own "Sizes in series" table, with vCPU and memory for every one.
+- **Azure SQL and PostgreSQL are fully dated.** About 60% of VM sizes carry a dated GA
+  announcement; the rest read *not established* rather than carrying a guess, and every run
+  counts them.
 - If you enable Redis: **every Azure Cache for Redis tier is retiring.** Enterprise and
   Enterprise Flash on 2027-03-31, Basic/Standard/Premium on 2028-09-30, with creation
   already blocked for new customers since 2026-04-01. Microsoft directs new work to Azure

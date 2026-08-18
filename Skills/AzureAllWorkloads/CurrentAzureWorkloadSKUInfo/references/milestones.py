@@ -204,14 +204,18 @@ AKS_PREMIUM = milestone(
 )
 
 # --------------------------------------------------------------------------
-# Azure Virtual Machines — recorded at family level
+# Azure Virtual Machines — one milestone per series generation
+#
+# VM sizes are announced per series generation, so the milestones live in their
+# own module and are registered here. See references/vm_milestones.py.
 # --------------------------------------------------------------------------
 
-VM_FAMILY = milestone(
-    key="vm-family", label="Azure Virtual Machine size family",
-    preview=None, ga=None, confidence="unknown",
-    source="https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
-    note="A VM family spans many series introduced over many years, so a single "
-         "release date is not meaningful at family level. Individual series carry "
-         "their own dates on their series pages.",
-)
+from vm_milestones import ALL as _VM_MILESTONES              # noqa: E402
+
+for _entry in _VM_MILESTONES:
+    milestone(
+        key=_entry["key"], label=_entry["label"],
+        preview=_entry["preview"], ga=_entry["ga"],
+        confidence=_entry["confidence"], source=_entry["source"],
+        note=_entry.get("note", ""),
+    )

@@ -77,14 +77,23 @@ def num(text: str) -> float | None:
 
 
 def sentences(text: str, limit: int = 8) -> list[str]:
-    """Split documentation prose into clean, numbered-list-ready conditions."""
+    """Split documentation prose into clean, numbered-list-ready conditions.
+
+    HTML entities are decoded before splitting. Without that, "Intel&reg; Xeon"
+    splits on the entity's semicolon and yields the fragment "This new processor
+    features Intel&reg." instead of a usable sentence.
+    """
+    import html
     import re
+    text = html.unescape(text)
     text = re.sub(r"\s+", " ", text).strip()
     parts = re.split(r"(?<=[.;])\s+(?=[A-Z(])", text)
     out = []
     for p in parts:
         p = p.strip().rstrip(";").strip()
-        if len(p) < 12:
+        if len(p) < 25:                 # drop stubs left by lists and headings
+            continue
+        if len(p.split()) < 5:          # and anything that is not a real sentence
             continue
         if not p.endswith("."):
             p += "."

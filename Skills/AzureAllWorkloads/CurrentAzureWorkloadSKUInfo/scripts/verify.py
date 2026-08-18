@@ -157,6 +157,26 @@ def main() -> int:
     if not any(problems.values()):
         ok("every SKU has a release date, lifecycle status, guidance and both sources")
 
+    # ---- Virtual Machines are individual sizes, not families
+    vms = [s for s in skus if s["service"] == "Azure Virtual Machines"]
+    if vms:
+        no_spec = [s["sku"] for s in vms
+                   if s["capacity"] is None or s["memory_gb"] is None]
+        not_size = [s["sku"] for s in vms if not s["sku"].startswith("Standard_")]
+        series = {s["series"] for s in vms}
+        if not_size:
+            fail(f"{len(not_size)} VM rows are not individual sizes "
+                 f"(e.g. {not_size[0]}) — the provider fell back to family level")
+        elif no_spec:
+            fail(f"{len(no_spec)} VM sizes have no vCPU or memory "
+                 f"(e.g. {no_spec[0]}) — a non-Basics table was parsed")
+        elif len(vms) < 800 or len(series) < 100:
+            fail(f"only {len(vms)} VM sizes across {len(series)} series — "
+                 "expected far more; the series pages changed shape")
+        else:
+            ok(f"{len(vms)} individual VM sizes across {len(series)} series, "
+               "all with vCPU and memory")
+
     # ---- newest SKU first within each service section
     def rkey(d: str) -> tuple:
         if not d or d == "not established":
@@ -188,11 +208,13 @@ def main() -> int:
     allowed = {"Generally available", "Public preview"}
     unknown = {s["lifecycle_status"] for s in skus
                if s["lifecycle_status"] not in allowed
-               and not s["lifecycle_status"].startswith(("Deprecated", "Retiring"))}
+               and not s["lifecycle_status"].startswith(
+                   ("Deprecated", "Retiring", "Previous generation"))}
     if unknown:
         fail(f"unexpected lifecycle values: {sorted(unknown)}")
     else:
-        ok("lifecycle values are all GA / preview / deprecated / retiring")
+        ok("lifecycle values are all GA / preview / deprecated / retiring / "
+           "previous generation")
 
     # ---- a preview SKU must be dated by its preview announcement
     for s in skus:

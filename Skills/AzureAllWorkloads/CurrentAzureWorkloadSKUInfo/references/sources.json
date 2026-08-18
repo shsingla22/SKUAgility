@@ -61,7 +61,7 @@
       "strategy": "raw",
       "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-compute-docs/main/articles/virtual-machines/sizes/overview.md",
       "live_url": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
-      "reads": "VM size families grouped by type, with the workloads each family targets."
+      "reads": "The VM size family list per workload type. This page is the entry point: the provider follows it to each family page, then to each series page, and reads the 'Sizes in series' Basics table on every one - roughly 130 pages - to get individual sizes."
     }
   }
 }

@@ -102,15 +102,18 @@ Three details worth knowing when reading a section:
 | Azure Cache for Redis | off | Tier | Overview + what's-new |
 | Azure App Service | off | Plan tier | Hosting-plans page |
 | Azure Kubernetes Service | off | Pricing tier | Pricing-tiers page |
-| Azure Virtual Machines | **on** | **Size family, not size** | Sizes overview |
+| Azure Virtual Machines | **on** | **Every individual size** (~965 across ~131 series) | Sizes overview -> family pages -> series pages |
 
 Two deliberate boundaries, both worth stating when you report results:
 
-- **Virtual Machines are family-level.** Azure documents roughly 800 individual
-  sizes across more than a hundred pages, and the authoritative per-size list is
-  the Resource SKUs API, which needs a subscription and credentials. Family
-  level is what the documentation states cleanly in one place and is the level
-  at which "which VM should I use" is actually answered.
+- **Virtual Machines are enumerated per size.** The provider crawls the sizes
+  overview to the family pages, then to each of the ~131 series pages, and reads
+  the "Sizes in series" **Basics** table on each one. Only that table is read:
+  the Local Storage, Remote Storage, Network and Accelerator tables on the same
+  page repeat the size names with different columns, and on some pages in a
+  different name form entirely (HBv5 lists `Standard_HB368-336rs_v5` in Basics
+  but `Standard_HB368_336rsv5` in the storage tables), so matching every "Size
+  Name" table invents sizes and reads a disk count as a vCPU count.
 - **Azure SQL is delegated, not re-derived.** `providers/azure_sql.py` runs the
   sibling skill and adopts its output, milestones included. One source of truth
   for Azure SQL; if that skill is missing the provider fails loudly rather than
@@ -150,12 +153,15 @@ Some milestones ship with `confidence="unknown"` and a release date of
 *not established*. That is deliberate: no date could be sourced, and a guess
 would be worse than a gap. Verification counts them every run.
 
-In the default service set the 20 VM families carry them, because a family spans
-many series introduced over many years and no single family-level date is
-meaningful; the individual series carry their own dates on their series pages.
-Azure SQL and PostgreSQL are fully dated. More appear once the remaining
-services are enabled: the older App Service tiers, the AKS tiers and the
-original Redis Basic/Standard/Premium GA. Finding a
+Azure SQL and PostgreSQL are fully dated. Virtual Machines are dated per series
+generation in `references/vm_milestones.py`: roughly 60% of sizes carry a dated
+Microsoft GA announcement, and the rest - mostly the specialised M, N, L, H and
+Fx series - read *not established*.
+
+Closing those gaps is mechanical and is the highest-value follow-up: find the
+"Announcing ... generally available" post for the generation, add a block to
+`vm_milestones.py` with its series prefixes, and every size in those series
+inherits the date. Do not infer a date from a neighbouring generation. Finding a
 dated Microsoft announcement for any of these is the highest-value improvement
 to this catalog.
 
