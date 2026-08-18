@@ -157,6 +157,33 @@ def main() -> int:
     if not any(problems.values()):
         ok("every SKU has a release date, lifecycle status, guidance and both sources")
 
+    # ---- newest SKU first within each service section
+    def rkey(d: str) -> tuple:
+        if not d or d == "not established":
+            return (-1, -1, -1)
+        try:
+            nums = [int(x) for x in d.split("-")[:3]]
+        except ValueError:
+            return (-1, -1, -1)
+        return tuple(nums + [0] * (3 - len(nums)))
+
+    out_of_order = []
+    seen_service, prev = None, None
+    for s in skus:
+        if s["service"] != seen_service:
+            seen_service, prev = s["service"], None
+        cur = rkey(s["release_date"])
+        if prev is not None and cur > prev:
+            out_of_order.append(
+                f"{s['service']}: {s['sku']} ({s['release_date']}) appears after an "
+                f"older SKU")
+        prev = cur
+    if out_of_order:
+        fail(f"{len(out_of_order)} SKUs break the newest-first ordering "
+             f"(e.g. {out_of_order[0]})")
+    else:
+        ok("each service section is ordered newest release first")
+
     # ---- lifecycle values are from the known set
     allowed = {"Generally available", "Public preview"}
     unknown = {s["lifecycle_status"] for s in skus

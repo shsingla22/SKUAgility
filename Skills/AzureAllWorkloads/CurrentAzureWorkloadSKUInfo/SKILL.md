@@ -10,7 +10,7 @@ services it is configured to cover, and hands back:
 
 | Output | What it is |
 | --- | --- |
-| `azure-workload-sku-table.md` | The full table, **one section per Azure service**, with a contents index |
+| `azure-workload-sku-table.md` | The full table, **one section per Azure service, newest SKUs first**, with a contents index |
 | `azure-workload-skus.html` | The **Azure Workload SKU Atlas** — filterable page |
 | `azure-workload-skus.json` | Machine-readable catalog + milestones + errata |
 | `azure-workload-skus.csv` | Flat table for spreadsheets |
@@ -71,6 +71,25 @@ outbound HTTPS.
 
 Exit codes: `0` clean, `1` a stage failed, `2` verified but the catalog moved
 and needs review.
+
+## Ordering
+
+Within each service section the newest SKUs come first, by release date. The
+ordering is applied once in `build_catalog.order_rows`, before anything is
+written, so the Markdown table, the CSV, the JSON and the Atlas all present the
+same order — and `verify.py` asserts it on every run.
+
+Three details worth knowing when reading a section:
+
+1. Dates arrive at whatever precision Microsoft published — `2025-11-14`,
+   `2025-11` or a bare `2025`. A coarser date sorts as the start of its period,
+   so `2016-08` ranks above a bare `2016`.
+2. SKUs sharing a release date keep the order their provider produced them in,
+   which is Microsoft's own documentation order. The sort is stable, so this is
+   deterministic run to run.
+3. SKUs whose date could not be sourced (`not established`) collect at the
+   **bottom** of their section rather than the top, so an unsourced date never
+   masquerades as recent news.
 
 ## Coverage, and where it stops
 
@@ -163,6 +182,8 @@ silently rewrite correct data.
 1. The deliverables, with the Atlas linked or attached.
 2. Headline counts per service — the table is sectioned per service, so report
    it that way — plus the overall GA / preview / deprecated / retiring split.
+   The top of each section is the newest thing Azure shipped for that service,
+   which is usually the most useful sentence you can write about it.
 3. Anything retiring or in preview — that is what changes decisions.
 4. The honest gaps: how many dates are *not established*, and the coverage
    boundaries above.

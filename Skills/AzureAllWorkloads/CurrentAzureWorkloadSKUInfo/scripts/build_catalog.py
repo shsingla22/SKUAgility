@@ -45,6 +45,49 @@ def load_specs() -> dict:
     return specs
 
 
+def release_sort_key(date: str) -> tuple[int, int, int]:
+    """Sort key for a release date, newest first when reversed.
+
+    Dates arrive at whatever precision Microsoft published: "2025-11-14",
+    "2025-11", or bare "2025". A coarser date sorts as the start of its period,
+    so 2016-08 is newer than a bare 2016. "not established" sorts oldest so
+    undated SKUs collect at the bottom of their section rather than the top.
+    """
+    if not date or date == NOT_ESTABLISHED:
+        return (-1, -1, -1)
+    parts = date.split("-")
+    try:
+        nums = [int(p) for p in parts[:3]]
+    except ValueError:
+        return (-1, -1, -1)
+    while len(nums) < 3:
+        nums.append(0)
+    return (nums[0], nums[1], nums[2])
+
+
+def order_rows(rows: list, service_order: list[str]) -> list:
+    """Group by service in configured order, newest SKU first within each group.
+
+    Applied once, before anything is emitted, so the Markdown table, the CSV,
+    the JSON and the Atlas all present the same order. Python's sort is stable,
+    so SKUs sharing a release date keep the order their provider produced them
+    in — which is the documentation's own order, and is deterministic.
+    """
+    groups: dict[str, list] = {}
+    for r in rows:
+        groups.setdefault(r.service, []).append(r)
+
+    ordered_services = [s for s in service_order if s in groups]
+    ordered_services += [s for s in groups if s not in ordered_services]
+
+    out = []
+    for svc in ordered_services:
+        group = groups[svc]
+        group.sort(key=lambda r: release_sort_key(r.release_date), reverse=True)
+        out += group
+    return out
+
+
 def numbered(items: list[str]) -> str:
     return "<br>".join(f"{i}. {t}" for i, t in enumerate(items, 1))
 
@@ -73,13 +116,12 @@ def sku_row(i: int, r) -> str:
 def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
                    order: list[str]) -> None:
     """One section per Azure service, each with its own table."""
+    # rows arrive already grouped by service and sorted newest-first within each
+    # group (see order_rows), so this only needs to preserve what it is given.
     by_service: dict[str, list] = {}
     for r in rows:
         by_service.setdefault(r.service, []).append(r)
-
-    # Preserve the order services were configured in, not alphabetical.
-    ordered = [s for s in order if s in by_service]
-    ordered += [s for s in by_service if s not in ordered]
+    ordered = list(by_service)
 
     lines = [
         "# Azure workload SKU catalog",
@@ -113,6 +155,10 @@ def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
         f"*{NOT_ESTABLISHED}* rather than carrying a guess.",
         "- **Lifecycle status** — read from the current Microsoft documentation, "
         "including retirement dates where Microsoft has announced them.",
+        "- **Ordering** — within each service the newest SKUs come first, by "
+        "release date. SKUs sharing a date keep Microsoft's own documentation "
+        "order, and any SKU whose date could not be sourced sits at the bottom "
+        "of its section.",
         "- **When to recommend** — taken from Microsoft's own guidance "
         "(\"Target workloads\", \"When to use\", service-tier \"when to choose\" "
         "sections and tier descriptions) on the pages linked in the last column.",
@@ -212,6 +258,8 @@ def main() -> int:
               "complete while missing a whole service, so this is a hard failure.",
               file=sys.stderr)
         return 1
+
+    rows = order_rows(rows, order)
 
     errata = registry.applied_errata(modules)
     os.makedirs(args.out_dir, exist_ok=True)

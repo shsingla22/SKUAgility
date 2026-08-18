@@ -372,9 +372,9 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     <h1>Azure Workload SKU Atlas</h1>
     <p class="sub">
       Compute SKUs for the Azure services this catalog is configured to cover, grouped by
-      service — each with the release that made it orderable, its lifecycle state, and the
-      conditions for recommending it. Open any row for the guidance and its sources. Every
-      fact traces to Microsoft documentation.
+      service and newest first — each with the release that made it orderable, its lifecycle
+      state, and the conditions for recommending it. Open any row for the guidance and its
+      sources. Every fact traces to Microsoft documentation.
     </p>
     <div class="stats">
       <div class="stat"><b id="st-total">—</b><span>SKUs documented</span></div>
@@ -606,11 +606,12 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     ordered.forEach(function (svc) {
     var head = el('tr', 'section');
     var hcell = document.createElement('td');
-    hcell.colSpan = 10;
+    hcell.colSpan = 9;
     hcell.appendChild(el('span', 'section-name', svc));
     hcell.appendChild(document.createTextNode('  '));
     hcell.appendChild(el('span', 'section-count',
-      groups[svc].length + (groups[svc].length === 1 ? ' SKU' : ' SKUs')));
+      groups[svc].length + (groups[svc].length === 1 ? ' SKU' : ' SKUs')
+      + ' \u00b7 newest first'));
     head.appendChild(hcell);
     frag.appendChild(head);
 
