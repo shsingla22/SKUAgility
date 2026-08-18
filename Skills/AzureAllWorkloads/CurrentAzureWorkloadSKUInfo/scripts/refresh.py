@@ -2,7 +2,10 @@
 """Run the whole skill: fetch, build, diff, verify.
 
     python3 scripts/refresh.py [--out-dir DIR] [--offline] [--skip-links]
-                               [--workload NAME] [--accept-baseline]
+                               [--services LIST] [--accept-baseline]
+
+Which Azure services are built comes from references/config.json; --services
+overrides it for one run ("azure_sql,postgresql" or "all").
 
 Stages:
   1. fetch    pull every documentation source declared in references/sources.json
@@ -77,7 +80,7 @@ def main() -> int:
     ap.add_argument("--cache", default=os.path.join(HERE, ".cache"))
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--skip-links", action="store_true")
-    ap.add_argument("--workload")
+    ap.add_argument("--services", help="comma-separated service keys, or 'all'; defaults to references/config.json")
     ap.add_argument("--accept-baseline", action="store_true")
     ap.add_argument("--as-of")
     args = ap.parse_args()
@@ -85,16 +88,16 @@ def main() -> int:
     fetch_args = ["--cache", args.cache]
     if args.offline:
         fetch_args.append("--offline")
-    if args.workload:
-        fetch_args += ["--workload", args.workload]
+    if args.services:
+        fetch_args += ["--services", args.services]
     if run("fetch_docs.py", *fetch_args) != 0:
         print("\nfetch failed — a catalog built from partial sources would look "
               "complete while missing a service", file=sys.stderr)
         return 1
 
     build_args = ["--cache", args.cache, "--out-dir", args.out_dir]
-    if args.workload:
-        build_args += ["--workload", args.workload]
+    if args.services:
+        build_args += ["--services", args.services]
     if args.offline:
         build_args.append("--offline")
     if args.as_of:

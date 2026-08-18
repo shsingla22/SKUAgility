@@ -88,7 +88,8 @@ def build(out_dir: str) -> None:
         })
 
     payload = json.dumps(
-        {"rows": rows, "guidance": guidance, "asOf": src["generated"]},
+        {"rows": rows, "guidance": guidance, "asOf": src["generated"],
+         "order": src.get("service_order", [])},
         separators=(",", ":"))
 
     html = TEMPLATE.replace("__DATA__", payload)
@@ -278,6 +279,17 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     color: var(--ink-2); text-align: left; padding: 10px 12px;
     border-bottom: 1px solid var(--line); white-space: nowrap; font-weight: 600;
   }
+  tbody tr.section td {
+    background: var(--surface-2); border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line); padding: 9px 12px 8px;
+  }
+  .section-name {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+  }
+  .section-count { color: var(--ink-3); font-size: 11px; letter-spacing: .06em;
+                   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
   tbody tr.sku { border-top: 1px solid var(--line-2); }
   tbody tr.sku:first-child { border-top: 0; }
   tbody tr.sku:hover { background: var(--surface-2); }
@@ -359,10 +371,10 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     <p class="eyebrow">SKUAgility · catalog <span id="asof"></span></p>
     <h1>Azure Workload SKU Atlas</h1>
     <p class="sub">
-      Compute SKUs across Azure&rsquo;s major workload services — databases, caching, web,
-      Kubernetes and virtual machines — with the release that made each one orderable, its
-      lifecycle state, and the conditions for recommending it. Open any row for the
-      guidance and its sources. Every fact traces to Microsoft documentation.
+      Compute SKUs for the Azure services this catalog is configured to cover, grouped by
+      service — each with the release that made it orderable, its lifecycle state, and the
+      conditions for recommending it. Open any row for the guidance and its sources. Every
+      fact traces to Microsoft documentation.
     </p>
     <div class="stats">
       <div class="stat"><b id="st-total">—</b><span>SKUs documented</span></div>
@@ -400,7 +412,6 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
         <tr>
           <th></th>
           <th>SKU</th>
-          <th>Service</th>
           <th>Tier</th>
           <th>Series / family</th>
           <th>Size</th>
@@ -540,7 +551,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
   function detailRow(r) {
     var tr = el('tr', 'detail');
     var td = document.createElement('td');
-    td.colSpan = 10;
+    td.colSpan = 9;
     var box = el('div', 'detail-in');
 
     var left = el('div', 'detail');
@@ -583,7 +594,27 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       : 'Showing ' + list.length + ' of ' + rows.length + ' SKUs';
 
     var frag = document.createDocumentFragment();
+    var order = D.order && D.order.length ? D.order : [];
+    var groups = {}, seen = [];
     list.forEach(function (r) {
+      if (!groups[r.svc]) { groups[r.svc] = []; seen.push(r.svc); }
+      groups[r.svc].push(r);
+    });
+    var ordered = order.filter(function (s) { return groups[s]; });
+    seen.forEach(function (s) { if (ordered.indexOf(s) === -1) ordered.push(s); });
+
+    ordered.forEach(function (svc) {
+    var head = el('tr', 'section');
+    var hcell = document.createElement('td');
+    hcell.colSpan = 10;
+    hcell.appendChild(el('span', 'section-name', svc));
+    hcell.appendChild(document.createTextNode('  '));
+    hcell.appendChild(el('span', 'section-count',
+      groups[svc].length + (groups[svc].length === 1 ? ' SKU' : ' SKUs')));
+    head.appendChild(hcell);
+    frag.appendChild(head);
+
+    groups[svc].forEach(function (r) {
       var sc = statusClass(r.ls);
       var tr = el('tr', 'sku s-' + sc);
 
@@ -599,7 +630,6 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       tdN.appendChild(btn);
       tr.appendChild(tdN);
 
-      tr.appendChild(el('td', 'dim', r.svc));
 
       tr.appendChild(el('td', 'tier', r.t));
       tr.appendChild(el('td', 'hw', r.hw === 'n/a (DTU model)' ? '—' : r.hw));
@@ -635,6 +665,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       });
 
       frag.appendChild(tr);
+    });
     });
     tbody.appendChild(frag);
   }

@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Download every documentation source this skill reads.
 
-    python3 scripts/fetch_docs.py [--cache DIR] [--offline] [--workload NAME]
+    python3 scripts/fetch_docs.py [--cache DIR] [--offline] [--services LIST]
 
-Sources are declared in references/sources.json. Each one names its own fetch
-strategy, so adding a workload is a data change, not a code change.
+Sources are declared in references/sources.json and selected by
+references/config.json, so which services get fetched is a configuration
+choice. Each source names its own fetch strategy, so adding one is a data
+change, not a code change.
 """
 
 from __future__ import annotations
@@ -14,31 +16,38 @@ import json
 import os
 import sys
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from docsource import fetch                                    # noqa: E402
-
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+for _sub in ("", "/scripts", "/providers", "/references"):
+    sys.path.insert(0, HERE + _sub)
+
+from docsource import fetch                                    # noqa: E402
+import providers as registry                                   # noqa: E402
 SOURCES = os.path.join(HERE, "references", "sources.json")
 
 
-def load_specs(workload: str | None = None) -> dict:
+def load_specs(services: str | None = None) -> dict:
     with open(SOURCES, encoding="utf-8") as fh:
         specs = json.load(fh)["sources"]
     for key, spec in specs.items():
         spec["key"] = key
-    if workload:
-        specs = {k: v for k, v in specs.items() if v["workload"] == workload}
-    return specs
+    wanted = {s["key"] for s in registry.selected(services)}
+    return {k: v for k, v in specs.items() if v["workload"] in wanted}
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", default=os.path.join(HERE, ".cache"))
     ap.add_argument("--offline", action="store_true")
-    ap.add_argument("--workload")
+    ap.add_argument("--services", help="comma-separated service keys, or 'all'; "
+                                       "defaults to whatever is enabled in "
+                                       "references/config.json")
     args = ap.parse_args()
 
-    specs = load_specs(args.workload)
+    chosen = registry.selected(args.services)
+    print(f"Services: {', '.join(s['display'] for s in chosen)}")
+    specs = load_specs(args.services)
+    if not specs:
+        print("  (the selected services declare no fetchable sources of their own)")
     failures = []
     for key, spec in specs.items():
         try:

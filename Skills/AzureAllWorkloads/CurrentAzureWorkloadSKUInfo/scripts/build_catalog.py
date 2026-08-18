@@ -2,7 +2,7 @@
 """Run every workload provider and emit the cross-workload catalog.
 
     python3 scripts/build_catalog.py [--cache DIR] [--out-dir DIR]
-                                     [--workload NAME] [--offline]
+                                     [--services LIST] [--offline]
 
 Writes into --out-dir:
     azure-workload-skus.json     catalog + milestone registry + errata
@@ -31,6 +31,11 @@ from docsource import load                                   # noqa: E402
 from milestones import MILESTONES, NOT_ESTABLISHED           # noqa: E402
 import providers as registry                                 # noqa: E402
 
+COLUMNS = ("| # | SKU | Tier | Series / family | Size | Release date | Confidence "
+           "| Lifecycle status | SKU data source | Release date source "
+           "| When to recommend this SKU | Recommendation source |\n"
+           "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+
 
 def load_specs() -> dict:
     with open(os.path.join(HERE, "references", "sources.json"), encoding="utf-8") as fh:
@@ -53,62 +58,88 @@ def links(urls: list[str]) -> str:
     return "<br>".join(f"[{i}]({u})" for i, u in enumerate(out, 1))
 
 
-def write_markdown(rows: list, path: str, as_of: str, errata: list[dict]) -> None:
-    by_workload: dict[str, int] = {}
+def sku_row(i: int, r) -> str:
+    size = "—"
+    if r.capacity is not None:
+        size = f"{r.capacity:g} {r.capacity_unit}"
+        if r.memory_gb is not None:
+            size += f" / {r.memory_gb:g} GB"
+    return (f"| {i} | `{r.sku}` | {r.tier} | {r.series} | {size} "
+            f"| {r.release_date} | {r.date_confidence} | {r.lifecycle_status} "
+            f"| [docs]({r.inventory_doc}) | [announcement]({r.release_doc}) "
+            f"| {numbered(r.recommend_when)} | {links(r.recommend_sources)} |")
+
+
+def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
+                   order: list[str]) -> None:
+    """One section per Azure service, each with its own table."""
+    by_service: dict[str, list] = {}
     for r in rows:
-        by_workload[r.service] = by_workload.get(r.service, 0) + 1
+        by_service.setdefault(r.service, []).append(r)
+
+    # Preserve the order services were configured in, not alphabetical.
+    ordered = [s for s in order if s in by_service]
+    ordered += [s for s in by_service if s not in ordered]
 
     lines = [
         "# Azure workload SKU catalog",
         "",
-        f"**{len(rows)} SKUs across {len(by_workload)} Azure services.** Generated "
+        f"**{len(rows)} SKUs across {len(by_service)} Azure services.** Generated "
         f"{as_of} by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft "
         "documentation.",
         "",
-        "| Service | SKUs |",
-        "| --- | --- |",
+        "Which services appear here is set in the skill's "
+        "`references/config.json`, or overridden for one run with `--services`.",
+        "",
+        "## Contents",
+        "",
+        "| Service | SKUs | Section |",
+        "| --- | --- | --- |",
     ]
-    for svc, n in sorted(by_workload.items(), key=lambda kv: -kv[1]):
-        lines.append(f"| {svc} | {n} |")
+    for svc in ordered:
+        anchor = svc.lower().replace(" ", "-").replace("(", "").replace(")", "")
+        lines.append(f"| {svc} | {len(by_service[svc])} | [jump](#{anchor}) |")
 
     lines += [
         "",
-        "Column notes:",
+        "## How to read the columns",
         "",
         "- **Release date** — the GA date of the release that made the SKU orderable, "
         "or the preview date for SKUs still in preview. Azure announces SKUs by family "
-        "or tier, so sizes inherit their family's date unless they were added later.",
+        "or tier, so a size inherits its family's date unless it was added later.",
         "- **Confidence** — `high` a dated Microsoft announcement names this exact "
         "change; `medium` a Microsoft page dates it to a month; `low` reconstructed "
         "from context; **`unknown` means no date could be sourced** and the cell reads "
         f"*{NOT_ESTABLISHED}* rather than carrying a guess.",
         "- **Lifecycle status** — read from the current Microsoft documentation, "
         "including retirement dates where Microsoft has announced them.",
-        "- **When to recommend** — taken from Microsoft's own guidance columns "
-        "(\"Target workloads\", \"When to use\", tier descriptions) on the pages "
-        "linked in the last column.",
+        "- **When to recommend** — taken from Microsoft's own guidance "
+        "(\"Target workloads\", \"When to use\", service-tier \"when to choose\" "
+        "sections and tier descriptions) on the pages linked in the last column.",
         "",
-        "| # | SKU | Service | Tier | Series / family | Size | Release date "
-        "| Confidence | Lifecycle status | SKU data source | Release date source "
-        "| When to recommend this SKU | Recommendation source |",
-        "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |",
     ]
 
-    for i, r in enumerate(rows, 1):
-        size = "—"
-        if r.capacity is not None:
-            size = f"{r.capacity:g} {r.capacity_unit}"
-            if r.memory_gb is not None:
-                size += f" / {r.memory_gb:g} GB"
-        lines.append(
-            f"| {i} | `{r.sku}` | {r.service} | {r.tier} | {r.series} | {size} "
-            f"| {r.release_date} | {r.date_confidence} | {r.lifecycle_status} "
-            f"| [docs]({r.inventory_doc}) | [announcement]({r.release_doc}) "
-            f"| {numbered(r.recommend_when)} | {links(r.recommend_sources)} |"
-        )
+    for svc in ordered:
+        group = by_service[svc]
+        anchor_counts: dict[str, int] = {}
+        for r in group:
+            anchor_counts[r.lifecycle_status] = anchor_counts.get(
+                r.lifecycle_status, 0) + 1
+        summary = ", ".join(f"{v} {k.lower()}"
+                            for k, v in sorted(anchor_counts.items(), key=lambda kv: -kv[1]))
+        docs = sorted({r.inventory_doc for r in group})
+
+        lines += [f"## {svc}", "",
+                  f"{len(group)} SKUs — {summary}.", "",
+                  "Documentation read for this service:", ""]
+        lines += [f"- <{d}>" for d in docs]
+        lines += ["", COLUMNS]
+        for i, r in enumerate(group, 1):
+            lines.append(sku_row(i, r))
+        lines.append("")
 
     used = {r.milestone for r in rows}
-    lines += ["", "## Release milestones", "",
+    lines += ["## Release milestones", "",
               "| Milestone | Preview | GA | Confidence | Source |",
               "| --- | --- | --- | --- | --- |"]
     for key, m in MILESTONES.items():
@@ -143,7 +174,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", default=os.path.join(HERE, ".cache"))
     ap.add_argument("--out-dir", default=os.path.join(HERE, "output"))
-    ap.add_argument("--workload")
+    ap.add_argument("--services", help="comma-separated service keys, or 'all'; "
+                                       "defaults to references/config.json")
     ap.add_argument("--offline", action="store_true")
     ap.add_argument("--as-of")
     args = ap.parse_args()
@@ -154,10 +186,11 @@ def main() -> int:
         as_of = datetime.date.today().isoformat()
 
     specs = load_specs()
-    rows, failures = [], []
-    for provider in registry.PROVIDERS:
-        if args.workload and provider.WORKLOAD != args.workload:
-            continue
+    modules = registry.providers_for(args.services)
+    print("Services: " + ", ".join(m.DISPLAY for m in modules))
+
+    rows, failures, order = [], [], []
+    for provider in modules:
         try:
             docs = {k: load(specs[k], args.cache) for k in provider.SOURCES}
             if provider.WORKLOAD == "azure_sql":
@@ -165,6 +198,9 @@ def main() -> int:
             else:
                 got = provider.collect(docs)
             rows += got
+            for r in got:
+                if r.service not in order:
+                    order.append(r.service)
             print(f"  {provider.WORKLOAD:18} {len(got):>4} SKUs")
         except Exception as exc:
             failures.append((provider.WORKLOAD, exc))
@@ -177,7 +213,7 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    errata = registry.applied_errata()
+    errata = registry.applied_errata(modules)
     os.makedirs(args.out_dir, exist_ok=True)
 
     used = {r.milestone for r in rows}
@@ -185,7 +221,8 @@ def main() -> int:
         "generated": as_of,
         "generator": "Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo",
         "sku_count": len(rows),
-        "workloads": sorted({r.service for r in rows}),
+        "workloads": order,
+        "service_order": order,
         "date_confidence_legend": {
             "high": "a dated Microsoft announcement or release note names this change",
             "medium": "a Microsoft page dates the change to a month, or a reputable "
@@ -221,7 +258,7 @@ def main() -> int:
             w.writerow(d)
 
     write_markdown(rows, os.path.join(args.out_dir, "azure-workload-sku-table.md"),
-                   as_of, errata)
+                   as_of, errata, order)
 
     life: dict[str, int] = {}
     for r in rows:

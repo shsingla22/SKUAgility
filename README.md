@@ -4,8 +4,9 @@ SKU agility for all workloads.
 
 A catalog of the compute SKUs offered by Azure data services — what exists today, what tier
 and hardware family it belongs to, when it shipped, whether it is still a good idea, and
-where every one of those claims came from. Currently **492 SKUs across 8 Azure services**,
-built from Microsoft documentation by two reusable skills.
+where every one of those claims came from. Built from Microsoft documentation by two
+reusable skills. **413 SKUs across Azure SQL and Azure Database for PostgreSQL** by
+default; five more services ship switched off behind a config flag.
 
 ## What's here
 
@@ -22,6 +23,7 @@ built from Microsoft documentation by two reusable skills.
 | `data/azure-postgresql.json`, `data/azure-postgresql.csv` | Machine-readable PostgreSQL catalog |
 | `data/azure-workloads.json`, `data/azure-workloads.csv` | Machine-readable cross-workload catalog |
 | `tools/refresh_all_workloads.sh` | Runs the all-workloads skill into `docs/` and `data/` |
+| `Skills/.../references/config.json` | **Which Azure services the catalog covers** |
 | `tools/refresh_azure_sql.sh` | Runs the Azure SQL skill into `docs/` and `data/` |
 | `tools/build_catalog.py` | PostgreSQL catalog generator (Azure SQL is the skill's job) |
 
@@ -43,8 +45,13 @@ and generate everything, then verify what they produced:
 
 | Skill | Covers | Granularity |
 | --- | --- | --- |
-| `CurrentAzureWorkloadSKUInfo` | SQL DB, SQL MI, PostgreSQL, MySQL, Cache for Redis, App Service, AKS, Virtual Machines | Per size, except VMs (per family) |
+| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL + PostgreSQL on by default; MySQL, Cache for Redis, App Service, AKS and Virtual Machines available | Per size, except VMs (per family) |
 | `CurrentAzureSQLSKUInfo` | Azure SQL Database + Managed Instance | Every service-level objective |
+
+Which services the cross-workload catalog covers is set in
+[`references/config.json`](Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo/references/config.json)
+— flip an `enabled` flag, or override one run with `--services postgresql,redis` or
+`--services all`. The output is sectioned per service, with a contents index.
 
 The all-workloads skill delegates Azure SQL to the SQL skill rather than re-deriving it, so
 there is one source of truth per service. Both are symlinked into `.claude/skills/` so
@@ -57,14 +64,16 @@ milestones, and a provider module — described in the
 
 ### Notable current findings
 
-- **Every Azure Cache for Redis tier is retiring.** Enterprise and Enterprise Flash on
-  2027-03-31, Basic/Standard/Premium on 2028-09-30, with creation already blocked for new
-  customers since 2026-04-01. Microsoft directs new work to Azure Managed Redis.
-- **Azure SQL Fsv2-series is deprecated**, retiring 2026-10-01.
-- **34 SKUs have no sourceable release date.** They read *not established* rather than
-  carrying a guess, and every run counts them.
+- **Azure SQL Fsv2-series is deprecated**, retiring 2026-10-01 — 11 SKUs.
 - **Four typos in Microsoft's published PostgreSQL compute table** are corrected explicitly
   and listed in the output rather than repeated or silently dropped.
+- With the default service set, **every release date is sourced**. Enabling the optional
+  services adds 34 SKUs whose dates could not be sourced; those read *not established*
+  rather than carrying a guess, and every run counts them.
+- If you enable Redis: **every Azure Cache for Redis tier is retiring.** Enterprise and
+  Enterprise Flash on 2027-03-31, Basic/Standard/Premium on 2028-09-30, with creation
+  already blocked for new customers since 2026-04-01. Microsoft directs new work to Azure
+  Managed Redis.
 
 ## The Azure SQL skill
 

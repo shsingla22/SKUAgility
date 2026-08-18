@@ -92,14 +92,26 @@ def main() -> int:
     services = {}
     for s in skus:
         services[s["service"]] = services.get(s["service"], 0) + 1
-    if len(services) < 5:
-        fail(f"only {len(services)} services in the catalog — a provider silently "
-             "returned nothing")
+    expected = set(data.get("service_order") or services)
+    if set(services) != expected:
+        fail(f"catalog services {sorted(services)} do not match the configured set "
+             f"{sorted(expected)} — a provider silently returned nothing")
+    elif any(v == 0 for v in services.values()):
+        fail("a configured service produced zero SKUs")
     else:
         ok(f"{len(skus)} SKUs across {len(services)} services: "
            + ", ".join(f"{k} {v}" for k, v in sorted(services.items())))
 
+    # The table is sectioned per service and numbering restarts in each section,
+    # so count rows rather than trusting the highest index.
     md_rows = len(re.findall(r"^\| \d+ \| `", md, re.M))
+    sections = re.findall(r"^## (.+)$", md, re.M)
+    svc_sections = [x for x in sections if x in services]
+    if len(svc_sections) != len(services):
+        fail(f"Markdown has {len(svc_sections)} service sections, expected "
+             f"{len(services)}: {sorted(services)}")
+    else:
+        ok(f"Markdown has one section per service: {', '.join(svc_sections)}")
     if md_rows != len(skus):
         fail(f"Markdown table has {md_rows} rows, expected {len(skus)}")
     else:

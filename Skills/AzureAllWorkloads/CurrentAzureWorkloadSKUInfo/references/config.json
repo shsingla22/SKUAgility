@@ -1,0 +1,67 @@
+{
+  "_comment": [
+    "Which Azure services this skill builds a SKU catalog for.",
+    "",
+    "Set \"enabled\": true to include a service, false to leave it out. Everything",
+    "else in the skill follows this file: only enabled services are fetched, only",
+    "they appear in the table, and verification checks exactly this set.",
+    "",
+    "A one-off run can override the file without editing it:",
+    "    python3 scripts/refresh.py --services azure_sql,postgresql,redis",
+    "    python3 scripts/refresh.py --services all",
+    "",
+    "The disabled entries below are fully implemented and verified - flip the flag",
+    "to turn one on. To add a service that is not listed at all, see SKILL.md."
+  ],
+  "services": [
+    {
+      "key": "azure_sql",
+      "display": "Azure SQL (Database + Managed Instance)",
+      "provider": "azure_sql",
+      "enabled": true,
+      "note": "Delegated to the sibling CurrentAzureSQLSKUInfo skill; per service-level objective."
+    },
+    {
+      "key": "postgresql",
+      "display": "Azure Database for PostgreSQL",
+      "provider": "postgresql",
+      "enabled": true,
+      "note": "Flexible server, per compute size."
+    },
+    {
+      "key": "mysql",
+      "display": "Azure Database for MySQL",
+      "provider": "mysql",
+      "enabled": false,
+      "note": "Flexible server, per compute size."
+    },
+    {
+      "key": "redis",
+      "display": "Azure Cache for Redis",
+      "provider": "redis",
+      "enabled": false,
+      "note": "Per tier. Every tier is on a retirement path; see SKILL.md."
+    },
+    {
+      "key": "app_service",
+      "display": "Azure App Service",
+      "provider": "app_service",
+      "enabled": false,
+      "note": "Per plan tier."
+    },
+    {
+      "key": "aks",
+      "display": "Azure Kubernetes Service",
+      "provider": "aks",
+      "enabled": false,
+      "note": "Per pricing tier."
+    },
+    {
+      "key": "virtual_machines",
+      "display": "Azure Virtual Machines",
+      "provider": "virtual_machines",
+      "enabled": false,
+      "note": "Per size family, not per size - Azure documents ~800 sizes and the authoritative per-size list is the Resource SKUs API."
+    }
+  ]
+}
