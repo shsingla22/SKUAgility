@@ -29,6 +29,7 @@ for sub in ("", "/scripts", "/providers", "/references"):
 
 from docsource import load                                   # noqa: E402
 from milestones import MILESTONES, NOT_ESTABLISHED           # noqa: E402
+import migrate_support                                       # noqa: E402
 import providers as registry                                 # noqa: E402
 
 COLUMNS = ("| # | SKU | Tier | Series / family | Size | Release date | Confidence "
@@ -113,6 +114,76 @@ def sku_row(i: int, r) -> str:
             f"| {numbered(r.recommend_when)} | {links(r.recommend_sources)} |")
 
 
+def migrate_comparisons(by_service: dict) -> dict:
+    """Migrate-support comparison for every service, keyed by service display name.
+
+    Every configured service gets an entry, including workloads with no
+    migrate_support.json data yet — those come back {"available": False} so the
+    Markdown and Atlas can say "not supplied yet" instead of omitting the block.
+    """
+    support = migrate_support.load()
+    out = {}
+    for svc, group in by_service.items():
+        workload = group[0].workload
+        out[svc] = migrate_support.compare(group, support.get(workload))
+    return out
+
+
+def migrate_block_lines(svc: str, cmp: dict) -> list[str]:
+    """Markdown lines for the Migrate-support callout at the top of one section."""
+    lines = ["**Azure Migrate SKU support**", ""]
+    if not cmp["available"]:
+        lines += ["Comparison data has not been supplied for this service yet — "
+                  "no flags to show.", ""]
+        return lines
+
+    lines += [f"Compared against {cmp['supported_count']} SKUs Azure Migrate "
+              f"supports for this service, as of {cmp['as_of']}. Source: "
+              f"{cmp['source']}", ""]
+
+    ga_bad = cmp["ga_unsupported"]
+    dep_bad = cmp["deprecated_supported"]
+
+    if not ga_bad and not dep_bad:
+        lines.append("No flags: every GA SKU is Migrate-supported, and no "
+                     "deprecated/retiring SKU is still Migrate-supported.")
+    else:
+        if ga_bad:
+            lines += ["", f"*{len(ga_bad)} GA SKU(s) Migrate does NOT support "
+                      "— recommending these blocks a Migrate-based migration:*", "",
+                      "| SKU | Azure GA since | Confidence | Source |",
+                      "| --- | --- | --- | --- |"]
+            for d in ga_bad:
+                lines.append(f"| `{d['sku']}` | {d['release_date']} "
+                             f"| {d['date_confidence']} | [{d['milestone_label']}]"
+                             f"({d['release_doc']}) |")
+        if dep_bad:
+            lines += ["", f"*{len(dep_bad)} deprecated/retiring SKU(s) Migrate "
+                      "STILL supports — Migrate may recommend landing on "
+                      "something Azure is already walking back:*", "",
+                      "| SKU | Azure lifecycle | Azure GA since | Confidence | Source |",
+                      "| --- | --- | --- | --- | --- |"]
+            for d in dep_bad:
+                lines.append(f"| `{d['sku']}` | {d['lifecycle_status']} "
+                             f"| {d['release_date']} | {d['date_confidence']} "
+                             f"| [{d['milestone_label']}]({d['release_doc']}) |")
+
+    prev = cmp["preview_unassessed"]
+    if prev:
+        lines += ["", f"*Informational — {len(prev)} public-preview SKU(s) not "
+                  "yet in Migrate's supported list (not flagged: a preview SKU "
+                  "is not expected to have Migrate support yet).*"]
+
+    unknown = cmp["unknown_to_azure"]
+    if unknown:
+        lines += ["", f"*Data-quality note — Migrate's list names "
+                  f"{len(unknown)} SKU(s) this catalog does not find under "
+                  f"{svc}: {', '.join(f'`{u}`' for u in unknown)}.*"]
+
+    lines.append("")
+    return lines
+
+
 def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
                    order: list[str]) -> None:
     """One section per Azure service, each with its own table."""
@@ -122,6 +193,7 @@ def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
     for r in rows:
         by_service.setdefault(r.service, []).append(r)
     ordered = list(by_service)
+    migrate = migrate_comparisons(by_service)
 
     lines = [
         "# Azure workload SKU catalog",
@@ -176,8 +248,9 @@ def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
         docs = sorted({r.inventory_doc for r in group})
 
         lines += [f"## {svc}", "",
-                  f"{len(group)} SKUs — {summary}.", "",
-                  "Documentation read for this service:", ""]
+                  f"{len(group)} SKUs — {summary}.", ""]
+        lines += migrate_block_lines(svc, migrate[svc])
+        lines += ["Documentation read for this service:", ""]
         lines += [f"- <{d}>" for d in docs]
         lines += ["", COLUMNS]
         for i, r in enumerate(group, 1):
@@ -264,6 +337,11 @@ def main() -> int:
     errata = registry.applied_errata(modules)
     os.makedirs(args.out_dir, exist_ok=True)
 
+    by_service: dict[str, list] = {}
+    for r in rows:
+        by_service.setdefault(r.service, []).append(r)
+    migrate = migrate_comparisons(by_service)
+
     used = {r.milestone for r in rows}
     payload = {
         "generated": as_of,
@@ -285,6 +363,7 @@ def main() -> int:
             for k, m in MILESTONES.items() if k in used
         ],
         "source_doc_errata": errata,
+        "migrate_support": migrate,
         "skus": [r.dict() for r in rows],
     }
     with open(os.path.join(args.out_dir, "azure-workload-skus.json"), "w",
@@ -320,6 +399,13 @@ def main() -> int:
         print(f"  release date not established: {n_unknown}")
     if errata:
         print(f"  source-doc corrections applied: {len(errata)}")
+    for svc, cmp in migrate.items():
+        if not cmp["available"]:
+            continue
+        flags = len(cmp["ga_unsupported"]) + len(cmp["deprecated_supported"])
+        print(f"  migrate support ({svc}): {flags} flagged "
+              f"({len(cmp['ga_unsupported'])} GA-unsupported, "
+              f"{len(cmp['deprecated_supported'])} deprecated-but-supported)")
     return 0
 
 

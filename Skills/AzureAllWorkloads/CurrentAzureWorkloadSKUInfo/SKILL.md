@@ -119,6 +119,42 @@ Two deliberate boundaries, both worth stating when you report results:
   for Azure SQL; if that skill is missing the provider fails loudly rather than
   quietly shipping a catalog with no Azure SQL in it.
 
+## Azure Migrate SKU support comparison
+
+Every service section carries an **Azure Migrate SKU support** callout, right at
+the top, above the SKU table. It compares this catalog's SKUs for that service
+against a separately-supplied list of the SKUs Azure Migrate's
+discovery-and-assessment tooling recognizes, and flags exactly two things:
+
+1. A SKU Azure has **GA** that Migrate does **not** support — recommending it
+   blocks a Migrate-based migration.
+2. A SKU Azure has **deprecated or retiring** that Migrate **still** supports —
+   Migrate may point a migration at something Azure is already walking back.
+
+A SKU still in preview is neither, and is reported separately as
+"not yet assessed" — informational, never a flag, since a preview SKU predates
+most Migrate support lists by construction.
+
+The Migrate-supported list is not fetched from a Microsoft doc; it comes from
+whatever source the user supplies, recorded per workload in
+`references/migrate_support.json` alongside where it came from and as of when.
+A workload with no entry there gets an honest "comparison data has not been
+supplied for this service yet" line instead of an omitted block — the callout
+always appears, even before its data exists.
+
+`references/migrate_support.py` does the comparison and is imported by
+`build_catalog.py` (for the Markdown) and carried into the JSON for
+`build_artifact.py` (for the Atlas, where it renders as a banner at the top of
+each section, folding shut with the rest of the section). `verify.py`
+recomputes every shipped flag independently from `migrate_support.json` and the
+catalog itself, so a bug in the comparison module can't ship unnoticed.
+
+To add Migrate-support data for another service: add an entry to
+`references/migrate_support.json` keyed by that service's `WORKLOAD` string
+(the same key used in `references/config.json`), naming its `source`, `as_of`
+date and `supported_skus` list using this catalog's own SKU names (`sku` field,
+e.g. `Standard_D4ds_v5`) — no other code changes are needed.
+
 ## Adding a service
 
 Four edits, no framework changes:
@@ -186,6 +222,16 @@ a `v4` suffix in a `v5` row). On each refresh, check whether Microsoft has fixed
 them — a correction that is no longer needed should be removed, not left to
 silently rewrite correct data.
 
+### 5. Keep Migrate-support data current
+
+`references/migrate_support.json` is a snapshot of what Azure Migrate supported
+as of the date it names — it does not refresh itself the way the rest of the
+catalog does, because there is no Microsoft doc URL to fetch it from. When the
+user supplies an updated list (a newer document, a different service), replace
+the workload's entry and re-run; the comparison and both outputs pick it up
+automatically. Currently only **PostgreSQL** has an entry — every other
+service's section will keep reading "not supplied yet" until one is added.
+
 ## Reporting the result
 
 1. The deliverables, with the Atlas linked or attached.
@@ -194,7 +240,10 @@ silently rewrite correct data.
    The top of each section is the newest thing Azure shipped for that service,
    which is usually the most useful sentence you can write about it.
 3. Anything retiring or in preview — that is what changes decisions.
-4. The honest gaps: how many dates are *not established*, and the coverage
+4. Any Azure Migrate SKU support flags, per service — a GA SKU Migrate doesn't
+   support, or a deprecated one it still does. Zero flags is itself worth
+   saying plainly rather than skipping.
+5. The honest gaps: how many dates are *not established*, and the coverage
    boundaries above.
 
 Publish `azure-workload-skus.html` as an artifact if the user wants a shareable
@@ -225,7 +274,9 @@ CurrentAzureWorkloadSKUInfo/
 ├── references/
 │   ├── config.json        WHICH SERVICES TO COVER — edit this first
 │   ├── sources.json       every page read, its strategy, and why
-│   └── milestones.py      release dates, confidence ratings, retirement dates
+│   ├── milestones.py      release dates, confidence ratings, retirement dates
+│   ├── migrate_support.json  Migrate-supported SKUs per workload, as supplied
+│   └── migrate_support.py    the comparison: GA-unsupported / deprecated-supported
 ├── baseline/inventory.json
 └── output/
 ```

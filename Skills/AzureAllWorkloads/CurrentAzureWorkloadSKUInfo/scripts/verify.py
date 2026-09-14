@@ -112,6 +112,13 @@ def main() -> int:
              f"{len(services)}: {sorted(services)}")
     else:
         ok(f"Markdown has one section per service: {', '.join(svc_sections)}")
+    md_migrate_blocks = len(re.findall(r"^\*\*Azure Migrate SKU support\*\*$", md, re.M))
+    if md_migrate_blocks != len(services):
+        fail(f"Markdown has {md_migrate_blocks} 'Azure Migrate SKU support' "
+             f"blocks, expected one per service ({len(services)})")
+    else:
+        ok(f"Markdown carries a Migrate-support block in every service section")
+
     if md_rows != len(skus):
         fail(f"Markdown table has {md_rows} rows, expected {len(skus)}")
     else:
@@ -132,6 +139,13 @@ def main() -> int:
             fail(f"HTML page carries {len(page['rows'])} rows, expected {len(skus)}")
         else:
             ok(f"HTML page carries {len(page['rows'])} rows")
+        page_migrate = page.get("migrate", {})
+        if set(page_migrate) != set(services):
+            fail(f"HTML page's embedded Migrate-support data covers "
+                 f"{sorted(page_migrate)}, expected one entry per service "
+                 f"{sorted(services)}")
+        else:
+            ok("HTML page carries Migrate-support data for every service")
 
     # ---- per-SKU completeness
     problems = {"release_date": [], "lifecycle": [], "guidance": [],
@@ -237,6 +251,78 @@ def main() -> int:
                 f"{conf['unknown']} SKUs have NO sourced release date; they read "
                 "'not established' rather than carrying a guess. Sourcing these is "
                 "the highest-value follow-up for this catalog")
+    # ---- Migrate-support comparison, recomputed independently of build_catalog.py
+    # so a bug in migrate_support.py's own logic doesn't ship unnoticed.
+    support_path = os.path.join(HERE, "references", "migrate_support.json")
+    supplied = {}
+    if os.path.exists(support_path):
+        with open(support_path, encoding="utf-8") as fh:
+            supplied = json.load(fh)
+    shipped_migrate = data.get("migrate_support", {})
+
+    def bucket(ls: str) -> str:
+        if "preview" in ls:
+            return "preview"
+        if ls.startswith(("Deprecated", "Retiring", "Retired", "Previous generation")):
+            return "deprecated"
+        return "ga"
+
+    by_svc: dict[str, list] = {}
+    for s in skus:
+        by_svc.setdefault(s["service"], []).append(s)
+
+    if not shipped_migrate:
+        if supplied:
+            fail("migrate_support.json has data but the catalog carries no "
+                 "migrate_support block at all")
+    else:
+        for svc, rows in by_svc.items():
+            shipped = shipped_migrate.get(svc)
+            if shipped is None:
+                fail(f"no migrate-support entry (available or not) for '{svc}'")
+                continue
+            workload = rows[0]["workload"]
+            entry = supplied.get(workload)
+            if not entry:
+                if shipped.get("available"):
+                    fail(f"'{svc}' has no migrate_support.json entry but the "
+                         "catalog marked it available")
+                continue
+            if not shipped.get("available"):
+                fail(f"'{svc}' has a migrate_support.json entry but the "
+                     "catalog marked it unavailable")
+                continue
+            supported = set(entry.get("supported_skus", []))
+            exp_ga = sorted(s["sku"] for s in rows
+                            if bucket(s["lifecycle_status"]) == "ga"
+                            and s["sku"] not in supported)
+            exp_dep = sorted(s["sku"] for s in rows
+                             if bucket(s["lifecycle_status"]) == "deprecated"
+                             and s["sku"] in supported)
+            exp_unknown = sorted(supported - {s["sku"] for s in rows})
+            got_ga = sorted(d["sku"] for d in shipped.get("ga_unsupported", []))
+            got_dep = sorted(d["sku"] for d in shipped.get("deprecated_supported", []))
+            got_unknown = sorted(shipped.get("unknown_to_azure", []))
+            if got_ga != exp_ga:
+                fail(f"'{svc}' GA-but-Migrate-unsupported flags don't match an "
+                     f"independent recompute: shipped {got_ga}, expected {exp_ga}")
+            elif got_dep != exp_dep:
+                fail(f"'{svc}' deprecated-but-Migrate-supported flags don't match "
+                     f"an independent recompute: shipped {got_dep}, expected "
+                     f"{exp_dep}")
+            elif got_unknown != exp_unknown:
+                fail(f"'{svc}' Migrate-names-unknown-to-Azure list doesn't match "
+                     f"an independent recompute: shipped {got_unknown}, expected "
+                     f"{exp_unknown}")
+            else:
+                ok(f"'{svc}' Migrate-support comparison matches an independent "
+                   f"recompute ({len(got_ga)} GA-unsupported, {len(got_dep)} "
+                   f"deprecated-but-supported, {len(got_unknown)} unrecognized)")
+            if got_unknown:
+                warnings.append(f"'{svc}': Migrate's list names {len(got_unknown)} "
+                                "SKU(s) not found in this catalog — check for a "
+                                f"naming mismatch: {got_unknown}")
+
     errata = data.get("source_doc_errata", [])
     if errata:
         warnings.append(

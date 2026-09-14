@@ -1,6 +1,6 @@
 # Azure workload SKU catalog
 
-**1378 SKUs across 4 Azure services.** Generated 2026-08-18 by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft documentation.
+**1378 SKUs across 4 Azure services.** Generated 2026-09-14 by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft documentation.
 
 Which services appear here is set in the skill's `references/config.json`, or overridden for one run with `--services`.
 
@@ -24,6 +24,10 @@ Which services appear here is set in the skill's `references/config.json`, or ov
 ## Azure SQL Database
 
 198 SKUs — 185 generally available, 11 deprecated - cannot be created; retires 2026-10-01, 2 public preview.
+
+**Azure Migrate SKU support**
+
+Comparison data has not been supplied for this service yet — no flags to show.
 
 Documentation read for this service:
 
@@ -236,6 +240,10 @@ Documentation read for this service:
 
 106 SKUs — 106 generally available.
 
+**Azure Migrate SKU support**
+
+Comparison data has not been supplied for this service yet — no flags to show.
+
 Documentation read for this service:
 
 - <https://learn.microsoft.com/azure/azure-sql/managed-instance/resource-limits>
@@ -352,6 +360,14 @@ Documentation read for this service:
 ## Azure Database for PostgreSQL
 
 109 SKUs — 71 generally available, 38 public preview.
+
+**Azure Migrate SKU support**
+
+Compared against 71 SKUs Azure Migrate supports for this service, as of 2026-09-14. Source: User-supplied reference document (PG_SQL_Migrate_supported_SKUs.docx): the Burstable, General Purpose and Memory Optimized compute SKUs that Azure Migrate's discovery-and-assessment tooling recognizes for Azure Database for PostgreSQL flexible server.
+
+No flags: every GA SKU is Migrate-supported, and no deprecated/retiring SKU is still Migrate-supported.
+
+*Informational — 38 public-preview SKU(s) not yet in Migrate's supported list (not flagged: a preview SKU is not expected to have Migrate support yet).*
 
 Documentation read for this service:
 
@@ -472,6 +488,10 @@ Documentation read for this service:
 ## Azure Virtual Machines
 
 965 SKUs — 927 generally available, 24 previous generation - capacity limited, 14 previous generation - next-gen available.
+
+**Azure Migrate SKU support**
+
+Comparison data has not been supplied for this service yet — no flags to show.
 
 Documentation read for this service:
 

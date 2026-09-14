@@ -78,6 +78,12 @@ milestones, and a provider module — described in the
   Enterprise Flash on 2027-03-31, Basic/Standard/Premium on 2028-09-30, with creation
   already blocked for new customers since 2026-04-01. Microsoft directs new work to Azure
   Managed Redis.
+- **Azure Migrate SKU support comparison.** Every service section now opens with a callout
+  comparing this catalog's SKUs against Azure Migrate's supported SKU list for that service,
+  flagging any GA SKU Migrate doesn't support and any deprecated SKU it still does. Currently
+  sourced for **PostgreSQL only** (a user-supplied document, `references/migrate_support.json`):
+  Migrate's list matches the 71 GA PostgreSQL SKUs exactly — zero flags. Other services show
+  "not supplied yet" until their own Migrate data is added.
 
 ## The Azure SQL skill
 

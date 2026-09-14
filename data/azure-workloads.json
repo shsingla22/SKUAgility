@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18",
+  "generated": "2026-09-14",
   "generator": "Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo",
   "sku_count": 1378,
   "workloads": [
@@ -462,6 +462,370 @@
       "source": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute"
     }
   ],
+  "migrate_support": {
+    "Azure SQL Database": {
+      "available": false
+    },
+    "Azure SQL Managed Instance": {
+      "available": false
+    },
+    "Azure Database for PostgreSQL": {
+      "available": true,
+      "source": "User-supplied reference document (PG_SQL_Migrate_supported_SKUs.docx): the Burstable, General Purpose and Memory Optimized compute SKUs that Azure Migrate's discovery-and-assessment tooling recognizes for Azure Database for PostgreSQL flexible server.",
+      "as_of": "2026-09-14",
+      "supported_count": 71,
+      "ga_unsupported": [],
+      "deprecated_supported": [],
+      "preview_unassessed": [
+        {
+          "sku": "Standard_D128ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D16ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D16ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D192ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D2ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D2ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D32ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D32ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D48ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D48ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D4ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D4ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D64ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D64ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D8ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D8ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D96ads_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_D96ds_v6",
+          "tier": "General Purpose",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E128ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E16ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E16ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E192ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E20ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E20ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E2ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E2ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E32ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E32ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E48ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E48ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E4ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E4ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E64ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E64ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E8ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E8ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E96ads_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        },
+        {
+          "sku": "Standard_E96ds_v6",
+          "tier": "Memory Optimized",
+          "lifecycle_status": "Public preview",
+          "release_date": "2025",
+          "date_confidence": "medium",
+          "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
+          "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview"
+        }
+      ],
+      "unknown_to_azure": []
+    },
+    "Azure Virtual Machines": {
+      "available": false
+    }
+  },
   "skus": [
     {
       "workload": "azure_sql",
