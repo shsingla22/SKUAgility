@@ -103,8 +103,10 @@ def main() -> int:
            + ", ".join(f"{k} {v}" for k, v in sorted(services.items())))
 
     # The table is sectioned per service and numbering restarts in each section,
-    # so count rows rather than trusting the highest index.
-    md_rows = len(re.findall(r"^\| \d+ \| `", md, re.M))
+    # so count rows rather than trusting the highest index. Anchored on the
+    # "[docs](" cell so the Migrate-support bucket tables — which share the same
+    # "| # | `sku` |" row shape — are never counted as catalog rows.
+    md_rows = len(re.findall(r"^\| \d+ \| `[^`]+` \|.*\| \[docs\]\(https?://", md, re.M))
     sections = re.findall(r"^## (.+)$", md, re.M)
     svc_sections = [x for x in sections if x in services]
     if len(svc_sections) != len(services):
@@ -112,12 +114,14 @@ def main() -> int:
              f"{len(services)}: {sorted(services)}")
     else:
         ok(f"Markdown has one section per service: {', '.join(svc_sections)}")
-    md_migrate_blocks = len(re.findall(r"^\*\*Azure Migrate SKU support\*\*$", md, re.M))
-    if md_migrate_blocks != len(services):
-        fail(f"Markdown has {md_migrate_blocks} 'Azure Migrate SKU support' "
-             f"blocks, expected one per service ({len(services)})")
+    md_ga_blocks = len(re.findall(r"^### GA SKU discrepancies$", md, re.M))
+    md_preview_blocks = len(re.findall(r"^### Public preview SKU discrepancies$", md, re.M))
+    if md_ga_blocks != len(services) or md_preview_blocks != len(services):
+        fail(f"Markdown has {md_ga_blocks} 'GA SKU discrepancies' and "
+             f"{md_preview_blocks} 'Public preview SKU discrepancies' blocks, "
+             f"expected one of each per service ({len(services)})")
     else:
-        ok(f"Markdown carries a Migrate-support block in every service section")
+        ok("Markdown carries both Migrate-support sections in every service section")
 
     if md_rows != len(skus):
         fail(f"Markdown table has {md_rows} rows, expected {len(skus)}")
@@ -293,31 +297,60 @@ def main() -> int:
                      "catalog marked it unavailable")
                 continue
             supported = set(entry.get("supported_skus", []))
-            exp_ga = sorted(s["sku"] for s in rows
-                            if bucket(s["lifecycle_status"]) == "ga"
-                            and s["sku"] not in supported)
-            exp_dep = sorted(s["sku"] for s in rows
-                             if bucket(s["lifecycle_status"]) == "deprecated"
-                             and s["sku"] in supported)
+            # ga and preview: flagged when Azure has it and Migrate does not.
+            # deprecated: flagged when Migrate still supports something Azure is
+            # walking back. Every bucket recomputed in full — total, supported
+            # count and flagged set — not just the flagged subset, since the
+            # shipped output now reports every SKU in each bucket.
+            flag_when_unsupported = {"ga", "preview"}
+            exp = {}
+            for kind in ("ga", "deprecated", "preview"):
+                bucket_rows = [s for s in rows if bucket(s["lifecycle_status"]) == kind]
+                if kind in flag_when_unsupported:
+                    flagged = sorted(s["sku"] for s in bucket_rows
+                                     if s["sku"] not in supported)
+                else:
+                    flagged = sorted(s["sku"] for s in bucket_rows
+                                     if s["sku"] in supported)
+                exp[kind] = {
+                    "total": len(bucket_rows),
+                    "supported_count": sum(1 for s in bucket_rows if s["sku"] in supported),
+                    "flagged": flagged,
+                }
             exp_unknown = sorted(supported - {s["sku"] for s in rows})
-            got_ga = sorted(d["sku"] for d in shipped.get("ga_unsupported", []))
-            got_dep = sorted(d["sku"] for d in shipped.get("deprecated_supported", []))
+
+            mismatch = None
+            for kind in ("ga", "deprecated", "preview"):
+                got_bucket = shipped.get(kind, {})
+                got_flagged = sorted(d["sku"] for d in got_bucket.get("rows", [])
+                                     if d.get("flagged"))
+                if got_bucket.get("total") != exp[kind]["total"]:
+                    mismatch = (f"'{svc}' {kind} bucket has {got_bucket.get('total')} "
+                               f"SKUs, expected {exp[kind]['total']}")
+                elif got_bucket.get("supported_count") != exp[kind]["supported_count"]:
+                    mismatch = (f"'{svc}' {kind} bucket reports "
+                               f"{got_bucket.get('supported_count')} Migrate-supported, "
+                               f"expected {exp[kind]['supported_count']}")
+                elif got_flagged != exp[kind]["flagged"]:
+                    mismatch = (f"'{svc}' {kind} flags don't match an independent "
+                               f"recompute: shipped {got_flagged}, expected "
+                               f"{exp[kind]['flagged']}")
+                if mismatch:
+                    break
             got_unknown = sorted(shipped.get("unknown_to_azure", []))
-            if got_ga != exp_ga:
-                fail(f"'{svc}' GA-but-Migrate-unsupported flags don't match an "
-                     f"independent recompute: shipped {got_ga}, expected {exp_ga}")
-            elif got_dep != exp_dep:
-                fail(f"'{svc}' deprecated-but-Migrate-supported flags don't match "
-                     f"an independent recompute: shipped {got_dep}, expected "
-                     f"{exp_dep}")
-            elif got_unknown != exp_unknown:
-                fail(f"'{svc}' Migrate-names-unknown-to-Azure list doesn't match "
-                     f"an independent recompute: shipped {got_unknown}, expected "
-                     f"{exp_unknown}")
+            if not mismatch and got_unknown != exp_unknown:
+                mismatch = (f"'{svc}' Migrate-names-unknown-to-Azure list doesn't "
+                           f"match an independent recompute: shipped {got_unknown}, "
+                           f"expected {exp_unknown}")
+
+            if mismatch:
+                fail(mismatch)
             else:
                 ok(f"'{svc}' Migrate-support comparison matches an independent "
-                   f"recompute ({len(got_ga)} GA-unsupported, {len(got_dep)} "
-                   f"deprecated-but-supported, {len(got_unknown)} unrecognized)")
+                   f"recompute ({len(exp['ga']['flagged'])} GA-unsupported, "
+                   f"{len(exp['deprecated']['flagged'])} deprecated-but-supported, "
+                   f"{len(exp['preview']['flagged'])} preview-unsupported, "
+                   f"{len(got_unknown)} unrecognized)")
             if got_unknown:
                 warnings.append(f"'{svc}': Migrate's list names {len(got_unknown)} "
                                 "SKU(s) not found in this catalog — check for a "

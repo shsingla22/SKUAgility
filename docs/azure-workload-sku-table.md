@@ -25,7 +25,11 @@ Which services appear here is set in the skill's `references/config.json`, or ov
 
 198 SKUs — 185 generally available, 11 deprecated - cannot be created; retires 2026-10-01, 2 public preview.
 
-**Azure Migrate SKU support**
+### GA SKU discrepancies
+
+Comparison data has not been supplied for this service yet — no flags to show.
+
+### Public preview SKU discrepancies
 
 Comparison data has not been supplied for this service yet — no flags to show.
 
@@ -240,7 +244,11 @@ Documentation read for this service:
 
 106 SKUs — 106 generally available.
 
-**Azure Migrate SKU support**
+### GA SKU discrepancies
+
+Comparison data has not been supplied for this service yet — no flags to show.
+
+### Public preview SKU discrepancies
 
 Comparison data has not been supplied for this service yet — no flags to show.
 
@@ -361,13 +369,134 @@ Documentation read for this service:
 
 109 SKUs — 71 generally available, 38 public preview.
 
-**Azure Migrate SKU support**
+### GA SKU discrepancies
 
 Compared against 71 SKUs Azure Migrate supports for this service, as of 2026-09-14. Source: User-supplied reference document (PG_SQL_Migrate_supported_SKUs.docx): the Burstable, General Purpose and Memory Optimized compute SKUs that Azure Migrate's discovery-and-assessment tooling recognizes for Azure Database for PostgreSQL flexible server.
 
-No flags: every GA SKU is Migrate-supported, and no deprecated/retiring SKU is still Migrate-supported.
+**Generally available** — 71 SKU(s), Migrate supports 71, 0 flagged.
 
-*Informational — 38 public-preview SKU(s) not yet in Migrate's supported list (not flagged: a preview SKU is not expected to have Migrate support yet).*
+| # | SKU | Lifecycle status | Since | Confidence | Migrate supported | Flag |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `Standard_B12ms` | Generally available | 2023-04 | high | Yes | — |
+| 2 | `Standard_B16ms` | Generally available | 2023-04 | high | Yes | — |
+| 3 | `Standard_B1ms` | Generally available | 2021-11 | medium | Yes | — |
+| 4 | `Standard_B20ms` | Generally available | 2023-04 | high | Yes | — |
+| 5 | `Standard_B2ms` | Generally available | 2021-11 | medium | Yes | — |
+| 6 | `Standard_B2s` | Generally available | 2021-11 | medium | Yes | — |
+| 7 | `Standard_B4ms` | Generally available | 2023-04 | high | Yes | — |
+| 8 | `Standard_B8ms` | Generally available | 2023-04 | high | Yes | — |
+| 9 | `Standard_D16ads_v5` | Generally available | 2023 | low | Yes | — |
+| 10 | `Standard_D16ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 11 | `Standard_D16ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 12 | `Standard_D16s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 13 | `Standard_D2ads_v5` | Generally available | 2023 | low | Yes | — |
+| 14 | `Standard_D2ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 15 | `Standard_D2ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 16 | `Standard_D2s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 17 | `Standard_D32ads_v5` | Generally available | 2023 | low | Yes | — |
+| 18 | `Standard_D32ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 19 | `Standard_D32ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 20 | `Standard_D32s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 21 | `Standard_D48ads_v5` | Generally available | 2023 | low | Yes | — |
+| 22 | `Standard_D48ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 23 | `Standard_D48ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 24 | `Standard_D48s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 25 | `Standard_D4ads_v5` | Generally available | 2023 | low | Yes | — |
+| 26 | `Standard_D4ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 27 | `Standard_D4ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 28 | `Standard_D4s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 29 | `Standard_D64ads_v5` | Generally available | 2023 | low | Yes | — |
+| 30 | `Standard_D64ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 31 | `Standard_D64ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 32 | `Standard_D64s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 33 | `Standard_D8ads_v5` | Generally available | 2023 | low | Yes | — |
+| 34 | `Standard_D8ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 35 | `Standard_D8ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 36 | `Standard_D8s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 37 | `Standard_D96ads_v5` | Generally available | 2023 | low | Yes | — |
+| 38 | `Standard_D96ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 39 | `Standard_E16ads_v5` | Generally available | 2023 | low | Yes | — |
+| 40 | `Standard_E16ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 41 | `Standard_E16ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 42 | `Standard_E16s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 43 | `Standard_E20ads_v5` | Generally available | 2023 | low | Yes | — |
+| 44 | `Standard_E20ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 45 | `Standard_E20ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 46 | `Standard_E2ads_v5` | Generally available | 2023 | low | Yes | — |
+| 47 | `Standard_E2ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 48 | `Standard_E2ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 49 | `Standard_E2s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 50 | `Standard_E32ads_v5` | Generally available | 2023 | low | Yes | — |
+| 51 | `Standard_E32ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 52 | `Standard_E32ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 53 | `Standard_E32s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 54 | `Standard_E48ads_v5` | Generally available | 2023 | low | Yes | — |
+| 55 | `Standard_E48ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 56 | `Standard_E48ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 57 | `Standard_E48s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 58 | `Standard_E4ads_v5` | Generally available | 2023 | low | Yes | — |
+| 59 | `Standard_E4ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 60 | `Standard_E4ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 61 | `Standard_E4s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 62 | `Standard_E64ads_v5` | Generally available | 2023 | low | Yes | — |
+| 63 | `Standard_E64ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 64 | `Standard_E64ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 65 | `Standard_E64s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 66 | `Standard_E8ads_v5` | Generally available | 2023 | low | Yes | — |
+| 67 | `Standard_E8ds_v4` | Generally available | 2021-10 | high | Yes | — |
+| 68 | `Standard_E8ds_v5` | Generally available | 2023-05 | high | Yes | — |
+| 69 | `Standard_E8s_v3` | Generally available | 2021-11 | medium | Yes | — |
+| 70 | `Standard_E96ads_v5` | Generally available | 2023 | low | Yes | — |
+| 71 | `Standard_E96ds_v5` | Generally available | 2023-05 | high | Yes | — |
+
+**Deprecated / retiring** — 0 SKU(s), Migrate supports 0, 0 flagged.
+
+No deprecated / retiring SKUs for this service — nothing to compare.
+
+### Public preview SKU discrepancies
+
+**Public preview** — 38 SKU(s), Migrate supports 0, 38 flagged.
+
+| # | SKU | Lifecycle status | Since | Confidence | Migrate supported | Flag |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | `Standard_D128ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 2 | `Standard_D16ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 3 | `Standard_D16ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 4 | `Standard_D192ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 5 | `Standard_D2ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 6 | `Standard_D2ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 7 | `Standard_D32ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 8 | `Standard_D32ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 9 | `Standard_D48ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 10 | `Standard_D48ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 11 | `Standard_D4ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 12 | `Standard_D4ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 13 | `Standard_D64ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 14 | `Standard_D64ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 15 | `Standard_D8ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 16 | `Standard_D8ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 17 | `Standard_D96ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 18 | `Standard_D96ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 19 | `Standard_E128ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 20 | `Standard_E16ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 21 | `Standard_E16ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 22 | `Standard_E192ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 23 | `Standard_E20ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 24 | `Standard_E20ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 25 | `Standard_E2ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 26 | `Standard_E2ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 27 | `Standard_E32ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 28 | `Standard_E32ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 29 | `Standard_E48ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 30 | `Standard_E48ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 31 | `Standard_E4ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 32 | `Standard_E4ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 33 | `Standard_E64ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 34 | `Standard_E64ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 35 | `Standard_E8ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 36 | `Standard_E8ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 37 | `Standard_E96ads_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
+| 38 | `Standard_E96ds_v6` | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
 
 Documentation read for this service:
 
@@ -489,7 +618,11 @@ Documentation read for this service:
 
 965 SKUs — 927 generally available, 24 previous generation - capacity limited, 14 previous generation - next-gen available.
 
-**Azure Migrate SKU support**
+### GA SKU discrepancies
+
+Comparison data has not been supplied for this service yet — no flags to show.
+
+### Public preview SKU discrepancies
 
 Comparison data has not been supplied for this service yet — no flags to show.
 

@@ -121,39 +121,54 @@ Two deliberate boundaries, both worth stating when you report results:
 
 ## Azure Migrate SKU support comparison
 
-Every service section carries an **Azure Migrate SKU support** callout, right at
-the top, above the SKU table. It compares this catalog's SKUs for that service
-against a separately-supplied list of the SKUs Azure Migrate's
-discovery-and-assessment tooling recognizes, and flags exactly two things:
+Every service section opens with **two** call-outs, right at the top, above the
+SKU table: **GA SKU discrepancies** and **Public preview SKU discrepancies**.
+Each compares this catalog's SKUs for that service against a separately-supplied
+list of the SKUs Azure Migrate's discovery-and-assessment tooling recognizes.
+
+Three things are flagged, because they are the three ways the two lists can
+disagree in a way that matters operationally:
 
 1. A SKU Azure has **GA** that Migrate does **not** support — recommending it
-   blocks a Migrate-based migration.
-2. A SKU Azure has **deprecated or retiring** that Migrate **still** supports —
-   Migrate may point a migration at something Azure is already walking back.
+   blocks a Migrate-based migration. *(GA SKU discrepancies)*
+2. A SKU Azure has in **public preview** that Migrate does **not** support —
+   the same problem, one release stage earlier. *(Public preview SKU
+   discrepancies)*
+3. A SKU Azure has **deprecated or retiring** that Migrate **still**
+   supports — Migrate may point a migration at something Azure is already
+   walking back. *(nested under GA SKU discrepancies, since it's the other
+   non-preview lifecycle state)*
 
-A SKU still in preview is neither, and is reported separately as
-"not yet assessed" — informational, never a flag, since a preview SKU predates
-most Migrate support lists by construction.
+Both sections report **every** SKU in their bucket, not just the disagreements —
+a clean bucket (nothing flagged) still states its totals and lists every SKU
+with a Yes/No Migrate-support column, rather than being collapsed to a "no
+issues" sentence. A bucket with zero SKUs (e.g. no deprecated PostgreSQL SKUs
+today) still states that plainly instead of being omitted.
 
 The Migrate-supported list is not fetched from a Microsoft doc; it comes from
 whatever source the user supplies, recorded per workload in
 `references/migrate_support.json` alongside where it came from and as of when.
 A workload with no entry there gets an honest "comparison data has not been
-supplied for this service yet" line instead of an omitted block — the callout
-always appears, even before its data exists.
+supplied for this service yet" line in both sections instead of an omitted
+block — the two call-outs always appear, even before a service's data exists.
 
-`references/migrate_support.py` does the comparison and is imported by
-`build_catalog.py` (for the Markdown) and carried into the JSON for
-`build_artifact.py` (for the Atlas, where it renders as a banner at the top of
-each section, folding shut with the rest of the section). `verify.py`
-recomputes every shipped flag independently from `migrate_support.json` and the
-catalog itself, so a bug in the comparison module can't ship unnoticed.
+`references/migrate_support.py` does the comparison, bucketing every SKU by
+lifecycle status (`ga` / `deprecated` / `preview`) and tagging each with
+`migrate_supported` and `flagged`. `build_catalog.py` renders the two Markdown
+sections from it; `build_artifact.py` carries the same buckets into the JSON so
+the Atlas renders two banners per section (folding shut with the rest of the
+section). `verify.py` recomputes every bucket's totals and flagged set
+independently from `migrate_support.json` and the catalog itself, so a bug in
+the comparison module can't ship unnoticed.
 
 To add Migrate-support data for another service: add an entry to
 `references/migrate_support.json` keyed by that service's `WORKLOAD` string
 (the same key used in `references/config.json`), naming its `source`, `as_of`
 date and `supported_skus` list using this catalog's own SKU names (`sku` field,
-e.g. `Standard_D4ds_v5`) — no other code changes are needed.
+e.g. `Standard_D4ds_v5`) — no other code changes are needed. Do note: a full
+per-SKU table means a service with a very large GA bucket (Virtual Machines'
+~965 sizes, say) would render a very long table if given Migrate data — worth
+reconsidering paging or a summary-only mode before extending this to VMs.
 
 ## Adding a service
 
@@ -240,9 +255,9 @@ service's section will keep reading "not supplied yet" until one is added.
    The top of each section is the newest thing Azure shipped for that service,
    which is usually the most useful sentence you can write about it.
 3. Anything retiring or in preview — that is what changes decisions.
-4. Any Azure Migrate SKU support flags, per service — a GA SKU Migrate doesn't
-   support, or a deprecated one it still does. Zero flags is itself worth
-   saying plainly rather than skipping.
+4. Any Azure Migrate SKU support flags, per service — a GA or preview SKU
+   Migrate doesn't support, or a deprecated one it still does. Zero flags in a
+   bucket is itself worth saying plainly rather than skipping.
 5. The honest gaps: how many dates are *not established*, and the coverage
    boundaries above.
 

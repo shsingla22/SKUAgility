@@ -312,12 +312,11 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 10.5px; letter-spacing: .13em; text-transform: uppercase;
     color: var(--ink-3); font-weight: 600; }
-  .migrate-ok { color: var(--ga); font-size: 13.5px; margin: 0; }
   .migrate-unavailable { color: var(--ink-3); font-size: 13.5px; margin: 0; }
   .migrate-note { color: var(--ink-2); font-size: 12.5px; margin: 8px 0 0; }
-  .migrate-flag { margin: 12px 0 0; }
-  .migrate-flag h5 { margin: 0 0 6px; font-size: 13px; color: var(--dep); font-weight: 600; }
-  table.migrate-t { border-collapse: collapse; font-size: 12.5px; }
+  .migrate-flag { margin: 14px 0 0; padding-top: 10px; border-top: 1px solid var(--line-2); }
+  .migrate-flag:first-of-type { border-top: 0; padding-top: 0; }
+  table.migrate-t { border-collapse: collapse; font-size: 12.5px; margin-top: 6px; }
   table.migrate-t th {
     text-align: left; padding: 3px 14px 3px 0; color: var(--ink-3);
     font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; font-weight: 600;
@@ -629,26 +628,46 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     return tr;
   }
 
-  function migrateTable(title, list, showLifecycle) {
+  var BUCKET_LABEL = { ga: 'Generally available', deprecated: 'Deprecated / retiring',
+                       preview: 'Public preview' };
+
+  function migrateFlagText(kind, flagged) {
+    if (!flagged) return '—';
+    return kind === 'deprecated' ? '⚠️ Migrate still supports this'
+                                  : '⚠️ Not Migrate-supported';
+  }
+
+  // Every SKU in the bucket, not just the flagged ones — a clean bucket still
+  // reports its numbers and lists what it compared, rather than being omitted.
+  function migrateBucketBlock(kind, bucket) {
+    var label = BUCKET_LABEL[kind];
     var wrap = el('div', 'migrate-flag');
-    wrap.appendChild(el('h5', null, title));
+    wrap.appendChild(el('p', 'migrate-note',
+      label + ' — ' + bucket.total + ' SKU(s), Migrate supports '
+      + bucket.supported_count + ', ' + bucket.flagged_count + ' flagged.'));
+    if (!bucket.total) {
+      wrap.appendChild(el('p', 'migrate-unavailable',
+        'No ' + label.toLowerCase() + ' SKUs for this service — nothing to compare.'));
+      return wrap;
+    }
     var t = document.createElement('table');
     t.className = 'migrate-t';
     var thead = document.createElement('thead');
     var htr = document.createElement('tr');
-    var heads = ['SKU'];
-    if (showLifecycle) heads.push('Lifecycle');
-    heads.push('Azure GA since', 'Confidence');
-    heads.forEach(function (h) { htr.appendChild(el('th', null, h)); });
+    ['#', 'SKU', 'Lifecycle status', 'Since', 'Confidence', 'Migrate supported', 'Flag']
+      .forEach(function (h) { htr.appendChild(el('th', null, h)); });
     thead.appendChild(htr);
     t.appendChild(thead);
     var tb = document.createElement('tbody');
-    list.forEach(function (d) {
+    bucket.rows.forEach(function (d, i) {
       var r = document.createElement('tr');
+      r.appendChild(el('td', null, String(i + 1)));
       r.appendChild(el('td', 'mono', d.sku));
-      if (showLifecycle) r.appendChild(el('td', null, d.lifecycle_status));
+      r.appendChild(el('td', null, d.lifecycle_status));
       r.appendChild(el('td', null, d.release_date));
       r.appendChild(el('td', null, d.date_confidence));
+      r.appendChild(el('td', null, d.migrate_supported ? 'Yes' : 'No'));
+      r.appendChild(el('td', null, migrateFlagText(kind, d.flagged)));
       tb.appendChild(r);
     });
     t.appendChild(tb);
@@ -656,43 +675,52 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     return wrap;
   }
 
-  function migrateRow(svc) {
+  function migrateUnavailableBox(title) {
+    var box = el('div', 'migrate-box');
+    box.appendChild(el('p', 'migrate-title', title));
+    box.appendChild(el('p', 'migrate-unavailable',
+      'Comparison data has not been supplied for this service yet — no flags to show.'));
+    return box;
+  }
+
+  function migrateGaRow(svc) {
     var tr = el('tr', 'migrate');
     var td = document.createElement('td');
     td.colSpan = 9;
-    var box = el('div', 'migrate-box');
-    box.appendChild(el('p', 'migrate-title', 'Azure Migrate SKU support'));
     var cmp = (D.migrate || {})[svc];
+    var box;
     if (!cmp || !cmp.available) {
-      box.appendChild(el('p', 'migrate-unavailable',
-        'Comparison data has not been supplied for this service yet — no flags to show.'));
+      box = migrateUnavailableBox('GA SKU discrepancies');
     } else {
+      box = el('div', 'migrate-box');
+      box.appendChild(el('p', 'migrate-title', 'GA SKU discrepancies'));
       box.appendChild(el('p', 'migrate-note',
         'Compared against ' + cmp.supported_count + ' Migrate-supported SKUs, as of '
         + cmp.as_of + '. ' + cmp.source));
-      var gaBad = cmp.ga_unsupported || [], depBad = cmp.deprecated_supported || [];
-      if (!gaBad.length && !depBad.length) {
-        box.appendChild(el('p', 'migrate-ok',
-          'No flags: every GA SKU is Migrate-supported, and no deprecated/retiring '
-          + 'SKU is still Migrate-supported.'));
-      } else {
-        if (gaBad.length) box.appendChild(migrateTable(
-          gaBad.length + ' GA SKU(s) Migrate does NOT support — recommending '
-          + 'these blocks a Migrate-based migration', gaBad, false));
-        if (depBad.length) box.appendChild(migrateTable(
-          depBad.length + ' deprecated/retiring SKU(s) Migrate STILL supports '
-          + '— Migrate may recommend landing on something Azure is already '
-          + 'walking back', depBad, true));
-      }
-      var prev = cmp.preview_unassessed || [];
-      if (prev.length) box.appendChild(el('p', 'migrate-note',
-        'Informational — ' + prev.length + ' public-preview SKU(s) not yet '
-        + 'in Migrate’s supported list (not flagged: a preview SKU is not '
-        + 'expected to have Migrate support yet).'));
+      box.appendChild(migrateBucketBlock('ga', cmp.ga));
+      box.appendChild(migrateBucketBlock('deprecated', cmp.deprecated));
       var unk = cmp.unknown_to_azure || [];
       if (unk.length) box.appendChild(el('p', 'migrate-note',
         'Data-quality note — Migrate’s list names ' + unk.length
         + ' SKU(s) this catalog does not find under ' + svc + ': ' + unk.join(', ')));
+    }
+    td.appendChild(box);
+    tr.appendChild(td);
+    return tr;
+  }
+
+  function migratePreviewRow(svc) {
+    var tr = el('tr', 'migrate');
+    var td = document.createElement('td');
+    td.colSpan = 9;
+    var cmp = (D.migrate || {})[svc];
+    var box;
+    if (!cmp || !cmp.available) {
+      box = migrateUnavailableBox('Public preview SKU discrepancies');
+    } else {
+      box = el('div', 'migrate-box');
+      box.appendChild(el('p', 'migrate-title', 'Public preview SKU discrepancies'));
+      box.appendChild(migrateBucketBlock('preview', cmp.preview));
     }
     td.appendChild(box);
     tr.appendChild(td);
@@ -748,7 +776,8 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
 
     if (!open) { return; }
 
-    frag.appendChild(migrateRow(svc));
+    frag.appendChild(migrateGaRow(svc));
+    frag.appendChild(migratePreviewRow(svc));
 
     groups[svc].forEach(function (r) {
       var sc = statusClass(r.ls);

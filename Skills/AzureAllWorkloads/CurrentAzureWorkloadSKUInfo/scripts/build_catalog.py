@@ -129,58 +129,65 @@ def migrate_comparisons(by_service: dict) -> dict:
     return out
 
 
-def migrate_block_lines(svc: str, cmp: dict) -> list[str]:
-    """Markdown lines for the Migrate-support callout at the top of one section."""
-    lines = ["**Azure Migrate SKU support**", ""]
+MIGRATE_TABLE_HEADER = ("| # | SKU | Lifecycle status | Since | Confidence "
+                        "| Migrate supported | Flag |\n"
+                        "| --- | --- | --- | --- | --- | --- | --- |")
+
+
+def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
+    if not flagged:
+        return "—"
+    if bucket_kind == "deprecated":
+        return "⚠️ Migrate still supports this"
+    return "⚠️ Not Migrate-supported"
+
+
+def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict) -> list[str]:
+    """Lines for one lifecycle bucket's table: always emitted, even at zero rows."""
+    lines = [f"**{label}** — {bucket['total']} SKU(s), Migrate supports "
+             f"{bucket['supported_count']}, {bucket['flagged_count']} flagged.", ""]
+    if bucket["total"] == 0:
+        lines += [f"No {label.lower()} SKUs for this service — nothing to compare.", ""]
+        return lines
+    lines += [MIGRATE_TABLE_HEADER]
+    for i, d in enumerate(bucket["rows"], 1):
+        yn = "Yes" if d["migrate_supported"] else "No"
+        flag = _migrate_flag_text(bucket_kind, d["flagged"])
+        lines.append(f"| {i} | `{d['sku']}` | {d['lifecycle_status']} "
+                     f"| {d['release_date']} | {d['date_confidence']} | {yn} | {flag} |")
+    lines.append("")
+    return lines
+
+
+def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
+    """Markdown for the two Migrate-support sections at the top of one section.
+
+    Both sections always appear, and always state their numbers — a clean bucket
+    (nothing flagged) is reported as plainly as a dirty one, never omitted.
+    """
+    lines = ["### GA SKU discrepancies", ""]
     if not cmp["available"]:
         lines += ["Comparison data has not been supplied for this service yet — "
+                  "no flags to show.", "",
+                  "### Public preview SKU discrepancies", "",
+                  "Comparison data has not been supplied for this service yet — "
                   "no flags to show.", ""]
         return lines
 
     lines += [f"Compared against {cmp['supported_count']} SKUs Azure Migrate "
               f"supports for this service, as of {cmp['as_of']}. Source: "
               f"{cmp['source']}", ""]
-
-    ga_bad = cmp["ga_unsupported"]
-    dep_bad = cmp["deprecated_supported"]
-
-    if not ga_bad and not dep_bad:
-        lines.append("No flags: every GA SKU is Migrate-supported, and no "
-                     "deprecated/retiring SKU is still Migrate-supported.")
-    else:
-        if ga_bad:
-            lines += ["", f"*{len(ga_bad)} GA SKU(s) Migrate does NOT support "
-                      "— recommending these blocks a Migrate-based migration:*", "",
-                      "| SKU | Azure GA since | Confidence | Source |",
-                      "| --- | --- | --- | --- |"]
-            for d in ga_bad:
-                lines.append(f"| `{d['sku']}` | {d['release_date']} "
-                             f"| {d['date_confidence']} | [{d['milestone_label']}]"
-                             f"({d['release_doc']}) |")
-        if dep_bad:
-            lines += ["", f"*{len(dep_bad)} deprecated/retiring SKU(s) Migrate "
-                      "STILL supports — Migrate may recommend landing on "
-                      "something Azure is already walking back:*", "",
-                      "| SKU | Azure lifecycle | Azure GA since | Confidence | Source |",
-                      "| --- | --- | --- | --- | --- |"]
-            for d in dep_bad:
-                lines.append(f"| `{d['sku']}` | {d['lifecycle_status']} "
-                             f"| {d['release_date']} | {d['date_confidence']} "
-                             f"| [{d['milestone_label']}]({d['release_doc']}) |")
-
-    prev = cmp["preview_unassessed"]
-    if prev:
-        lines += ["", f"*Informational — {len(prev)} public-preview SKU(s) not "
-                  "yet in Migrate's supported list (not flagged: a preview SKU "
-                  "is not expected to have Migrate support yet).*"]
+    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"])
+    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"])
 
     unknown = cmp["unknown_to_azure"]
     if unknown:
-        lines += ["", f"*Data-quality note — Migrate's list names "
-                  f"{len(unknown)} SKU(s) this catalog does not find under "
-                  f"{svc}: {', '.join(f'`{u}`' for u in unknown)}.*"]
+        lines += [f"*Data-quality note — Migrate's list names {len(unknown)} "
+                  f"SKU(s) this catalog does not find under {svc}: "
+                  f"{', '.join(f'`{u}`' for u in unknown)}.*", ""]
 
-    lines.append("")
+    lines += ["### Public preview SKU discrepancies", ""]
+    lines += _migrate_bucket_lines("preview", "Public preview", cmp["preview"])
     return lines
 
 
@@ -249,7 +256,7 @@ def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
 
         lines += [f"## {svc}", "",
                   f"{len(group)} SKUs — {summary}.", ""]
-        lines += migrate_block_lines(svc, migrate[svc])
+        lines += migrate_section_lines(svc, migrate[svc])
         lines += ["Documentation read for this service:", ""]
         lines += [f"- <{d}>" for d in docs]
         lines += ["", COLUMNS]
@@ -402,10 +409,12 @@ def main() -> int:
     for svc, cmp in migrate.items():
         if not cmp["available"]:
             continue
-        flags = len(cmp["ga_unsupported"]) + len(cmp["deprecated_supported"])
+        flags = (cmp["ga"]["flagged_count"] + cmp["deprecated"]["flagged_count"]
+                 + cmp["preview"]["flagged_count"])
         print(f"  migrate support ({svc}): {flags} flagged "
-              f"({len(cmp['ga_unsupported'])} GA-unsupported, "
-              f"{len(cmp['deprecated_supported'])} deprecated-but-supported)")
+              f"({cmp['ga']['flagged_count']} GA-unsupported, "
+              f"{cmp['deprecated']['flagged_count']} deprecated-but-supported, "
+              f"{cmp['preview']['flagged_count']} preview-unsupported)")
     return 0
 
 

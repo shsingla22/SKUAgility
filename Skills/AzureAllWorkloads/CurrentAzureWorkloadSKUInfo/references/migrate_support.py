@@ -5,19 +5,25 @@ discovery-and-assessment tooling recognizes for that service — as supplied to 
 skill (a document, a support article, whatever the workload's entry names as its
 `source`), not derived from the same Microsoft pages the rest of the catalog reads.
 A workload with no entry gets an honest "not supplied yet" result rather than a
-silent empty comparison, so every service section can carry this block even before
-its Migrate data exists.
+silent empty comparison, so every service section can carry both call-outs below
+even before its Migrate data exists.
 
-Two things are flagged, because they are the two ways the catalogs can disagree in
-a way that matters operationally:
+The comparison is bucketed by Azure lifecycle status, and every bucket is reported
+in full — every SKU in the bucket, with its Migrate-support status — not just the
+ones that disagree. A clean bucket (no disagreement) still reports its numbers
+rather than being silently omitted, because "nothing to flag" is itself a fact
+worth stating plainly.
 
-  - a SKU Azure has GA and Migrate does NOT support — Migrate will not assess or
-    move workloads on it, so recommending it blocks a Migrate-based migration.
-  - a SKU Azure has deprecated or retiring and Migrate DOES support — Migrate may
-    recommend landing on something Azure is already walking back.
+Three things are flagged, because they are the three ways the catalogs can
+disagree in a way that matters operationally:
 
-A SKU still in preview is neither: it is reported separately, as informational
-"not yet assessed" context, never as a flag.
+  - a SKU Azure has GA that Migrate does NOT support — Migrate will not assess
+    or move workloads on it, so recommending it blocks a Migrate-based migration.
+  - a SKU Azure has in public preview that Migrate does NOT support — the same
+    problem, one release stage earlier: it's not yet safe to plan a Migrate-based
+    move onto it.
+  - a SKU Azure has deprecated or retiring that Migrate DOES support — Migrate
+    may recommend landing on something Azure is already walking back.
 """
 
 from __future__ import annotations
@@ -45,7 +51,18 @@ def status_bucket(lifecycle_status: str) -> str:
     return "ga"
 
 
-def _detail(r) -> dict:
+# A bucket is flagged when Migrate's support disagrees with what you'd want:
+# GA and preview SKUs should be supported; deprecated/retiring ones should not.
+FLAG_WHEN_UNSUPPORTED = {"ga", "preview"}
+
+
+def _detail(r, supported: set) -> dict:
+    migrate_supported = r.sku in supported
+    bucket = status_bucket(r.lifecycle_status)
+    if bucket in FLAG_WHEN_UNSUPPORTED:
+        flagged = not migrate_supported
+    else:
+        flagged = migrate_supported
     return {
         "sku": r.sku,
         "tier": r.tier,
@@ -54,6 +71,19 @@ def _detail(r) -> dict:
         "date_confidence": r.date_confidence,
         "milestone_label": r.milestone_label,
         "release_doc": r.release_doc,
+        "migrate_supported": migrate_supported,
+        "flagged": flagged,
+    }
+
+
+def _bucket(rows: list) -> dict:
+    rows = sorted(rows, key=lambda d: d["sku"])
+    flagged = [d for d in rows if d["flagged"]]
+    return {
+        "total": len(rows),
+        "supported_count": sum(1 for d in rows if d["migrate_supported"]),
+        "flagged_count": len(flagged),
+        "rows": rows,
     }
 
 
@@ -62,36 +92,33 @@ def compare(service_rows: list, entry: dict | None) -> dict:
 
     Always returns a dict; `available` is False when the workload has no entry
     in migrate_support.json yet, which the caller renders as an honest gap
-    rather than omitting the block.
+    rather than omitting either call-out.
+
+    Every bucket (ga / deprecated / preview) carries every SKU in that bucket,
+    each tagged `migrate_supported` and `flagged` — a clean bucket still reports
+    its total and supported count, it just has `flagged_count == 0`.
     """
     if not entry:
         return {"available": False}
 
     supported = set(entry.get("supported_skus", []))
-    ga_unsupported, deprecated_supported, preview_unassessed = [], [], []
+    buckets: dict[str, list] = {"ga": [], "deprecated": [], "preview": []}
     catalog_skus = set()
 
     for r in service_rows:
         catalog_skus.add(r.sku)
-        bucket = status_bucket(r.lifecycle_status)
-        if bucket == "ga" and r.sku not in supported:
-            ga_unsupported.append(_detail(r))
-        elif bucket == "deprecated" and r.sku in supported:
-            deprecated_supported.append(_detail(r))
-        elif bucket == "preview" and r.sku not in supported:
-            preview_unassessed.append(_detail(r))
+        buckets[status_bucket(r.lifecycle_status)].append(_detail(r, supported))
 
     return {
         "available": True,
         "source": entry.get("source", ""),
         "as_of": entry.get("as_of", ""),
         "supported_count": len(supported),
-        "ga_unsupported": sorted(ga_unsupported, key=lambda d: d["sku"]),
-        "deprecated_supported": sorted(deprecated_supported, key=lambda d: d["sku"]),
-        "preview_unassessed": sorted(preview_unassessed, key=lambda d: d["sku"]),
+        "ga": _bucket(buckets["ga"]),
+        "deprecated": _bucket(buckets["deprecated"]),
+        "preview": _bucket(buckets["preview"]),
         # Migrate-listed names this catalog cannot find at all — either a naming
         # mismatch or a SKU Azure has removed from the docs entirely. Surfaced so
-        # a silent match (both lists happen to be empty of complaints) can't hide
-        # a broken join.
+        # a silent match (every bucket clean) can't hide a broken join.
         "unknown_to_azure": sorted(supported - catalog_skus),
     }
