@@ -222,6 +222,42 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
   .stat.is-prev b { color: var(--prev); }
   .stat.is-dep b { color: var(--dep); }
 
+  /* ---- per-service stat strip ---- */
+  .svc-stats { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .svc-stats-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 -2px;
+  }
+  .svc-card {
+    background: var(--ground); border: 1px solid var(--line); border-radius: 3px;
+    padding: 11px 14px 12px; display: flex; flex-direction: column; gap: 8px;
+  }
+  .svc-card h3 {
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
+    color: var(--accent); font-weight: 600;
+  }
+  .svc-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 22px; }
+  .svc-row-label {
+    flex: 0 0 auto; min-width: 88px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .mini { display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+  .mini b {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 17px; font-weight: 600; letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums; line-height: 1.1;
+  }
+  .mini span { font-size: 11.5px; color: var(--ink-2); }
+  .mini.is-ga b { color: var(--ga); }
+  .mini.is-prev b { color: var(--prev); }
+  .mini.is-dep b { color: var(--dep); }
+  .mini.is-flag b { color: var(--dep); }
+  .mini.is-muted span { color: var(--ink-3); font-style: italic; }
+
   /* ---- controls ---- */
   .controls {
     position: sticky; top: 0; z-index: 20; background: var(--surface);
@@ -418,6 +454,9 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       <div class="stat is-prev"><b id="st-prev">—</b><span>Public preview</span></div>
       <div class="stat"><b id="st-span">—</b><span>Dates not sourced</span></div>
     </div>
+    <div class="svc-stats" id="svc-stats">
+      <p class="svc-stats-label">Per service · catalog and Azure Migrate support</p>
+    </div>
   </div>
 </header>
 
@@ -516,6 +555,63 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
   document.getElementById('st-prev').textContent = n.prev;
   document.getElementById('st-svc').textContent = Object.keys(services).length;
   document.getElementById('st-span').textContent = unsourced;
+
+  // ---- per-service stat strip: the same split as above, per service, plus the
+  // Azure Migrate support numbers for that service (or a note that none were supplied)
+  (function () {
+    var host = document.getElementById('svc-stats');
+    var per = {};
+    rows.forEach(function (r) {
+      var p = per[r.svc] || (per[r.svc] = { total: 0, ga: 0, prev: 0, dep: 0, unsourced: 0 });
+      p.total++;
+      p[statusClass(r.ls)]++;
+      if (r.cf === 'unknown') p.unsourced++;
+    });
+    var svcOrder = (D.order || []).filter(function (s) { return per[s]; });
+    Object.keys(per).forEach(function (s) { if (svcOrder.indexOf(s) === -1) svcOrder.push(s); });
+
+    function mini(cls, num, label) {
+      var m = el('span', 'mini' + (cls ? ' ' + cls : ''));
+      m.appendChild(el('b', null, String(num)));
+      m.appendChild(el('span', null, label));
+      return m;
+    }
+    function row(label, items) {
+      var r = el('div', 'svc-row');
+      r.appendChild(el('span', 'svc-row-label', label));
+      items.forEach(function (i) { r.appendChild(i); });
+      return r;
+    }
+
+    svcOrder.forEach(function (svc) {
+      var p = per[svc];
+      var card = el('div', 'svc-card');
+      card.appendChild(el('h3', null, svc));
+      card.appendChild(row('Catalog', [
+        mini('', p.total, 'SKUs documented'),
+        mini('is-ga', p.ga, 'generally available'),
+        mini('is-prev', p.prev, 'public preview'),
+        mini('is-dep', p.dep, 'deprecated / retiring'),
+        mini('', p.unsourced, 'dates not sourced')
+      ]));
+      var cmp = (D.migrate || {})[svc];
+      if (!cmp || !cmp.available) {
+        var note = el('span', 'mini is-muted');
+        note.appendChild(el('span', null, 'Migrate support data not supplied for this service yet'));
+        card.appendChild(row('Migrate', [note]));
+      } else {
+        card.appendChild(row('Migrate', [
+          mini('is-ga', cmp.ga.supported_count, 'GA · supported by Azure and Migrate'),
+          mini(cmp.ga.flagged_count ? 'is-flag' : '', cmp.ga.flagged_count, 'GA · not supported by Migrate'),
+          mini('is-prev', cmp.preview.supported_count, 'preview · supported by both'),
+          mini(cmp.preview.flagged_count ? 'is-flag' : '', cmp.preview.flagged_count, 'preview · not supported by Migrate'),
+          mini(cmp.deprecated.flagged_count ? 'is-flag' : '', cmp.deprecated.flagged_count, 'deprecated · still supported by Migrate'),
+          mini('', cmp.supported_count, 'SKUs on Migrate\u2019s list')
+        ]));
+      }
+      host.appendChild(card);
+    });
+  })();
 
   // ---- facets
   var state = { q: '', svc: null, ls: null, t: null };
