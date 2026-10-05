@@ -5,8 +5,9 @@ SKU agility for all workloads.
 A catalog of the compute SKUs offered by Azure data services — what exists today, what tier
 and hardware family it belongs to, when it shipped, whether it is still a good idea, and
 where every one of those claims came from. Built from Microsoft documentation by two
-reusable skills. **1,378 SKUs across Azure SQL, Azure Database for PostgreSQL and Azure
-Virtual Machines** by default; four more services ship switched off behind a config flag.
+reusable skills. **1,509 SKUs across Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL
+and Azure Virtual Machines** by default; three more services ship switched off behind a
+config flag.
 
 ## What's here
 
@@ -45,7 +46,7 @@ and generate everything, then verify what they produced:
 
 | Skill | Covers | Granularity |
 | --- | --- | --- |
-| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL, PostgreSQL and Virtual Machines on by default; MySQL, Cache for Redis, App Service and AKS available | Per individual size |
+| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL, PostgreSQL, MySQL and Virtual Machines on by default; Cache for Redis, App Service and AKS available | Per individual size |
 | `CurrentAzureSQLSKUInfo` | Azure SQL Database + Managed Instance | Every service-level objective |
 
 Which services the cross-workload catalog covers is set in
@@ -66,10 +67,12 @@ milestones, and a provider module — described in the
 
 ### Notable current findings
 
-- **Azure SQL Fsv2-series is deprecated**, retiring 2026-10-01 — 11 SKUs.
+- **Azure SQL Fsv2-series retired on 2026-10-01.** Its 11 sizes are gone from Microsoft's
+  resource-limits article and so from this catalog; the family is recorded in the Azure SQL
+  table's *Retired and deprecated hardware families* section.
 - **Four typos in Microsoft's published PostgreSQL compute table** are corrected explicitly
   and listed in the output rather than repeated or silently dropped.
-- **Azure Virtual Machines are enumerated per size** — 965 sizes across 131 series, read
+- **Azure Virtual Machines are enumerated per size** — 1,058 sizes across 137 series, read
   from each series' own "Sizes in series" table, with vCPU and memory for every one.
 - **Azure SQL and PostgreSQL are fully dated.** About 60% of VM sizes carry a dated GA
   announcement; the rest read *not established* rather than carrying a guess, and every run
@@ -85,8 +88,14 @@ milestones, and a provider module — described in the
   deprecated SKU it still does. Currently sourced for **PostgreSQL only** (a user-supplied
   document, `references/migrate_support.json`): all 71 GA PostgreSQL SKUs match Migrate's list
   exactly (zero flags), but all **38 public-preview v6 SKUs are flagged** — Migrate's list
-  predates the v6 preview. Other services show "not supplied yet" until their own Migrate
-  data is added.
+  predates the v6 preview. **MySQL** (user-supplied document, 2026-10-05): **25 of the 49 GA
+  SKUs are not Migrate-supported** — every v5 size (`*ads_v5` / `*ds_v5`) plus `E64ds_v4` —
+  and Migrate's list names `Standard_E96ds_v5`, which Microsoft's MySQL service-tiers page
+  does not offer. Azure SQL and Virtual Machines show "not supplied yet" until their own
+  Migrate data is added.
+- **80 VM sizes across 11 series are End of Life** per Microsoft's End of Life size-series
+  list (Dv2/Dsv2, Dv3/Dsv3, Ev3/Esv3, Fsv2, Lsv2, DCsv3/DCdsv3, HC, HBv2): retirement
+  announced, still usable until the date, restricted for new subscriptions.
 
 ## The Azure SQL skill
 
@@ -140,7 +149,6 @@ Every Azure SQL SKU carries a lifecycle status read from the current Microsoft d
 | Status | Count | What it covers |
 | --- | --- | --- |
 | Generally available | 291 | Orderable, fully supported |
-| Deprecated - cannot be created; retires 2026-10-01 | 11 | The Fsv2-series sizes |
 | Public preview | 2 | `HS_PRMS_160` and `HS_PRMS_192` |
 
 Gen4 and M-series are fully retired and no longer enumerable from Microsoft docs; they are
@@ -168,4 +176,4 @@ from third-party sources.
 
 Sources for every date are listed in [`SOURCES.md`](SOURCES.md), in the skill's
 [`references/sources.json`](Skills/AzureSQL/CurrentAzureSQLSKUInfo/references/sources.json),
-and inline in the JSON. Catalog as of **2026-08-17**.
+and inline in the JSON. Catalog as of **2026-10-05**.

@@ -531,12 +531,14 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
 
   function statusClass(ls) {
     if (ls.indexOf('preview') > -1) return 'prev';
-    if (ls.indexOf('Deprecated') > -1 || ls.indexOf('Retiring') > -1) return 'dep';
+    if (/Deprecated|Retiring|Retired|End of Life|Previous generation/.test(ls)) return 'dep';
     return 'ga';
   }
   function shortStatus(ls) {
     if (ls.indexOf('preview') > -1) return 'Preview';
+    if (ls.indexOf('End of Life') > -1) return 'End of life';
     if (ls.indexOf('Retiring') > -1) return 'Retiring';
+    if (ls.indexOf('Retired') > -1) return 'Retired';
     if (ls.indexOf('Deprecated') > -1) return 'Deprecated';
     return 'GA';
   }

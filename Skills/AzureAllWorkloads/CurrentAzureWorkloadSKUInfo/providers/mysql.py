@@ -7,6 +7,8 @@ from the "Target workloads" table on the same page.
 
 from __future__ import annotations
 
+import re
+
 from common import GA, Sku, num, sentences
 from milestones import MYSQL_BUSINESS_CRITICAL, MYSQL_FLEX
 
@@ -17,6 +19,14 @@ SOURCES = ["mysql_tiers"]
 TIERS = {"Burstable": "Burstable",
          "General Purpose": "General Purpose",
          "Memory-Optimized": "Business Critical"}
+
+
+def series_of(sku: str) -> str:
+    part = sku.replace("Standard_", "")
+    if part.startswith("B"):
+        return "B-series"
+    m = re.match(r"^([DE])\d+(i?a?d?s)_(v\d)$", part)
+    return f"{m.group(1)}{m.group(2)}{m.group(3)}-series" if m else "unknown"
 
 
 def collect(docs: dict) -> list[Sku]:
@@ -33,8 +43,10 @@ def collect(docs: dict) -> list[Sku]:
         for table in section.tables:
             if table.column("Compute size") < 0:
                 continue
+            # A cell may name two equivalent sizes, e.g.
+            # "Standard_E2ads_v5, Standard_E2ds_v5" — one SKU each.
             for row in table.body:
-                sku = row[0].strip()
+              for sku in re.split(r"\s*,\s*", row[0].strip()):
                 if not sku.startswith("Standard_"):
                     continue
                 tier = TIERS[tier_doc_name]
@@ -47,7 +59,7 @@ def collect(docs: dict) -> list[Sku]:
                             "region before committing to it.")
                 rows.append(Sku(
                     workload=WORKLOAD, service=SERVICE, sku=sku, tier=tier,
-                    series=sku.split("_")[1].rstrip("0123456789ms") or "B-series",
+                    series=series_of(sku),
                     capacity=num(row[1]), capacity_unit="vCore",
                     memory_gb=num(row[2]) if len(row) > 2 else None,
                     lifecycle_status=GA,

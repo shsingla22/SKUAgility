@@ -32,7 +32,7 @@
       "key": "mysql",
       "display": "Azure Database for MySQL",
       "provider": "mysql",
-      "enabled": false,
+      "enabled": true,
       "note": "Flexible server, per compute size."
     },
     {

@@ -11,7 +11,7 @@ This provider walks that structure rather than stopping at the family:
     sizes/overview.md            -> the family pages, grouped by workload type
     <type>/<x>-family.md         -> the series pages belonging to that family
     <type>/<series>-series.md    -> the sizes themselves
-    lifecycle/previous-gen-sizes-list.md -> which series are previous generation
+    lifecycle/end-of-life-sizes-list.md -> which series are End of Life
 
 Release dates come from references/vm_milestones.py, which maps series to the
 dated Microsoft announcement that made that generation generally available.
@@ -51,10 +51,22 @@ TYPES = {"General purpose", "Compute optimized", "Memory optimized",
 # the storage tables). Matching every "Size Name" table would invent sizes and
 # read a disk count as a vCPU count, so the header must name both a CPU column
 # and a memory column. Most pages say "vCPUs (Qty.)"; the DCv3 pages say
-# "Cores (Qty.)".
+# "Cores (Qty.)". A few pages still use the older layout, "| Size | vCPU |
+# Memory: GiB | ..." (Ebdsv5/Ebsv5 was rewritten this way in 2026-09), where
+# the same sizes repeat in an NVMe table and a SCSI table — collect() keeps the
+# first occurrence of each size name, so that repetition is harmless.
 SIZE_HEADER = re.compile(
-    r"^\|\s*Size Name\s*\|[^|]*(?:vCPU|Cores)[^|]*\|[^|]*Memory", re.I)
+    r"^\|\s*Size(?:\s+Name)?\s*\|[^|]*(?:vCPU|Cores)[^|]*\|[^|]*Memory", re.I)
 NUM = re.compile(r"(\d[\d,]*\.?\d*)")
+
+# Typos in Microsoft's published Basics tables, corrected explicitly and listed
+# in the output rather than repeated. Keyed by the name as published.
+ERRATA = {
+    "Standard_L80s_v26": ("Standard_L80s_v2",
+                          "a footnote digit is fused to the size name; every other "
+                          "table on the page says Standard_L80s_v2"),
+}
+APPLIED_ERRATA: list[dict] = []
 
 
 # --------------------------------------------------------------------------
@@ -144,12 +156,30 @@ def discover(doc, cache: str, offline: bool) -> tuple[dict, dict, dict]:
         fam = path.split("/")[0] + "/" + path.split("/")[-1].replace("-workloads", "")
         workloads[fam] = sentences(body, limit=5)
 
-    prev = previous_generation(_get("lifecycle/previous-gen-sizes-list", cache, offline))
+    prev = end_of_life(_get("lifecycle/end-of-life-sizes-list", cache, offline))
     return series_type, {"fam_type": fam_type, "workloads": workloads}, prev
 
 
-def previous_generation(text: str) -> dict[str, str]:
-    """Series name -> lifecycle status, from the previous-generation list."""
+END_OF_LIFE = "End of Life - retirement announced"
+
+
+def end_of_life(text: str) -> dict[str, str]:
+    """Series key -> lifecycle status, from Microsoft's End of Life size-series list.
+
+    The list replaced the older previous-generation page in 2026-09 (the old URL
+    redirects here). It names whole series — "Dv2 and Dsv2-series", "Fsv2-series"
+    — each with a modernization-guide link, and no per-series sub-status, so every
+    listed series carries the one END_OF_LIFE status. Entries that name only some
+    sizes of a series ("Msv2 and Mdsv2 isolated sizes") are skipped rather than
+    applied to the whole series.
+
+    An empty or unparseable page raises: the previous silent failure mode was
+    every End of Life series quietly turning back into "Generally available".
+    """
+    if not text.strip():
+        raise RuntimeError("Virtual Machines: the End of Life size-series list could "
+                           "not be read (lifecycle/end-of-life-sizes-list) — refusing "
+                           "to mark every series as generally available")
     out: dict[str, str] = {}
     for line in text.split("\n"):
         if not line.startswith("|"):
@@ -157,15 +187,29 @@ def previous_generation(text: str) -> dict[str, str]:
         cells = [c.strip() for c in line.strip().strip("|").split("|")]
         if len(cells) < 2 or set("".join(cells)) <= set("-: "):
             continue
-        name, status = cells[0], cells[1]
-        status = re.sub(r"\[([^\]]*)\][^\)]*\)", r"\1", status).strip()
-        if not name or name.lower().startswith("series name"):
+        name = cells[0]
+        if not name or name.lower().startswith("series") or "isolated sizes" in name.lower():
             continue
         for part in re.split(r"\s+and\s+", name):
-            key = part.lower().replace("-series", "").replace(" ", "")
+            key = re.sub(r"\s*\(.*?\)|-series$|^standard\s+|^memory-optimized\s+", "",
+                         part.strip(), flags=re.I)
+            key = key.lower().replace(" ", "")
             if key:
-                out[key] = status
+                out[key] = END_OF_LIFE
+    if len(out) < 10:
+        raise RuntimeError(f"Virtual Machines: only {len(out)} series parsed from the "
+                           "End of Life list — the page changed shape")
     return out
+
+
+def end_of_life_status(series_key: str, eol: dict[str, str]) -> str | None:
+    """A series page may cover two series ("ev3-esv3"); match either half."""
+    if series_key in eol:
+        return eol[series_key]
+    for part in series_key.split("-"):
+        if part in eol:
+            return eol[part]
+    return None
 
 
 # --------------------------------------------------------------------------
@@ -190,7 +234,7 @@ def parse_sizes(text: str) -> list[tuple[str, float | None, float | None]]:
         # e.g. "*Standard_D192lds_v7" or "**Standard_M8-2ms**". Strip those or the
         # size is silently dropped from the catalog.
         name = cells[0].strip().lstrip("*").strip().strip("*").strip()
-        name = re.sub(r"^\\|<sup>.*?</sup>|\s+$", "", name)
+        name = re.sub(r"^\\|<sup>.*?</sup>|\s+$", "", name).strip()
         if not name.startswith("Standard_"):
             continue
         def num(i):
@@ -240,6 +284,7 @@ def collect(docs: dict, cache: str = "", offline: bool = False) -> list[Sku]:
 
     rows: list[Sku] = []
     seen: set[str] = set()
+    APPLIED_ERRATA.clear()
     for path, text in pages.items():
         vm_type = series_type[path] or "Other"
         series = series_label(path)
@@ -259,10 +304,8 @@ def collect(docs: dict, cache: str = "", offline: bool = False) -> list[Sku]:
             guidance += [g for g in workloads.get(family_key, []) if g not in guidance]
 
         key = series.lower().replace("-series", "")
-        status = prev.get(key)
-        lifecycle = GA
-        if status:
-            lifecycle = f"Previous generation - {status}"
+        status = end_of_life_status(key, prev)
+        lifecycle = status or GA
 
         ms = milestone_for(series)
         sizes = parse_sizes(text)
@@ -270,6 +313,12 @@ def collect(docs: dict, cache: str = "", offline: bool = False) -> list[Sku]:
             raise RuntimeError(f"Virtual Machines: no sizes parsed from {path}")
 
         for name, vcpus, memory in sizes:
+            if name in ERRATA:
+                fixed, why = ERRATA[name]
+                APPLIED_ERRATA.append({"workload": WORKLOAD, "published": name,
+                                       "corrected": fixed, "reason": why,
+                                       "source": LIVE + path})
+                name = fixed
             if name in seen:
                 continue
             seen.add(name)
@@ -277,9 +326,11 @@ def collect(docs: dict, cache: str = "", offline: bool = False) -> list[Sku]:
             when.insert(0, f"This size belongs to the {series}, a "
                            f"{vm_type.lower()} series.")
             if status:
-                when.append(f"Microsoft lists this series as previous generation "
-                            f"({status}); prefer a current series for new "
-                            f"deployments and check the migration guide.")
+                when.append("Microsoft lists this series as End of Life: it has an "
+                            "announced retirement date and deployment restrictions "
+                            "for new subscriptions. Use a Current series for new "
+                            "deployments and plan the move with its modernization "
+                            "guide.")
             when.append("Confirm the size is offered in your target region and that "
                         "your subscription has vCPU quota for its family.")
             rows.append(Sku(

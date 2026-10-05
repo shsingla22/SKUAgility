@@ -79,7 +79,8 @@ Lifecycle is not parsed — it comes from prose that moves around. Read the cach
   reflected in the deprecated status and in `RETIRED_FAMILIES`.
 
 At the time of writing that means: `HS_PRMS_160` / `HS_PRMS_192` are preview, the
-11 `GP_Fsv2_*` sizes are deprecated with a 2026-10-01 retirement, and Gen4 and
+the 11 `GP_Fsv2_*` sizes retired on 2026-10-01 (the parser treats that section as
+optional, and the family is listed as retired), and Gen4 and
 M-series are fully retired and no longer enumerable.
 
 ### 3. Read the verification output

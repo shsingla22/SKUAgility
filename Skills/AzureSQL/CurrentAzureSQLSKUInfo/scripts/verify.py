@@ -146,11 +146,11 @@ def main() -> int:
     allowed = {"Generally available", "Public preview"}
     unknown = {s["lifecycle_status"] for s in skus
                if s["lifecycle_status"] not in allowed
-               and not s["lifecycle_status"].startswith("Deprecated")}
+               and not s["lifecycle_status"].startswith(("Deprecated", "Retired"))}
     if unknown:
         fail(f"unexpected lifecycle values: {sorted(unknown)}")
     else:
-        ok("lifecycle values are all GA / preview / deprecated")
+        ok("lifecycle values are all GA / preview / deprecated / retired")
 
     # ---- a preview SKU must be dated by its preview announcement
     for s in skus:

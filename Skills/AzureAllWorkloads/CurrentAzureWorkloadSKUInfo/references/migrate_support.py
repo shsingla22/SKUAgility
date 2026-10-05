@@ -46,7 +46,8 @@ def status_bucket(lifecycle_status: str) -> str:
     ls = lifecycle_status or ""
     if "preview" in ls:
         return "preview"
-    if ls.startswith(("Deprecated", "Retiring", "Retired", "Previous generation")):
+    if ls.startswith(("Deprecated", "Retiring", "Retired", "End of Life",
+                      "Previous generation")):
         return "deprecated"
     return "ga"
 

@@ -1,6 +1,6 @@
 ---
 name: CurrentAzureWorkloadSKUInfo
-description: Produce a current, fully sourced SKU catalog for a configurable set of Azure services — Azure SQL, Azure Database for PostgreSQL and Azure Virtual Machines by default, with MySQL, Cache for Redis, App Service and Kubernetes Service available by flipping a flag. Output is sectioned per service with the newest SKUs first and collapsible sections in the Atlas, and every SKU gets its release date, lifecycle status (GA / public preview / deprecated / retiring), numbered plain-English conditions for when to recommend it taken from Microsoft's own guidance, and links to every page the data came from. Outputs a Markdown table and the filterable "Azure Workload SKU Atlas" HTML page. Use when asked for Azure SKUs for one or more services, which Azure tier or size to pick for a workload, what is deprecated, retiring or in preview, or to refresh an existing Azure SKU catalog.
+description: Produce a current, fully sourced SKU catalog for a configurable set of Azure services — Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL and Azure Virtual Machines by default, with Cache for Redis, App Service and Kubernetes Service available by flipping a flag. Output is sectioned per service with the newest SKUs first and collapsible sections in the Atlas, and every SKU gets its release date, lifecycle status (GA / public preview / deprecated / retiring), numbered plain-English conditions for when to recommend it taken from Microsoft's own guidance, and links to every page the data came from. Outputs a Markdown table and the filterable "Azure Workload SKU Atlas" HTML page. Use when asked for Azure SKUs for one or more services, which Azure tier or size to pick for a workload, what is deprecated, retiring or in preview, or to refresh an existing Azure SKU catalog.
 ---
 
 # CurrentAzureWorkloadSKUInfo
@@ -98,11 +98,11 @@ Three details worth knowing when reading a section:
 | --- | --- | --- | --- |
 | Azure SQL Database / Managed Instance | **on** | Every service-level objective | Delegated to the `CurrentAzureSQLSKUInfo` skill |
 | Azure Database for PostgreSQL | **on** | Every compute size | Compute-options page |
-| Azure Database for MySQL | off | Every compute size | Service-tiers page |
+| Azure Database for MySQL | **on** | Every compute size | Service-tiers page |
 | Azure Cache for Redis | off | Tier | Overview + what's-new |
 | Azure App Service | off | Plan tier | Hosting-plans page |
 | Azure Kubernetes Service | off | Pricing tier | Pricing-tiers page |
-| Azure Virtual Machines | **on** | **Every individual size** (~965 across ~131 series) | Sizes overview -> family pages -> series pages |
+| Azure Virtual Machines | **on** | **Every individual size** (~1,058 across ~137 series) | Sizes overview -> family pages -> series pages |
 
 Two deliberate boundaries, both worth stating when you report results:
 
@@ -220,7 +220,8 @@ to this catalog.
 
 Lifecycle is not fully parseable — it lives in prose. Re-read the cached
 what's-new pages each run. With the default set, the standout is that the 11
-Azure SQL **Fsv2-series** SKUs are deprecated and retire 2026-10-01. If Redis is
+Azure SQL **Fsv2-series** SKUs retired on 2026-10-01 and dropped out of the catalog
+when Microsoft removed their section. If Redis is
 enabled, note that **every Azure Cache for Redis tier is on a retirement path**: Enterprise and Enterprise
 Flash retire 2027-03-31, Basic/Standard/Premium retire 2028-09-30, creation was
 blocked for new customers on 2026-04-01, and Microsoft directs new work to Azure
@@ -244,7 +245,7 @@ as of the date it names — it does not refresh itself the way the rest of the
 catalog does, because there is no Microsoft doc URL to fetch it from. When the
 user supplies an updated list (a newer document, a different service), replace
 the workload's entry and re-run; the comparison and both outputs pick it up
-automatically. Currently only **PostgreSQL** has an entry — every other
+automatically. Currently **PostgreSQL** and **MySQL** have entries — every other
 service's section will keep reading "not supplied yet" until one is added.
 
 ## Reporting the result

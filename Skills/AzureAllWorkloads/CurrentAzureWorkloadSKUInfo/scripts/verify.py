@@ -227,12 +227,13 @@ def main() -> int:
     unknown = {s["lifecycle_status"] for s in skus
                if s["lifecycle_status"] not in allowed
                and not s["lifecycle_status"].startswith(
-                   ("Deprecated", "Retiring", "Previous generation"))}
+                   ("Deprecated", "Retiring", "Retired", "End of Life",
+                    "Previous generation"))}
     if unknown:
         fail(f"unexpected lifecycle values: {sorted(unknown)}")
     else:
         ok("lifecycle values are all GA / preview / deprecated / retiring / "
-           "previous generation")
+           "retired / end of life")
 
     # ---- a preview SKU must be dated by its preview announcement
     for s in skus:
@@ -267,7 +268,8 @@ def main() -> int:
     def bucket(ls: str) -> str:
         if "preview" in ls:
             return "preview"
-        if ls.startswith(("Deprecated", "Retiring", "Retired", "Previous generation")):
+        if ls.startswith(("Deprecated", "Retiring", "Retired", "End of Life",
+                          "Previous generation")):
             return "deprecated"
         return "ga"
 

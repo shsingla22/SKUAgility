@@ -1,4 +1,298 @@
 {
+ "Azure Database for MySQL :: Standard_B12ms [Burstable]": {
+  "capacity": 12.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 48.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B16ms [Burstable]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B1ms [Burstable]": {
+  "capacity": 1.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 2.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B20ms [Burstable]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 80.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B2ms [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B2s [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 4.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B4ms [Burstable]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_B8ms [Burstable]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "B-series"
+ },
+ "Azure Database for MySQL :: Standard_D16ads_v5 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D16ds_v4 [General Purpose]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D2ads_v5 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D2ds_v4 [General Purpose]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D32ads_v5 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D32ds_v4 [General Purpose]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D48ads_v5 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D48ds_v4 [General Purpose]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D4ads_v5 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D4ds_v4 [General Purpose]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D64ads_v5 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D64ds_v4 [General Purpose]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D8ads_v5 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_D8ds_v4 [General Purpose]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ddsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_D96ads_v5 [General Purpose]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Dadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E16ads_v5 [Business Critical]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E16ds_v4 [Business Critical]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E16ds_v5 [Business Critical]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E20ads_v5 [Business Critical]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E20ds_v4 [Business Critical]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E20ds_v5 [Business Critical]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E2ads_v5 [Business Critical]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E2ds_v4 [Business Critical]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E2ds_v5 [Business Critical]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E32ads_v5 [Business Critical]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E32ds_v4 [Business Critical]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E32ds_v5 [Business Critical]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E48ads_v5 [Business Critical]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E48ds_v4 [Business Critical]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E48ds_v5 [Business Critical]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E4ads_v5 [Business Critical]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E4ds_v4 [Business Critical]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E4ds_v5 [Business Critical]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E64ads_v5 [Business Critical]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 504.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E64ds_v4 [Business Critical]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 504.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E64ds_v5 [Business Critical]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E80ids_v4 [Business Critical]": {
+  "capacity": 80.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 504.0,
+  "series": "Eidsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E8ads_v5 [Business Critical]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Eadsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E8ds_v4 [Business Critical]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Edsv4-series"
+ },
+ "Azure Database for MySQL :: Standard_E8ds_v5 [Business Critical]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Edsv5-series"
+ },
+ "Azure Database for MySQL :: Standard_E96ads_v5 [Business Critical]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Eadsv5-series"
+ },
  "Azure Database for PostgreSQL :: Standard_B12ms [Burstable]": {
   "capacity": 12.0,
   "lifecycle_status": "Generally available",
@@ -940,72 +1234,6 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 36.0,
   "series": "DC-series"
- },
- "Azure SQL Database :: GP_Fsv2_10 [General Purpose]": {
-  "capacity": 10,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 18.9,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_12 [General Purpose]": {
-  "capacity": 12,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 22.7,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_14 [General Purpose]": {
-  "capacity": 14,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 26.5,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_16 [General Purpose]": {
-  "capacity": 16,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 30.2,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_18 [General Purpose]": {
-  "capacity": 18,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 34.0,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_20 [General Purpose]": {
-  "capacity": 20,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 37.8,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_24 [General Purpose]": {
-  "capacity": 24,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 45.4,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_32 [General Purpose]": {
-  "capacity": 32,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 60.5,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_36 [General Purpose]": {
-  "capacity": 36,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 68.0,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_72 [General Purpose]": {
-  "capacity": 72,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 136.0,
-  "series": "Fsv2-series"
- },
- "Azure SQL Database :: GP_Fsv2_8 [General Purpose]": {
-  "capacity": 8,
-  "lifecycle_status": "Deprecated - cannot be created; retires 2026-10-01",
-  "memory_gb": 15.1,
-  "series": "Fsv2-series"
  },
  "Azure SQL Database :: GP_Gen5_10 [General Purpose]": {
   "capacity": 10,
@@ -2761,7 +2989,7 @@
  },
  "Azure Virtual Machines :: Standard_D16_v3 [General purpose]": {
   "capacity": 16.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 64.0,
   "series": "Dv3-series"
  },
@@ -2971,7 +3199,7 @@
  },
  "Azure Virtual Machines :: Standard_D16s_v3 [General purpose]": {
   "capacity": 16.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 64.0,
   "series": "Dsv3-series"
  },
@@ -3031,7 +3259,7 @@
  },
  "Azure Virtual Machines :: Standard_D1_v2 [General purpose]": {
   "capacity": 1.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 3.5,
   "series": "Dv2-series"
  },
@@ -3061,13 +3289,13 @@
  },
  "Azure Virtual Machines :: Standard_D2_v2 [General purpose]": {
   "capacity": 2.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 7.0,
   "series": "Dv2-series"
  },
  "Azure Virtual Machines :: Standard_D2_v3 [General purpose]": {
   "capacity": 2.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 8.0,
   "series": "Dv3-series"
  },
@@ -3277,7 +3505,7 @@
  },
  "Azure Virtual Machines :: Standard_D2s_v3 [General purpose]": {
   "capacity": 2.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 8.0,
   "series": "Dsv3-series"
  },
@@ -3307,7 +3535,7 @@
  },
  "Azure Virtual Machines :: Standard_D32_v3 [General purpose]": {
   "capacity": 32.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 128.0,
   "series": "Dv3-series"
  },
@@ -3517,7 +3745,7 @@
  },
  "Azure Virtual Machines :: Standard_D32s_v3 [General purpose]": {
   "capacity": 32.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 128.0,
   "series": "Dsv3-series"
  },
@@ -3559,13 +3787,13 @@
  },
  "Azure Virtual Machines :: Standard_D3_v2 [General purpose]": {
   "capacity": 4.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 14.0,
   "series": "Dv2-series"
  },
  "Azure Virtual Machines :: Standard_D48_v3 [General purpose]": {
   "capacity": 48.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 192.0,
   "series": "Dv3-series"
  },
@@ -3775,7 +4003,7 @@
  },
  "Azure Virtual Machines :: Standard_D48s_v3 [General purpose]": {
   "capacity": 48.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 192.0,
   "series": "Dsv3-series"
  },
@@ -3805,13 +4033,13 @@
  },
  "Azure Virtual Machines :: Standard_D4_v2 [General purpose]": {
   "capacity": 8.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 28.0,
   "series": "Dv2-series"
  },
  "Azure Virtual Machines :: Standard_D4_v3 [General purpose]": {
   "capacity": 4.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 16.0,
   "series": "Dv3-series"
  },
@@ -4021,7 +4249,7 @@
  },
  "Azure Virtual Machines :: Standard_D4s_v3 [General purpose]": {
   "capacity": 4.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 16.0,
   "series": "Dsv3-series"
  },
@@ -4051,13 +4279,13 @@
  },
  "Azure Virtual Machines :: Standard_D5_v2 [General purpose]": {
   "capacity": 16.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 56.0,
   "series": "Dv2-series"
  },
  "Azure Virtual Machines :: Standard_D64_v3 [General purpose]": {
   "capacity": 64.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 256.0,
   "series": "Dv3-series"
  },
@@ -4267,7 +4495,7 @@
  },
  "Azure Virtual Machines :: Standard_D64s_v3 [General purpose]": {
   "capacity": 64.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 256.0,
   "series": "Dsv3-series"
  },
@@ -4297,7 +4525,7 @@
  },
  "Azure Virtual Machines :: Standard_D8_v3 [General purpose]": {
   "capacity": 8.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 32.0,
   "series": "Dv3-series"
  },
@@ -4507,7 +4735,7 @@
  },
  "Azure Virtual Machines :: Standard_D8s_v3 [General purpose]": {
   "capacity": 8.0,
-  "lifecycle_status": "Previous generation - Next-gen available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 32.0,
   "series": "Dsv3-series"
  },
@@ -4765,7 +4993,7 @@
  },
  "Azure Virtual Machines :: Standard_DC16ds_v3 [General purpose]": {
   "capacity": 16.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 128.0,
   "series": "Dcdsv3-series"
  },
@@ -4783,13 +5011,13 @@
  },
  "Azure Virtual Machines :: Standard_DC16s_v3 [General purpose]": {
   "capacity": 16.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 128.0,
   "series": "Dcsv3-series"
  },
  "Azure Virtual Machines :: Standard_DC1ds_v3 [General purpose]": {
   "capacity": 1.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 8.0,
   "series": "Dcdsv3-series"
  },
@@ -4801,19 +5029,19 @@
  },
  "Azure Virtual Machines :: Standard_DC1s_v3 [General purpose]": {
   "capacity": 1.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 8.0,
   "series": "Dcsv3-series"
  },
  "Azure Virtual Machines :: Standard_DC24ds_v3 [General purpose]": {
   "capacity": 24.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 192.0,
   "series": "Dcdsv3-series"
  },
  "Azure Virtual Machines :: Standard_DC24s_v3 [General purpose]": {
   "capacity": 24.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 192.0,
   "series": "Dcsv3-series"
  },
@@ -4843,7 +5071,7 @@
  },
  "Azure Virtual Machines :: Standard_DC2ds_v3 [General purpose]": {
   "capacity": 2.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 16.0,
   "series": "Dcdsv3-series"
  },
@@ -4867,7 +5095,7 @@
  },
  "Azure Virtual Machines :: Standard_DC2s_v3 [General purpose]": {
   "capacity": 2.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 16.0,
   "series": "Dcsv3-series"
  },
@@ -4909,7 +5137,7 @@
  },
  "Azure Virtual Machines :: Standard_DC32ds_v3 [General purpose]": {
   "capacity": 32.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 256.0,
   "series": "Dcdsv3-series"
  },
@@ -4927,7 +5155,7 @@
  },
  "Azure Virtual Machines :: Standard_DC32s_v3 [General purpose]": {
   "capacity": 32.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 256.0,
   "series": "Dcsv3-series"
  },
@@ -4969,7 +5197,7 @@
  },
  "Azure Virtual Machines :: Standard_DC48ds_v3 [General purpose]": {
   "capacity": 48.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 384.0,
   "series": "Dcdsv3-series"
  },
@@ -4987,7 +5215,7 @@
  },
  "Azure Virtual Machines :: Standard_DC48s_v3 [General purpose]": {
   "capacity": 48.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 384.0,
   "series": "Dcsv3-series"
  },
@@ -5029,7 +5257,7 @@
  },
  "Azure Virtual Machines :: Standard_DC4ds_v3 [General purpose]": {
   "capacity": 4.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 32.0,
   "series": "Dcdsv3-series"
  },
@@ -5053,7 +5281,7 @@
  },
  "Azure Virtual Machines :: Standard_DC4s_v3 [General purpose]": {
   "capacity": 4.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 32.0,
   "series": "Dcsv3-series"
  },
@@ -5149,7 +5377,7 @@
  },
  "Azure Virtual Machines :: Standard_DC8ds_v3 [General purpose]": {
   "capacity": 8.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 64.0,
   "series": "Dcdsv3-series"
  },
@@ -5167,7 +5395,7 @@
  },
  "Azure Virtual Machines :: Standard_DC8s_v3 [General purpose]": {
   "capacity": 8.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 64.0,
   "series": "Dcsv3-series"
  },
@@ -5221,31 +5449,31 @@
  },
  "Azure Virtual Machines :: Standard_DS1_v2 [General purpose]": {
   "capacity": 1.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 3.5,
   "series": "Dsv2-series"
  },
  "Azure Virtual Machines :: Standard_DS2_v2 [General purpose]": {
   "capacity": 2.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 7.0,
   "series": "Dsv2-series"
  },
  "Azure Virtual Machines :: Standard_DS3_v2 [General purpose]": {
   "capacity": 4.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 14.0,
   "series": "Dsv2-series"
  },
  "Azure Virtual Machines :: Standard_DS4_v2 [General purpose]": {
   "capacity": 8.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 28.0,
   "series": "Dsv2-series"
  },
  "Azure Virtual Machines :: Standard_DS5_v2 [General purpose]": {
   "capacity": 16.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 56.0,
   "series": "Dsv2-series"
  },
@@ -5284,6 +5512,18 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 672.0,
   "series": "Easv5-series"
+ },
+ "Azure Virtual Machines :: Standard_E112ibds_v5 [Memory optimized]": {
+  "capacity": 112.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
+ "Azure Virtual Machines :: Standard_E112ibs_v5 [Memory optimized]": {
+  "capacity": 112.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E128ads_v7 [Memory optimized]": {
   "capacity": 128.0,
@@ -5345,6 +5585,12 @@
   "memory_gb": 1280.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E16_v3 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 128.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E16_v5 [Memory optimized]": {
   "capacity": 16.0,
   "lifecycle_status": "Generally available",
@@ -5387,11 +5633,23 @@
   "memory_gb": 128.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E16bds_v5 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E16bds_v6 [Memory optimized]": {
   "capacity": 16.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 128.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E16bs_v5 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E16bs_v6 [Memory optimized]": {
   "capacity": 16.0,
@@ -5447,6 +5705,12 @@
   "memory_gb": 128.0,
   "series": "Epsv6-series"
  },
+ "Azure Virtual Machines :: Standard_E16s_v3 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 128.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E16s_v5 [Memory optimized]": {
   "capacity": 16.0,
   "lifecycle_status": "Generally available",
@@ -5494,6 +5758,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 1536.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E20_v3 [Memory optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 160.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E20_v5 [Memory optimized]": {
   "capacity": 20.0,
@@ -5555,6 +5825,12 @@
   "memory_gb": 160.0,
   "series": "Epsv5-series"
  },
+ "Azure Virtual Machines :: Standard_E20s_v3 [Memory optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 160.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E20s_v5 [Memory optimized]": {
   "capacity": 20.0,
   "lifecycle_status": "Generally available",
@@ -5584,6 +5860,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 1888.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E2_v3 [Memory optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 16.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E2_v5 [Memory optimized]": {
   "capacity": 2.0,
@@ -5627,11 +5909,23 @@
   "memory_gb": 16.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E2bds_v5 [Memory optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E2bds_v6 [Memory optimized]": {
   "capacity": 2.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 16.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E2bs_v5 [Memory optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E2bs_v6 [Memory optimized]": {
   "capacity": 2.0,
@@ -5687,6 +5981,12 @@
   "memory_gb": 16.0,
   "series": "Epsv6-series"
  },
+ "Azure Virtual Machines :: Standard_E2s_v3 [Memory optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 16.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E2s_v5 [Memory optimized]": {
   "capacity": 2.0,
   "lifecycle_status": "Generally available",
@@ -5704,6 +6004,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 16.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E32_v3 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 256.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E32_v5 [Memory optimized]": {
   "capacity": 32.0,
@@ -5747,11 +6053,23 @@
   "memory_gb": 256.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E32bds_v5 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E32bds_v6 [Memory optimized]": {
   "capacity": 32.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 256.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E32bs_v5 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E32bs_v6 [Memory optimized]": {
   "capacity": 32.0,
@@ -5807,6 +6125,12 @@
   "memory_gb": 256.0,
   "series": "Epsv6-series"
  },
+ "Azure Virtual Machines :: Standard_E32s_v3 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 256.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E32s_v5 [Memory optimized]": {
   "capacity": 32.0,
   "lifecycle_status": "Generally available",
@@ -5836,6 +6160,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 2832.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E48_v3 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 384.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E48_v5 [Memory optimized]": {
   "capacity": 48.0,
@@ -5879,11 +6209,23 @@
   "memory_gb": 384.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E48bds_v5 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E48bds_v6 [Memory optimized]": {
   "capacity": 48.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 384.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E48bs_v5 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E48bs_v6 [Memory optimized]": {
   "capacity": 48.0,
@@ -5927,6 +6269,12 @@
   "memory_gb": 384.0,
   "series": "Epsv6-series"
  },
+ "Azure Virtual Machines :: Standard_E48s_v3 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 384.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E48s_v5 [Memory optimized]": {
   "capacity": 48.0,
   "lifecycle_status": "Generally available",
@@ -5944,6 +6292,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 384.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E4_v3 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 32.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E4_v5 [Memory optimized]": {
   "capacity": 4.0,
@@ -5987,11 +6341,23 @@
   "memory_gb": 32.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E4bds_v5 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E4bds_v6 [Memory optimized]": {
   "capacity": 4.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 32.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E4bs_v5 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E4bs_v6 [Memory optimized]": {
   "capacity": 4.0,
@@ -6047,6 +6413,12 @@
   "memory_gb": 32.0,
   "series": "Epsv6-series"
  },
+ "Azure Virtual Machines :: Standard_E4s_v3 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 32.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E4s_v5 [Memory optimized]": {
   "capacity": 4.0,
   "lifecycle_status": "Generally available",
@@ -6064,6 +6436,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 32.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E64_v3 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 432.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E64_v5 [Memory optimized]": {
   "capacity": 64.0,
@@ -6107,11 +6485,23 @@
   "memory_gb": 512.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E64bds_v5 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E64bds_v6 [Memory optimized]": {
   "capacity": 64.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 512.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E64bs_v5 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E64bs_v6 [Memory optimized]": {
   "capacity": 64.0,
@@ -6137,6 +6527,18 @@
   "memory_gb": 512.0,
   "series": "Edsv7-series"
  },
+ "Azure Virtual Machines :: Standard_E64i_v3 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 432.0,
+  "series": "Ev3-esv3-series"
+ },
+ "Azure Virtual Machines :: Standard_E64is_v3 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 432.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E64ns_v6 [Memory optimized]": {
   "capacity": 64.0,
   "lifecycle_status": "Generally available",
@@ -6155,6 +6557,12 @@
   "memory_gb": 512.0,
   "series": "Epsv6-series"
  },
+ "Azure Virtual Machines :: Standard_E64s_v3 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 432.0,
+  "series": "Ev3-esv3-series"
+ },
  "Azure Virtual Machines :: Standard_E64s_v5 [Memory optimized]": {
   "capacity": 64.0,
   "lifecycle_status": "Generally available",
@@ -6172,6 +6580,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 512.0,
   "series": "Esv7-series"
+ },
+ "Azure Virtual Machines :: Standard_E8_v3 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 64.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E8_v5 [Memory optimized]": {
   "capacity": 8.0,
@@ -6215,11 +6629,23 @@
   "memory_gb": 64.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E8bds_v5 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E8bds_v6 [Memory optimized]": {
   "capacity": 8.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 64.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E8bs_v5 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E8bs_v6 [Memory optimized]": {
   "capacity": 8.0,
@@ -6274,6 +6700,12 @@
   "lifecycle_status": "Generally available",
   "memory_gb": 64.0,
   "series": "Epsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E8s_v3 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "End of Life - retirement announced",
+  "memory_gb": 64.0,
+  "series": "Ev3-esv3-series"
  },
  "Azure Virtual Machines :: Standard_E8s_v5 [Memory optimized]": {
   "capacity": 8.0,
@@ -6335,11 +6767,23 @@
   "memory_gb": 768.0,
   "series": "Easv7-series"
  },
+ "Azure Virtual Machines :: Standard_E96bds_v5 [Memory optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ebdsv5-ebsv5-series"
+ },
  "Azure Virtual Machines :: Standard_E96bds_v6 [Memory optimized]": {
   "capacity": 96.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 768.0,
   "series": "Ebdsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_E96bs_v5 [Memory optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ebdsv5-ebsv5-series"
  },
  "Azure Virtual Machines :: Standard_E96bs_v6 [Memory optimized]": {
   "capacity": 96.0,
@@ -6401,11 +6845,35 @@
   "memory_gb": 768.0,
   "series": "Esv7-series"
  },
+ "Azure Virtual Machines :: Standard_EC16ads_cc_v5 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC16ads_v5 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC16ads_v6 [Memory optimized]": {
   "capacity": 16.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 128.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC16as_cc_v5 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC16as_v5 [Memory optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC16as_v6 [Memory optimized]": {
   "capacity": 16.0,
@@ -6413,11 +6881,47 @@
   "memory_gb": 128.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC20ads_cc_v5 [Memory optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC20ads_v5 [Memory optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC20as_cc_v5 [Memory optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC20as_v5 [Memory optimized]": {
+  "capacity": 20.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 160.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC2ads_v5 [Memory optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC2ads_v6 [Memory optimized]": {
   "capacity": 2.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 16.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC2as_v5 [Memory optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC2as_v6 [Memory optimized]": {
   "capacity": 2.0,
@@ -6425,11 +6929,35 @@
   "memory_gb": 16.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC32ads_cc_v5 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC32ads_v5 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC32ads_v6 [Memory optimized]": {
   "capacity": 32.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 256.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC32as_cc_v5 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC32as_v5 [Memory optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC32as_v6 [Memory optimized]": {
   "capacity": 32.0,
@@ -6437,11 +6965,35 @@
   "memory_gb": 256.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC48ads_cc_v5 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC48ads_v5 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC48ads_v6 [Memory optimized]": {
   "capacity": 48.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 384.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC48as_cc_v5 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC48as_v5 [Memory optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC48as_v6 [Memory optimized]": {
   "capacity": 48.0,
@@ -6449,11 +7001,35 @@
   "memory_gb": 384.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC4ads_cc_v5 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC4ads_v5 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC4ads_v6 [Memory optimized]": {
   "capacity": 4.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 32.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC4as_cc_v5 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC4as_v5 [Memory optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC4as_v6 [Memory optimized]": {
   "capacity": 4.0,
@@ -6461,11 +7037,35 @@
   "memory_gb": 32.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC64ads_cc_v5 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC64ads_v5 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC64ads_v6 [Memory optimized]": {
   "capacity": 64.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 512.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC64as_cc_v5 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC64as_v5 [Memory optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC64as_v6 [Memory optimized]": {
   "capacity": 64.0,
@@ -6473,11 +7073,35 @@
   "memory_gb": 512.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC8ads_cc_v5 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC8ads_v5 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC8ads_v6 [Memory optimized]": {
   "capacity": 8.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 64.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC8as_cc_v5 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC8as_v5 [Memory optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC8as_v6 [Memory optimized]": {
   "capacity": 8.0,
@@ -6485,11 +7109,35 @@
   "memory_gb": 64.0,
   "series": "Ecasv6-series"
  },
+ "Azure Virtual Machines :: Standard_EC96ads_cc_v5 [Memory optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC96ads_v5 [Memory optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ecasv5-ecadsv5-series"
+ },
  "Azure Virtual Machines :: Standard_EC96ads_v6 [Memory optimized]": {
   "capacity": 96.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 672.0,
   "series": "Ecadsv6-series"
+ },
+ "Azure Virtual Machines :: Standard_EC96as_cc_v5 [Memory optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ecasccv5-ecadsccv5-series"
+ },
+ "Azure Virtual Machines :: Standard_EC96as_v5 [Memory optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 672.0,
+  "series": "Ecasv5-ecadsv5-series"
  },
  "Azure Virtual Machines :: Standard_EC96as_v6 [Memory optimized]": {
   "capacity": 96.0,
@@ -6553,7 +7201,7 @@
  },
  "Azure Virtual Machines :: Standard_F16s_v2 [Compute optimized]": {
   "capacity": 16.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 32.0,
   "series": "Fsv2-series"
  },
@@ -6649,7 +7297,7 @@
  },
  "Azure Virtual Machines :: Standard_F2s_v2 [Compute optimized]": {
   "capacity": 2.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 4.0,
   "series": "Fsv2-series"
  },
@@ -6709,7 +7357,7 @@
  },
  "Azure Virtual Machines :: Standard_F32s_v2 [Compute optimized]": {
   "capacity": 32.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 64.0,
   "series": "Fsv2-series"
  },
@@ -6769,7 +7417,7 @@
  },
  "Azure Virtual Machines :: Standard_F48s_v2 [Compute optimized]": {
   "capacity": 48.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 96.0,
   "series": "Fsv2-series"
  },
@@ -6829,7 +7477,7 @@
  },
  "Azure Virtual Machines :: Standard_F4s_v2 [Compute optimized]": {
   "capacity": 4.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 8.0,
   "series": "Fsv2-series"
  },
@@ -6889,13 +7537,13 @@
  },
  "Azure Virtual Machines :: Standard_F64s_v2 [Compute optimized]": {
   "capacity": 64.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 128.0,
   "series": "Fsv2-series"
  },
  "Azure Virtual Machines :: Standard_F72s_v2 [Compute optimized]": {
   "capacity": 72.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 144.0,
   "series": "Fsv2-series"
  },
@@ -6991,7 +7639,7 @@
  },
  "Azure Virtual Machines :: Standard_F8s_v2 [Compute optimized]": {
   "capacity": 8.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 16.0,
   "series": "Fsv2-series"
  },
@@ -7147,7 +7795,7 @@
  },
  "Azure Virtual Machines :: Standard_HB120-16rs_v2 [High performance compute]": {
   "capacity": 16.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 456.0,
   "series": "Hbv2-series"
  },
@@ -7159,7 +7807,7 @@
  },
  "Azure Virtual Machines :: Standard_HB120-32rs_v2 [High performance compute]": {
   "capacity": 32.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 456.0,
   "series": "Hbv2-series"
  },
@@ -7171,7 +7819,7 @@
  },
  "Azure Virtual Machines :: Standard_HB120-64rs_v2 [High performance compute]": {
   "capacity": 64.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 456.0,
   "series": "Hbv2-series"
  },
@@ -7183,7 +7831,7 @@
  },
  "Azure Virtual Machines :: Standard_HB120-96rs_v2 [High performance compute]": {
   "capacity": 96.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 456.0,
   "series": "Hbv2-series"
  },
@@ -7195,7 +7843,7 @@
  },
  "Azure Virtual Machines :: Standard_HB120rs_v2 [High performance compute]": {
   "capacity": 120.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 456.0,
   "series": "Hbv2-series"
  },
@@ -7285,19 +7933,19 @@
  },
  "Azure Virtual Machines :: Standard_HC44-16rs [High performance compute]": {
   "capacity": 16.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 352.0,
   "series": "Hc-series"
  },
  "Azure Virtual Machines :: Standard_HC44-32rs [High performance compute]": {
   "capacity": 32.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 352.0,
   "series": "Hc-series"
  },
  "Azure Virtual Machines :: Standard_HC44rs [High performance compute]": {
   "capacity": 44.0,
-  "lifecycle_status": "Generally available",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 352.0,
   "series": "Hc-series"
  },
@@ -7331,17 +7979,53 @@
   "memory_gb": 1408.0,
   "series": "Hx-series"
  },
+ "Azure Virtual Machines :: Standard_L128aos_v5 [Storage optimized]": {
+  "capacity": 128.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 1024.0,
+  "series": "Laosv5-series"
+ },
+ "Azure Virtual Machines :: Standard_L128as_v5 [Storage optimized]": {
+  "capacity": 128.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 1024.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L12aos_v4 [Storage optimized]": {
   "capacity": 12.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 96.0,
   "series": "Laosv4-series"
  },
+ "Azure Virtual Machines :: Standard_L12aos_v5 [Storage optimized]": {
+  "capacity": 12.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 96.0,
+  "series": "Laosv5-series"
+ },
+ "Azure Virtual Machines :: Standard_L160iaos_v5 [Storage optimized]": {
+  "capacity": 160.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 1040.0,
+  "series": "Laosv5-series"
+ },
+ "Azure Virtual Machines :: Standard_L160ias_v5 [Storage optimized]": {
+  "capacity": 160.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 1280.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L16aos_v4 [Storage optimized]": {
   "capacity": 16.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 128.0,
   "series": "Laosv4-series"
+ },
+ "Azure Virtual Machines :: Standard_L16aos_v5 [Storage optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Laosv5-series"
  },
  "Azure Virtual Machines :: Standard_L16as_v3 [Storage optimized]": {
   "capacity": 16.0,
@@ -7355,9 +8039,15 @@
   "memory_gb": 128.0,
   "series": "Lasv4-series"
  },
+ "Azure Virtual Machines :: Standard_L16as_v5 [Storage optimized]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L16s_v2 [Storage optimized]": {
   "capacity": 16.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 128.0,
   "series": "Lsv2-series"
  },
@@ -7379,17 +8069,35 @@
   "memory_gb": 192.0,
   "series": "Laosv4-series"
  },
+ "Azure Virtual Machines :: Standard_L24aos_v5 [Storage optimized]": {
+  "capacity": 24.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 192.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L2aos_v4 [Storage optimized]": {
   "capacity": 2.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 16.0,
   "series": "Laosv4-series"
  },
+ "Azure Virtual Machines :: Standard_L2aos_v5 [Storage optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L2as_v4 [Storage optimized]": {
   "capacity": 2.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 16.0,
   "series": "Lasv4-series"
+ },
+ "Azure Virtual Machines :: Standard_L2as_v5 [Storage optimized]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Lasv5-series"
  },
  "Azure Virtual Machines :: Standard_L2s_v4 [Storage optimized]": {
   "capacity": 2.0,
@@ -7403,6 +8111,12 @@
   "memory_gb": 256.0,
   "series": "Laosv4-series"
  },
+ "Azure Virtual Machines :: Standard_L32aos_v5 [Storage optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L32as_v3 [Storage optimized]": {
   "capacity": 32.0,
   "lifecycle_status": "Generally available",
@@ -7415,9 +8129,15 @@
   "memory_gb": 256.0,
   "series": "Lasv4-series"
  },
+ "Azure Virtual Machines :: Standard_L32as_v5 [Storage optimized]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L32s_v2 [Storage optimized]": {
   "capacity": 32.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 256.0,
   "series": "Lsv2-series"
  },
@@ -7433,6 +8153,12 @@
   "memory_gb": 256.0,
   "series": "Lsv4-series"
  },
+ "Azure Virtual Machines :: Standard_L48aos_v5 [Storage optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L48as_v3 [Storage optimized]": {
   "capacity": 48.0,
   "lifecycle_status": "Generally available",
@@ -7445,9 +8171,15 @@
   "memory_gb": 384.0,
   "series": "Lasv4-series"
  },
+ "Azure Virtual Machines :: Standard_L48as_v5 [Storage optimized]": {
+  "capacity": 48.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 384.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L48s_v2 [Storage optimized]": {
   "capacity": 48.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 384.0,
   "series": "Lsv2-series"
  },
@@ -7469,17 +8201,35 @@
   "memory_gb": 32.0,
   "series": "Laosv4-series"
  },
+ "Azure Virtual Machines :: Standard_L4aos_v5 [Storage optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L4as_v4 [Storage optimized]": {
   "capacity": 4.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 32.0,
   "series": "Lasv4-series"
  },
+ "Azure Virtual Machines :: Standard_L4as_v5 [Storage optimized]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L4s_v4 [Storage optimized]": {
   "capacity": 4.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 32.0,
   "series": "Lsv4-series"
+ },
+ "Azure Virtual Machines :: Standard_L64aos_v5 [Storage optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Laosv5-series"
  },
  "Azure Virtual Machines :: Standard_L64as_v3 [Storage optimized]": {
   "capacity": 64.0,
@@ -7493,9 +8243,15 @@
   "memory_gb": 512.0,
   "series": "Lasv4-series"
  },
+ "Azure Virtual Machines :: Standard_L64as_v5 [Storage optimized]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 512.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L64s_v2 [Storage optimized]": {
   "capacity": 64.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 512.0,
   "series": "Lsv2-series"
  },
@@ -7523,9 +8279,15 @@
   "memory_gb": 640.0,
   "series": "Lasv4-series"
  },
- "Azure Virtual Machines :: Standard_L80s_v26 [Storage optimized]": {
+ "Azure Virtual Machines :: Standard_L80as_v5 [Storage optimized]": {
   "capacity": 80.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "Generally available",
+  "memory_gb": 640.0,
+  "series": "Lasv5-series"
+ },
+ "Azure Virtual Machines :: Standard_L80s_v2 [Storage optimized]": {
+  "capacity": 80.0,
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 640.0,
   "series": "Lsv2-series"
  },
@@ -7547,6 +8309,12 @@
   "memory_gb": 64.0,
   "series": "Laosv4-series"
  },
+ "Azure Virtual Machines :: Standard_L8aos_v5 [Storage optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L8as_v3 [Storage optimized]": {
   "capacity": 8.0,
   "lifecycle_status": "Generally available",
@@ -7559,9 +8327,15 @@
   "memory_gb": 64.0,
   "series": "Lasv4-series"
  },
+ "Azure Virtual Machines :: Standard_L8as_v5 [Storage optimized]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Lasv5-series"
+ },
  "Azure Virtual Machines :: Standard_L8s_v2 [Storage optimized]": {
   "capacity": 8.0,
-  "lifecycle_status": "Previous generation - Capacity limited",
+  "lifecycle_status": "End of Life - retirement announced",
   "memory_gb": 64.0,
   "series": "Lsv2-series"
  },
@@ -7577,11 +8351,23 @@
   "memory_gb": 64.0,
   "series": "Lsv4-series"
  },
+ "Azure Virtual Machines :: Standard_L96aos_v5 [Storage optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 768.0,
+  "series": "Laosv5-series"
+ },
  "Azure Virtual Machines :: Standard_L96as_v4 [Storage optimized]": {
   "capacity": 96.0,
   "lifecycle_status": "Generally available",
   "memory_gb": 768.0,
   "series": "Lasv4-series"
+ },
+ "Azure Virtual Machines :: Standard_L96as_v5 [Storage optimized]": {
+  "capacity": 96.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 768.0,
+  "series": "Lasv5-series"
  },
  "Azure Virtual Machines :: Standard_L96s_v4 [Storage optimized]": {
   "capacity": 96.0,

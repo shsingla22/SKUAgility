@@ -44,7 +44,7 @@ Retrieved 2026-08-17.
 - [Serverless compute tier](https://learn.microsoft.com/azure/azure-sql/database/serverless-tier-overview) — serverless GA, November 2019
 - [What's new archive](https://learn.microsoft.com/azure/azure-sql/database/doc-changes-updates-release-notes-whats-new-archive) — dated entries for the Gen5 rename (2022), 128 vCore preview (2022), Hyperscale premium-series preview (2022), 64 vCore for Hyperscale premium-series (June 2023), 128 vCore GA (June 2023), DC-series 10–40 vCore preview (July 2023) and GA (November 2023), Hyperscale premium-series GA (July 2023), Hyperscale serverless preview (February 2023) and GA (February 2024), Hyperscale elastic pools GA (September 2024)
 - [Announcing preview of 160 and 192 vCore premium-series options](https://techcommunity.microsoft.com/blog/azuresqlblog/announcing-preview-of-160-and-192vcore-premium-series-options-for-azure-sql-data/4501367) — March 2026
-- [Retirement notice: Fsv2-series](https://azure.microsoft.com/updates?id=485030) — retirement 2026-10-01
+- [Retirement notice: Fsv2-series](https://azure.microsoft.com/updates?id=485030) — retired 2026-10-01
 - [Support has ended for Gen 4 hardware](https://azure.microsoft.com/updates/support-has-ended-for-gen-4-hardware-on-azure-sql-database/)
 
 ### Azure SQL Managed Instance

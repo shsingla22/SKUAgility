@@ -33,6 +33,13 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SLO_RE = re.compile(r"`((?:GP|BC|HS)_(?:S_)?(?:Gen5|Fsv2|DC|PRMS|MOPRMS)_\d+)`")
 SUP_RE = re.compile(r"<sup>.*?</sup>|\^\d+\^|<br\s*/?>")
 
+# Hardware Microsoft has retired and may remove from the article entirely. A
+# missing section for one of these is a retirement taking effect, not a parse
+# failure: the sizes drop out of the inventory (the diff reports every one) and
+# the family is recorded in rules.RETIRED_FAMILIES instead. Anything not listed
+# here must still be present, or the article has changed shape.
+RETIRED_SECTIONS_OPTIONAL = {"GP_Fsv2"}
+
 # vCore section heading -> (service tier, compute tier, hardware, SLO prefix)
 VCORE_SECTIONS = [
     ("General Purpose - serverless compute - standard-series (Gen5)",
@@ -132,6 +139,10 @@ def parse_vcore(lines: list[str]) -> list[dict]:
     rows = []
     for name, tier, compute, hardware, prefix in VCORE_SECTIONS:
         found = slos.get(prefix)
+        if not found and prefix in RETIRED_SECTIONS_OPTIONAL:
+            print(f"  note: no '{name}' section — retired hardware no longer "
+                  "enumerated in the article; family recorded in RETIRED_FAMILIES")
+            continue
         if not found:
             raise SystemExit(
                 f"no SLOs parsed for '{prefix}' — the '{name}' section of the vCore "

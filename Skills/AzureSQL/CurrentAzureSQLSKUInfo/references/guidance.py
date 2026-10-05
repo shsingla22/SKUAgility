@@ -425,12 +425,12 @@ RETIRED_FAMILIES = [
     },
     {
         "family": "Fsv2-series hardware (General Purpose)",
-        "status": "Deprecated",
+        "status": "Retired",
         "retired": "2026-10-01",
-        "detail": "Still documented with full resource limits and still runs, but can no "
-                  "longer be created. Sizes are listed individually in the main table. "
-                  "Microsoft directs existing users to Hyperscale premium-series or "
-                  "standard-series (Gen5).",
+        "detail": "Retired on 1 October 2026 and removed from the resource-limits "
+                  "article, so its 11 sizes (GP_Fsv2_8 to GP_Fsv2_72) can no longer be "
+                  "enumerated. Microsoft directs former users to Hyperscale "
+                  "premium-series or standard-series (Gen5).",
         "source": FSV2_RETIREMENT,
     },
     {
