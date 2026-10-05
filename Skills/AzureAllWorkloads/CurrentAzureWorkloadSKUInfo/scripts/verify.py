@@ -339,6 +339,17 @@ def main() -> int:
                                f"{exp[kind]['flagged']}")
                 if mismatch:
                     break
+            details = entry.get("sku_details", {})
+            exp_spec = sorted(
+                s["sku"] for s in rows if s["sku"] in details and (
+                    (details[s["sku"]].get("vcores") is not None and s["capacity"] is not None
+                     and float(details[s["sku"]]["vcores"]) != float(s["capacity"]))
+                    or (details[s["sku"]].get("memory_gib") is not None and s["memory_gb"] is not None
+                        and float(details[s["sku"]]["memory_gib"]) != float(s["memory_gb"]))))
+            got_spec = sorted(m["sku"] for m in shipped.get("spec_mismatches", []))
+            if not mismatch and got_spec != exp_spec:
+                mismatch = (f"'{svc}' Migrate-vs-Azure spec mismatches don't match an "
+                           f"independent recompute: shipped {got_spec}, expected {exp_spec}")
             got_unknown = sorted(shipped.get("unknown_to_azure", []))
             if not mismatch and got_unknown != exp_unknown:
                 mismatch = (f"'{svc}' Migrate-names-unknown-to-Azure list doesn't "

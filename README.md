@@ -91,8 +91,11 @@ milestones, and a provider module — described in the
   predates the v6 preview. **MySQL** (user-supplied document, 2026-10-05): **25 of the 49 GA
   SKUs are not Migrate-supported** — every v5 size (`*ads_v5` / `*ds_v5`) plus `E64ds_v4` —
   and Migrate's list names `Standard_E96ds_v5`, which Microsoft's MySQL service-tiers page
-  does not offer. Azure SQL and Virtual Machines show "not supplied yet" until their own
-  Migrate data is added.
+  does not offer. **MongoDB / Azure DocumentDB** (user-supplied document, 2026-10-05): Migrate
+  supports all nine cluster tiers M10–M200 — with its own SKU names and a Dev/Test (M10–M30) vs
+  Production (M40–M200) classification, and its vCore/RAM figures agree with Azure's page for
+  every one — but **not the Free Tier**, the one flag. Azure SQL and Virtual Machines show "not
+  supplied yet" until their own Migrate data is added.
 - **MongoDB on Azure is Azure DocumentDB now.** Microsoft renamed Azure Cosmos DB for MongoDB
   (vCore) to Azure DocumentDB (with MongoDB compatibility) on 2025-11-18. The catalog carries
   its nine cluster tiers (M10–M200) plus the Free Tier, all GA; M10/M20 are dated to their

@@ -549,7 +549,9 @@
             "milestone_label": "PostgreSQL Burstable B4ms - B20ms",
             "release_doc": "https://azure.microsoft.com/updates/generally-available-new-burstable-skus-for-azure-database-for-postgresql-flexible-server/",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B16ms",
@@ -560,7 +562,9 @@
             "milestone_label": "PostgreSQL Burstable B4ms - B20ms",
             "release_doc": "https://azure.microsoft.com/updates/generally-available-new-burstable-skus-for-azure-database-for-postgresql-flexible-server/",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B1ms",
@@ -571,7 +575,9 @@
             "milestone_label": "PostgreSQL Burstable B1ms / B2s / B2ms",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B20ms",
@@ -582,7 +588,9 @@
             "milestone_label": "PostgreSQL Burstable B4ms - B20ms",
             "release_doc": "https://azure.microsoft.com/updates/generally-available-new-burstable-skus-for-azure-database-for-postgresql-flexible-server/",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B2ms",
@@ -593,7 +601,9 @@
             "milestone_label": "PostgreSQL Burstable B1ms / B2s / B2ms",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B2s",
@@ -604,7 +614,9 @@
             "milestone_label": "PostgreSQL Burstable B1ms / B2s / B2ms",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B4ms",
@@ -615,7 +627,9 @@
             "milestone_label": "PostgreSQL Burstable B4ms - B20ms",
             "release_doc": "https://azure.microsoft.com/updates/generally-available-new-burstable-skus-for-azure-database-for-postgresql-flexible-server/",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B8ms",
@@ -626,7 +640,9 @@
             "milestone_label": "PostgreSQL Burstable B4ms - B20ms",
             "release_doc": "https://azure.microsoft.com/updates/generally-available-new-burstable-skus-for-azure-database-for-postgresql-flexible-server/",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ads_v5",
@@ -637,7 +653,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ds_v4",
@@ -648,7 +666,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ds_v5",
@@ -659,7 +679,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16s_v3",
@@ -670,7 +692,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ads_v5",
@@ -681,7 +705,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ds_v4",
@@ -692,7 +718,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ds_v5",
@@ -703,7 +731,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2s_v3",
@@ -714,7 +744,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ads_v5",
@@ -725,7 +757,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ds_v4",
@@ -736,7 +770,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ds_v5",
@@ -747,7 +783,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32s_v3",
@@ -758,7 +796,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ads_v5",
@@ -769,7 +809,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ds_v4",
@@ -780,7 +822,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ds_v5",
@@ -791,7 +835,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48s_v3",
@@ -802,7 +848,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ads_v5",
@@ -813,7 +861,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ds_v4",
@@ -824,7 +874,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ds_v5",
@@ -835,7 +887,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4s_v3",
@@ -846,7 +900,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ads_v5",
@@ -857,7 +913,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ds_v4",
@@ -868,7 +926,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ds_v5",
@@ -879,7 +939,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64s_v3",
@@ -890,7 +952,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ads_v5",
@@ -901,7 +965,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ds_v4",
@@ -912,7 +978,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ds_v5",
@@ -923,7 +991,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8s_v3",
@@ -934,7 +1004,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D96ads_v5",
@@ -945,7 +1017,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D96ds_v5",
@@ -956,7 +1030,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ads_v5",
@@ -967,7 +1043,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ds_v4",
@@ -978,7 +1056,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ds_v5",
@@ -989,7 +1069,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16s_v3",
@@ -1000,7 +1082,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ads_v5",
@@ -1011,7 +1095,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ds_v4",
@@ -1022,7 +1108,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ds_v5",
@@ -1033,7 +1121,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ads_v5",
@@ -1044,7 +1134,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ds_v4",
@@ -1055,7 +1147,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ds_v5",
@@ -1066,7 +1160,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2s_v3",
@@ -1077,7 +1173,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ads_v5",
@@ -1088,7 +1186,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ds_v4",
@@ -1099,7 +1199,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ds_v5",
@@ -1110,7 +1212,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32s_v3",
@@ -1121,7 +1225,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ads_v5",
@@ -1132,7 +1238,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ds_v4",
@@ -1143,7 +1251,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ds_v5",
@@ -1154,7 +1264,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48s_v3",
@@ -1165,7 +1277,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ads_v5",
@@ -1176,7 +1290,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ds_v4",
@@ -1187,7 +1303,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ds_v5",
@@ -1198,7 +1316,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4s_v3",
@@ -1209,7 +1329,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ads_v5",
@@ -1220,7 +1342,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ds_v4",
@@ -1231,7 +1355,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ds_v5",
@@ -1242,7 +1368,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64s_v3",
@@ -1253,7 +1381,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ads_v5",
@@ -1264,7 +1394,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ds_v4",
@@ -1275,7 +1407,9 @@
             "milestone_label": "PostgreSQL v4 compute series (Ddsv4, Edsv4)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ds_v5",
@@ -1286,7 +1420,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8s_v3",
@@ -1297,7 +1433,9 @@
             "milestone_label": "PostgreSQL v3 compute series (Dsv3, Esv3)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/release-notes/release-notes",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E96ads_v5",
@@ -1308,7 +1446,9 @@
             "milestone_label": "PostgreSQL AMD v5 compute series (Dadsv5, Eadsv5)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E96ds_v5",
@@ -1319,7 +1459,9 @@
             "milestone_label": "PostgreSQL Intel v5 compute series (Ddsv5, Edsv5)",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           }
         ]
       },
@@ -1343,7 +1485,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ads_v6",
@@ -1354,7 +1498,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ds_v6",
@@ -1365,7 +1511,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D192ds_v6",
@@ -1376,7 +1524,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ads_v6",
@@ -1387,7 +1537,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ds_v6",
@@ -1398,7 +1550,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ads_v6",
@@ -1409,7 +1563,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ds_v6",
@@ -1420,7 +1576,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ads_v6",
@@ -1431,7 +1589,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ds_v6",
@@ -1442,7 +1602,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ads_v6",
@@ -1453,7 +1615,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ds_v6",
@@ -1464,7 +1628,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ads_v6",
@@ -1475,7 +1641,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ds_v6",
@@ -1486,7 +1654,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ads_v6",
@@ -1497,7 +1667,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ds_v6",
@@ -1508,7 +1680,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D96ads_v6",
@@ -1519,7 +1693,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D96ds_v6",
@@ -1530,7 +1706,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E128ds_v6",
@@ -1541,7 +1719,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ads_v6",
@@ -1552,7 +1732,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ds_v6",
@@ -1563,7 +1745,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E192ds_v6",
@@ -1574,7 +1758,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ads_v6",
@@ -1585,7 +1771,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ds_v6",
@@ -1596,7 +1784,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ads_v6",
@@ -1607,7 +1797,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ds_v6",
@@ -1618,7 +1810,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ads_v6",
@@ -1629,7 +1823,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ds_v6",
@@ -1640,7 +1836,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ads_v6",
@@ -1651,7 +1849,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ds_v6",
@@ -1662,7 +1862,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ads_v6",
@@ -1673,7 +1875,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ds_v6",
@@ -1684,7 +1888,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ads_v6",
@@ -1695,7 +1901,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ds_v6",
@@ -1706,7 +1914,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ads_v6",
@@ -1717,7 +1927,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ds_v6",
@@ -1728,7 +1940,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E96ads_v6",
@@ -1739,7 +1953,9 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E96ds_v6",
@@ -1750,11 +1966,15 @@
             "milestone_label": "PostgreSQL v6 compute series (Ddsv6, Dadsv6, Edsv6, Eadsv6)",
             "release_doc": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           }
         ]
       },
-      "unknown_to_azure": []
+      "unknown_to_azure": [],
+      "spec_mismatches": [],
+      "has_details": false
     },
     "Azure Database for MySQL": {
       "available": true,
@@ -1775,7 +1995,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B16ms",
@@ -1786,7 +2008,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B1ms",
@@ -1797,7 +2021,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B20ms",
@@ -1808,7 +2034,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B2ms",
@@ -1819,7 +2047,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B2s",
@@ -1830,7 +2060,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B4ms",
@@ -1841,7 +2073,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_B8ms",
@@ -1852,7 +2086,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ads_v5",
@@ -1863,7 +2099,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D16ds_v4",
@@ -1874,7 +2112,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ads_v5",
@@ -1885,7 +2125,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D2ds_v4",
@@ -1896,7 +2138,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ads_v5",
@@ -1907,7 +2151,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D32ds_v4",
@@ -1918,7 +2164,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ads_v5",
@@ -1929,7 +2177,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D48ds_v4",
@@ -1940,7 +2190,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ads_v5",
@@ -1951,7 +2203,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D4ds_v4",
@@ -1962,7 +2216,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ads_v5",
@@ -1973,7 +2229,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D64ds_v4",
@@ -1984,7 +2242,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ads_v5",
@@ -1995,7 +2255,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D8ds_v4",
@@ -2006,7 +2268,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_D96ads_v5",
@@ -2017,7 +2281,9 @@
             "milestone_label": "Azure Database for MySQL flexible server",
             "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ads_v5",
@@ -2028,7 +2294,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ds_v4",
@@ -2039,7 +2307,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E16ds_v5",
@@ -2050,7 +2320,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ads_v5",
@@ -2061,7 +2333,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ds_v4",
@@ -2072,7 +2346,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E20ds_v5",
@@ -2083,7 +2359,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ads_v5",
@@ -2094,7 +2372,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ds_v4",
@@ -2105,7 +2385,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E2ds_v5",
@@ -2116,7 +2398,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ads_v5",
@@ -2127,7 +2411,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ds_v4",
@@ -2138,7 +2424,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E32ds_v5",
@@ -2149,7 +2437,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ads_v5",
@@ -2160,7 +2450,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ds_v4",
@@ -2171,7 +2463,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E48ds_v5",
@@ -2182,7 +2476,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ads_v5",
@@ -2193,7 +2489,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ds_v4",
@@ -2204,7 +2502,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E4ds_v5",
@@ -2215,7 +2515,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ads_v5",
@@ -2226,7 +2528,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ds_v4",
@@ -2237,7 +2541,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E64ds_v5",
@@ -2248,7 +2554,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E80ids_v4",
@@ -2259,7 +2567,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ads_v5",
@@ -2270,7 +2580,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ds_v4",
@@ -2281,7 +2593,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": true,
-            "flagged": false
+            "flagged": false,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E8ds_v5",
@@ -2292,7 +2606,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           },
           {
             "sku": "Standard_E96ads_v5",
@@ -2303,7 +2619,9 @@
             "milestone_label": "MySQL Business Critical tier (the renamed Memory Optimized tier)",
             "release_doc": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
             "migrate_supported": false,
-            "flagged": true
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
           }
         ]
       },
@@ -2321,10 +2639,167 @@
       },
       "unknown_to_azure": [
         "Standard_E96ds_v5"
-      ]
+      ],
+      "spec_mismatches": [],
+      "has_details": false
     },
     "Azure DocumentDB (MongoDB-compatible)": {
-      "available": false
+      "available": true,
+      "source": "User-supplied reference document (Mongo_DB_Migrate.docx): the Azure DocumentDB (formerly Azure Cosmos DB for MongoDB vCore) cluster tiers that Azure Migrate's discovery-and-assessment tooling recognizes, with Migrate's internal SKU name and its Dev/Test or Production classification for each.",
+      "as_of": "2026-10-05",
+      "supported_count": 9,
+      "ga": {
+        "total": 10,
+        "supported_count": 9,
+        "flagged_count": 1,
+        "rows": [
+          {
+            "sku": "Free Tier",
+            "tier": "Free",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "medium",
+            "milestone_label": "Azure DocumentDB Free Tier",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/announced-at-ms-ignite-2023-mongodb-vcore-free-offer-copilot-and-more/",
+            "migrate_supported": false,
+            "flagged": true,
+            "migrate_sku_name": null,
+            "migrate_class": null
+          },
+          {
+            "sku": "M10",
+            "tier": "Burstable",
+            "lifecycle_status": "Generally available",
+            "release_date": "2025-03-12",
+            "date_confidence": "high",
+            "milestone_label": "Azure DocumentDB cluster tiers M10 and M20",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Burstable1vCore",
+            "migrate_class": "Dev/Test"
+          },
+          {
+            "sku": "M20",
+            "tier": "Burstable",
+            "lifecycle_status": "Generally available",
+            "release_date": "2025-03-12",
+            "date_confidence": "high",
+            "milestone_label": "Azure DocumentDB cluster tiers M10 and M20",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Burstable2vCore_M20",
+            "migrate_class": "Dev/Test"
+          },
+          {
+            "sku": "M200",
+            "tier": "Regular",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "high",
+            "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_64vCore",
+            "migrate_class": "Production"
+          },
+          {
+            "sku": "M25",
+            "tier": "Burstable",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-21",
+            "date_confidence": "high",
+            "milestone_label": "Azure DocumentDB burstable cluster tier M25",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/introducing-burstable-tier-m25-on-azure-cosmos-db-for-mongodb-vcore/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Burstable2vCore_M25",
+            "migrate_class": "Dev/Test"
+          },
+          {
+            "sku": "M30",
+            "tier": "Regular",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "high",
+            "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_2vCore",
+            "migrate_class": "Dev/Test"
+          },
+          {
+            "sku": "M40",
+            "tier": "Regular",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "high",
+            "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_4vCore",
+            "migrate_class": "Production"
+          },
+          {
+            "sku": "M50",
+            "tier": "Regular",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "high",
+            "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_8vCore",
+            "migrate_class": "Production"
+          },
+          {
+            "sku": "M60",
+            "tier": "Regular",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "high",
+            "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_16vCore",
+            "migrate_class": "Production"
+          },
+          {
+            "sku": "M80",
+            "tier": "Regular",
+            "lifecycle_status": "Generally available",
+            "release_date": "2023-11-15",
+            "date_confidence": "high",
+            "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+            "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+            "migrate_supported": true,
+            "flagged": false,
+            "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_32vCore",
+            "migrate_class": "Production"
+          }
+        ]
+      },
+      "deprecated": {
+        "total": 0,
+        "supported_count": 0,
+        "flagged_count": 0,
+        "rows": []
+      },
+      "preview": {
+        "total": 0,
+        "supported_count": 0,
+        "flagged_count": 0,
+        "rows": []
+      },
+      "unknown_to_azure": [],
+      "spec_mismatches": [],
+      "has_details": true
     },
     "Azure Virtual Machines": {
       "available": false

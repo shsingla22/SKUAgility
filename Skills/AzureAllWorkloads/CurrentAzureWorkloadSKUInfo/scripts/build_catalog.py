@@ -132,6 +132,9 @@ def migrate_comparisons(by_service: dict) -> dict:
 MIGRATE_TABLE_HEADER = ("| # | SKU | Lifecycle status | Since | Confidence "
                         "| Migrate supported | Flag |\n"
                         "| --- | --- | --- | --- | --- | --- | --- |")
+MIGRATE_TABLE_HEADER_DETAIL = ("| # | SKU | Lifecycle status | Since | Confidence "
+                               "| Migrate supported | Migrate SKU name | Migrate class | Flag |\n"
+                               "| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
 
 
 def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
@@ -142,19 +145,24 @@ def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
     return "⚠️ Not Migrate-supported"
 
 
-def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict) -> list[str]:
+def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
+                          detailed: bool = False) -> list[str]:
     """Lines for one lifecycle bucket's table: always emitted, even at zero rows."""
     lines = [f"**{label}** — {bucket['total']} SKU(s), Migrate supports "
              f"{bucket['supported_count']}, {bucket['flagged_count']} flagged.", ""]
     if bucket["total"] == 0:
         lines += [f"No {label.lower()} SKUs for this service — nothing to compare.", ""]
         return lines
-    lines += [MIGRATE_TABLE_HEADER]
+    lines += [MIGRATE_TABLE_HEADER_DETAIL if detailed else MIGRATE_TABLE_HEADER]
     for i, d in enumerate(bucket["rows"], 1):
         yn = "Yes" if d["migrate_supported"] else "No"
         flag = _migrate_flag_text(bucket_kind, d["flagged"])
+        extra = ""
+        if detailed:
+            name = f"`{d['migrate_sku_name']}`" if d.get("migrate_sku_name") else "—"
+            extra = f"| {name} | {d.get('migrate_class') or '—'} "
         lines.append(f"| {i} | `{d['sku']}` | {d['lifecycle_status']} "
-                     f"| {d['release_date']} | {d['date_confidence']} | {yn} | {flag} |")
+                     f"| {d['release_date']} | {d['date_confidence']} | {yn} {extra}| {flag} |")
     lines.append("")
     return lines
 
@@ -177,8 +185,18 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
     lines += [f"Compared against {cmp['supported_count']} SKUs Azure Migrate "
               f"supports for this service, as of {cmp['as_of']}. Source: "
               f"{cmp['source']}", ""]
-    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"])
-    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"])
+    detailed = cmp.get("has_details", False)
+    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"], detailed)
+    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"], detailed)
+
+    for mm in cmp.get("spec_mismatches", []):
+        parts = [f"{k} Azure {v['azure']:g} vs Migrate {v['migrate']:g}"
+                 for k, v in mm.items() if k != "sku"]
+        lines += [f"*Data-quality note — Migrate's list sizes `{mm['sku']}` differently "
+                  f"from Azure's page: {'; '.join(parts)}.*", ""]
+    if detailed and not cmp.get("spec_mismatches"):
+        lines += ["*Migrate's stated vCores and RAM agree with Azure's page for every "
+                  "SKU it lists.*", ""]
 
     unknown = cmp["unknown_to_azure"]
     if unknown:
@@ -187,7 +205,7 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
                   f"{', '.join(f'`{u}`' for u in unknown)}.*", ""]
 
     lines += ["### Public preview SKU discrepancies", ""]
-    lines += _migrate_bucket_lines("preview", "Public preview", cmp["preview"])
+    lines += _migrate_bucket_lines("preview", "Public preview", cmp["preview"], detailed)
     return lines
 
 

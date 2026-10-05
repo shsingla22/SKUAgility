@@ -741,11 +741,34 @@ Documentation read for this service:
 
 ### GA SKU discrepancies
 
-Comparison data has not been supplied for this service yet — no flags to show.
+Compared against 9 SKUs Azure Migrate supports for this service, as of 2026-10-05. Source: User-supplied reference document (Mongo_DB_Migrate.docx): the Azure DocumentDB (formerly Azure Cosmos DB for MongoDB vCore) cluster tiers that Azure Migrate's discovery-and-assessment tooling recognizes, with Migrate's internal SKU name and its Dev/Test or Production classification for each.
+
+**Generally available** — 10 SKU(s), Migrate supports 9, 1 flagged.
+
+| # | SKU | Lifecycle status | Since | Confidence | Migrate supported | Migrate SKU name | Migrate class | Flag |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | `Free Tier` | Generally available | 2023-11-15 | medium | No | — | — | ⚠️ Not Migrate-supported |
+| 2 | `M10` | Generally available | 2025-03-12 | high | Yes | `Burstable1vCore` | Dev/Test | — |
+| 3 | `M20` | Generally available | 2025-03-12 | high | Yes | `Burstable2vCore_M20` | Dev/Test | — |
+| 4 | `M200` | Generally available | 2023-11-15 | high | Yes | `Azure_Cosmos_DB_for_MongoDB_Worker_Node_64vCore` | Production | — |
+| 5 | `M25` | Generally available | 2023-11-21 | high | Yes | `Burstable2vCore_M25` | Dev/Test | — |
+| 6 | `M30` | Generally available | 2023-11-15 | high | Yes | `Azure_Cosmos_DB_for_MongoDB_Worker_Node_2vCore` | Dev/Test | — |
+| 7 | `M40` | Generally available | 2023-11-15 | high | Yes | `Azure_Cosmos_DB_for_MongoDB_Worker_Node_4vCore` | Production | — |
+| 8 | `M50` | Generally available | 2023-11-15 | high | Yes | `Azure_Cosmos_DB_for_MongoDB_Worker_Node_8vCore` | Production | — |
+| 9 | `M60` | Generally available | 2023-11-15 | high | Yes | `Azure_Cosmos_DB_for_MongoDB_Worker_Node_16vCore` | Production | — |
+| 10 | `M80` | Generally available | 2023-11-15 | high | Yes | `Azure_Cosmos_DB_for_MongoDB_Worker_Node_32vCore` | Production | — |
+
+**Deprecated / retiring** — 0 SKU(s), Migrate supports 0, 0 flagged.
+
+No deprecated / retiring SKUs for this service — nothing to compare.
+
+*Migrate's stated vCores and RAM agree with Azure's page for every SKU it lists.*
 
 ### Public preview SKU discrepancies
 
-Comparison data has not been supplied for this service yet — no flags to show.
+**Public preview** — 0 SKU(s), Migrate supports 0, 0 flagged.
+
+No public preview SKUs for this service — nothing to compare.
 
 Documentation read for this service:
 

@@ -106,5 +106,76 @@
       "Standard_E80ids_v4",
       "Standard_E96ds_v5"
     ]
+  },
+  "mongodb": {
+    "source": "User-supplied reference document (Mongo_DB_Migrate.docx): the Azure DocumentDB (formerly Azure Cosmos DB for MongoDB vCore) cluster tiers that Azure Migrate's discovery-and-assessment tooling recognizes, with Migrate's internal SKU name and its Dev/Test or Production classification for each.",
+    "as_of": "2026-10-05",
+    "supported_skus": [
+      "M10",
+      "M20",
+      "M25",
+      "M30",
+      "M40",
+      "M50",
+      "M60",
+      "M80",
+      "M200"
+    ],
+    "sku_details": {
+      "M10": {
+        "migrate_sku_name": "Burstable1vCore",
+        "migrate_class": "Dev/Test",
+        "vcores": 1,
+        "memory_gib": 2
+      },
+      "M20": {
+        "migrate_sku_name": "Burstable2vCore_M20",
+        "migrate_class": "Dev/Test",
+        "vcores": 2,
+        "memory_gib": 4
+      },
+      "M25": {
+        "migrate_sku_name": "Burstable2vCore_M25",
+        "migrate_class": "Dev/Test",
+        "vcores": 2,
+        "memory_gib": 8
+      },
+      "M30": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_2vCore",
+        "migrate_class": "Dev/Test",
+        "vcores": 2,
+        "memory_gib": 8
+      },
+      "M40": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_4vCore",
+        "migrate_class": "Production",
+        "vcores": 4,
+        "memory_gib": 16
+      },
+      "M50": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_8vCore",
+        "migrate_class": "Production",
+        "vcores": 8,
+        "memory_gib": 32
+      },
+      "M60": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_16vCore",
+        "migrate_class": "Production",
+        "vcores": 16,
+        "memory_gib": 64
+      },
+      "M80": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_32vCore",
+        "migrate_class": "Production",
+        "vcores": 32,
+        "memory_gib": 128
+      },
+      "M200": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_64vCore",
+        "migrate_class": "Production",
+        "vcores": 64,
+        "memory_gib": 256
+      }
+    }
   }
 }

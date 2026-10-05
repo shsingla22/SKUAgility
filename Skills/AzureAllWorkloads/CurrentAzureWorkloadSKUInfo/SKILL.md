@@ -166,7 +166,12 @@ To add Migrate-support data for another service: add an entry to
 `references/migrate_support.json` keyed by that service's `WORKLOAD` string
 (the same key used in `references/config.json`), naming its `source`, `as_of`
 date and `supported_skus` list using this catalog's own SKU names (`sku` field,
-e.g. `Standard_D4ds_v5`) — no other code changes are needed. Do note: a full
+e.g. `Standard_D4ds_v5`) — no other code changes are needed. If the supplied list
+says more per SKU, add an optional `sku_details` map keyed by SKU with any of
+`migrate_sku_name`, `migrate_class`, `vcores`, `memory_gib`: the name and class
+appear as extra columns, and stated sizes are cross-checked against Azure's own
+figures, with every disagreement reported as a data-quality note (MongoDB's list
+is the first to carry these). Do note: a full
 per-SKU table means a service with a very large GA bucket (Virtual Machines'
 ~965 sizes, say) would render a very long table if given Migrate data — worth
 reconsidering paging or a summary-only mode before extending this to VMs.
