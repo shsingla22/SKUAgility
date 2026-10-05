@@ -36,6 +36,13 @@
       "note": "Flexible server, per compute size."
     },
     {
+      "key": "mongodb",
+      "display": "Azure DocumentDB (MongoDB-compatible)",
+      "provider": "mongodb",
+      "enabled": true,
+      "note": "Formerly Azure Cosmos DB for MongoDB (vCore); per cluster tier, plus the Free Tier."
+    },
+    {
       "key": "redis",
       "display": "Azure Cache for Redis",
       "provider": "redis",

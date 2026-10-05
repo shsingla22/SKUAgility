@@ -1,6 +1,6 @@
 ---
 name: CurrentAzureWorkloadSKUInfo
-description: Produce a current, fully sourced SKU catalog for a configurable set of Azure services — Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL and Azure Virtual Machines by default, with Cache for Redis, App Service and Kubernetes Service available by flipping a flag. Output is sectioned per service with the newest SKUs first and collapsible sections in the Atlas, and every SKU gets its release date, lifecycle status (GA / public preview / deprecated / retiring), numbered plain-English conditions for when to recommend it taken from Microsoft's own guidance, and links to every page the data came from. Outputs a Markdown table and the filterable "Azure Workload SKU Atlas" HTML page. Use when asked for Azure SKUs for one or more services, which Azure tier or size to pick for a workload, what is deprecated, retiring or in preview, or to refresh an existing Azure SKU catalog.
+description: Produce a current, fully sourced SKU catalog for a configurable set of Azure services — Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL, Azure DocumentDB (MongoDB-compatible) and Azure Virtual Machines by default, with Cache for Redis, App Service and Kubernetes Service available by flipping a flag. Output is sectioned per service with the newest SKUs first and collapsible sections in the Atlas, and every SKU gets its release date, lifecycle status (GA / public preview / deprecated / retiring), numbered plain-English conditions for when to recommend it taken from Microsoft's own guidance, and links to every page the data came from. Outputs a Markdown table and the filterable "Azure Workload SKU Atlas" HTML page. Use when asked for Azure SKUs for one or more services, which Azure tier or size to pick for a workload, what is deprecated, retiring or in preview, or to refresh an existing Azure SKU catalog.
 ---
 
 # CurrentAzureWorkloadSKUInfo
@@ -99,6 +99,7 @@ Three details worth knowing when reading a section:
 | Azure SQL Database / Managed Instance | **on** | Every service-level objective | Delegated to the `CurrentAzureSQLSKUInfo` skill |
 | Azure Database for PostgreSQL | **on** | Every compute size | Compute-options page |
 | Azure Database for MySQL | **on** | Every compute size | Service-tiers page |
+| Azure DocumentDB (MongoDB-compatible) | **on** | Every cluster tier + the Free Tier | Compute-and-storage, free-tier and release-notes pages |
 | Azure Cache for Redis | off | Tier | Overview + what's-new |
 | Azure App Service | off | Plan tier | Hosting-plans page |
 | Azure Kubernetes Service | off | Pricing tier | Pricing-tiers page |

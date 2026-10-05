@@ -947,6 +947,66 @@
   "memory_gb": 768.0,
   "series": "Edsv6-series"
  },
+ "Azure DocumentDB (MongoDB-compatible) :: Free Tier [Free]": {
+  "capacity": null,
+  "lifecycle_status": "Generally available",
+  "memory_gb": null,
+  "series": "Free tier"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M10 [Burstable]": {
+  "capacity": 1.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 2.0,
+  "series": "Cluster tier (burstable vCores)"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M20 [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 4.0,
+  "series": "Cluster tier (burstable vCores)"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M200 [Regular]": {
+  "capacity": 64.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 256.0,
+  "series": "Cluster tier"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M25 [Burstable]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Cluster tier (burstable vCores)"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M30 [Regular]": {
+  "capacity": 2.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 8.0,
+  "series": "Cluster tier"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M40 [Regular]": {
+  "capacity": 4.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 16.0,
+  "series": "Cluster tier"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M50 [Regular]": {
+  "capacity": 8.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 32.0,
+  "series": "Cluster tier"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M60 [Regular]": {
+  "capacity": 16.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 64.0,
+  "series": "Cluster tier"
+ },
+ "Azure DocumentDB (MongoDB-compatible) :: M80 [Regular]": {
+  "capacity": 32.0,
+  "lifecycle_status": "Generally available",
+  "memory_gb": 128.0,
+  "series": "Cluster tier"
+ },
  "Azure SQL Database :: BC_DC_10 [Business Critical]": {
   "capacity": 10,
   "lifecycle_status": "Generally available",

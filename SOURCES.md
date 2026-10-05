@@ -21,6 +21,12 @@ Retrieved 2026-08-17.
 - [What is Azure Database for PostgreSQL flexible server?](https://learn.microsoft.com/azure/postgresql/overview) — v6 SKU family preview status and per-region compute-generation availability
 - [What's happening to PostgreSQL single server](https://learn.microsoft.com/azure/postgresql/single-server/whats-happening-to-postgresql-single-server) — retirement of the single server deployment model
 
+## Azure DocumentDB (MongoDB-compatible) — SKU inventory
+
+- [Compute and storage configurations](https://learn.microsoft.com/azure/documentdb/compute-storage) — the cluster-tier table (M10–M200 with vCores and RAM per shard) and the burstable-tier description
+- [Free tier](https://learn.microsoft.com/azure/documentdb/free-tier) — the Free Tier SKU, its benefits and restrictions
+- [Service release notes](https://learn.microsoft.com/azure/documentdb/release-notes) — the 2025-11-18 rename from Azure Cosmos DB for MongoDB (vCore)
+
 ## Recommendation guidance ("when to recommend this SKU")
 
 - [Compare vCore and DTU purchasing models](https://learn.microsoft.com/azure/azure-sql/database/purchasing-models) — which purchasing model to choose and what each is best for
@@ -62,6 +68,13 @@ Retrieved 2026-08-17.
 - [Flexible server now supports v4 compute series](https://techcommunity.microsoft.com/blog/adforpostgresql/flexible-server-now-supports-v4-compute-series-in-postgresql-on-azure/2815092) — October 2021
 - [GA: New burstable SKUs (B4ms–B20ms)](https://azure.microsoft.com/updates/generally-available-new-burstable-skus-for-azure-database-for-postgresql-flexible-server/) — April 2023
 - [Introducing Intel V5 compute and 32 TB storage support](https://techcommunity.microsoft.com/t5/azure-database-for-postgresql/introducing-intel-v5-compute-and-32-tb-storage-support-on-azure/ba-p/3839849) — Ddsv5/Edsv5, May 2023 release, announced June 5, 2023
+
+### Azure DocumentDB (MongoDB-compatible)
+
+- [General availability announcement, 2023-11-15](https://devblogs.microsoft.com/cosmosdb/mongovcorega/) and the [public preview update, 2023-03-28](https://azure.microsoft.com/en-us/updates/public-preview-azure-cosmos-db-for-mongodb-vcore/) — M30–M200
+- [Burstable tier M25, 2023-11-21](https://devblogs.microsoft.com/cosmosdb/introducing-burstable-tier-m25-on-azure-cosmos-db-for-mongodb-vcore/)
+- [M10 and M20 tiers, 2025-03-12](https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/)
+- [Ignite 2023 announcements including the Free Tier, 2023-11-15](https://devblogs.microsoft.com/cosmosdb/announced-at-ms-ignite-2023-mongodb-vcore-free-offer-copilot-and-more/) — medium confidence; the dedicated GA update page is script-rendered
 
 ## Link verification
 

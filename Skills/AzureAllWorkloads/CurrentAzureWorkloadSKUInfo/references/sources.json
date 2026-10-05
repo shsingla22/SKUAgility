@@ -62,6 +62,34 @@
       "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-compute-docs/main/articles/virtual-machines/sizes/overview.md",
       "live_url": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
       "reads": "The VM size family list per workload type. This page is the entry point: the provider follows it to each family page, then to each series page, and reads the 'Sizes in series' Basics table on every one - roughly 130 pages - to get individual sizes."
+    },
+    "ddb_compute": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/compute-storage",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "reads": "The cluster-tier table (M10-M200 with vCores and RAM per shard), the burstable-tier description, and the configuration guidance."
+    },
+    "ddb_overview": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/overview",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/overview",
+      "reads": "What the service is and when Microsoft positions it."
+    },
+    "ddb_free": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/free-tier",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/free-tier",
+      "reads": "The Free Tier SKU: what it includes and its restrictions."
+    },
+    "ddb_release": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/release-notes",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/release-notes",
+      "reads": "Service release notes, including the November 2025 rename from Azure Cosmos DB for MongoDB (vCore)."
     }
   }
 }

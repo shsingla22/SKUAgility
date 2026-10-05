@@ -5,9 +5,9 @@ SKU agility for all workloads.
 A catalog of the compute SKUs offered by Azure data services — what exists today, what tier
 and hardware family it belongs to, when it shipped, whether it is still a good idea, and
 where every one of those claims came from. Built from Microsoft documentation by two
-reusable skills. **1,509 SKUs across Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL
-and Azure Virtual Machines** by default; three more services ship switched off behind a
-config flag.
+reusable skills. **1,519 SKUs across Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL,
+Azure DocumentDB (MongoDB-compatible) and Azure Virtual Machines** by default; three more
+services ship switched off behind a config flag.
 
 ## What's here
 
@@ -46,7 +46,7 @@ and generate everything, then verify what they produced:
 
 | Skill | Covers | Granularity |
 | --- | --- | --- |
-| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL, PostgreSQL, MySQL and Virtual Machines on by default; Cache for Redis, App Service and AKS available | Per individual size |
+| `CurrentAzureWorkloadSKUInfo` | A **configurable** set of services — SQL, PostgreSQL, MySQL, DocumentDB (MongoDB) and Virtual Machines on by default; Cache for Redis, App Service and AKS available | Per individual size |
 | `CurrentAzureSQLSKUInfo` | Azure SQL Database + Managed Instance | Every service-level objective |
 
 Which services the cross-workload catalog covers is set in
@@ -93,6 +93,11 @@ milestones, and a provider module — described in the
   and Migrate's list names `Standard_E96ds_v5`, which Microsoft's MySQL service-tiers page
   does not offer. Azure SQL and Virtual Machines show "not supplied yet" until their own
   Migrate data is added.
+- **MongoDB on Azure is Azure DocumentDB now.** Microsoft renamed Azure Cosmos DB for MongoDB
+  (vCore) to Azure DocumentDB (with MongoDB compatibility) on 2025-11-18. The catalog carries
+  its nine cluster tiers (M10–M200) plus the Free Tier, all GA; M10/M20 are dated to their
+  March 2025 launch and M25 to November 2023. One doc inconsistency is recorded: the M10/M20
+  announcement calls them dedicated compute, the current compute page lists them as burstable.
 - **80 VM sizes across 11 series are End of Life** per Microsoft's End of Life size-series
   list (Dv2/Dsv2, Dv3/Dsv3, Ev3/Esv3, Fsv2, Lsv2, DCsv3/DCdsv3, HC, HBv2): retirement
   announced, still usable until the date, restricted for new subscriptions.
@@ -121,6 +126,10 @@ Fsv2-series, DC-series, premium-series, premium-series memory optimized).
 **Azure SQL Managed Instance** — General Purpose, Next-gen General Purpose and Business
 Critical on standard-series (Gen5), premium-series (`G8IM`) and memory optimized
 premium-series (`G8IH`).
+
+**Azure DocumentDB (MongoDB-compatible)** — cluster tiers M10, M20, M25 (burstable vCores) and
+M30–M200, plus the Free Tier. The RU-based Azure Cosmos DB for MongoDB has no compute sizes
+and is not covered.
 
 **Azure Database for PostgreSQL** — flexible server Burstable, General Purpose and Memory
 Optimized tiers across the v3, v4, v5 (Intel and AMD) and v6 (preview) compute series. The

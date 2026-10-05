@@ -210,6 +210,49 @@ AKS_PREMIUM = milestone(
 # own module and are registered here. See references/vm_milestones.py.
 # --------------------------------------------------------------------------
 
+
+# --------------------------------------------------------------------------
+# Azure DocumentDB (MongoDB-compatible) — formerly Azure Cosmos DB for MongoDB (vCore)
+# --------------------------------------------------------------------------
+
+MONGO_VCORE = milestone(
+    key="mongodb-vcore-ga",
+    label="Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) — regular cluster tiers",
+    preview="2023-03-28", ga="2023-11-15", confidence="high",
+    source="https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+    note="Public preview announced 28 March 2023 (https://azure.microsoft.com/en-us/updates/"
+         "public-preview-azure-cosmos-db-for-mongodb-vcore/), general availability announced "
+         "at Microsoft Ignite on 15 November 2023. Renamed Azure DocumentDB (with MongoDB "
+         "compatibility) on 18 November 2025 per the service release notes.",
+)
+MONGO_M25 = milestone(
+    key="mongodb-burstable-m25",
+    label="Azure DocumentDB burstable cluster tier M25",
+    preview=None, ga="2023-11-21", confidence="high",
+    source="https://devblogs.microsoft.com/cosmosdb/introducing-burstable-tier-m25-on-azure-cosmos-db-for-mongodb-vcore/",
+    note="Introduced as the first burstable tier six days after the service's GA.",
+)
+MONGO_M10_M20 = milestone(
+    key="mongodb-m10-m20",
+    label="Azure DocumentDB cluster tiers M10 and M20",
+    preview=None, ga="2025-03-12", confidence="high",
+    source="https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/",
+    note="The announcement describes M10 and M20 as dedicated compute; the current "
+         "compute-and-storage page lists both vCore counts as burstable. The catalog "
+         "follows the current page and records the discrepancy here.",
+)
+MONGO_FREE = milestone(
+    key="mongodb-free-tier",
+    label="Azure DocumentDB Free Tier",
+    preview=None, ga="2023-11-15", confidence="medium",
+    source="https://devblogs.microsoft.com/cosmosdb/announced-at-ms-ignite-2023-mongodb-vcore-free-offer-copilot-and-more/",
+    note="Announced with the service's GA at Ignite 2023. Microsoft's separate 'General "
+         "availability: Free tier' Azure update exists (https://azure.microsoft.com/en-us/"
+         "updates/general-availability-free-tier-on-azure-cosmos-db-for-mongodb-vcore/) "
+         "but its page is script-rendered and its date could not be machine-read, so the "
+         "Ignite date is used at medium confidence.",
+)
+
 from vm_milestones import ALL as _VM_MILESTONES              # noqa: E402
 
 for _entry in _VM_MILESTONES:

@@ -1,12 +1,13 @@
 {
   "generated": "2026-10-05",
   "generator": "Skills/AzureAllWorkloads/CurrentAzureWorkloadSKUInfo",
-  "sku_count": 1509,
+  "sku_count": 1519,
   "workloads": [
     "Azure SQL Database",
     "Azure SQL Managed Instance",
     "Azure Database for PostgreSQL",
     "Azure Database for MySQL",
+    "Azure DocumentDB (MongoDB-compatible)",
     "Azure Virtual Machines"
   ],
   "service_order": [
@@ -14,6 +15,7 @@
     "Azure SQL Managed Instance",
     "Azure Database for PostgreSQL",
     "Azure Database for MySQL",
+    "Azure DocumentDB (MongoDB-compatible)",
     "Azure Virtual Machines"
   ],
   "date_confidence_legend": {
@@ -111,6 +113,46 @@
       "confidence": "medium",
       "source": "https://techcommunity.microsoft.com/blog/adformysql/leverage-flexible-server%E2%80%99s-business-critical-service-tier-for-mission-critical-a/3709525",
       "note": "The Memory Optimized tier was enhanced and renamed Business Critical; the 80 and 96 vCore sizes became generally available at the same time.",
+      "retirement": null
+    },
+    {
+      "key": "mongodb-vcore-ga",
+      "label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "preview": "2023-03-28",
+      "ga": "2023-11-15",
+      "confidence": "high",
+      "source": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "note": "Public preview announced 28 March 2023 (https://azure.microsoft.com/en-us/updates/public-preview-azure-cosmos-db-for-mongodb-vcore/), general availability announced at Microsoft Ignite on 15 November 2023. Renamed Azure DocumentDB (with MongoDB compatibility) on 18 November 2025 per the service release notes.",
+      "retirement": null
+    },
+    {
+      "key": "mongodb-burstable-m25",
+      "label": "Azure DocumentDB burstable cluster tier M25",
+      "preview": null,
+      "ga": "2023-11-21",
+      "confidence": "high",
+      "source": "https://devblogs.microsoft.com/cosmosdb/introducing-burstable-tier-m25-on-azure-cosmos-db-for-mongodb-vcore/",
+      "note": "Introduced as the first burstable tier six days after the service's GA.",
+      "retirement": null
+    },
+    {
+      "key": "mongodb-m10-m20",
+      "label": "Azure DocumentDB cluster tiers M10 and M20",
+      "preview": null,
+      "ga": "2025-03-12",
+      "confidence": "high",
+      "source": "https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/",
+      "note": "The announcement describes M10 and M20 as dedicated compute; the current compute-and-storage page lists both vCore counts as burstable. The catalog follows the current page and records the discrepancy here.",
+      "retirement": null
+    },
+    {
+      "key": "mongodb-free-tier",
+      "label": "Azure DocumentDB Free Tier",
+      "preview": null,
+      "ga": "2023-11-15",
+      "confidence": "medium",
+      "source": "https://devblogs.microsoft.com/cosmosdb/announced-at-ms-ignite-2023-mongodb-vcore-free-offer-copilot-and-more/",
+      "note": "Announced with the service's GA at Ignite 2023. Microsoft's separate 'General availability: Free tier' Azure update exists (https://azure.microsoft.com/en-us/updates/general-availability-free-tier-on-azure-cosmos-db-for-mongodb-vcore/) but its page is script-rendered and its date could not be machine-read, so the Ignite date is used at medium confidence.",
       "retirement": null
     },
     {
@@ -2280,6 +2322,9 @@
       "unknown_to_azure": [
         "Standard_E96ds_v5"
       ]
+    },
+    "Azure DocumentDB (MongoDB-compatible)": {
+      "available": false
     },
     "Azure Virtual Machines": {
       "available": false
@@ -16655,6 +16700,344 @@
       "milestone_label": "Azure Database for MySQL flexible server",
       "release_doc": "https://techcommunity.microsoft.com/t5/azure-database-for-mysql-blog/announcing-azure-database-for-mysql-flexible-server-for-business/ba-p/3361718",
       "notes": "General availability announced November 2021, effective 1 December 2021."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M10",
+      "tier": "Burstable",
+      "series": "Cluster tier (burstable vCores)",
+      "capacity": 1.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 2.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-m10-m20",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Burstable tier offers an intelligent solution tailored for small database workloads.",
+        "By providing minimal CPU performance during idle periods, these clusters optimize resource utilization.",
+        "However, the real brilliance lies in their ability to seamlessly scale up to full CPU power in response to increased traffic or workload demands.",
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2025-03-12",
+      "date_confidence": "high",
+      "milestone_label": "Azure DocumentDB cluster tiers M10 and M20",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M20",
+      "tier": "Burstable",
+      "series": "Cluster tier (burstable vCores)",
+      "capacity": 2.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 4.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-m10-m20",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Burstable tier offers an intelligent solution tailored for small database workloads.",
+        "By providing minimal CPU performance during idle periods, these clusters optimize resource utilization.",
+        "However, the real brilliance lies in their ability to seamlessly scale up to full CPU power in response to increased traffic or workload demands.",
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2025-03-12",
+      "date_confidence": "high",
+      "milestone_label": "Azure DocumentDB cluster tiers M10 and M20",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongodb-workloads-affordable-with-m10-m20-tiers-vcore-azure-cosmos/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M25",
+      "tier": "Burstable",
+      "series": "Cluster tier (burstable vCores)",
+      "capacity": 2.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 8.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-burstable-m25",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Burstable tier offers an intelligent solution tailored for small database workloads.",
+        "By providing minimal CPU performance during idle periods, these clusters optimize resource utilization.",
+        "However, the real brilliance lies in their ability to seamlessly scale up to full CPU power in response to increased traffic or workload demands.",
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-21",
+      "date_confidence": "high",
+      "milestone_label": "Azure DocumentDB burstable cluster tier M25",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/introducing-burstable-tier-m25-on-azure-cosmos-db-for-mongodb-vcore/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M30",
+      "tier": "Regular",
+      "series": "Cluster tier",
+      "capacity": 2.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 8.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-vcore-ga",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "high",
+      "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M40",
+      "tier": "Regular",
+      "series": "Cluster tier",
+      "capacity": 4.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 16.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-vcore-ga",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "high",
+      "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M50",
+      "tier": "Regular",
+      "series": "Cluster tier",
+      "capacity": 8.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 32.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-vcore-ga",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "high",
+      "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M60",
+      "tier": "Regular",
+      "series": "Cluster tier",
+      "capacity": 16.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 64.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-vcore-ga",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "high",
+      "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M80",
+      "tier": "Regular",
+      "series": "Cluster tier",
+      "capacity": 32.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 128.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-vcore-ga",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "high",
+      "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "M200",
+      "tier": "Regular",
+      "series": "Cluster tier",
+      "capacity": 64.0,
+      "capacity_unit": "vCore",
+      "memory_gb": 256.0,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-vcore-ga",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "recommend_when": [
+        "Memory: Ensure that your  working set  (frequently accessed data and indexes) fits into RAM.",
+        "CPU: Choose a CPU configuration that can handle your query load and concurrency requirements.",
+        "Storage IOPS: Use 'IOPS' metric with 'Max' aggregation on your cluster to see historical storage IOPS usage.",
+        "Data volume: Estimate the total size of your data, including indexes.",
+        "Concurrency: Assess the number of concurrent operations your database needs to handle.",
+        "The concept of a working set is important for performance optimization because MongoDB, like many databases, performs best when the working set fits in RAM.",
+        "By keeping the working set in RAM, you can minimize slower disk I/O operations, thus improving the performance of your MongoDB database.",
+        "If your working set exceeds the available RAM, consider optimizing your data model, adding more RAM to your cluster, or using sharding to distribute data across multiple nodes.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/compute-storage",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "high",
+      "milestone_label": "Azure Cosmos DB for MongoDB vCore (now Azure DocumentDB) \u2014 regular cluster tiers",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/mongovcorega/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename."
+    },
+    {
+      "workload": "mongodb",
+      "service": "Azure DocumentDB (MongoDB-compatible)",
+      "sku": "Free Tier",
+      "tier": "Free",
+      "series": "Free tier",
+      "capacity": null,
+      "capacity_unit": "vCore",
+      "memory_gb": null,
+      "lifecycle_status": "Generally available",
+      "milestone": "mongodb-free-tier",
+      "inventory_doc": "https://learn.microsoft.com/azure/documentdb/free-tier",
+      "recommend_when": [
+        "Azure DocumentDB now introduces a new SKU, the \"Free Tier,\" enabling users to explore the platform without any financial commitments.",
+        "The free tier lasts for the lifetime of your account, boasting command and feature parity with a regular Azure DocumentDB account.",
+        "It makes it easy for you to get started, develop, test your applications, or even run small production workloads for free.",
+        "For a given subscription, only one free tier account is permissible.",
+        "High availability, Microsoft Entra ID (formerly known as Azure Active Directory), Backup / Restore, HNSW & DiskANN vector indexes, and Diagnostic Logging aren't supported.",
+        "Free tier clusters are paused after 60 days of inactivity.",
+        "Transition from a paid tier account to a free tier accounts isn't supported.",
+        "Confirm the cluster tier is offered in your target region before committing to it."
+      ],
+      "recommend_sources": [
+        "https://learn.microsoft.com/azure/documentdb/free-tier",
+        "https://learn.microsoft.com/azure/documentdb/overview"
+      ],
+      "release_date": "2023-11-15",
+      "date_confidence": "medium",
+      "milestone_label": "Azure DocumentDB Free Tier",
+      "release_doc": "https://devblogs.microsoft.com/cosmosdb/announced-at-ms-ignite-2023-mongodb-vcore-free-offer-copilot-and-more/",
+      "notes": "Renamed from Azure Cosmos DB for MongoDB (vCore) to Azure DocumentDB on November 18, 2025 (service release notes). Cluster tiers are unchanged by the rename. Microsoft does not publish the Free Tier's vCore count or RAM."
     },
     {
       "workload": "virtual_machines",

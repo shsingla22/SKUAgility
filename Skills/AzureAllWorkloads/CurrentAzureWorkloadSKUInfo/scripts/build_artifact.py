@@ -37,6 +37,9 @@ SHORT_DOC = {
     "elastic-pool-overview": "Elastic pools overview",
     "doc-changes-updates-release-notes-whats-new-archive": "What\'s new archive",
     "sql-managed-instance-paas-overview": "Managed Instance overview",
+    "compute-storage": "Compute and storage",
+    "free-tier": "Free tier",
+    "release-notes": "Release notes",
 }
 
 
