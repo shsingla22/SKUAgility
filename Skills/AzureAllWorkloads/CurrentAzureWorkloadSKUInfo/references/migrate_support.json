@@ -177,5 +177,428 @@
         "memory_gib": 256
       }
     }
+  },
+  "Azure SQL Managed Instance": {
+    "_keyed_by": "service display name, because the azure_sql workload produces two sections (Database and Managed Instance) and this list covers Managed Instance only",
+    "source": "User-supplied reference document (SQL_instance_SKU_Migrate.docx): the Azure SQL Managed Instance service tier / hardware generation / vCore combinations that Azure Migrate's discovery-and-assessment tooling recognizes, expanded here from its tier x hardware x vCore-step grid. Entries carry the tier because Managed Instance reuses one SKU name (e.g. GP_Gen5 (4 vCores)) for both General Purpose and Next-gen General Purpose.",
+    "as_of": "2026-10-06",
+    "supported_skus": [
+      {
+        "sku": "GP_Gen5 (4 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (8 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (16 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (24 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (32 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (40 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (64 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (80 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (4 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (8 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (16 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (24 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (32 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (40 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (64 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (80 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (4 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (8 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (16 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (24 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (32 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (40 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (64 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (80 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "BC_Gen5 (4 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (8 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (16 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (24 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (32 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (40 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (64 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (80 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (4 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (6 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (8 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (10 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (12 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (16 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (20 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (24 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (32 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (40 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (48 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (56 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (64 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (80 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (96 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (128 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (4 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (6 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (8 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (10 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (12 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (16 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (20 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (24 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (32 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (40 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (48 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (56 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (64 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (80 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (96 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (128 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "GP_Gen5 (4 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (8 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (16 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (24 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (32 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (40 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (64 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (80 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (4 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (6 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (8 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (10 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (12 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (16 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (20 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (24 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (32 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (40 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (48 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (56 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (64 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (80 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (96 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (128 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (4 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (6 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (8 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (10 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (12 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (16 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (20 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (24 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (32 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (40 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (48 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (56 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (64 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (80 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (96 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (128 vCores)",
+        "tier": "Next-gen General Purpose"
+      }
+    ]
   }
 }

@@ -57,8 +57,31 @@ def status_bucket(lifecycle_status: str) -> str:
 FLAG_WHEN_UNSUPPORTED = {"ga", "preview"}
 
 
+def supported_keys(entry: dict) -> set:
+    """(sku, tier-or-None) pairs from supported_skus, which may be plain names or
+    {"sku", "tier"} objects — the tier disambiguates services that reuse a SKU
+    name across tiers (Azure SQL Managed Instance's GP_Gen5 sizes)."""
+    out = set()
+    for e in entry.get("supported_skus", []):
+        if isinstance(e, dict):
+            out.add((e["sku"], e.get("tier")))
+        else:
+            out.add((e, None))
+    return out
+
+
+def is_supported(r, keys: set) -> bool:
+    return (r.sku, r.tier) in keys or (r.sku, None) in keys
+
+
+def entry_for(support: dict, service: str, workload: str) -> dict | None:
+    """A workload's Migrate list, or a per-section list keyed by display name
+    when one workload yields several sections (Azure SQL)."""
+    return support.get(service) or support.get(workload)
+
+
 def _detail(r, supported: set, details: dict) -> dict:
-    migrate_supported = r.sku in supported
+    migrate_supported = is_supported(r, supported)
     bucket = status_bucket(r.lifecycle_status)
     if bucket in FLAG_WHEN_UNSUPPORTED:
         flagged = not migrate_supported
@@ -123,14 +146,19 @@ def compare(service_rows: list, entry: dict | None) -> dict:
     if not entry:
         return {"available": False}
 
-    supported = set(entry.get("supported_skus", []))
+    supported = supported_keys(entry)
     details = entry.get("sku_details", {})
     buckets: dict[str, list] = {"ga": [], "deprecated": [], "preview": []}
-    catalog_skus = set()
+    catalog_pairs, catalog_skus = set(), set()
 
     for r in service_rows:
+        catalog_pairs.add((r.sku, r.tier))
         catalog_skus.add(r.sku)
         buckets[status_bucket(r.lifecycle_status)].append(_detail(r, supported, details))
+    unknown = sorted(
+        (f"{sku} [{tier}]" if tier else sku) for sku, tier in supported
+        if (tier is not None and (sku, tier) not in catalog_pairs)
+        or (tier is None and sku not in catalog_skus))
 
     return {
         "available": True,
@@ -143,7 +171,7 @@ def compare(service_rows: list, entry: dict | None) -> dict:
         # Migrate-listed names this catalog cannot find at all — either a naming
         # mismatch or a SKU Azure has removed from the docs entirely. Surfaced so
         # a silent match (every bucket clean) can't hide a broken join.
-        "unknown_to_azure": sorted(supported - catalog_skus),
+        "unknown_to_azure": unknown,
         # Where the supplied list also states sizes, disagreements with Azure's
         # own figures — a sign one of the two lists is stale.
         "spec_mismatches": _spec_mismatches(service_rows, details),

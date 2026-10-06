@@ -755,7 +755,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     t.className = 'migrate-t';
     var thead = document.createElement('thead');
     var htr = document.createElement('tr');
-    var heads = ['#', 'SKU', 'Lifecycle status', 'Since', 'Confidence', 'Migrate supported'];
+    var heads = ['#', 'SKU', 'Tier', 'Lifecycle status', 'Since', 'Confidence', 'Migrate supported'];
     if (detailed) heads.push('Migrate SKU name', 'Migrate class');
     heads.push('Flag');
     heads.forEach(function (h) { htr.appendChild(el('th', null, h)); });
@@ -766,6 +766,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       var r = document.createElement('tr');
       r.appendChild(el('td', null, String(i + 1)));
       r.appendChild(el('td', 'mono', d.sku));
+      r.appendChild(el('td', null, d.tier));
       r.appendChild(el('td', null, d.lifecycle_status));
       r.appendChild(el('td', null, d.release_date));
       r.appendChild(el('td', null, d.date_confidence));

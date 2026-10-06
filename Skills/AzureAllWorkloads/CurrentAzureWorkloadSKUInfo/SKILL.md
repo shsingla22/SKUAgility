@@ -166,7 +166,12 @@ To add Migrate-support data for another service: add an entry to
 `references/migrate_support.json` keyed by that service's `WORKLOAD` string
 (the same key used in `references/config.json`), naming its `source`, `as_of`
 date and `supported_skus` list using this catalog's own SKU names (`sku` field,
-e.g. `Standard_D4ds_v5`) — no other code changes are needed. If the supplied list
+e.g. `Standard_D4ds_v5`) — no other code changes are needed. Two refinements:
+key the entry by the section's **display name** instead when one workload
+yields several sections (`azure_sql` → "Azure SQL Database" and "Azure SQL
+Managed Instance"), and write an entry as `{"sku": ..., "tier": ...}` when a
+service reuses a SKU name across tiers (Managed Instance's `GP_Gen5 (4 vCores)`
+is both General Purpose and Next-gen General Purpose). If the supplied list
 says more per SKU, add an optional `sku_details` map keyed by SKU with any of
 `migrate_sku_name`, `migrate_class`, `vcores`, `memory_gib`: the name and class
 appear as extra columns, and stated sizes are cross-checked against Azure's own

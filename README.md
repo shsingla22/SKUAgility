@@ -94,8 +94,11 @@ milestones, and a provider module — described in the
   does not offer. **MongoDB / Azure DocumentDB** (user-supplied document, 2026-10-05): Migrate
   supports all nine cluster tiers M10–M200 — with its own SKU names and a Dev/Test (M10–M30) vs
   Production (M40–M200) classification, and its vCore/RAM figures agree with Azure's page for
-  every one — but **not the Free Tier**, the one flag. Azure SQL and Virtual Machines show "not
-  supplied yet" until their own Migrate data is added.
+  every one — but **not the Free Tier**, the one flag. **Azure SQL Managed Instance** (user-supplied
+  document, 2026-10-06): Migrate's tier x hardware x vCore grid covers 104 of the 106 sizes; the two
+  it misses are the 2-vCore General Purpose sizes (standard-series and premium-series), which Azure
+  offers only inside instance pools. Azure SQL Database and Virtual Machines show "not supplied
+  yet" until their own Migrate data is added.
 - **MongoDB on Azure is Azure DocumentDB now.** Microsoft renamed Azure Cosmos DB for MongoDB
   (vCore) to Azure DocumentDB (with MongoDB compatibility) on 2025-11-18. The catalog carries
   its nine cluster tiers (M10–M200) plus the Free Tier, all GA; M10/M20 are dated to their

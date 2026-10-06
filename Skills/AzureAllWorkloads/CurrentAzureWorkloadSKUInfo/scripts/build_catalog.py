@@ -125,16 +125,17 @@ def migrate_comparisons(by_service: dict) -> dict:
     out = {}
     for svc, group in by_service.items():
         workload = group[0].workload
-        out[svc] = migrate_support.compare(group, support.get(workload))
+        out[svc] = migrate_support.compare(
+            group, migrate_support.entry_for(support, svc, workload))
     return out
 
 
-MIGRATE_TABLE_HEADER = ("| # | SKU | Lifecycle status | Since | Confidence "
+MIGRATE_TABLE_HEADER = ("| # | SKU | Tier | Lifecycle status | Since | Confidence "
                         "| Migrate supported | Flag |\n"
-                        "| --- | --- | --- | --- | --- | --- | --- |")
-MIGRATE_TABLE_HEADER_DETAIL = ("| # | SKU | Lifecycle status | Since | Confidence "
+                        "| --- | --- | --- | --- | --- | --- | --- | --- |")
+MIGRATE_TABLE_HEADER_DETAIL = ("| # | SKU | Tier | Lifecycle status | Since | Confidence "
                                "| Migrate supported | Migrate SKU name | Migrate class | Flag |\n"
-                               "| --- | --- | --- | --- | --- | --- | --- | --- | --- |")
+                               "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
 
 
 def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
@@ -161,7 +162,7 @@ def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
         if detailed:
             name = f"`{d['migrate_sku_name']}`" if d.get("migrate_sku_name") else "—"
             extra = f"| {name} | {d.get('migrate_class') or '—'} "
-        lines.append(f"| {i} | `{d['sku']}` | {d['lifecycle_status']} "
+        lines.append(f"| {i} | `{d['sku']}` | {d['tier']} | {d['lifecycle_status']} "
                      f"| {d['release_date']} | {d['date_confidence']} | {yn} {extra}| {flag} |")
     lines.append("")
     return lines

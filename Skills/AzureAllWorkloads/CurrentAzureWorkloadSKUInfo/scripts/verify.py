@@ -288,7 +288,7 @@ def main() -> int:
                 fail(f"no migrate-support entry (available or not) for '{svc}'")
                 continue
             workload = rows[0]["workload"]
-            entry = supplied.get(workload)
+            entry = supplied.get(svc) or supplied.get(workload)
             if not entry:
                 if shipped.get("available"):
                     fail(f"'{svc}' has no migrate_support.json entry but the "
@@ -298,7 +298,12 @@ def main() -> int:
                 fail(f"'{svc}' has a migrate_support.json entry but the "
                      "catalog marked it unavailable")
                 continue
-            supported = set(entry.get("supported_skus", []))
+            keys = set()
+            for e in entry.get("supported_skus", []):
+                keys.add((e["sku"], e.get("tier")) if isinstance(e, dict) else (e, None))
+            def sup(s):
+                return (s["sku"], s["tier"]) in keys or (s["sku"], None) in keys
+            supported = {s["sku"] for s in rows if sup(s)}   # catalog-side view
             # ga and preview: flagged when Azure has it and Migrate does not.
             # deprecated: flagged when Migrate still supports something Azure is
             # walking back. Every bucket recomputed in full — total, supported
@@ -309,17 +314,19 @@ def main() -> int:
             for kind in ("ga", "deprecated", "preview"):
                 bucket_rows = [s for s in rows if bucket(s["lifecycle_status"]) == kind]
                 if kind in flag_when_unsupported:
-                    flagged = sorted(s["sku"] for s in bucket_rows
-                                     if s["sku"] not in supported)
+                    flagged = sorted(s["sku"] for s in bucket_rows if not sup(s))
                 else:
-                    flagged = sorted(s["sku"] for s in bucket_rows
-                                     if s["sku"] in supported)
+                    flagged = sorted(s["sku"] for s in bucket_rows if sup(s))
                 exp[kind] = {
                     "total": len(bucket_rows),
-                    "supported_count": sum(1 for s in bucket_rows if s["sku"] in supported),
+                    "supported_count": sum(1 for s in bucket_rows if sup(s)),
                     "flagged": flagged,
                 }
-            exp_unknown = sorted(supported - {s["sku"] for s in rows})
+            pairs = {(s["sku"], s["tier"]) for s in rows}
+            names = {s["sku"] for s in rows}
+            exp_unknown = sorted(
+                (f"{k[0]} [{k[1]}]" if k[1] else k[0]) for k in keys
+                if (k[1] is not None and k not in pairs) or (k[1] is None and k[0] not in names))
 
             mismatch = None
             for kind in ("ga", "deprecated", "preview"):
