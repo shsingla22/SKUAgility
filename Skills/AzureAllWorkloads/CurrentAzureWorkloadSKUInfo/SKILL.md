@@ -103,7 +103,7 @@ Three details worth knowing when reading a section:
 | Azure Cache for Redis | off | Tier | Overview + what's-new |
 | Azure App Service | off | Plan tier | Hosting-plans page |
 | Azure Kubernetes Service | off | Pricing tier | Pricing-tiers page |
-| Azure Virtual Machines | **on** | **Every individual size** (~1,058 across ~137 series) | Sizes overview -> family pages -> series pages |
+| Azure Virtual Machines | **on** | **Every individual size** (~1,168 across ~150 series) | Sizes overview -> family pages -> series pages, plus `vm_extra_series.json` |
 
 Two deliberate boundaries, both worth stating when you report results:
 
@@ -115,6 +115,12 @@ Two deliberate boundaries, both worth stating when you report results:
   different name form entirely (HBv5 lists `Standard_HB368-336rs_v5` in Basics
   but `Standard_HB368_336rsv5` in the storage tables), so matching every "Size
   Name" table invents sizes and reads a disk count as a vCPU count.
+- **Microsoft's VM navigation misses some series.** Thirteen series pages exist but are
+  linked from neither the sizes overview nor their family page. The crawl probes series
+  named in the overview's text (silently skipping names with no page) and adds the
+  confirmed pages listed in `references/vm_extra_series.json`, which must stay readable
+  or the build fails — the cue to remove a retired entry. When a comparison names sizes
+  the catalog lacks, check this before assuming the list is wrong.
 - **Azure SQL is delegated, not re-derived.** `providers/azure_sql.py` runs the
   sibling skill and adopts its output, milestones included. One source of truth
   for Azure SQL; if that skill is missing the provider fails loudly rather than
@@ -309,6 +315,7 @@ CurrentAzureWorkloadSKUInfo/
 │   ├── config.json        WHICH SERVICES TO COVER — edit this first
 │   ├── sources.json       every page read, its strategy, and why
 │   ├── milestones.py      release dates, confidence ratings, retirement dates
+│   ├── vm_extra_series.json  VM series pages Microsoft's navigation does not link
 │   ├── migrate_support.json  Migrate-supported SKUs per workload, as supplied
 │   └── migrate_support.py    the comparison: GA-unsupported / deprecated-supported
 ├── baseline/inventory.json

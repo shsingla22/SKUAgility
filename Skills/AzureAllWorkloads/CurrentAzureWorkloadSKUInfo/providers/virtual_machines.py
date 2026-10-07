@@ -22,6 +22,7 @@ inheriting a neighbouring generation's date.
 from __future__ import annotations
 
 import concurrent.futures
+import json
 import os
 import re
 import sys
@@ -65,6 +66,10 @@ ERRATA = {
     "Standard_L80s_v26": ("Standard_L80s_v2",
                           "a footnote digit is fused to the size name; every other "
                           "table on the page says Standard_L80s_v2"),
+    "Standard_E104id_v52": ("Standard_E104id_v5",
+                            "a footnote digit is fused to the size name in the Edv5 "
+                            "Basics table; Microsoft's own size list says "
+                            "Standard_E104id_v5"),
 }
 APPLIED_ERRATA: list[dict] = []
 
@@ -138,6 +143,29 @@ def discover(doc, cache: str, offline: bool) -> tuple[dict, dict, dict]:
         folder = fam.split("/")[0]
         for m in re.findall(r"\]\(\./([a-z0-9_-]+-series)\.md", text):
             series_type[f"{folder}/{m}"] = fam_type.get(fam, "")
+    # Microsoft's navigation is not complete: the overview names some series in
+    # a family row's text without linking them (Ddsv6, Edsv6), and some series
+    # pages are linked from nowhere in the sizes tree (the v4 E-series, M-series).
+    # Two supplements, both conservative: names in the overview's text are probed
+    # and silently skipped if no page exists, while references/vm_extra_series.json
+    # lists pages confirmed to exist, which must still be readable or the build
+    # fails (the cue to remove a retired entry).
+    for line in overview.split("\n"):
+        if "-family.md" not in line:
+            continue
+        folders = re.findall(r"\]\(\./([a-z-]+)/[a-z0-9-]+-family\.md", line)
+        if not folders:
+            continue
+        for name in re.findall(r"\b([A-Z][A-Za-z]{0,7}v\d)\b", line):
+            cand = f"{folders[0]}/{name.lower()}-series"
+            if cand not in series_type and _get(cand, cache, offline).strip():
+                series_type[cand] = ""
+    extra_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                              "references", "vm_extra_series.json")
+    if os.path.exists(extra_path):
+        with open(extra_path, encoding="utf-8") as fh:
+            for e in json.load(fh)["series"]:
+                series_type.setdefault(e["path"], "")
     for path in list(series_type):
         if not series_type[path]:
             folder = path.split("/")[0]

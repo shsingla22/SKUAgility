@@ -133,9 +133,6 @@ def migrate_comparisons(by_service: dict) -> dict:
 MIGRATE_TABLE_HEADER = ("| # | SKU | Tier | Lifecycle status | Since | Confidence "
                         "| Migrate supported | Flag |\n"
                         "| --- | --- | --- | --- | --- | --- | --- | --- |")
-MIGRATE_TABLE_HEADER_DETAIL = ("| # | SKU | Tier | Lifecycle status | Since | Confidence "
-                               "| Migrate supported | Migrate SKU name | Migrate class | Flag |\n"
-                               "| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |")
 
 
 def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
@@ -147,7 +144,8 @@ def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
 
 
 def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
-                          detailed: bool = False, flagged_only: bool = False) -> list[str]:
+                          detailed: bool = False, flagged_only: bool = False,
+                          cols: tuple = (True, True)) -> list[str]:
     """Lines for one lifecycle bucket's table: always emitted, even at zero rows."""
     lines = [f"**{label}** — {bucket['total']} SKU(s), Migrate supports "
              f"{bucket['supported_count']}, {bucket['flagged_count']} flagged.", ""]
@@ -166,14 +164,23 @@ def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
                   "above and not listed individually.", ""]
         if not rows:
             return lines
-    lines += [MIGRATE_TABLE_HEADER_DETAIL if detailed else MIGRATE_TABLE_HEADER]
+    if detailed:
+        extra_heads = [h for h, on in (("Migrate SKU name", cols[0]), ("Migrate class", cols[1])) if on]
+        header = ("| # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | "
+                  + " | ".join(extra_heads) + (" | " if extra_heads else "") + "Flag |\n"
+                  + "| --- " * (8 + len(extra_heads)) + "|")
+        lines += [header]
+    else:
+        lines += [MIGRATE_TABLE_HEADER]
     for i, d in enumerate(rows, 1):
         yn = "Yes" if d["migrate_supported"] else "No"
         flag = _migrate_flag_text(bucket_kind, d["flagged"])
         extra = ""
         if detailed:
-            name = f"`{d['migrate_sku_name']}`" if d.get("migrate_sku_name") else "—"
-            extra = f"| {name} | {d.get('migrate_class') or '—'} "
+            if cols[0]:
+                extra += f"| {('`' + d['migrate_sku_name'] + '`') if d.get('migrate_sku_name') else '—'} "
+            if cols[1]:
+                extra += f"| {d.get('migrate_class') or '—'} "
         lines.append(f"| {i} | `{d['sku']}` | {d['tier']} | {d['lifecycle_status']} "
                      f"| {d['release_date']} | {d['date_confidence']} | {yn} {extra}| {flag} |")
     lines.append("")
@@ -202,8 +209,9 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
         lines += [f"*Scope: {cmp['scope_note']}*", ""]
     detailed = cmp.get("has_details", False)
     fo = cmp.get("table_mode") == "flagged_only"
-    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"], detailed, fo)
-    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"], detailed, fo)
+    cols = (cmp.get("has_sku_names", True), cmp.get("has_classes", True))
+    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"], detailed, fo, cols)
+    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"], detailed, fo, cols)
 
     for mm in cmp.get("spec_mismatches", []):
         parts = [f"{k} Azure {v['azure']:g} vs Migrate {v['migrate']:g}"
@@ -222,7 +230,8 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
 
     lines += ["### Public preview SKU discrepancies", ""]
     lines += _migrate_bucket_lines("preview", "Public preview", cmp["preview"], detailed,
-                                   cmp.get("table_mode") == "flagged_only")
+                                   cmp.get("table_mode") == "flagged_only",
+                                   (cmp.get("has_sku_names", True), cmp.get("has_classes", True)))
     return lines
 
 

@@ -5,7 +5,7 @@ SKU agility for all workloads.
 A catalog of the compute SKUs offered by Azure data services — what exists today, what tier
 and hardware family it belongs to, when it shipped, whether it is still a good idea, and
 where every one of those claims came from. Built from Microsoft documentation by two
-reusable skills. **1,519 SKUs across Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL,
+reusable skills. **1,629 SKUs across Azure SQL, Azure Database for PostgreSQL, Azure Database for MySQL,
 Azure DocumentDB (MongoDB-compatible) and Azure Virtual Machines** by default; three more
 services ship switched off behind a config flag.
 
@@ -72,7 +72,7 @@ milestones, and a provider module — described in the
   table's *Retired and deprecated hardware families* section.
 - **Four typos in Microsoft's published PostgreSQL compute table** are corrected explicitly
   and listed in the output rather than repeated or silently dropped.
-- **Azure Virtual Machines are enumerated per size** — 1,058 sizes across 137 series, read
+- **Azure Virtual Machines are enumerated per size** — 1,168 sizes across 150 series, read
   from each series' own "Sizes in series" table, with vCPU and memory for every one.
 - **Azure SQL and PostgreSQL are fully dated.** About 60% of VM sizes carry a dated GA
   announcement; the rest read *not established* rather than carrying a guess, and every run
@@ -103,16 +103,25 @@ milestones, and a provider module — described in the
   purchasing model (45), serverless (29) and DC-series (36). Only four are gaps inside families
   Migrate does target: `GP_Gen5_128`, `BC_Gen5_128`, `HS_PRMS_64`, `HS_MOPRMS_64`; the two
   160/192-vCore premium-series previews flag too. The document's memory ranges match the
-  catalog's smallest and largest size in each family exactly. Only Virtual Machines still reads
-  "not supplied yet".
+  catalog's smallest and largest size in each family exactly. **Virtual Machines** (user-supplied
+  CSV, 2026-10-07): Migrate targets 683 of the 1,074 GA sizes across 82 series and none of the 94
+  End-of-Life sizes; the 391 flags are almost entirely scope — no Intel v7, GPU, HPC, Arm v5,
+  v6/v2 confidential, network-optimized or Ebsv6/Lasv5/FXv2/Dlsv5 series — plus a handful of
+  single sizes. One data-quality note: Migrate lists `Standard_EC32as_v5` and `EC32ads_v5` at
+  192 GB; Microsoft's page says 256 GB. All six services now carry Migrate data.
 - **MongoDB on Azure is Azure DocumentDB now.** Microsoft renamed Azure Cosmos DB for MongoDB
   (vCore) to Azure DocumentDB (with MongoDB compatibility) on 2025-11-18. The catalog carries
   its nine cluster tiers (M10–M200) plus the Free Tier, all GA; M10/M20 are dated to their
   March 2025 launch and M25 to November 2023. One doc inconsistency is recorded: the M10/M20
   announcement calls them dedicated compute, the current compute page lists them as burstable.
-- **80 VM sizes across 11 series are End of Life** per Microsoft's End of Life size-series
-  list (Dv2/Dsv2, Dv3/Dsv3, Ev3/Esv3, Fsv2, Lsv2, DCsv3/DCdsv3, HC, HBv2): retirement
-  announced, still usable until the date, restricted for new subscriptions.
+- **94 VM sizes across 14 series are End of Life** per Microsoft's End of Life size-series
+  list (Av2, Dv2/Dsv2, Dv3/Dsv3, Ev3/Esv3, Fsv2, Lsv2, DCsv3/DCdsv3, HC, HBv2, NVv3, NVv4):
+  retirement announced, still usable until the date, restricted for new subscriptions.
+- **Microsoft's VM navigation is incomplete.** Thirteen series pages — Ddsv6, Dldsv6, Edsv6,
+  the six v4 E-series, M-series, Av2, NVv3, NVv4 — are linked from neither the sizes overview
+  nor their family page. The crawl now also probes series named in the overview's text and
+  carries a short list of confirmed pages (`references/vm_extra_series.json`); the gap was
+  surfaced by the Azure Migrate comparison, which named 95 sizes the catalog lacked.
 
 ## The Azure SQL skill
 

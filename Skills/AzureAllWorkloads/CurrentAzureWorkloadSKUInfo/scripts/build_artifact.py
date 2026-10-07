@@ -740,7 +740,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
 
   // Every SKU in the bucket, not just the flagged ones — a clean bucket still
   // reports its numbers and lists what it compared, rather than being omitted.
-  function migrateBucketBlock(kind, bucket, detailed, flaggedOnly) {
+  function migrateBucketBlock(kind, bucket, detailed, flaggedOnly, cols) {
     var label = BUCKET_LABEL[kind];
     var wrap = el('div', 'migrate-flag');
     wrap.appendChild(el('p', 'migrate-note',
@@ -769,7 +769,8 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     var thead = document.createElement('thead');
     var htr = document.createElement('tr');
     var heads = ['#', 'SKU', 'Tier', 'Lifecycle status', 'Since', 'Confidence', 'Migrate supported'];
-    if (detailed) heads.push('Migrate SKU name', 'Migrate class');
+    if (detailed && cols[0]) heads.push('Migrate SKU name');
+    if (detailed && cols[1]) heads.push('Migrate class');
     heads.push('Flag');
     heads.forEach(function (h) { htr.appendChild(el('th', null, h)); });
     thead.appendChild(htr);
@@ -784,10 +785,8 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       r.appendChild(el('td', null, d.release_date));
       r.appendChild(el('td', null, d.date_confidence));
       r.appendChild(el('td', null, d.migrate_supported ? 'Yes' : 'No'));
-      if (detailed) {
-        r.appendChild(el('td', 'mono', d.migrate_sku_name || '—'));
-        r.appendChild(el('td', null, d.migrate_class || '—'));
-      }
+      if (detailed && cols[0]) r.appendChild(el('td', 'mono', d.migrate_sku_name || '—'));
+      if (detailed && cols[1]) r.appendChild(el('td', null, d.migrate_class || '—'));
       r.appendChild(el('td', null, migrateFlagText(kind, d.flagged)));
       tb.appendChild(r);
     });
@@ -820,8 +819,9 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
         + cmp.as_of + '. ' + cmp.source));
       if (cmp.scope_note) box.appendChild(el('p', 'migrate-note', 'Scope: ' + cmp.scope_note));
       var fo = cmp.table_mode === 'flagged_only';
-      box.appendChild(migrateBucketBlock('ga', cmp.ga, cmp.has_details, fo));
-      box.appendChild(migrateBucketBlock('deprecated', cmp.deprecated, cmp.has_details, fo));
+      var cols = [cmp.has_sku_names !== false, cmp.has_classes !== false];
+      box.appendChild(migrateBucketBlock('ga', cmp.ga, cmp.has_details, fo, cols));
+      box.appendChild(migrateBucketBlock('deprecated', cmp.deprecated, cmp.has_details, fo, cols));
       (cmp.spec_mismatches || []).forEach(function (mm) {
         var parts = Object.keys(mm).filter(function (k) { return k !== 'sku'; }).map(function (k) {
           return k + ' Azure ' + mm[k].azure + ' vs Migrate ' + mm[k].migrate; });
@@ -854,7 +854,8 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       box = el('div', 'migrate-box');
       box.appendChild(el('p', 'migrate-title', 'Public preview SKU discrepancies'));
       box.appendChild(migrateBucketBlock('preview', cmp.preview, cmp.has_details,
-                                         cmp.table_mode === 'flagged_only'));
+                                         cmp.table_mode === 'flagged_only',
+                                         [cmp.has_sku_names !== false, cmp.has_classes !== false]));
     }
     td.appendChild(box);
     tr.appendChild(td);

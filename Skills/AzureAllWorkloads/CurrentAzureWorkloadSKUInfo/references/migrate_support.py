@@ -191,4 +191,6 @@ def compare(service_rows: list, entry: dict | None) -> dict:
         # own figures — a sign one of the two lists is stale.
         "spec_mismatches": _spec_mismatches(service_rows, details),
         "has_details": bool(details),
+        "has_sku_names": any(v.get("migrate_sku_name") for v in details.values()),
+        "has_classes": any(v.get("migrate_class") for v in details.values()),
     }
