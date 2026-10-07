@@ -344,6 +344,18 @@ def main() -> int:
                     mismatch = (f"'{svc}' {kind} flags don't match an independent "
                                f"recompute: shipped {got_flagged}, expected "
                                f"{exp[kind]['flagged']}")
+                else:
+                    flagged_set = set(exp[kind]["flagged"])
+                    exp_groups = {}
+                    for s in rows:
+                        if bucket(s["lifecycle_status"]) == kind and s["sku"] in flagged_set:
+                            k = (s["tier"], s["series"]); exp_groups[k] = exp_groups.get(k, 0) + 1
+                    got_groups = {(g["tier"], g["series"]): g["count"]
+                                  for g in got_bucket.get("flagged_groups", [])}
+                    if got_groups != exp_groups:
+                        mismatch = (f"'{svc}' {kind} flagged-by-group counts don't match "
+                                   f"an independent recompute: shipped {got_groups}, "
+                                   f"expected {exp_groups}")
                 if mismatch:
                     break
             details = entry.get("sku_details", {})

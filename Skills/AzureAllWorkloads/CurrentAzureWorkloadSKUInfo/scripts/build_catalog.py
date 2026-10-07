@@ -151,6 +151,10 @@ def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
     """Lines for one lifecycle bucket's table: always emitted, even at zero rows."""
     lines = [f"**{label}** — {bucket['total']} SKU(s), Migrate supports "
              f"{bucket['supported_count']}, {bucket['flagged_count']} flagged.", ""]
+    if bucket.get("flagged_groups"):
+        lines += ["Flagged, by tier and hardware: " + "; ".join(
+            f"{g['tier']} · {g['series']}: {g['count']}" if g['series'] else f"{g['tier']}: {g['count']}"
+            for g in bucket["flagged_groups"]) + ".", ""]
     if bucket["total"] == 0:
         lines += [f"No {label.lower()} SKUs for this service — nothing to compare.", ""]
         return lines
@@ -186,6 +190,8 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
     lines += [f"Compared against {cmp['supported_count']} SKUs Azure Migrate "
               f"supports for this service, as of {cmp['as_of']}. Source: "
               f"{cmp['source']}", ""]
+    if cmp.get("scope_note"):
+        lines += [f"*Scope: {cmp['scope_note']}*", ""]
     detailed = cmp.get("has_details", False)
     lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"], detailed)
     lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"], detailed)

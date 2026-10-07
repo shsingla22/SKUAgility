@@ -746,6 +746,11 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
     wrap.appendChild(el('p', 'migrate-note',
       label + ' — ' + bucket.total + ' SKU(s), Migrate supports '
       + bucket.supported_count + ', ' + bucket.flagged_count + ' flagged.'));
+    if (bucket.flagged_groups && bucket.flagged_groups.length) {
+      wrap.appendChild(el('p', 'migrate-note', 'Flagged, by tier and hardware: '
+        + bucket.flagged_groups.map(function (g) {
+            return g.tier + (g.series ? ' · ' + g.series : '') + ': ' + g.count; }).join('; ') + '.'));
+    }
     if (!bucket.total) {
       wrap.appendChild(el('p', 'migrate-unavailable',
         'No ' + label.toLowerCase() + ' SKUs for this service — nothing to compare.'));
@@ -805,6 +810,7 @@ TEMPLATE = r"""<title>Azure Workload SKU Atlas</title>
       box.appendChild(el('p', 'migrate-note',
         'Compared against ' + cmp.supported_count + ' Migrate-supported SKUs, as of '
         + cmp.as_of + '. ' + cmp.source));
+      if (cmp.scope_note) box.appendChild(el('p', 'migrate-note', 'Scope: ' + cmp.scope_note));
       box.appendChild(migrateBucketBlock('ga', cmp.ga, cmp.has_details));
       box.appendChild(migrateBucketBlock('deprecated', cmp.deprecated, cmp.has_details));
       (cmp.spec_mismatches || []).forEach(function (mm) {

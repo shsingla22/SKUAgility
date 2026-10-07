@@ -1,6 +1,6 @@
 # Azure workload SKU catalog
 
-**1519 SKUs across 6 Azure services.** Generated 2026-10-06 by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft documentation.
+**1519 SKUs across 6 Azure services.** Generated 2026-10-07 by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft documentation.
 
 Which services appear here is set in the skill's `references/config.json`, or overridden for one run with `--services`.
 
@@ -29,11 +29,216 @@ Which services appear here is set in the skill's `references/config.json`, or ov
 
 ### GA SKU discrepancies
 
-Comparison data has not been supplied for this service yet — no flags to show.
+Compared against 71 SKUs Azure Migrate supports for this service, as of 2026-10-07. Source: User-supplied reference document (SQL_database_Migrate_support.docx): the Azure SQL Database service tier / hardware generation / vCore combinations that Azure Migrate's discovery-and-assessment tooling recognizes, expanded here from its tier x hardware x vCore grid. The document's memory ranges (10.4-415.2 GB for Gen5, 10.4-625 GB for premium-series, 20.8-830.5 GB for premium-series memory optimized) match the catalog's smallest and largest sizes in each family exactly.
+
+*Scope: Migrate's list covers provisioned vCore compute only: General Purpose, Business Critical and Hyperscale on standard-series (Gen5), plus Hyperscale on premium-series and premium-series memory optimized. It names nothing in the DTU purchasing model (Basic, Standard, Premium and their elastic pools), nothing serverless, and no DC-series hardware - so every SKU in those families is flagged below. Read those flags as 'Migrate assesses to provisioned vCore targets only', not as individual gaps.*
+
+**Generally available** — 185 SKU(s), Migrate supports 71, 114 flagged.
+
+Flagged, by tier and hardware: Standard · n/a (DTU model): 20; Premium · n/a (DTU model): 16; General Purpose - Serverless · Standard-series (Gen5): 15; Hyperscale - Serverless · Standard-series (Gen5): 14; Business Critical · DC-series: 12; General Purpose · DC-series: 12; Hyperscale · DC-series: 12; Basic · n/a (DTU model): 9; Business Critical · Standard-series (Gen5): 1; General Purpose · Standard-series (Gen5): 1; Hyperscale · Premium-series: 1; Hyperscale · Premium-series memory optimized: 1.
+
+| # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | Flag |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | `BC_DC_10` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 2 | `BC_DC_12` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 3 | `BC_DC_14` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 4 | `BC_DC_16` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 5 | `BC_DC_18` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 6 | `BC_DC_2` | Business Critical | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 7 | `BC_DC_20` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 8 | `BC_DC_32` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 9 | `BC_DC_4` | Business Critical | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 10 | `BC_DC_40` | Business Critical | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 11 | `BC_DC_6` | Business Critical | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 12 | `BC_DC_8` | Business Critical | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 13 | `BC_Gen5_10` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 14 | `BC_Gen5_12` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 15 | `BC_Gen5_128` | Business Critical | Generally available | 2023-06 | high | No | ⚠️ Not Migrate-supported |
+| 16 | `BC_Gen5_14` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 17 | `BC_Gen5_16` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 18 | `BC_Gen5_18` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 19 | `BC_Gen5_2` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 20 | `BC_Gen5_20` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 21 | `BC_Gen5_24` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 22 | `BC_Gen5_32` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 23 | `BC_Gen5_4` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 24 | `BC_Gen5_40` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 25 | `BC_Gen5_6` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 26 | `BC_Gen5_8` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 27 | `BC_Gen5_80` | Business Critical | Generally available | 2018-04 | low | Yes | — |
+| 28 | `Basic` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 29 | `BasicPool_100` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 30 | `BasicPool_1200` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 31 | `BasicPool_1600` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 32 | `BasicPool_200` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 33 | `BasicPool_300` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 34 | `BasicPool_400` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 35 | `BasicPool_50` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 36 | `BasicPool_800` | Basic | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 37 | `GP_DC_10` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 38 | `GP_DC_12` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 39 | `GP_DC_14` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 40 | `GP_DC_16` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 41 | `GP_DC_18` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 42 | `GP_DC_2` | General Purpose | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 43 | `GP_DC_20` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 44 | `GP_DC_32` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 45 | `GP_DC_4` | General Purpose | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 46 | `GP_DC_40` | General Purpose | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 47 | `GP_DC_6` | General Purpose | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 48 | `GP_DC_8` | General Purpose | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 49 | `GP_Gen5_10` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 50 | `GP_Gen5_12` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 51 | `GP_Gen5_128` | General Purpose | Generally available | 2023-06 | high | No | ⚠️ Not Migrate-supported |
+| 52 | `GP_Gen5_14` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 53 | `GP_Gen5_16` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 54 | `GP_Gen5_18` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 55 | `GP_Gen5_2` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 56 | `GP_Gen5_20` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 57 | `GP_Gen5_24` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 58 | `GP_Gen5_32` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 59 | `GP_Gen5_4` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 60 | `GP_Gen5_40` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 61 | `GP_Gen5_6` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 62 | `GP_Gen5_8` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 63 | `GP_Gen5_80` | General Purpose | Generally available | 2018-04 | low | Yes | — |
+| 64 | `GP_S_Gen5_1` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 65 | `GP_S_Gen5_10` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 66 | `GP_S_Gen5_12` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 67 | `GP_S_Gen5_14` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 68 | `GP_S_Gen5_16` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 69 | `GP_S_Gen5_18` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 70 | `GP_S_Gen5_2` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 71 | `GP_S_Gen5_20` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 72 | `GP_S_Gen5_24` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 73 | `GP_S_Gen5_32` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 74 | `GP_S_Gen5_4` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 75 | `GP_S_Gen5_40` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 76 | `GP_S_Gen5_6` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 77 | `GP_S_Gen5_8` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 78 | `GP_S_Gen5_80` | General Purpose - Serverless | Generally available | 2019-11 | medium | No | ⚠️ Not Migrate-supported |
+| 79 | `HS_DC_10` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 80 | `HS_DC_12` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 81 | `HS_DC_14` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 82 | `HS_DC_16` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 83 | `HS_DC_18` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 84 | `HS_DC_2` | Hyperscale | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 85 | `HS_DC_20` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 86 | `HS_DC_32` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 87 | `HS_DC_4` | Hyperscale | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 88 | `HS_DC_40` | Hyperscale | Generally available | 2023-11 | high | No | ⚠️ Not Migrate-supported |
+| 89 | `HS_DC_6` | Hyperscale | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 90 | `HS_DC_8` | Hyperscale | Generally available | 2021-11 | low | No | ⚠️ Not Migrate-supported |
+| 91 | `HS_Gen5_10` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 92 | `HS_Gen5_12` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 93 | `HS_Gen5_14` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 94 | `HS_Gen5_16` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 95 | `HS_Gen5_18` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 96 | `HS_Gen5_2` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 97 | `HS_Gen5_20` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 98 | `HS_Gen5_24` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 99 | `HS_Gen5_32` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 100 | `HS_Gen5_4` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 101 | `HS_Gen5_40` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 102 | `HS_Gen5_6` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 103 | `HS_Gen5_8` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 104 | `HS_Gen5_80` | Hyperscale | Generally available | 2019-05 | medium | Yes | — |
+| 105 | `HS_MOPRMS_10` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 106 | `HS_MOPRMS_12` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 107 | `HS_MOPRMS_14` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 108 | `HS_MOPRMS_16` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 109 | `HS_MOPRMS_18` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 110 | `HS_MOPRMS_2` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 111 | `HS_MOPRMS_20` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 112 | `HS_MOPRMS_24` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 113 | `HS_MOPRMS_32` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 114 | `HS_MOPRMS_4` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 115 | `HS_MOPRMS_40` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 116 | `HS_MOPRMS_6` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 117 | `HS_MOPRMS_64` | Hyperscale | Generally available | 2023-06 | high | No | ⚠️ Not Migrate-supported |
+| 118 | `HS_MOPRMS_8` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 119 | `HS_MOPRMS_80` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 120 | `HS_PRMS_10` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 121 | `HS_PRMS_12` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 122 | `HS_PRMS_128` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 123 | `HS_PRMS_14` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 124 | `HS_PRMS_16` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 125 | `HS_PRMS_18` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 126 | `HS_PRMS_2` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 127 | `HS_PRMS_20` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 128 | `HS_PRMS_24` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 129 | `HS_PRMS_32` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 130 | `HS_PRMS_4` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 131 | `HS_PRMS_40` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 132 | `HS_PRMS_6` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 133 | `HS_PRMS_64` | Hyperscale | Generally available | 2023-06 | high | No | ⚠️ Not Migrate-supported |
+| 134 | `HS_PRMS_8` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 135 | `HS_PRMS_80` | Hyperscale | Generally available | 2023-07 | high | Yes | — |
+| 136 | `HS_S_Gen5_10` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 137 | `HS_S_Gen5_12` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 138 | `HS_S_Gen5_14` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 139 | `HS_S_Gen5_16` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 140 | `HS_S_Gen5_18` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 141 | `HS_S_Gen5_2` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 142 | `HS_S_Gen5_20` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 143 | `HS_S_Gen5_24` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 144 | `HS_S_Gen5_32` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 145 | `HS_S_Gen5_4` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 146 | `HS_S_Gen5_40` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 147 | `HS_S_Gen5_6` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 148 | `HS_S_Gen5_8` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 149 | `HS_S_Gen5_80` | Hyperscale - Serverless | Generally available | 2024-02 | high | No | ⚠️ Not Migrate-supported |
+| 150 | `P1` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 151 | `P11` | Premium | Generally available | 2015 | low | No | ⚠️ Not Migrate-supported |
+| 152 | `P15` | Premium | Generally available | 2016-08 | medium | No | ⚠️ Not Migrate-supported |
+| 153 | `P2` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 154 | `P4` | Premium | Generally available | 2015 | low | No | ⚠️ Not Migrate-supported |
+| 155 | `P6` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 156 | `PremiumPool_1000` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 157 | `PremiumPool_125` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 158 | `PremiumPool_1500` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 159 | `PremiumPool_2000` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 160 | `PremiumPool_250` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 161 | `PremiumPool_2500` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 162 | `PremiumPool_3000` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 163 | `PremiumPool_3500` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 164 | `PremiumPool_4000` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 165 | `PremiumPool_500` | Premium | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 166 | `S0` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 167 | `S1` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 168 | `S12` | Standard | Generally available | 2016 | low | No | ⚠️ Not Migrate-supported |
+| 169 | `S2` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 170 | `S3` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 171 | `S4` | Standard | Generally available | 2016 | low | No | ⚠️ Not Migrate-supported |
+| 172 | `S6` | Standard | Generally available | 2016 | low | No | ⚠️ Not Migrate-supported |
+| 173 | `S7` | Standard | Generally available | 2016 | low | No | ⚠️ Not Migrate-supported |
+| 174 | `S9` | Standard | Generally available | 2016 | low | No | ⚠️ Not Migrate-supported |
+| 175 | `StandardPool_100` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 176 | `StandardPool_1200` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 177 | `StandardPool_1600` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 178 | `StandardPool_200` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 179 | `StandardPool_2000` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 180 | `StandardPool_2500` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 181 | `StandardPool_300` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 182 | `StandardPool_3000` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 183 | `StandardPool_400` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 184 | `StandardPool_50` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+| 185 | `StandardPool_800` | Standard | Generally available | 2014-09 | medium | No | ⚠️ Not Migrate-supported |
+
+**Deprecated / retiring** — 0 SKU(s), Migrate supports 0, 0 flagged.
+
+No deprecated / retiring SKUs for this service — nothing to compare.
 
 ### Public preview SKU discrepancies
 
-Comparison data has not been supplied for this service yet — no flags to show.
+**Public preview** — 2 SKU(s), Migrate supports 0, 2 flagged.
+
+Flagged, by tier and hardware: Hyperscale · Premium-series: 2.
+
+| # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | Flag |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | `HS_PRMS_160` | Hyperscale | Public preview | 2026-03 | high | No | ⚠️ Not Migrate-supported |
+| 2 | `HS_PRMS_192` | Hyperscale | Public preview | 2026-03 | high | No | ⚠️ Not Migrate-supported |
 
 Documentation read for this service:
 
@@ -240,6 +445,8 @@ Documentation read for this service:
 Compared against 104 SKUs Azure Migrate supports for this service, as of 2026-10-06. Source: User-supplied reference document (SQL_instance_SKU_Migrate.docx): the Azure SQL Managed Instance service tier / hardware generation / vCore combinations that Azure Migrate's discovery-and-assessment tooling recognizes, expanded here from its tier x hardware x vCore-step grid. Entries carry the tier because Managed Instance reuses one SKU name (e.g. GP_Gen5 (4 vCores)) for both General Purpose and Next-gen General Purpose.
 
 **Generally available** — 106 SKU(s), Migrate supports 104, 2 flagged.
+
+Flagged, by tier and hardware: General Purpose · Premium-series: 1; General Purpose · Standard-series (Gen5): 1.
 
 | # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | Flag |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -565,6 +772,8 @@ No deprecated / retiring SKUs for this service — nothing to compare.
 
 **Public preview** — 38 SKU(s), Migrate supports 0, 38 flagged.
 
+Flagged, by tier and hardware: Memory Optimized · Edsv6-series: 11; General Purpose · Ddsv6-series: 10; Memory Optimized · Eadsv6-series: 9; General Purpose · Dadsv6-series: 8.
+
 | # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | Flag |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `Standard_D128ds_v6` | General Purpose | Public preview | 2025 | medium | No | ⚠️ Not Migrate-supported |
@@ -732,6 +941,8 @@ Compared against 25 SKUs Azure Migrate supports for this service, as of 2026-10-
 
 **Generally available** — 49 SKU(s), Migrate supports 24, 25 flagged.
 
+Flagged, by tier and hardware: Business Critical · Eadsv5-series: 9; General Purpose · Dadsv5-series: 8; Business Critical · Edsv5-series: 7; Business Critical · Edsv4-series: 1.
+
 | # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | Flag |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | `Standard_B12ms` | Burstable | Generally available | 2021-12 | high | Yes | — |
@@ -861,6 +1072,8 @@ Documentation read for this service:
 Compared against 9 SKUs Azure Migrate supports for this service, as of 2026-10-05. Source: User-supplied reference document (Mongo_DB_Migrate.docx): the Azure DocumentDB (formerly Azure Cosmos DB for MongoDB vCore) cluster tiers that Azure Migrate's discovery-and-assessment tooling recognizes, with Migrate's internal SKU name and its Dev/Test or Production classification for each.
 
 **Generally available** — 10 SKU(s), Migrate supports 9, 1 flagged.
+
+Flagged, by tier and hardware: Free · Free tier: 1.
 
 | # | SKU | Tier | Lifecycle status | Since | Confidence | Migrate supported | Migrate SKU name | Migrate class | Flag |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

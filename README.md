@@ -97,8 +97,14 @@ milestones, and a provider module — described in the
   every one — but **not the Free Tier**, the one flag. **Azure SQL Managed Instance** (user-supplied
   document, 2026-10-06): Migrate's tier x hardware x vCore grid covers 104 of the 106 sizes; the two
   it misses are the 2-vCore General Purpose sizes (standard-series and premium-series), which Azure
-  offers only inside instance pools. Azure SQL Database and Virtual Machines show "not supplied
-  yet" until their own Migrate data is added.
+  offers only inside instance pools. **Azure SQL Database** (user-supplied document, 2026-10-07):
+  Migrate's list covers provisioned vCore compute only — GP/BC/Hyperscale on Gen5, Hyperscale on
+  premium-series — so 71 of 185 GA SKUs match and 114 flag, almost all by scope: the whole DTU
+  purchasing model (45), serverless (29) and DC-series (36). Only four are gaps inside families
+  Migrate does target: `GP_Gen5_128`, `BC_Gen5_128`, `HS_PRMS_64`, `HS_MOPRMS_64`; the two
+  160/192-vCore premium-series previews flag too. The document's memory ranges match the
+  catalog's smallest and largest size in each family exactly. Only Virtual Machines still reads
+  "not supplied yet".
 - **MongoDB on Azure is Azure DocumentDB now.** Microsoft renamed Azure Cosmos DB for MongoDB
   (vCore) to Azure DocumentDB (with MongoDB compatibility) on 2025-11-18. The catalog carries
   its nine cluster tiers (M10–M200) plus the Free Tier, all GA; M10/M20 are dated to their

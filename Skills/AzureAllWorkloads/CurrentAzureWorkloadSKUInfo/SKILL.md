@@ -176,7 +176,11 @@ says more per SKU, add an optional `sku_details` map keyed by SKU with any of
 `migrate_sku_name`, `migrate_class`, `vcores`, `memory_gib`: the name and class
 appear as extra columns, and stated sizes are cross-checked against Azure's own
 figures, with every disagreement reported as a data-quality note (MongoDB's list
-is the first to carry these). Do note: a full
+is the first to carry these). An optional `scope_note` string is printed under
+the source line — use it when a list deliberately covers only part of a service
+(Azure SQL Database's covers provisioned vCore only), so dozens of flags read as
+one scoping decision rather than dozens of gaps; the flagged-by-tier-and-hardware
+breakdown printed with each bucket makes the same point from the numbers. Do note: a full
 per-SKU table means a service with a very large GA bucket (Virtual Machines'
 ~965 sizes, say) would render a very long table if given Migrate data — worth
 reconsidering paging or a summary-only mode before extending this to VMs.

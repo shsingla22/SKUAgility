@@ -90,6 +90,7 @@ def _detail(r, supported: set, details: dict) -> dict:
     return {
         "sku": r.sku,
         "tier": r.tier,
+        "series": r.series,
         "lifecycle_status": r.lifecycle_status,
         "release_date": r.release_date,
         "date_confidence": r.date_confidence,
@@ -124,10 +125,19 @@ def _spec_mismatches(service_rows: list, details: dict) -> list[dict]:
 def _bucket(rows: list) -> dict:
     rows = sorted(rows, key=lambda d: d["sku"])
     flagged = [d for d in rows if d["flagged"]]
+    # Where flags run into the dozens they usually share a cause — a whole
+    # purchasing model or hardware family Migrate doesn't target — so count
+    # them by tier and series as well as listing them.
+    groups: dict[tuple, int] = {}
+    for d in flagged:
+        k = (d["tier"], d.get("series") or "")
+        groups[k] = groups.get(k, 0) + 1
     return {
         "total": len(rows),
         "supported_count": sum(1 for d in rows if d["migrate_supported"]),
         "flagged_count": len(flagged),
+        "flagged_groups": [{"tier": t, "series": s, "count": n}
+                           for (t, s), n in sorted(groups.items(), key=lambda kv: (-kv[1], kv[0]))],
         "rows": rows,
     }
 
@@ -163,6 +173,7 @@ def compare(service_rows: list, entry: dict | None) -> dict:
     return {
         "available": True,
         "source": entry.get("source", ""),
+        "scope_note": entry.get("scope_note", ""),
         "as_of": entry.get("as_of", ""),
         "supported_count": len(supported),
         "ga": _bucket(buckets["ga"]),
