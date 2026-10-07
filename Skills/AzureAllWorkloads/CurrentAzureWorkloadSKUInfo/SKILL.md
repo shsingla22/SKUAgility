@@ -180,7 +180,10 @@ is the first to carry these). An optional `scope_note` string is printed under
 the source line — use it when a list deliberately covers only part of a service
 (Azure SQL Database's covers provisioned vCore only), so dozens of flags read as
 one scoping decision rather than dozens of gaps; the flagged-by-tier-and-hardware
-breakdown printed with each bucket makes the same point from the numbers. Do note: a full
+breakdown printed with each bucket makes the same point from the numbers. For a
+service with many hundreds of sizes, set `"table_mode": "flagged_only"` on its
+entry: each bucket then lists only its flagged SKUs in full and summarises the
+agreeing ones by count, instead of a thousand-row Yes/No table. Do note: a full
 per-SKU table means a service with a very large GA bucket (Virtual Machines'
 ~965 sizes, say) would render a very long table if given Migrate data — worth
 reconsidering paging or a summary-only mode before extending this to VMs.

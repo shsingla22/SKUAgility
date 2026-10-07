@@ -147,7 +147,7 @@ def _migrate_flag_text(bucket_kind: str, flagged: bool) -> str:
 
 
 def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
-                          detailed: bool = False) -> list[str]:
+                          detailed: bool = False, flagged_only: bool = False) -> list[str]:
     """Lines for one lifecycle bucket's table: always emitted, even at zero rows."""
     lines = [f"**{label}** — {bucket['total']} SKU(s), Migrate supports "
              f"{bucket['supported_count']}, {bucket['flagged_count']} flagged.", ""]
@@ -158,8 +158,16 @@ def _migrate_bucket_lines(bucket_kind: str, label: str, bucket: dict,
     if bucket["total"] == 0:
         lines += [f"No {label.lower()} SKUs for this service — nothing to compare.", ""]
         return lines
+    rows = bucket["rows"]
+    if flagged_only:
+        rows = [d for d in rows if d["flagged"]]
+        lines += [f"Listing the {len(rows)} flagged SKU(s) only; the "
+                  f"{bucket['total'] - len(rows)} that agree with Migrate are counted "
+                  "above and not listed individually.", ""]
+        if not rows:
+            return lines
     lines += [MIGRATE_TABLE_HEADER_DETAIL if detailed else MIGRATE_TABLE_HEADER]
-    for i, d in enumerate(bucket["rows"], 1):
+    for i, d in enumerate(rows, 1):
         yn = "Yes" if d["migrate_supported"] else "No"
         flag = _migrate_flag_text(bucket_kind, d["flagged"])
         extra = ""
@@ -193,8 +201,9 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
     if cmp.get("scope_note"):
         lines += [f"*Scope: {cmp['scope_note']}*", ""]
     detailed = cmp.get("has_details", False)
-    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"], detailed)
-    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"], detailed)
+    fo = cmp.get("table_mode") == "flagged_only"
+    lines += _migrate_bucket_lines("ga", "Generally available", cmp["ga"], detailed, fo)
+    lines += _migrate_bucket_lines("deprecated", "Deprecated / retiring", cmp["deprecated"], detailed, fo)
 
     for mm in cmp.get("spec_mismatches", []):
         parts = [f"{k} Azure {v['azure']:g} vs Migrate {v['migrate']:g}"
@@ -212,7 +221,8 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
                   f"{', '.join(f'`{u}`' for u in unknown)}.*", ""]
 
     lines += ["### Public preview SKU discrepancies", ""]
-    lines += _migrate_bucket_lines("preview", "Public preview", cmp["preview"], detailed)
+    lines += _migrate_bucket_lines("preview", "Public preview", cmp["preview"], detailed,
+                                   cmp.get("table_mode") == "flagged_only")
     return lines
 
 

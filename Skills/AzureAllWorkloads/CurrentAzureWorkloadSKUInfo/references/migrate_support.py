@@ -174,6 +174,10 @@ def compare(service_rows: list, entry: dict | None) -> dict:
         "available": True,
         "source": entry.get("source", ""),
         "scope_note": entry.get("scope_note", ""),
+        # "full" lists every SKU in each bucket; "flagged_only" lists just the
+        # flagged ones and summarises the rest by count — for services with
+        # many hundreds of sizes, where a full Yes/No table buries the result.
+        "table_mode": entry.get("table_mode", "full"),
         "as_of": entry.get("as_of", ""),
         "supported_count": len(supported),
         "ga": _bucket(buckets["ga"]),
