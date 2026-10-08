@@ -235,6 +235,59 @@ def migrate_section_lines(svc: str, cmp: dict) -> list[str]:
     return lines
 
 
+def at_a_glance_lines(rows: list, by_service: dict, migrate: dict) -> list[str]:
+    """The Atlas's stat strip and per-service cards, as Markdown.
+
+    Same split as the page header — GA / preview / deprecated-or-retiring by
+    migrate_support.status_bucket, dates not sourced by confidence "unknown" —
+    and the same Migrate numbers per service, so the two deliverables open on
+    identical figures.
+    """
+    def split(group):
+        n = {"ga": 0, "preview": 0, "deprecated": 0, "unsourced": 0}
+        for r in group:
+            n[migrate_support.status_bucket(r.lifecycle_status)] += 1
+            if r.date_confidence == "unknown":
+                n["unsourced"] += 1
+        return n
+
+    tot = split(rows)
+    lines = [
+        "## At a glance", "",
+        f"**{len(rows)} SKUs across {len(by_service)} services** — {tot['ga']} generally "
+        f"available, {tot['preview']} in public preview, {tot['deprecated']} deprecated or "
+        f"retiring; {tot['unsourced']} with no sourced release date.", "",
+        "**Per service — catalog**", "",
+        "| Service | SKUs | Generally available | Public preview | Deprecated / retiring "
+        "| Dates not sourced |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ]
+    for svc, group in by_service.items():
+        n = split(group)
+        lines.append(f"| {svc} | {len(group)} | {n['ga']} | {n['preview']} "
+                     f"| {n['deprecated']} | {n['unsourced']} |")
+    lines += [
+        "", "**Per service — Azure Migrate support** (each section's two comparison "
+        "blocks carry the full detail)", "",
+        "| Service | On Migrate's list | GA · supported by both | GA · not supported by Migrate "
+        "| Preview · supported by both | Preview · not supported by Migrate "
+        "| Deprecated · still supported by Migrate | Migrate list as of |",
+        "| --- | --- | --- | --- | --- | --- | --- | --- |",
+    ]
+    for svc in by_service:
+        c = migrate.get(svc, {"available": False})
+        if not c.get("available"):
+            lines.append(f"| {svc} | not supplied yet | — | — | — | — | — | — |")
+            continue
+        lines.append(
+            f"| {svc} | {c['supported_count']} | {c['ga']['supported_count']} "
+            f"| {c['ga']['flagged_count']} | {c['preview']['supported_count']} "
+            f"| {c['preview']['flagged_count']} | {c['deprecated']['flagged_count']} "
+            f"| {c['as_of']} |")
+    lines.append("")
+    return lines
+
+
 def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
                    order: list[str]) -> None:
     """One section per Azure service, each with its own table."""
@@ -265,6 +318,7 @@ def write_markdown(rows: list, path: str, as_of: str, errata: list[dict],
         anchor = svc.lower().replace(" ", "-").replace("(", "").replace(")", "")
         lines.append(f"| {svc} | {len(by_service[svc])} | [jump](#{anchor}) |")
 
+    lines += [""] + at_a_glance_lines(rows, by_service, migrate)
     lines += [
         "",
         "## How to read the columns",

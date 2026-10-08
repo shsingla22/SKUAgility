@@ -123,6 +123,34 @@ def main() -> int:
     else:
         ok("Markdown carries both Migrate-support sections in every service section")
 
+    glance = re.search(r"^## At a glance\n(.*?)^## How to read", md, re.M | re.S)
+    if not glance:
+        fail("Markdown has no 'At a glance' section before the column guide")
+    else:
+        cat_rows = re.findall(r"^\| (.+?) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \| (\d+) \|$",
+                              glance.group(1), re.M)
+        def _b(ls):
+            if "preview" in ls: return "preview"
+            if ls.startswith(("Deprecated", "Retiring", "Retired", "End of Life",
+                              "Previous generation")): return "deprecated"
+            return "ga"
+        bad = []
+        for svc, total, ga, prev, dep, uns in cat_rows:
+            grp = [s for s in skus if s["service"] == svc]
+            exp = (len(grp), sum(_b(s["lifecycle_status"]) == "ga" for s in grp),
+                   sum(_b(s["lifecycle_status"]) == "preview" for s in grp),
+                   sum(_b(s["lifecycle_status"]) == "deprecated" for s in grp),
+                   sum(s["date_confidence"] == "unknown" for s in grp))
+            if tuple(int(x) for x in (total, ga, prev, dep, uns)) != exp:
+                bad.append(f"{svc}: table says {(total, ga, prev, dep, uns)}, catalog has {exp}")
+        if len(cat_rows) != len(services):
+            fail(f"'At a glance' catalog table has {len(cat_rows)} service rows, expected "
+                 f"{len(services)}")
+        elif bad:
+            fail("'At a glance' catalog rows don't reconcile: " + "; ".join(bad))
+        else:
+            ok("'At a glance' per-service catalog figures reconcile with the SKU list")
+
     if md_rows != len(skus):
         fail(f"Markdown table has {md_rows} rows, expected {len(skus)}")
     else:

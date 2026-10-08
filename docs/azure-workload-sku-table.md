@@ -1,6 +1,6 @@
 # Azure workload SKU catalog
 
-**1629 SKUs across 6 Azure services.** Generated 2026-10-07 by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft documentation.
+**1629 SKUs across 6 Azure services.** Generated 2026-10-08 by the `CurrentAzureWorkloadSKUInfo` skill, direct from Microsoft documentation.
 
 Which services appear here is set in the skill's `references/config.json`, or overridden for one run with `--services`.
 
@@ -14,6 +14,33 @@ Which services appear here is set in the skill's `references/config.json`, or ov
 | Azure Database for MySQL | 49 | [jump](#azure-database-for-mysql) |
 | Azure DocumentDB (MongoDB-compatible) | 10 | [jump](#azure-documentdb-mongodb-compatible) |
 | Azure Virtual Machines | 1168 | [jump](#azure-virtual-machines) |
+
+## At a glance
+
+**1629 SKUs across 6 services** — 1495 generally available, 40 in public preview, 94 deprecated or retiring; 504 with no sourced release date.
+
+**Per service — catalog**
+
+| Service | SKUs | Generally available | Public preview | Deprecated / retiring | Dates not sourced |
+| --- | --- | --- | --- | --- | --- |
+| Azure SQL Database | 187 | 185 | 2 | 0 | 0 |
+| Azure SQL Managed Instance | 106 | 106 | 0 | 0 | 0 |
+| Azure Database for PostgreSQL | 109 | 71 | 38 | 0 | 0 |
+| Azure Database for MySQL | 49 | 49 | 0 | 0 | 0 |
+| Azure DocumentDB (MongoDB-compatible) | 10 | 10 | 0 | 0 | 0 |
+| Azure Virtual Machines | 1168 | 1074 | 0 | 94 | 504 |
+
+**Per service — Azure Migrate support** (each section's two comparison blocks carry the full detail)
+
+| Service | On Migrate's list | GA · supported by both | GA · not supported by Migrate | Preview · supported by both | Preview · not supported by Migrate | Deprecated · still supported by Migrate | Migrate list as of |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Azure SQL Database | 71 | 71 | 114 | 0 | 2 | 0 | 2026-10-07 |
+| Azure SQL Managed Instance | 104 | 104 | 2 | 0 | 0 | 0 | 2026-10-06 |
+| Azure Database for PostgreSQL | 71 | 71 | 0 | 0 | 38 | 0 | 2026-09-14 |
+| Azure Database for MySQL | 25 | 24 | 25 | 0 | 0 | 0 | 2026-10-05 |
+| Azure DocumentDB (MongoDB-compatible) | 9 | 9 | 1 | 0 | 0 | 0 | 2026-10-05 |
+| Azure Virtual Machines | 683 | 683 | 391 | 0 | 0 | 0 | 2026-10-07 |
+
 
 ## How to read the columns
 

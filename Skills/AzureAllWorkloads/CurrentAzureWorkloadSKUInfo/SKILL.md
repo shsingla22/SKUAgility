@@ -146,6 +146,10 @@ disagree in a way that matters operationally:
    walking back. *(nested under GA SKU discrepancies, since it's the other
    non-preview lifecycle state)*
 
+The Markdown opens with an **At a glance** block — the same catalog-wide and
+per-service figures as the Atlas header, catalog split and Migrate numbers alike —
+and `verify.py` reconciles its per-service catalog rows against the SKU list.
+
 Both sections report **every** SKU in their bucket, not just the disagreements —
 a clean bucket (nothing flagged) still states its totals and lists every SKU
 with a Yes/No Migrate-support column, rather than being collapsed to a "no
