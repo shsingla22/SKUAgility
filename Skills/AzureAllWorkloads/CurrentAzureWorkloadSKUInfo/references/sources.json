@@ -1,0 +1,95 @@
+{
+  "_comment": [
+    "Every Microsoft page this skill reads, one entry per source.",
+    "strategy 'raw'   -> fetch_url is the Learn article source on GitHub.",
+    "strategy 'learn' -> fetch_url is the rendered Learn page, used where the",
+    "                    source repository is not publicly mirrored.",
+    "live_url is always the citable Learn URL that appears in the output."
+  ],
+  "sources": {
+    "pg_compute": {
+      "workload": "postgresql",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/postgresql/compute-storage/concepts-compute",
+      "live_url": "https://learn.microsoft.com/azure/postgresql/compute-storage/concepts-compute",
+      "reads": "Burstable / General Purpose / Memory Optimized server types with vCores, memory, IOPS."
+    },
+    "pg_overview": {
+      "workload": "postgresql",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/overview",
+      "live_url": "https://learn.microsoft.com/azure/postgresql/flexible-server/overview",
+      "reads": "Compute tier guidance and the V6 SKU family preview status."
+    },
+    "mysql_tiers": {
+      "workload": "mysql",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/mysql/flexible-server/concepts-service-tiers-storage",
+      "live_url": "https://learn.microsoft.com/azure/mysql/flexible-server/concepts-service-tiers-storage",
+      "reads": "Burstable / General Purpose / Business Critical compute sizes and tier guidance."
+    },
+    "redis_overview": {
+      "workload": "redis",
+      "strategy": "raw",
+      "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/main/articles/azure-cache-for-redis/cache-overview.md",
+      "live_url": "https://learn.microsoft.com/azure/azure-cache-for-redis/cache-overview",
+      "reads": "Service tiers and their descriptions."
+    },
+    "redis_whats_new": {
+      "workload": "redis",
+      "strategy": "raw",
+      "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/main/articles/azure-cache-for-redis/cache-whats-new.md",
+      "live_url": "https://learn.microsoft.com/azure/azure-cache-for-redis/cache-whats-new",
+      "reads": "Dated release history and the retirement timetable for every tier."
+    },
+    "appservice_plans": {
+      "workload": "app_service",
+      "strategy": "raw",
+      "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/main/articles/app-service/overview-hosting-plans.md",
+      "live_url": "https://learn.microsoft.com/azure/app-service/overview-hosting-plans",
+      "reads": "Pricing tier categories - shared, dedicated and isolated compute - and what each is for."
+    },
+    "aks_tiers": {
+      "workload": "aks",
+      "strategy": "raw",
+      "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-aks-docs/main/articles/aks/free-standard-pricing-tiers.md",
+      "live_url": "https://learn.microsoft.com/azure/aks/free-standard-pricing-tiers",
+      "reads": "Free / Standard / Premium pricing tiers, when to use each, and node limits."
+    },
+    "vm_sizes": {
+      "workload": "virtual_machines",
+      "strategy": "raw",
+      "fetch_url": "https://raw.githubusercontent.com/MicrosoftDocs/azure-compute-docs/main/articles/virtual-machines/sizes/overview.md",
+      "live_url": "https://learn.microsoft.com/azure/virtual-machines/sizes/overview",
+      "reads": "The VM size family list per workload type. This page is the entry point: the provider follows it to each family page, then to each series page, and reads the 'Sizes in series' Basics table on every one - roughly 130 pages - to get individual sizes."
+    },
+    "ddb_compute": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/compute-storage",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/compute-storage",
+      "reads": "The cluster-tier table (M10-M200 with vCores and RAM per shard), the burstable-tier description, and the configuration guidance."
+    },
+    "ddb_overview": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/overview",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/overview",
+      "reads": "What the service is and when Microsoft positions it."
+    },
+    "ddb_free": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/free-tier",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/free-tier",
+      "reads": "The Free Tier SKU: what it includes and its restrictions."
+    },
+    "ddb_release": {
+      "workload": "mongodb",
+      "strategy": "learn",
+      "fetch_url": "https://learn.microsoft.com/en-us/azure/documentdb/release-notes",
+      "live_url": "https://learn.microsoft.com/azure/documentdb/release-notes",
+      "reads": "Service release notes, including the November 2025 rename from Azure Cosmos DB for MongoDB (vCore)."
+    }
+  }
+}

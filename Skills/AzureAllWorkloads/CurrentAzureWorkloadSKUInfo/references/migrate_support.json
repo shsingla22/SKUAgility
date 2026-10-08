@@ -1,0 +1,4108 @@
+{
+  "postgresql": {
+    "source": "User-supplied reference document (PG_SQL_Migrate_supported_SKUs.docx): the Burstable, General Purpose and Memory Optimized compute SKUs that Azure Migrate's discovery-and-assessment tooling recognizes for Azure Database for PostgreSQL flexible server.",
+    "as_of": "2026-09-14",
+    "supported_skus": [
+      "Standard_B1ms",
+      "Standard_B2s",
+      "Standard_B2ms",
+      "Standard_B4ms",
+      "Standard_B8ms",
+      "Standard_B12ms",
+      "Standard_B16ms",
+      "Standard_B20ms",
+      "Standard_D2ads_v5",
+      "Standard_D2ds_v4",
+      "Standard_D2ds_v5",
+      "Standard_D2s_v3",
+      "Standard_D4ads_v5",
+      "Standard_D4ds_v4",
+      "Standard_D4ds_v5",
+      "Standard_D4s_v3",
+      "Standard_D8ads_v5",
+      "Standard_D8ds_v4",
+      "Standard_D8ds_v5",
+      "Standard_D8s_v3",
+      "Standard_D16ads_v5",
+      "Standard_D16ds_v4",
+      "Standard_D16ds_v5",
+      "Standard_D16s_v3",
+      "Standard_D32ads_v5",
+      "Standard_D32ds_v4",
+      "Standard_D32ds_v5",
+      "Standard_D32s_v3",
+      "Standard_D48ads_v5",
+      "Standard_D48ds_v4",
+      "Standard_D48ds_v5",
+      "Standard_D48s_v3",
+      "Standard_D64ads_v5",
+      "Standard_D64ds_v4",
+      "Standard_D64ds_v5",
+      "Standard_D64s_v3",
+      "Standard_D96ads_v5",
+      "Standard_D96ds_v5",
+      "Standard_E2ads_v5",
+      "Standard_E2ds_v4",
+      "Standard_E2ds_v5",
+      "Standard_E2s_v3",
+      "Standard_E4ads_v5",
+      "Standard_E4ds_v4",
+      "Standard_E4ds_v5",
+      "Standard_E4s_v3",
+      "Standard_E8ads_v5",
+      "Standard_E8ds_v4",
+      "Standard_E8ds_v5",
+      "Standard_E8s_v3",
+      "Standard_E16ads_v5",
+      "Standard_E16ds_v4",
+      "Standard_E16ds_v5",
+      "Standard_E16s_v3",
+      "Standard_E20ads_v5",
+      "Standard_E20ds_v4",
+      "Standard_E20ds_v5",
+      "Standard_E32ads_v5",
+      "Standard_E32ds_v4",
+      "Standard_E32ds_v5",
+      "Standard_E32s_v3",
+      "Standard_E48ads_v5",
+      "Standard_E48ds_v4",
+      "Standard_E48ds_v5",
+      "Standard_E48s_v3",
+      "Standard_E64ads_v5",
+      "Standard_E64ds_v4",
+      "Standard_E64ds_v5",
+      "Standard_E64s_v3",
+      "Standard_E96ads_v5",
+      "Standard_E96ds_v5"
+    ]
+  },
+  "mysql": {
+    "source": "User-supplied reference document (MySQL_Migrate_supported_SKU.docx): the Burstable, General Purpose and Business Critical compute SKUs that Azure Migrate's discovery-and-assessment tooling recognizes for Azure Database for MySQL flexible server.",
+    "as_of": "2026-10-05",
+    "supported_skus": [
+      "Standard_B1ms",
+      "Standard_B2s",
+      "Standard_B2ms",
+      "Standard_B4ms",
+      "Standard_B8ms",
+      "Standard_B12ms",
+      "Standard_B16ms",
+      "Standard_B20ms",
+      "Standard_D2ds_v4",
+      "Standard_D4ds_v4",
+      "Standard_D8ds_v4",
+      "Standard_D16ds_v4",
+      "Standard_D32ds_v4",
+      "Standard_D48ds_v4",
+      "Standard_D64ds_v4",
+      "Standard_E2ds_v4",
+      "Standard_E4ds_v4",
+      "Standard_E8ds_v4",
+      "Standard_E16ds_v4",
+      "Standard_E20ds_v4",
+      "Standard_E32ds_v4",
+      "Standard_E48ds_v4",
+      "Standard_E64ds_v5",
+      "Standard_E80ids_v4",
+      "Standard_E96ds_v5"
+    ]
+  },
+  "mongodb": {
+    "source": "User-supplied reference document (Mongo_DB_Migrate.docx): the Azure DocumentDB (formerly Azure Cosmos DB for MongoDB vCore) cluster tiers that Azure Migrate's discovery-and-assessment tooling recognizes, with Migrate's internal SKU name and its Dev/Test or Production classification for each.",
+    "as_of": "2026-10-05",
+    "supported_skus": [
+      "M10",
+      "M20",
+      "M25",
+      "M30",
+      "M40",
+      "M50",
+      "M60",
+      "M80",
+      "M200"
+    ],
+    "sku_details": {
+      "M10": {
+        "migrate_sku_name": "Burstable1vCore",
+        "migrate_class": "Dev/Test",
+        "vcores": 1,
+        "memory_gib": 2
+      },
+      "M20": {
+        "migrate_sku_name": "Burstable2vCore_M20",
+        "migrate_class": "Dev/Test",
+        "vcores": 2,
+        "memory_gib": 4
+      },
+      "M25": {
+        "migrate_sku_name": "Burstable2vCore_M25",
+        "migrate_class": "Dev/Test",
+        "vcores": 2,
+        "memory_gib": 8
+      },
+      "M30": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_2vCore",
+        "migrate_class": "Dev/Test",
+        "vcores": 2,
+        "memory_gib": 8
+      },
+      "M40": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_4vCore",
+        "migrate_class": "Production",
+        "vcores": 4,
+        "memory_gib": 16
+      },
+      "M50": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_8vCore",
+        "migrate_class": "Production",
+        "vcores": 8,
+        "memory_gib": 32
+      },
+      "M60": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_16vCore",
+        "migrate_class": "Production",
+        "vcores": 16,
+        "memory_gib": 64
+      },
+      "M80": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_32vCore",
+        "migrate_class": "Production",
+        "vcores": 32,
+        "memory_gib": 128
+      },
+      "M200": {
+        "migrate_sku_name": "Azure_Cosmos_DB_for_MongoDB_Worker_Node_64vCore",
+        "migrate_class": "Production",
+        "vcores": 64,
+        "memory_gib": 256
+      }
+    }
+  },
+  "Azure SQL Managed Instance": {
+    "_keyed_by": "service display name, because the azure_sql workload produces two sections (Database and Managed Instance) and this list covers Managed Instance only",
+    "source": "User-supplied reference document (SQL_instance_SKU_Migrate.docx): the Azure SQL Managed Instance service tier / hardware generation / vCore combinations that Azure Migrate's discovery-and-assessment tooling recognizes, expanded here from its tier x hardware x vCore-step grid. Entries carry the tier because Managed Instance reuses one SKU name (e.g. GP_Gen5 (4 vCores)) for both General Purpose and Next-gen General Purpose.",
+    "as_of": "2026-10-06",
+    "supported_skus": [
+      {
+        "sku": "GP_Gen5 (4 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (8 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (16 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (24 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (32 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (40 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (64 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (80 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (4 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (8 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (16 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (24 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (32 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (40 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (64 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (80 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (4 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (8 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (16 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (24 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (32 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (40 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (64 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (80 vCores)",
+        "tier": "General Purpose"
+      },
+      {
+        "sku": "BC_Gen5 (4 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (8 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (16 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (24 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (32 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (40 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (64 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_Gen5 (80 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (4 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (6 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (8 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (10 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (12 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (16 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (20 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (24 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (32 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (40 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (48 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (56 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (64 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (80 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (96 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IM (128 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (4 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (6 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (8 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (10 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (12 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (16 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (20 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (24 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (32 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (40 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (48 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (56 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (64 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (80 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (96 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "BC_G8IH (128 vCores)",
+        "tier": "Business Critical"
+      },
+      {
+        "sku": "GP_Gen5 (4 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (8 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (16 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (24 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (32 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (40 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (64 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_Gen5 (80 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (4 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (6 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (8 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (10 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (12 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (16 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (20 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (24 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (32 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (40 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (48 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (56 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (64 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (80 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (96 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IM (128 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (4 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (6 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (8 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (10 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (12 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (16 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (20 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (24 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (32 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (40 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (48 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (56 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (64 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (80 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (96 vCores)",
+        "tier": "Next-gen General Purpose"
+      },
+      {
+        "sku": "GP_G8IH (128 vCores)",
+        "tier": "Next-gen General Purpose"
+      }
+    ]
+  },
+  "Azure SQL Database": {
+    "_keyed_by": "service display name, because the azure_sql workload produces two sections and this list covers Azure SQL Database only",
+    "source": "User-supplied reference document (SQL_database_Migrate_support.docx): the Azure SQL Database service tier / hardware generation / vCore combinations that Azure Migrate's discovery-and-assessment tooling recognizes, expanded here from its tier x hardware x vCore grid. The document's memory ranges (10.4-415.2 GB for Gen5, 10.4-625 GB for premium-series, 20.8-830.5 GB for premium-series memory optimized) match the catalog's smallest and largest sizes in each family exactly.",
+    "scope_note": "Migrate's list covers provisioned vCore compute only: General Purpose, Business Critical and Hyperscale on standard-series (Gen5), plus Hyperscale on premium-series and premium-series memory optimized. It names nothing in the DTU purchasing model (Basic, Standard, Premium and their elastic pools), nothing serverless, and no DC-series hardware - so every SKU in those families is flagged below. Read those flags as 'Migrate assesses to provisioned vCore targets only', not as individual gaps.",
+    "as_of": "2026-10-07",
+    "supported_skus": [
+      "GP_Gen5_2",
+      "GP_Gen5_4",
+      "GP_Gen5_6",
+      "GP_Gen5_8",
+      "GP_Gen5_10",
+      "GP_Gen5_12",
+      "GP_Gen5_14",
+      "GP_Gen5_16",
+      "GP_Gen5_18",
+      "GP_Gen5_20",
+      "GP_Gen5_24",
+      "GP_Gen5_32",
+      "GP_Gen5_40",
+      "GP_Gen5_80",
+      "BC_Gen5_2",
+      "BC_Gen5_4",
+      "BC_Gen5_6",
+      "BC_Gen5_8",
+      "BC_Gen5_10",
+      "BC_Gen5_12",
+      "BC_Gen5_14",
+      "BC_Gen5_16",
+      "BC_Gen5_18",
+      "BC_Gen5_20",
+      "BC_Gen5_24",
+      "BC_Gen5_32",
+      "BC_Gen5_40",
+      "BC_Gen5_80",
+      "HS_Gen5_2",
+      "HS_Gen5_4",
+      "HS_Gen5_6",
+      "HS_Gen5_8",
+      "HS_Gen5_10",
+      "HS_Gen5_12",
+      "HS_Gen5_14",
+      "HS_Gen5_16",
+      "HS_Gen5_18",
+      "HS_Gen5_20",
+      "HS_Gen5_24",
+      "HS_Gen5_32",
+      "HS_Gen5_40",
+      "HS_Gen5_80",
+      "HS_PRMS_2",
+      "HS_PRMS_4",
+      "HS_PRMS_6",
+      "HS_PRMS_8",
+      "HS_PRMS_10",
+      "HS_PRMS_12",
+      "HS_PRMS_14",
+      "HS_PRMS_16",
+      "HS_PRMS_18",
+      "HS_PRMS_20",
+      "HS_PRMS_24",
+      "HS_PRMS_32",
+      "HS_PRMS_40",
+      "HS_PRMS_80",
+      "HS_PRMS_128",
+      "HS_MOPRMS_2",
+      "HS_MOPRMS_4",
+      "HS_MOPRMS_6",
+      "HS_MOPRMS_8",
+      "HS_MOPRMS_10",
+      "HS_MOPRMS_12",
+      "HS_MOPRMS_14",
+      "HS_MOPRMS_16",
+      "HS_MOPRMS_18",
+      "HS_MOPRMS_20",
+      "HS_MOPRMS_24",
+      "HS_MOPRMS_32",
+      "HS_MOPRMS_40",
+      "HS_MOPRMS_80"
+    ]
+  },
+  "virtual_machines": {
+    "source": "User-supplied CSV (AzureMigrate-Supported-VmSkus.csv): the 683 Azure VM sizes across 82 series that Azure Migrate's assessment tooling can recommend as targets, with Migrate's stated cores, memory, data-disk count, disk IOPS, pricing tier and premium-storage flag for each.",
+    "scope_note": "Migrate's list covers the mainstream x86 series through the current AMD v7 generation: burstable (Bsv2/Basv2/Bpsv2), general-purpose and memory-optimized Intel v4-v6 and AMD v4-v7, Arm v6 (Dpsv6/Epsv6 families), compute-optimized AMD v6/v7 and FX v1, storage-optimized Lsv3/Lsv4/Lasv3/Lasv4/Laosv4, the v5 confidential AMD series, and the M family. It names no Intel v7 series (Dsv7/Ddsv7/Dlsv7/Dldsv7/Esv7/Edsv7), no GPU (NC/ND/NV/NG), no HPC (HB/HX), no Arm v5, no v6 or v2 confidential series, no network-optimized Dnsv6/Dnlsv6/Ensv6, and none of Ebsv6/Ebdsv6, Lasv5/Laosv5, FXv2 or Dlsv5/Dldsv5 - so every size in those series is flagged below as scope rather than as an individual gap. It also names none of the End of Life series. The remaining handful of flags are single sizes inside series Migrate does target.",
+    "as_of": "2026-10-07",
+    "table_mode": "flagged_only",
+    "supported_skus": [
+      "Standard_B2als_v2",
+      "Standard_B2as_v2",
+      "Standard_B2ats_v2",
+      "Standard_B4als_v2",
+      "Standard_B4as_v2",
+      "Standard_B8als_v2",
+      "Standard_B8as_v2",
+      "Standard_B16als_v2",
+      "Standard_B16as_v2",
+      "Standard_B32als_v2",
+      "Standard_B32as_v2",
+      "Standard_B2pls_v2",
+      "Standard_B2ps_v2",
+      "Standard_B2pts_v2",
+      "Standard_B4pls_v2",
+      "Standard_B4ps_v2",
+      "Standard_B8pls_v2",
+      "Standard_B8ps_v2",
+      "Standard_B16pls_v2",
+      "Standard_B16ps_v2",
+      "Standard_B2ls_v2",
+      "Standard_B2s_v2",
+      "Standard_B2ts_v2",
+      "Standard_B4ls_v2",
+      "Standard_B4s_v2",
+      "Standard_B8ls_v2",
+      "Standard_B8s_v2",
+      "Standard_B16ls_v2",
+      "Standard_B16s_v2",
+      "Standard_B32ls_v2",
+      "Standard_B32s_v2",
+      "Standard_D2ads_v5",
+      "Standard_D4ads_v5",
+      "Standard_D8ads_v5",
+      "Standard_D16ads_v5",
+      "Standard_D32ads_v5",
+      "Standard_D48ads_v5",
+      "Standard_D64ads_v5",
+      "Standard_D96ads_v5",
+      "Standard_D2ads_v6",
+      "Standard_D4ads_v6",
+      "Standard_D8ads_v6",
+      "Standard_D16ads_v6",
+      "Standard_D32ads_v6",
+      "Standard_D48ads_v6",
+      "Standard_D64ads_v6",
+      "Standard_D96ads_v6",
+      "Standard_D2ads_v7",
+      "Standard_D4ads_v7",
+      "Standard_D8ads_v7",
+      "Standard_D16ads_v7",
+      "Standard_D32ads_v7",
+      "Standard_D48ads_v7",
+      "Standard_D64ads_v7",
+      "Standard_D96ads_v7",
+      "Standard_D128ads_v7",
+      "Standard_D160ads_v7",
+      "Standard_D2alds_v6",
+      "Standard_D4alds_v6",
+      "Standard_D8alds_v6",
+      "Standard_D16alds_v6",
+      "Standard_D32alds_v6",
+      "Standard_D48alds_v6",
+      "Standard_D64alds_v6",
+      "Standard_D96alds_v6",
+      "Standard_D2alds_v7",
+      "Standard_D4alds_v7",
+      "Standard_D8alds_v7",
+      "Standard_D16alds_v7",
+      "Standard_D32alds_v7",
+      "Standard_D48alds_v7",
+      "Standard_D64alds_v7",
+      "Standard_D96alds_v7",
+      "Standard_D128alds_v7",
+      "Standard_D160alds_v7",
+      "Standard_D2als_v6",
+      "Standard_D4als_v6",
+      "Standard_D8als_v6",
+      "Standard_D16als_v6",
+      "Standard_D32als_v6",
+      "Standard_D48als_v6",
+      "Standard_D64als_v6",
+      "Standard_D96als_v6",
+      "Standard_D2als_v7",
+      "Standard_D4als_v7",
+      "Standard_D8als_v7",
+      "Standard_D16als_v7",
+      "Standard_D32als_v7",
+      "Standard_D48als_v7",
+      "Standard_D64als_v7",
+      "Standard_D96als_v7",
+      "Standard_D128als_v7",
+      "Standard_D160als_v7",
+      "Standard_D2as_v4",
+      "Standard_D4as_v4",
+      "Standard_D8as_v4",
+      "Standard_D16as_v4",
+      "Standard_D32as_v4",
+      "Standard_D48as_v4",
+      "Standard_D64as_v4",
+      "Standard_D96as_v4",
+      "Standard_D2as_v5",
+      "Standard_D4as_v5",
+      "Standard_D8as_v5",
+      "Standard_D16as_v5",
+      "Standard_D32as_v5",
+      "Standard_D48as_v5",
+      "Standard_D64as_v5",
+      "Standard_D96as_v5",
+      "Standard_D2as_v6",
+      "Standard_D4as_v6",
+      "Standard_D8as_v6",
+      "Standard_D16as_v6",
+      "Standard_D32as_v6",
+      "Standard_D48as_v6",
+      "Standard_D64as_v6",
+      "Standard_D96as_v6",
+      "Standard_D2as_v7",
+      "Standard_D4as_v7",
+      "Standard_D8as_v7",
+      "Standard_D16as_v7",
+      "Standard_D32as_v7",
+      "Standard_D48as_v7",
+      "Standard_D64as_v7",
+      "Standard_D96as_v7",
+      "Standard_D128as_v7",
+      "Standard_D160as_v7",
+      "Standard_D2a_v4",
+      "Standard_D4a_v4",
+      "Standard_D8a_v4",
+      "Standard_D16a_v4",
+      "Standard_D32a_v4",
+      "Standard_D48a_v4",
+      "Standard_D64a_v4",
+      "Standard_D96a_v4",
+      "Standard_DC2ads_v5",
+      "Standard_DC4ads_v5",
+      "Standard_DC8ads_v5",
+      "Standard_DC16ads_v5",
+      "Standard_DC32ads_v5",
+      "Standard_DC48ads_v5",
+      "Standard_DC64ads_v5",
+      "Standard_DC96ads_v5",
+      "Standard_DC2as_v5",
+      "Standard_DC4as_v5",
+      "Standard_DC8as_v5",
+      "Standard_DC16as_v5",
+      "Standard_DC32as_v5",
+      "Standard_DC48as_v5",
+      "Standard_DC64as_v5",
+      "Standard_DC96as_v5",
+      "Standard_D2ds_v4",
+      "Standard_D4ds_v4",
+      "Standard_D8ds_v4",
+      "Standard_D16ds_v4",
+      "Standard_D32ds_v4",
+      "Standard_D48ds_v4",
+      "Standard_D64ds_v4",
+      "Standard_D2ds_v5",
+      "Standard_D4ds_v5",
+      "Standard_D8ds_v5",
+      "Standard_D16ds_v5",
+      "Standard_D32ds_v5",
+      "Standard_D48ds_v5",
+      "Standard_D64ds_v5",
+      "Standard_D96ds_v5",
+      "Standard_D2ds_v6",
+      "Standard_D4ds_v6",
+      "Standard_D8ds_v6",
+      "Standard_D16ds_v6",
+      "Standard_D32ds_v6",
+      "Standard_D48ds_v6",
+      "Standard_D64ds_v6",
+      "Standard_D96ds_v6",
+      "Standard_D128ds_v6",
+      "Standard_D192ds_v6",
+      "Standard_D2d_v4",
+      "Standard_D4d_v4",
+      "Standard_D8d_v4",
+      "Standard_D16d_v4",
+      "Standard_D32d_v4",
+      "Standard_D48d_v4",
+      "Standard_D64d_v4",
+      "Standard_D2d_v5",
+      "Standard_D4d_v5",
+      "Standard_D8d_v5",
+      "Standard_D16d_v5",
+      "Standard_D32d_v5",
+      "Standard_D48d_v5",
+      "Standard_D64d_v5",
+      "Standard_D96d_v5",
+      "Standard_D2lds_v6",
+      "Standard_D4lds_v6",
+      "Standard_D8lds_v6",
+      "Standard_D16lds_v6",
+      "Standard_D32lds_v6",
+      "Standard_D48lds_v6",
+      "Standard_D64lds_v6",
+      "Standard_D96lds_v6",
+      "Standard_D128lds_v6",
+      "Standard_D2ls_v6",
+      "Standard_D4ls_v6",
+      "Standard_D8ls_v6",
+      "Standard_D16ls_v6",
+      "Standard_D32ls_v6",
+      "Standard_D48ls_v6",
+      "Standard_D64ls_v6",
+      "Standard_D96ls_v6",
+      "Standard_D128ls_v6",
+      "Standard_D2pds_v6",
+      "Standard_D4pds_v6",
+      "Standard_D8pds_v6",
+      "Standard_D16pds_v6",
+      "Standard_D32pds_v6",
+      "Standard_D48pds_v6",
+      "Standard_D64pds_v6",
+      "Standard_D96pds_v6",
+      "Standard_D2plds_v6",
+      "Standard_D4plds_v6",
+      "Standard_D8plds_v6",
+      "Standard_D16plds_v6",
+      "Standard_D32plds_v6",
+      "Standard_D48plds_v6",
+      "Standard_D64plds_v6",
+      "Standard_D96plds_v6",
+      "Standard_D2pls_v6",
+      "Standard_D4pls_v6",
+      "Standard_D8pls_v6",
+      "Standard_D16pls_v6",
+      "Standard_D32pls_v6",
+      "Standard_D48pls_v6",
+      "Standard_D64pls_v6",
+      "Standard_D96pls_v6",
+      "Standard_D2ps_v6",
+      "Standard_D4ps_v6",
+      "Standard_D8ps_v6",
+      "Standard_D16ps_v6",
+      "Standard_D32ps_v6",
+      "Standard_D48ps_v6",
+      "Standard_D64ps_v6",
+      "Standard_D96ps_v6",
+      "Standard_D2s_v4",
+      "Standard_D4s_v4",
+      "Standard_D8s_v4",
+      "Standard_D16s_v4",
+      "Standard_D32s_v4",
+      "Standard_D48s_v4",
+      "Standard_D64s_v4",
+      "Standard_D2s_v5",
+      "Standard_D4s_v5",
+      "Standard_D8s_v5",
+      "Standard_D16s_v5",
+      "Standard_D32s_v5",
+      "Standard_D48s_v5",
+      "Standard_D64s_v5",
+      "Standard_D96s_v5",
+      "Standard_D2s_v6",
+      "Standard_D4s_v6",
+      "Standard_D8s_v6",
+      "Standard_D16s_v6",
+      "Standard_D32s_v6",
+      "Standard_D48s_v6",
+      "Standard_D64s_v6",
+      "Standard_D96s_v6",
+      "Standard_D128s_v6",
+      "Standard_D192s_v6",
+      "Standard_D2_v4",
+      "Standard_D4_v4",
+      "Standard_D8_v4",
+      "Standard_D16_v4",
+      "Standard_D32_v4",
+      "Standard_D48_v4",
+      "Standard_D64_v4",
+      "Standard_D2_v5",
+      "Standard_D4_v5",
+      "Standard_D8_v5",
+      "Standard_D16_v5",
+      "Standard_D32_v5",
+      "Standard_D48_v5",
+      "Standard_D64_v5",
+      "Standard_D96_v5",
+      "Standard_E2ads_v5",
+      "Standard_E4ads_v5",
+      "Standard_E8ads_v5",
+      "Standard_E16ads_v5",
+      "Standard_E20ads_v5",
+      "Standard_E32ads_v5",
+      "Standard_E48ads_v5",
+      "Standard_E64ads_v5",
+      "Standard_E96ads_v5",
+      "Standard_E2ads_v6",
+      "Standard_E4ads_v6",
+      "Standard_E8ads_v6",
+      "Standard_E16ads_v6",
+      "Standard_E20ads_v6",
+      "Standard_E32ads_v6",
+      "Standard_E48ads_v6",
+      "Standard_E64ads_v6",
+      "Standard_E96ads_v6",
+      "Standard_E2ads_v7",
+      "Standard_E4ads_v7",
+      "Standard_E8ads_v7",
+      "Standard_E16ads_v7",
+      "Standard_E32ads_v7",
+      "Standard_E48ads_v7",
+      "Standard_E64ads_v7",
+      "Standard_E96ads_v7",
+      "Standard_E128ads_v7",
+      "Standard_E160ads_v7",
+      "Standard_E2as_v4",
+      "Standard_E4as_v4",
+      "Standard_E8as_v4",
+      "Standard_E16as_v4",
+      "Standard_E20as_v4",
+      "Standard_E32as_v4",
+      "Standard_E48as_v4",
+      "Standard_E64as_v4",
+      "Standard_E96as_v4",
+      "Standard_E2as_v5",
+      "Standard_E4as_v5",
+      "Standard_E8as_v5",
+      "Standard_E16as_v5",
+      "Standard_E20as_v5",
+      "Standard_E32as_v5",
+      "Standard_E48as_v5",
+      "Standard_E64as_v5",
+      "Standard_E96as_v5",
+      "Standard_E2as_v6",
+      "Standard_E4as_v6",
+      "Standard_E8as_v6",
+      "Standard_E16as_v6",
+      "Standard_E20as_v6",
+      "Standard_E32as_v6",
+      "Standard_E48as_v6",
+      "Standard_E64as_v6",
+      "Standard_E96as_v6",
+      "Standard_E2as_v7",
+      "Standard_E4as_v7",
+      "Standard_E8as_v7",
+      "Standard_E16as_v7",
+      "Standard_E32as_v7",
+      "Standard_E48as_v7",
+      "Standard_E64as_v7",
+      "Standard_E96as_v7",
+      "Standard_E128as_v7",
+      "Standard_E160as_v7",
+      "Standard_E2a_v4",
+      "Standard_E4a_v4",
+      "Standard_E8a_v4",
+      "Standard_E16a_v4",
+      "Standard_E20a_v4",
+      "Standard_E32a_v4",
+      "Standard_E48a_v4",
+      "Standard_E64a_v4",
+      "Standard_E96a_v4",
+      "Standard_E2bds_v5",
+      "Standard_E4bds_v5",
+      "Standard_E8bds_v5",
+      "Standard_E16bds_v5",
+      "Standard_E32bds_v5",
+      "Standard_E48bds_v5",
+      "Standard_E64bds_v5",
+      "Standard_E2bs_v5",
+      "Standard_E4bs_v5",
+      "Standard_E8bs_v5",
+      "Standard_E16bs_v5",
+      "Standard_E32bs_v5",
+      "Standard_E48bs_v5",
+      "Standard_E64bs_v5",
+      "Standard_EC2ads_v5",
+      "Standard_EC4ads_v5",
+      "Standard_EC8ads_v5",
+      "Standard_EC16ads_v5",
+      "Standard_EC20ads_v5",
+      "Standard_EC32ads_v5",
+      "Standard_EC48ads_v5",
+      "Standard_EC64ads_v5",
+      "Standard_EC96ads_v5",
+      "Standard_EC2as_v5",
+      "Standard_EC4as_v5",
+      "Standard_EC8as_v5",
+      "Standard_EC16as_v5",
+      "Standard_EC20as_v5",
+      "Standard_EC32as_v5",
+      "Standard_EC48as_v5",
+      "Standard_EC64as_v5",
+      "Standard_EC96as_v5",
+      "Standard_E2ds_v4",
+      "Standard_E4ds_v4",
+      "Standard_E8ds_v4",
+      "Standard_E16ds_v4",
+      "Standard_E20ds_v4",
+      "Standard_E32ds_v4",
+      "Standard_E48ds_v4",
+      "Standard_E64ds_v4",
+      "Standard_E2ds_v5",
+      "Standard_E4ds_v5",
+      "Standard_E8ds_v5",
+      "Standard_E16ds_v5",
+      "Standard_E20ds_v5",
+      "Standard_E32ds_v5",
+      "Standard_E48ds_v5",
+      "Standard_E64ds_v5",
+      "Standard_E96ds_v5",
+      "Standard_E104ids_v5",
+      "Standard_E2ds_v6",
+      "Standard_E4ds_v6",
+      "Standard_E8ds_v6",
+      "Standard_E16ds_v6",
+      "Standard_E20ds_v6",
+      "Standard_E32ds_v6",
+      "Standard_E48ds_v6",
+      "Standard_E64ds_v6",
+      "Standard_E96ds_v6",
+      "Standard_E128ds_v6",
+      "Standard_E192ids_v6",
+      "Standard_E2d_v4",
+      "Standard_E4d_v4",
+      "Standard_E8d_v4",
+      "Standard_E16d_v4",
+      "Standard_E20d_v4",
+      "Standard_E32d_v4",
+      "Standard_E48d_v4",
+      "Standard_E64d_v4",
+      "Standard_E2d_v5",
+      "Standard_E4d_v5",
+      "Standard_E8d_v5",
+      "Standard_E16d_v5",
+      "Standard_E20d_v5",
+      "Standard_E32d_v5",
+      "Standard_E48d_v5",
+      "Standard_E64d_v5",
+      "Standard_E96d_v5",
+      "Standard_E104id_v5",
+      "Standard_E2pds_v6",
+      "Standard_E4pds_v6",
+      "Standard_E8pds_v6",
+      "Standard_E16pds_v6",
+      "Standard_E32pds_v6",
+      "Standard_E48pds_v6",
+      "Standard_E64pds_v6",
+      "Standard_E96pds_v6",
+      "Standard_E2ps_v6",
+      "Standard_E4ps_v6",
+      "Standard_E8ps_v6",
+      "Standard_E16ps_v6",
+      "Standard_E32ps_v6",
+      "Standard_E48ps_v6",
+      "Standard_E64ps_v6",
+      "Standard_E96ps_v6",
+      "Standard_E2s_v4",
+      "Standard_E4s_v4",
+      "Standard_E8s_v4",
+      "Standard_E16s_v4",
+      "Standard_E20s_v4",
+      "Standard_E32s_v4",
+      "Standard_E48s_v4",
+      "Standard_E64s_v4",
+      "Standard_E2s_v5",
+      "Standard_E4s_v5",
+      "Standard_E8s_v5",
+      "Standard_E16s_v5",
+      "Standard_E20s_v5",
+      "Standard_E32s_v5",
+      "Standard_E48s_v5",
+      "Standard_E64s_v5",
+      "Standard_E96s_v5",
+      "Standard_E104is_v5",
+      "Standard_E2s_v6",
+      "Standard_E4s_v6",
+      "Standard_E8s_v6",
+      "Standard_E16s_v6",
+      "Standard_E20s_v6",
+      "Standard_E32s_v6",
+      "Standard_E48s_v6",
+      "Standard_E64s_v6",
+      "Standard_E96s_v6",
+      "Standard_E128s_v6",
+      "Standard_E192is_v6",
+      "Standard_E2_v4",
+      "Standard_E4_v4",
+      "Standard_E8_v4",
+      "Standard_E16_v4",
+      "Standard_E20_v4",
+      "Standard_E32_v4",
+      "Standard_E48_v4",
+      "Standard_E64_v4",
+      "Standard_E2_v5",
+      "Standard_E4_v5",
+      "Standard_E8_v5",
+      "Standard_E16_v5",
+      "Standard_E20_v5",
+      "Standard_E32_v5",
+      "Standard_E48_v5",
+      "Standard_E64_v5",
+      "Standard_E96_v5",
+      "Standard_E104i_v5",
+      "Standard_F1ads_v7",
+      "Standard_F2ads_v7",
+      "Standard_F4ads_v7",
+      "Standard_F8ads_v7",
+      "Standard_F16ads_v7",
+      "Standard_F32ads_v7",
+      "Standard_F48ads_v7",
+      "Standard_F64ads_v7",
+      "Standard_F80ads_v7",
+      "Standard_F1alds_v7",
+      "Standard_F2alds_v7",
+      "Standard_F4alds_v7",
+      "Standard_F8alds_v7",
+      "Standard_F16alds_v7",
+      "Standard_F32alds_v7",
+      "Standard_F48alds_v7",
+      "Standard_F64alds_v7",
+      "Standard_F80alds_v7",
+      "Standard_F2als_v6",
+      "Standard_F4als_v6",
+      "Standard_F8als_v6",
+      "Standard_F16als_v6",
+      "Standard_F32als_v6",
+      "Standard_F48als_v6",
+      "Standard_F64als_v6",
+      "Standard_F1als_v7",
+      "Standard_F2als_v7",
+      "Standard_F4als_v7",
+      "Standard_F8als_v7",
+      "Standard_F16als_v7",
+      "Standard_F32als_v7",
+      "Standard_F48als_v7",
+      "Standard_F64als_v7",
+      "Standard_F80als_v7",
+      "Standard_F1amds_v7",
+      "Standard_F2amds_v7",
+      "Standard_F4amds_v7",
+      "Standard_F8amds_v7",
+      "Standard_F16amds_v7",
+      "Standard_F32amds_v7",
+      "Standard_F48amds_v7",
+      "Standard_F64amds_v7",
+      "Standard_F80amds_v7",
+      "Standard_F2ams_v6",
+      "Standard_F4ams_v6",
+      "Standard_F8ams_v6",
+      "Standard_F16ams_v6",
+      "Standard_F32ams_v6",
+      "Standard_F48ams_v6",
+      "Standard_F64ams_v6",
+      "Standard_F1ams_v7",
+      "Standard_F2ams_v7",
+      "Standard_F4ams_v7",
+      "Standard_F8ams_v7",
+      "Standard_F16ams_v7",
+      "Standard_F32ams_v7",
+      "Standard_F48ams_v7",
+      "Standard_F64ams_v7",
+      "Standard_F80ams_v7",
+      "Standard_F2as_v6",
+      "Standard_F4as_v6",
+      "Standard_F8as_v6",
+      "Standard_F16as_v6",
+      "Standard_F32as_v6",
+      "Standard_F48as_v6",
+      "Standard_F64as_v6",
+      "Standard_F1as_v7",
+      "Standard_F2as_v7",
+      "Standard_F4as_v7",
+      "Standard_F8as_v7",
+      "Standard_F16as_v7",
+      "Standard_F32as_v7",
+      "Standard_F48as_v7",
+      "Standard_F64as_v7",
+      "Standard_F80as_v7",
+      "Standard_L2aos_v4",
+      "Standard_L4aos_v4",
+      "Standard_L8aos_v4",
+      "Standard_L12aos_v4",
+      "Standard_L16aos_v4",
+      "Standard_L24aos_v4",
+      "Standard_L32aos_v4",
+      "Standard_L8as_v3",
+      "Standard_L16as_v3",
+      "Standard_L32as_v3",
+      "Standard_L48as_v3",
+      "Standard_L64as_v3",
+      "Standard_L80as_v3",
+      "Standard_L2as_v4",
+      "Standard_L4as_v4",
+      "Standard_L8as_v4",
+      "Standard_L16as_v4",
+      "Standard_L32as_v4",
+      "Standard_L48as_v4",
+      "Standard_L64as_v4",
+      "Standard_L80as_v4",
+      "Standard_L96as_v4",
+      "Standard_L8s_v3",
+      "Standard_L16s_v3",
+      "Standard_L32s_v3",
+      "Standard_L48s_v3",
+      "Standard_L64s_v3",
+      "Standard_L80s_v3",
+      "Standard_L2s_v4",
+      "Standard_L4s_v4",
+      "Standard_L8s_v4",
+      "Standard_L16s_v4",
+      "Standard_L32s_v4",
+      "Standard_L48s_v4",
+      "Standard_L64s_v4",
+      "Standard_L80s_v4",
+      "Standard_L96s_v4",
+      "Standard_M64",
+      "Standard_M64m",
+      "Standard_M128",
+      "Standard_M128m",
+      "Standard_M16bds_v3",
+      "Standard_M32bds_v3",
+      "Standard_M48bds_v3",
+      "Standard_M64bds_1_v3",
+      "Standard_M64bds_v3",
+      "Standard_M96bds_2_v3",
+      "Standard_M96bds_v3",
+      "Standard_M128bds_3_v3",
+      "Standard_M128bds_v3",
+      "Standard_M176bds_4_v3",
+      "Standard_M176bds_v3",
+      "Standard_M16bs_v3",
+      "Standard_M32bs_v3",
+      "Standard_M48bs_v3",
+      "Standard_M64bs_v3",
+      "Standard_M96bs_v3",
+      "Standard_M128bs_v3",
+      "Standard_M176bs_v3",
+      "Standard_M32dms_v2",
+      "Standard_M64dms_v2",
+      "Standard_M64ds_v2",
+      "Standard_M128dms_v2",
+      "Standard_M128ds_v2",
+      "Standard_M192idms_v2",
+      "Standard_M192ids_v2",
+      "Standard_M12ds_v3",
+      "Standard_M24ds_v3",
+      "Standard_M48ds_1_v3",
+      "Standard_M96ds_1_v3",
+      "Standard_M96ds_2_v3",
+      "Standard_M176ds_3_v3",
+      "Standard_M176ds_4_v3",
+      "Standard_M832ids_16_v3",
+      "Standard_M8ms",
+      "Standard_M16ms",
+      "Standard_M32ls",
+      "Standard_M32ms",
+      "Standard_M32ts",
+      "Standard_M64ls",
+      "Standard_M64ms",
+      "Standard_M64s",
+      "Standard_M128ms",
+      "Standard_M128s",
+      "Standard_M32ms_v2",
+      "Standard_M64ms_v2",
+      "Standard_M64s_v2",
+      "Standard_M128ms_v2",
+      "Standard_M128s_v2",
+      "Standard_M192ims_v2",
+      "Standard_M192is_v2",
+      "Standard_M208ms_v2",
+      "Standard_M208s_v2",
+      "Standard_M416ms_v2",
+      "Standard_M416s_v2",
+      "Standard_M416s_6_v3",
+      "Standard_M416s_8_v3",
+      "Standard_M624s_12_v3",
+      "Standard_M832s_12_v3",
+      "Standard_M12s_v3",
+      "Standard_M24s_v3",
+      "Standard_M48s_1_v3",
+      "Standard_M96s_1_v3",
+      "Standard_M96s_2_v3",
+      "Standard_M176s_3_v3",
+      "Standard_M176s_4_v3",
+      "Standard_FX4mds",
+      "Standard_FX12mds",
+      "Standard_FX24mds",
+      "Standard_FX36mds",
+      "Standard_FX48mds"
+    ],
+    "sku_details": {
+      "Standard_B2als_v2": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_B2as_v2": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_B2ats_v2": {
+        "vcores": 2.0,
+        "memory_gib": 1.0
+      },
+      "Standard_B4als_v2": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_B4as_v2": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_B8als_v2": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_B8as_v2": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_B16als_v2": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_B16as_v2": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_B32als_v2": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_B32as_v2": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_B2pls_v2": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_B2ps_v2": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_B2pts_v2": {
+        "vcores": 2.0,
+        "memory_gib": 1.0
+      },
+      "Standard_B4pls_v2": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_B4ps_v2": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_B8pls_v2": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_B8ps_v2": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_B16pls_v2": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_B16ps_v2": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_B2ls_v2": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_B2s_v2": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_B2ts_v2": {
+        "vcores": 2.0,
+        "memory_gib": 1.0
+      },
+      "Standard_B4ls_v2": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_B4s_v2": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_B8ls_v2": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_B8s_v2": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_B16ls_v2": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_B16s_v2": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_B32ls_v2": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_B32s_v2": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D2ads_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ads_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ads_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ads_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ads_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ads_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ads_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96ads_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2ads_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ads_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ads_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ads_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ads_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ads_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ads_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96ads_v6": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2ads_v7": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ads_v7": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ads_v7": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ads_v7": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ads_v7": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ads_v7": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ads_v7": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96ads_v7": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D128ads_v7": {
+        "vcores": 128.0,
+        "memory_gib": 512.0
+      },
+      "Standard_D160ads_v7": {
+        "vcores": 160.0,
+        "memory_gib": 640.0
+      },
+      "Standard_D2alds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4alds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8alds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16alds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32alds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48alds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64alds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96alds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D2alds_v7": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4alds_v7": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8alds_v7": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16alds_v7": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32alds_v7": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48alds_v7": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64alds_v7": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96alds_v7": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D128alds_v7": {
+        "vcores": 128.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D160alds_v7": {
+        "vcores": 160.0,
+        "memory_gib": 320.0
+      },
+      "Standard_D2als_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4als_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8als_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16als_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32als_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48als_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64als_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96als_v6": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D2als_v7": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4als_v7": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8als_v7": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16als_v7": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32als_v7": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48als_v7": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64als_v7": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96als_v7": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D128als_v7": {
+        "vcores": 128.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D160als_v7": {
+        "vcores": 160.0,
+        "memory_gib": 320.0
+      },
+      "Standard_D2as_v4": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4as_v4": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8as_v4": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16as_v4": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32as_v4": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48as_v4": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64as_v4": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96as_v4": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2as_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4as_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8as_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16as_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32as_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48as_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64as_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96as_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2as_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4as_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8as_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16as_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32as_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48as_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64as_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96as_v6": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2as_v7": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4as_v7": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8as_v7": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16as_v7": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32as_v7": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48as_v7": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64as_v7": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96as_v7": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D128as_v7": {
+        "vcores": 128.0,
+        "memory_gib": 512.0
+      },
+      "Standard_D160as_v7": {
+        "vcores": 160.0,
+        "memory_gib": 640.0
+      },
+      "Standard_D2a_v4": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4a_v4": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8a_v4": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16a_v4": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32a_v4": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48a_v4": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64a_v4": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96a_v4": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_DC2ads_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_DC4ads_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_DC8ads_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_DC16ads_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_DC32ads_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_DC48ads_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_DC64ads_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_DC96ads_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_DC2as_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_DC4as_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_DC8as_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_DC16as_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_DC32as_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_DC48as_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_DC64as_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_DC96as_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2ds_v4": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ds_v4": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ds_v4": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ds_v4": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ds_v4": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ds_v4": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ds_v4": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D2ds_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ds_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ds_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ds_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ds_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ds_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ds_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96ds_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2ds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96ds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D128ds_v6": {
+        "vcores": 128.0,
+        "memory_gib": 512.0
+      },
+      "Standard_D192ds_v6": {
+        "vcores": 192.0,
+        "memory_gib": 768.0
+      },
+      "Standard_D2d_v4": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4d_v4": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8d_v4": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16d_v4": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32d_v4": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48d_v4": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64d_v4": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D2d_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4d_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8d_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16d_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32d_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48d_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64d_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96d_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2lds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4lds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8lds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16lds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32lds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48lds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64lds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96lds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D128lds_v6": {
+        "vcores": 128.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D2ls_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4ls_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8ls_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16ls_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32ls_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48ls_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64ls_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96ls_v6": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D128ls_v6": {
+        "vcores": 128.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D2pds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4pds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8pds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16pds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32pds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48pds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64pds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96pds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2plds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4plds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8plds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16plds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32plds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48plds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64plds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96plds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D2pls_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_D4pls_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D8pls_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D16pls_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D32pls_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D48pls_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_D64pls_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D96pls_v6": {
+        "vcores": 96.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D2ps_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4ps_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8ps_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16ps_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32ps_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48ps_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64ps_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96ps_v6": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2s_v4": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4s_v4": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8s_v4": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16s_v4": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32s_v4": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48s_v4": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64s_v4": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D2s_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4s_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8s_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16s_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32s_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48s_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64s_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96s_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D2s_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4s_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8s_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16s_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32s_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48s_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64s_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96s_v6": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_D128s_v6": {
+        "vcores": 128.0,
+        "memory_gib": 512.0
+      },
+      "Standard_D192s_v6": {
+        "vcores": 192.0,
+        "memory_gib": 768.0
+      },
+      "Standard_D2_v4": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4_v4": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8_v4": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16_v4": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32_v4": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48_v4": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64_v4": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D2_v5": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_D4_v5": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_D8_v5": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_D16_v5": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_D32_v5": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_D48_v5": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_D64_v5": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_D96_v5": {
+        "vcores": 96.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E2ads_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ads_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ads_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ads_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20ads_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32ads_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ads_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ads_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96ads_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2ads_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ads_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ads_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ads_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20ads_v6": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32ads_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ads_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ads_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96ads_v6": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2ads_v7": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ads_v7": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ads_v7": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ads_v7": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E32ads_v7": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ads_v7": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ads_v7": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96ads_v7": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_E128ads_v7": {
+        "vcores": 128.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_E160ads_v7": {
+        "vcores": 160.0,
+        "memory_gib": 1280.0
+      },
+      "Standard_E2as_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4as_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8as_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16as_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20as_v4": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32as_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48as_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64as_v4": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96as_v4": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2as_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4as_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8as_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16as_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20as_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32as_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48as_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64as_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96as_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2as_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4as_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8as_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16as_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20as_v6": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32as_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48as_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64as_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96as_v6": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2as_v7": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4as_v7": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8as_v7": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16as_v7": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E32as_v7": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48as_v7": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64as_v7": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96as_v7": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_E128as_v7": {
+        "vcores": 128.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_E160as_v7": {
+        "vcores": 160.0,
+        "memory_gib": 1280.0
+      },
+      "Standard_E2a_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4a_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8a_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16a_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20a_v4": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32a_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48a_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64a_v4": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96a_v4": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2bds_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4bds_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8bds_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16bds_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E32bds_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48bds_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64bds_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E2bs_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4bs_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8bs_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16bs_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E32bs_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48bs_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64bs_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_EC2ads_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_EC4ads_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_EC8ads_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_EC16ads_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_EC20ads_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_EC32ads_v5": {
+        "vcores": 32.0,
+        "memory_gib": 192.0
+      },
+      "Standard_EC48ads_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_EC64ads_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_EC96ads_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_EC2as_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_EC4as_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_EC8as_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_EC16as_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_EC20as_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_EC32as_v5": {
+        "vcores": 32.0,
+        "memory_gib": 192.0
+      },
+      "Standard_EC48as_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_EC64as_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_EC96as_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2ds_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ds_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ds_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ds_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20ds_v4": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32ds_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ds_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ds_v4": {
+        "vcores": 64.0,
+        "memory_gib": 504.0
+      },
+      "Standard_E2ds_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ds_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ds_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ds_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20ds_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32ds_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ds_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ds_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96ds_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E104ids_v5": {
+        "vcores": 104.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2ds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20ds_v6": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32ds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96ds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_E128ds_v6": {
+        "vcores": 128.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_E192ids_v6": {
+        "vcores": 192.0,
+        "memory_gib": 1832.0
+      },
+      "Standard_E2d_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4d_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8d_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16d_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20d_v4": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32d_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48d_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64d_v4": {
+        "vcores": 64.0,
+        "memory_gib": 504.0
+      },
+      "Standard_E2d_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4d_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8d_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16d_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20d_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32d_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48d_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64d_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96d_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E104id_v5": {
+        "vcores": 104.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2pds_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4pds_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8pds_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16pds_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E32pds_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48pds_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64pds_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96pds_v6": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2ps_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4ps_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8ps_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16ps_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E32ps_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48ps_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64ps_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96ps_v6": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2s_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4s_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8s_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16s_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20s_v4": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32s_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48s_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64s_v4": {
+        "vcores": 64.0,
+        "memory_gib": 504.0
+      },
+      "Standard_E2s_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4s_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8s_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16s_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20s_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32s_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48s_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64s_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96s_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E104is_v5": {
+        "vcores": 104.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E2s_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4s_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8s_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16s_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20s_v6": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32s_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48s_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64s_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96s_v6": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_E128s_v6": {
+        "vcores": 128.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_E192is_v6": {
+        "vcores": 192.0,
+        "memory_gib": 1832.0
+      },
+      "Standard_E2_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20_v4": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64_v4": {
+        "vcores": 64.0,
+        "memory_gib": 504.0
+      },
+      "Standard_E2_v5": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_E4_v5": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_E8_v5": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_E16_v5": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_E20_v5": {
+        "vcores": 20.0,
+        "memory_gib": 160.0
+      },
+      "Standard_E32_v5": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_E48_v5": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_E64_v5": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_E96_v5": {
+        "vcores": 96.0,
+        "memory_gib": 672.0
+      },
+      "Standard_E104i_v5": {
+        "vcores": 104.0,
+        "memory_gib": 672.0
+      },
+      "Standard_F1ads_v7": {
+        "vcores": 1.0,
+        "memory_gib": 4.0
+      },
+      "Standard_F2ads_v7": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F4ads_v7": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F8ads_v7": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F16ads_v7": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F32ads_v7": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F48ads_v7": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_F64ads_v7": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_F80ads_v7": {
+        "vcores": 80.0,
+        "memory_gib": 320.0
+      },
+      "Standard_F1alds_v7": {
+        "vcores": 1.0,
+        "memory_gib": 2.0
+      },
+      "Standard_F2alds_v7": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_F4alds_v7": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F8alds_v7": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F16alds_v7": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F32alds_v7": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F48alds_v7": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_F64alds_v7": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F80alds_v7": {
+        "vcores": 80.0,
+        "memory_gib": 160.0
+      },
+      "Standard_F2als_v6": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_F4als_v6": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F8als_v6": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F16als_v6": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F32als_v6": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F48als_v6": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_F64als_v6": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F1als_v7": {
+        "vcores": 1.0,
+        "memory_gib": 2.0
+      },
+      "Standard_F2als_v7": {
+        "vcores": 2.0,
+        "memory_gib": 4.0
+      },
+      "Standard_F4als_v7": {
+        "vcores": 4.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F8als_v7": {
+        "vcores": 8.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F16als_v7": {
+        "vcores": 16.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F32als_v7": {
+        "vcores": 32.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F48als_v7": {
+        "vcores": 48.0,
+        "memory_gib": 96.0
+      },
+      "Standard_F64als_v7": {
+        "vcores": 64.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F80als_v7": {
+        "vcores": 80.0,
+        "memory_gib": 160.0
+      },
+      "Standard_F1amds_v7": {
+        "vcores": 1.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F2amds_v7": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F4amds_v7": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F8amds_v7": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F16amds_v7": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F32amds_v7": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_F48amds_v7": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_F64amds_v7": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_F80amds_v7": {
+        "vcores": 80.0,
+        "memory_gib": 640.0
+      },
+      "Standard_F2ams_v6": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F4ams_v6": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F8ams_v6": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F16ams_v6": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F32ams_v6": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_F48ams_v6": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_F64ams_v6": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_F1ams_v7": {
+        "vcores": 1.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F2ams_v7": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F4ams_v7": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F8ams_v7": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F16ams_v7": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F32ams_v7": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_F48ams_v7": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_F64ams_v7": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_F80ams_v7": {
+        "vcores": 80.0,
+        "memory_gib": 640.0
+      },
+      "Standard_F2as_v6": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F4as_v6": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F8as_v6": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F16as_v6": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F32as_v6": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F48as_v6": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_F64as_v6": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_F1as_v7": {
+        "vcores": 1.0,
+        "memory_gib": 4.0
+      },
+      "Standard_F2as_v7": {
+        "vcores": 2.0,
+        "memory_gib": 8.0
+      },
+      "Standard_F4as_v7": {
+        "vcores": 4.0,
+        "memory_gib": 16.0
+      },
+      "Standard_F8as_v7": {
+        "vcores": 8.0,
+        "memory_gib": 32.0
+      },
+      "Standard_F16as_v7": {
+        "vcores": 16.0,
+        "memory_gib": 64.0
+      },
+      "Standard_F32as_v7": {
+        "vcores": 32.0,
+        "memory_gib": 128.0
+      },
+      "Standard_F48as_v7": {
+        "vcores": 48.0,
+        "memory_gib": 192.0
+      },
+      "Standard_F64as_v7": {
+        "vcores": 64.0,
+        "memory_gib": 256.0
+      },
+      "Standard_F80as_v7": {
+        "vcores": 80.0,
+        "memory_gib": 320.0
+      },
+      "Standard_L2aos_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_L4aos_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_L8aos_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_L12aos_v4": {
+        "vcores": 12.0,
+        "memory_gib": 96.0
+      },
+      "Standard_L16aos_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_L24aos_v4": {
+        "vcores": 24.0,
+        "memory_gib": 192.0
+      },
+      "Standard_L32aos_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_L8as_v3": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_L16as_v3": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_L32as_v3": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_L48as_v3": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_L64as_v3": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_L80as_v3": {
+        "vcores": 80.0,
+        "memory_gib": 640.0
+      },
+      "Standard_L2as_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_L4as_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_L8as_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_L16as_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_L32as_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_L48as_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_L64as_v4": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_L80as_v4": {
+        "vcores": 80.0,
+        "memory_gib": 640.0
+      },
+      "Standard_L96as_v4": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_L8s_v3": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_L16s_v3": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_L32s_v3": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_L48s_v3": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_L64s_v3": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_L80s_v3": {
+        "vcores": 80.0,
+        "memory_gib": 640.0
+      },
+      "Standard_L2s_v4": {
+        "vcores": 2.0,
+        "memory_gib": 16.0
+      },
+      "Standard_L4s_v4": {
+        "vcores": 4.0,
+        "memory_gib": 32.0
+      },
+      "Standard_L8s_v4": {
+        "vcores": 8.0,
+        "memory_gib": 64.0
+      },
+      "Standard_L16s_v4": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_L32s_v4": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_L48s_v4": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_L64s_v4": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_L80s_v4": {
+        "vcores": 80.0,
+        "memory_gib": 640.0
+      },
+      "Standard_L96s_v4": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_M64": {
+        "vcores": 64.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_M64m": {
+        "vcores": 64.0,
+        "memory_gib": 1792.0
+      },
+      "Standard_M128": {
+        "vcores": 128.0,
+        "memory_gib": 2048.0
+      },
+      "Standard_M128m": {
+        "vcores": 128.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_M16bds_v3": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_M32bds_v3": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_M48bds_v3": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_M64bds_1_v3": {
+        "vcores": 64.0,
+        "memory_gib": 1397.0
+      },
+      "Standard_M64bds_v3": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_M96bds_2_v3": {
+        "vcores": 96.0,
+        "memory_gib": 1946.0
+      },
+      "Standard_M96bds_v3": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_M128bds_3_v3": {
+        "vcores": 128.0,
+        "memory_gib": 2794.0
+      },
+      "Standard_M128bds_v3": {
+        "vcores": 128.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_M176bds_4_v3": {
+        "vcores": 176.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_M176bds_v3": {
+        "vcores": 176.0,
+        "memory_gib": 1536.0
+      },
+      "Standard_M16bs_v3": {
+        "vcores": 16.0,
+        "memory_gib": 128.0
+      },
+      "Standard_M32bs_v3": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_M48bs_v3": {
+        "vcores": 48.0,
+        "memory_gib": 384.0
+      },
+      "Standard_M64bs_v3": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_M96bs_v3": {
+        "vcores": 96.0,
+        "memory_gib": 768.0
+      },
+      "Standard_M128bs_v3": {
+        "vcores": 128.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_M176bs_v3": {
+        "vcores": 176.0,
+        "memory_gib": 1536.0
+      },
+      "Standard_M32dms_v2": {
+        "vcores": 32.0,
+        "memory_gib": 875.0
+      },
+      "Standard_M64dms_v2": {
+        "vcores": 64.0,
+        "memory_gib": 1792.0
+      },
+      "Standard_M64ds_v2": {
+        "vcores": 64.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_M128dms_v2": {
+        "vcores": 128.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_M128ds_v2": {
+        "vcores": 128.0,
+        "memory_gib": 2048.0
+      },
+      "Standard_M192idms_v2": {
+        "vcores": 192.0,
+        "memory_gib": 4096.0
+      },
+      "Standard_M192ids_v2": {
+        "vcores": 192.0,
+        "memory_gib": 2048.0
+      },
+      "Standard_M12ds_v3": {
+        "vcores": 12.0,
+        "memory_gib": 240.0
+      },
+      "Standard_M24ds_v3": {
+        "vcores": 24.0,
+        "memory_gib": 480.0
+      },
+      "Standard_M48ds_1_v3": {
+        "vcores": 48.0,
+        "memory_gib": 974.0
+      },
+      "Standard_M96ds_1_v3": {
+        "vcores": 96.0,
+        "memory_gib": 974.0
+      },
+      "Standard_M96ds_2_v3": {
+        "vcores": 96.0,
+        "memory_gib": 1946.0
+      },
+      "Standard_M176ds_3_v3": {
+        "vcores": 176.0,
+        "memory_gib": 2794.0
+      },
+      "Standard_M176ds_4_v3": {
+        "vcores": 176.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_M832ids_16_v3": {
+        "vcores": 832.0,
+        "memory_gib": 15200.0
+      },
+      "Standard_M8ms": {
+        "vcores": 8.0,
+        "memory_gib": 218.75
+      },
+      "Standard_M16ms": {
+        "vcores": 16.0,
+        "memory_gib": 437.5
+      },
+      "Standard_M32ls": {
+        "vcores": 32.0,
+        "memory_gib": 256.0
+      },
+      "Standard_M32ms": {
+        "vcores": 32.0,
+        "memory_gib": 875.0
+      },
+      "Standard_M32ts": {
+        "vcores": 32.0,
+        "memory_gib": 192.0
+      },
+      "Standard_M64ls": {
+        "vcores": 64.0,
+        "memory_gib": 512.0
+      },
+      "Standard_M64ms": {
+        "vcores": 64.0,
+        "memory_gib": 1792.0
+      },
+      "Standard_M64s": {
+        "vcores": 64.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_M128ms": {
+        "vcores": 128.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_M128s": {
+        "vcores": 128.0,
+        "memory_gib": 2048.0
+      },
+      "Standard_M32ms_v2": {
+        "vcores": 32.0,
+        "memory_gib": 875.0
+      },
+      "Standard_M64ms_v2": {
+        "vcores": 64.0,
+        "memory_gib": 1792.0
+      },
+      "Standard_M64s_v2": {
+        "vcores": 64.0,
+        "memory_gib": 1024.0
+      },
+      "Standard_M128ms_v2": {
+        "vcores": 128.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_M128s_v2": {
+        "vcores": 128.0,
+        "memory_gib": 2048.0
+      },
+      "Standard_M192ims_v2": {
+        "vcores": 192.0,
+        "memory_gib": 4096.0
+      },
+      "Standard_M192is_v2": {
+        "vcores": 192.0,
+        "memory_gib": 2048.0
+      },
+      "Standard_M208ms_v2": {
+        "vcores": 208.0,
+        "memory_gib": 5700.0
+      },
+      "Standard_M208s_v2": {
+        "vcores": 208.0,
+        "memory_gib": 2850.0
+      },
+      "Standard_M416ms_v2": {
+        "vcores": 416.0,
+        "memory_gib": 11400.0
+      },
+      "Standard_M416s_v2": {
+        "vcores": 416.0,
+        "memory_gib": 5700.0
+      },
+      "Standard_M416s_6_v3": {
+        "vcores": 416.0,
+        "memory_gib": 5696.0
+      },
+      "Standard_M416s_8_v3": {
+        "vcores": 416.0,
+        "memory_gib": 7600.0
+      },
+      "Standard_M624s_12_v3": {
+        "vcores": 624.0,
+        "memory_gib": 11400.0
+      },
+      "Standard_M832s_12_v3": {
+        "vcores": 832.0,
+        "memory_gib": 11400.0
+      },
+      "Standard_M12s_v3": {
+        "vcores": 12.0,
+        "memory_gib": 240.0
+      },
+      "Standard_M24s_v3": {
+        "vcores": 24.0,
+        "memory_gib": 480.0
+      },
+      "Standard_M48s_1_v3": {
+        "vcores": 48.0,
+        "memory_gib": 974.0
+      },
+      "Standard_M96s_1_v3": {
+        "vcores": 96.0,
+        "memory_gib": 974.0
+      },
+      "Standard_M96s_2_v3": {
+        "vcores": 96.0,
+        "memory_gib": 1946.0
+      },
+      "Standard_M176s_3_v3": {
+        "vcores": 176.0,
+        "memory_gib": 2794.0
+      },
+      "Standard_M176s_4_v3": {
+        "vcores": 176.0,
+        "memory_gib": 3892.0
+      },
+      "Standard_FX4mds": {
+        "vcores": 4.0,
+        "memory_gib": 84.0
+      },
+      "Standard_FX12mds": {
+        "vcores": 12.0,
+        "memory_gib": 252.0
+      },
+      "Standard_FX24mds": {
+        "vcores": 24.0,
+        "memory_gib": 504.0
+      },
+      "Standard_FX36mds": {
+        "vcores": 36.0,
+        "memory_gib": 756.0
+      },
+      "Standard_FX48mds": {
+        "vcores": 48.0,
+        "memory_gib": 1008.0
+      }
+    }
+  }
+}

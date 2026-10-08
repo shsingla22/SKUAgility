@@ -1,0 +1,51 @@
+{
+  "_comment": [
+    "Series pages that exist in MicrosoftDocs/azure-compute-docs but are linked from",
+    "neither the sizes overview nor their family page, so the crawl cannot find them.",
+    "Each was surfaced by a comparison (the Azure Migrate VM list, 2026-10) and is",
+    "confirmed to exist. If one of these pages disappears the build fails loudly,",
+    "which is the cue to remove it here."
+  ],
+  "series": [
+    {
+      "path": "general-purpose/ddsv6-series",
+      "why": "named in the overview's D-family row but not linked; absent from d-family.md"
+    },
+    {
+      "path": "general-purpose/dldsv6-series",
+      "why": "named in the overview's D-family row but not linked; absent from d-family.md"
+    },
+    {
+      "path": "memory-optimized/edsv6-series",
+      "why": "named in the overview's E-family row (linked only to esv6-series.md); absent from e-family.md"
+    },
+    {
+      "path": "memory-optimized/ev4-series",
+      "why": "the v4 E-series are absent from e-family.md and the overview"
+    },
+    {
+      "path": "memory-optimized/esv4-series",
+      "why": "the v4 E-series are absent from e-family.md and the overview"
+    },
+    {
+      "path": "memory-optimized/edv4-series",
+      "why": "the v4 E-series are absent from e-family.md and the overview"
+    },
+    {
+      "path": "memory-optimized/edsv4-series",
+      "why": "the v4 E-series are absent from e-family.md and the overview"
+    },
+    {
+      "path": "memory-optimized/eav4-series",
+      "why": "the v4 E-series are absent from e-family.md and the overview"
+    },
+    {
+      "path": "memory-optimized/easv4-series",
+      "why": "the v4 E-series are absent from e-family.md and the overview"
+    },
+    {
+      "path": "memory-optimized/m-series",
+      "why": "m-family.md links it as ../../m-series.md, outside the sizes tree the crawl follows"
+    }
+  ]
+}
